@@ -46,16 +46,20 @@ namespace GHospital_Care.DAL.Gateway
             return dtDataTable;
         }
 
-        public DataTable GetIpInfo(DateTime AdmintDate1, DateTime AdmintDate2, bool chkvalue)
+        public DataTable GetIpInfo(DateTime AdmintDate1, DateTime AdmintDate2, string chkvalue)
         {
             DataTable dtDataTable = new DataTable();
            // Query = "select * from HospitalBusinessOffice B where B.InputDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.OPID NOT IN(SELECT OPID FROM dbo.tbl_DischargeBill) ";
-            if (chkvalue == true)
+            if (chkvalue == "Discharge")
             {
                 Query = "select * from HospitalBusinessOfficeDishcarge B where Convert(date,B.DischargeDate) between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.OPID IN(SELECT OPID FROM dbo.tbl_DischargeBill) ";
 
             }
-            if (chkvalue == false)
+            if (chkvalue == "Running")
+            {
+                Query = "select * from HospitalBusinessOffice B where B.InputDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.OPID  NOT IN(SELECT OPID FROM dbo.tbl_DischargeBill) ";
+            }
+            if (chkvalue == "Req")
             {
                 Query = "select * from HospitalBusinessOffice B where B.InputDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.OPID  NOT IN(SELECT OPID FROM dbo.tbl_DischargeBill) ";
             }
