@@ -28,9 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Operation.OperationNote));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OperationNote));
+            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtRealtedToMeal = new DevExpress.XtraEditors.TextEdit();
             this.label24 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -42,17 +54,18 @@
             this.label17 = new System.Windows.Forms.Label();
             this.cmbDrug = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.AdvisePage = new DevExpress.XtraTab.XtraTabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.listViewAdvice = new System.Windows.Forms.ListView();
+            this.SL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Advise = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAddAdvice = new System.Windows.Forms.Button();
+            this.searchLookAdvice = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.richboxAdvice = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -121,19 +134,26 @@
             this.label21 = new System.Windows.Forms.Label();
             this.DateToDate = new System.Windows.Forms.DateTimePicker();
             this.dataFromDate = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).BeginInit();
+            this.xtraTabControl2.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRealtedToMeal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRoute.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDoose.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDrug.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.AdvisePage.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookAdvice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dorb.Properties)).BeginInit();
@@ -168,24 +188,55 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // repositoryItemHyperLinkEdit1
+            // 
+            this.repositoryItemHyperLinkEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemHyperLinkEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemHyperLinkEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit1.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemHyperLinkEdit1.Image")));
+            this.repositoryItemHyperLinkEdit1.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
+            // 
             // groupControl1
             // 
             this.groupControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupControl1.Appearance.Options.UseFont = true;
-            this.groupControl1.Controls.Add(this.groupControl3);
+            this.groupControl1.Controls.Add(this.xtraTabControl2);
             this.groupControl1.Controls.Add(this.panel2);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(952, 600);
+            this.groupControl1.Size = new System.Drawing.Size(952, 572);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Discharge Certificate";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
+            // xtraTabControl2
+            // 
+            this.xtraTabControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.xtraTabControl2.Location = new System.Drawing.Point(2, 298);
+            this.xtraTabControl2.Name = "xtraTabControl2";
+            this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
+            this.xtraTabControl2.Size = new System.Drawing.Size(948, 216);
+            this.xtraTabControl2.TabIndex = 222;
+            this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage3,
+            this.AdvisePage});
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.AutoScroll = true;
+            this.xtraTabPage3.Controls.Add(this.groupControl3);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(942, 188);
+            this.xtraTabPage3.Text = "Treatment";
+            // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.gridControl1);
             this.groupControl3.Controls.Add(this.txtRealtedToMeal);
             this.groupControl3.Controls.Add(this.label24);
             this.groupControl3.Controls.Add(this.simpleButton1);
@@ -196,150 +247,21 @@
             this.groupControl3.Controls.Add(this.label18);
             this.groupControl3.Controls.Add(this.label17);
             this.groupControl3.Controls.Add(this.cmbDrug);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl3.Location = new System.Drawing.Point(2, 300);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(948, 102);
+            this.groupControl3.ShowCaption = false;
+            this.groupControl3.Size = new System.Drawing.Size(942, 188);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "TREATMENT && ADVICE";
             // 
-            // txtRealtedToMeal
-            // 
-            this.txtRealtedToMeal.Location = new System.Drawing.Point(423, 55);
-            this.txtRealtedToMeal.Name = "txtRealtedToMeal";
-            this.txtRealtedToMeal.Size = new System.Drawing.Size(153, 20);
-            this.txtRealtedToMeal.TabIndex = 9;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(323, 57);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(104, 15);
-            this.label24.TabIndex = 8;
-            this.label24.Text = "Related To Meal :";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(777, 31);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(130, 45);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "ADD TO LIST";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(582, 27);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(189, 48);
-            this.txtDescription.TabIndex = 5;
-            this.txtDescription.Text = "";
-            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
-            // 
-            // txtRoute
-            // 
-            this.txtRoute.Location = new System.Drawing.Point(423, 28);
-            this.txtRoute.Name = "txtRoute";
-            this.txtRoute.Size = new System.Drawing.Size(153, 20);
-            this.txtRoute.TabIndex = 4;
-            this.txtRoute.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(374, 30);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(46, 15);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Route :";
-            // 
-            // txtDoose
-            // 
-            this.txtDoose.Location = new System.Drawing.Point(91, 55);
-            this.txtDoose.Name = "txtDoose";
-            this.txtDoose.Size = new System.Drawing.Size(226, 20);
-            this.txtDoose.TabIndex = 4;
-            this.txtDoose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(35, 58);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(49, 15);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Doose :";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(7, 30);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(77, 15);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Select Drug :";
-            // 
-            // cmbDrug
-            // 
-            this.cmbDrug.Location = new System.Drawing.Point(91, 27);
-            this.cmbDrug.Name = "cmbDrug";
-            this.cmbDrug.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbDrug.Properties.DisplayMember = "ProductName";
-            this.cmbDrug.Properties.NullText = "";
-            this.cmbDrug.Properties.NullValuePrompt = "Select Drug";
-            this.cmbDrug.Properties.NullValuePromptShowForEmptyValue = true;
-            this.cmbDrug.Properties.ValueMember = "ProductCode";
-            this.cmbDrug.Properties.View = this.gridView2;
-            this.cmbDrug.Size = new System.Drawing.Size(226, 20);
-            this.cmbDrug.TabIndex = 7;
-            this.cmbDrug.EditValueChanged += new System.EventHandler(this.cmbDrug_EditValueChanged);
-            this.cmbDrug.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDrug_KeyPress);
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.gridControl1);
-            this.panel2.Controls.Add(this.simpleButton3);
-            this.panel2.Controls.Add(this.btnRefresh);
-            this.panel2.Controls.Add(this.btnPrint);
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(2, 402);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(948, 196);
-            this.panel2.TabIndex = 221;
-            // 
             // gridControl1
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControl1.Location = new System.Drawing.Point(2, 64);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemHyperLinkEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(948, 109);
+            this.gridControl1.Size = new System.Drawing.Size(938, 122);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -400,17 +322,6 @@
             this.gridColumn5.VisibleIndex = 6;
             this.gridColumn5.Width = 76;
             // 
-            // repositoryItemHyperLinkEdit1
-            // 
-            this.repositoryItemHyperLinkEdit1.Appearance.Options.UseTextOptions = true;
-            this.repositoryItemHyperLinkEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.repositoryItemHyperLinkEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
-            this.repositoryItemHyperLinkEdit1.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemHyperLinkEdit1.Image")));
-            this.repositoryItemHyperLinkEdit1.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
-            this.repositoryItemHyperLinkEdit1.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit1_Click);
-            // 
             // gridColumn9
             // 
             this.gridColumn9.FieldName = "Route";
@@ -427,12 +338,256 @@
             this.gridColumn10.VisibleIndex = 4;
             this.gridColumn10.Width = 143;
             // 
+            // txtRealtedToMeal
+            // 
+            this.txtRealtedToMeal.Location = new System.Drawing.Point(423, 38);
+            this.txtRealtedToMeal.Name = "txtRealtedToMeal";
+            this.txtRealtedToMeal.Size = new System.Drawing.Size(153, 20);
+            this.txtRealtedToMeal.TabIndex = 9;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(323, 38);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(104, 15);
+            this.label24.TabIndex = 8;
+            this.label24.Text = "Related To Meal :";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(780, 8);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(130, 45);
+            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.Text = "ADD TO LIST";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(585, 10);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(189, 48);
+            this.txtDescription.TabIndex = 5;
+            this.txtDescription.Text = "";
+            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
+            // 
+            // txtRoute
+            // 
+            this.txtRoute.Location = new System.Drawing.Point(426, 10);
+            this.txtRoute.Name = "txtRoute";
+            this.txtRoute.Size = new System.Drawing.Size(153, 20);
+            this.txtRoute.TabIndex = 4;
+            this.txtRoute.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(374, 11);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(46, 15);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Route :";
+            // 
+            // txtDoose
+            // 
+            this.txtDoose.Location = new System.Drawing.Point(90, 38);
+            this.txtDoose.Name = "txtDoose";
+            this.txtDoose.Size = new System.Drawing.Size(226, 20);
+            this.txtDoose.TabIndex = 4;
+            this.txtDoose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(35, 39);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(49, 15);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Doose :";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(7, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(77, 15);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Select Drug :";
+            // 
+            // cmbDrug
+            // 
+            this.cmbDrug.Location = new System.Drawing.Point(91, 10);
+            this.cmbDrug.Name = "cmbDrug";
+            this.cmbDrug.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbDrug.Properties.DisplayMember = "ProductName";
+            this.cmbDrug.Properties.NullText = "";
+            this.cmbDrug.Properties.NullValuePrompt = "Select Drug";
+            this.cmbDrug.Properties.NullValuePromptShowForEmptyValue = true;
+            this.cmbDrug.Properties.ValueMember = "ProductCode";
+            this.cmbDrug.Properties.View = this.gridView2;
+            this.cmbDrug.Size = new System.Drawing.Size(226, 20);
+            this.cmbDrug.TabIndex = 7;
+            this.cmbDrug.EditValueChanged += new System.EventHandler(this.cmbDrug_EditValueChanged);
+            this.cmbDrug.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDrug_KeyPress);
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // AdvisePage
+            // 
+            this.AdvisePage.Appearance.PageClient.BackColor = System.Drawing.Color.DimGray;
+            this.AdvisePage.Appearance.PageClient.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.AdvisePage.Appearance.PageClient.Options.UseBackColor = true;
+            this.AdvisePage.Controls.Add(this.panel3);
+            this.AdvisePage.Name = "AdvisePage";
+            this.AdvisePage.Size = new System.Drawing.Size(942, 188);
+            this.AdvisePage.Text = "Advise";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.listViewAdvice);
+            this.panel3.Controls.Add(this.btnAddAdvice);
+            this.panel3.Controls.Add(this.searchLookAdvice);
+            this.panel3.Controls.Add(this.richboxAdvice);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(942, 188);
+            this.panel3.TabIndex = 10;
+            // 
+            // listViewAdvice
+            // 
+            this.listViewAdvice.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.SL,
+            this.Advise});
+            this.listViewAdvice.Font = new System.Drawing.Font("Kalpurush", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewAdvice.FullRowSelect = true;
+            this.listViewAdvice.GridLines = true;
+            this.listViewAdvice.Location = new System.Drawing.Point(422, 3);
+            this.listViewAdvice.Name = "listViewAdvice";
+            this.listViewAdvice.Size = new System.Drawing.Size(517, 182);
+            this.listViewAdvice.TabIndex = 100089;
+            this.listViewAdvice.UseCompatibleStateImageBehavior = false;
+            this.listViewAdvice.View = System.Windows.Forms.View.Details;
+            this.listViewAdvice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewAdvice_KeyDown);
+            this.listViewAdvice.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewAdvice_MouseDown);
+            // 
+            // SL
+            // 
+            this.SL.Text = "SL";
+            this.SL.Width = 34;
+            // 
+            // Advise
+            // 
+            this.Advise.Text = "Advise";
+            this.Advise.Width = 478;
+            // 
+            // btnAddAdvice
+            // 
+            this.btnAddAdvice.BackColor = System.Drawing.Color.Red;
+            this.btnAddAdvice.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAddAdvice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAdvice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAdvice.ForeColor = System.Drawing.Color.White;
+            this.btnAddAdvice.Location = new System.Drawing.Point(297, 11);
+            this.btnAddAdvice.Name = "btnAddAdvice";
+            this.btnAddAdvice.Size = new System.Drawing.Size(119, 34);
+            this.btnAddAdvice.TabIndex = 10;
+            this.btnAddAdvice.Text = "Add";
+            this.btnAddAdvice.UseVisualStyleBackColor = false;
+            this.btnAddAdvice.Click += new System.EventHandler(this.btnAddAdvice_Click);
+            // 
+            // searchLookAdvice
+            // 
+            this.searchLookAdvice.Location = new System.Drawing.Point(19, 12);
+            this.searchLookAdvice.Name = "searchLookAdvice";
+            this.searchLookAdvice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.searchLookAdvice.Properties.Appearance.Options.UseFont = true;
+            this.searchLookAdvice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookAdvice.Properties.DisplayMember = "AdviceName";
+            this.searchLookAdvice.Properties.NullText = "";
+            this.searchLookAdvice.Properties.NullValuePrompt = "Select Drug";
+            this.searchLookAdvice.Properties.NullValuePromptShowForEmptyValue = true;
+            this.searchLookAdvice.Properties.ValueMember = "AdviceName";
+            this.searchLookAdvice.Properties.View = this.gridView4;
+            this.searchLookAdvice.Size = new System.Drawing.Size(272, 32);
+            this.searchLookAdvice.TabIndex = 9;
+            this.searchLookAdvice.EditValueChanged += new System.EventHandler(this.searchLookAdvice_EditValueChanged);
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn11,
+            this.gridColumn12});
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "AdviceId";
+            this.gridColumn11.FieldName = "AdviceId";
+            this.gridColumn11.Name = "gridColumn11";
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "AdviceName";
+            this.gridColumn12.FieldName = "AdviceName";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 0;
+            // 
+            // richboxAdvice
+            // 
+            this.richboxAdvice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richboxAdvice.Font = new System.Drawing.Font("Kalpurush", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richboxAdvice.Location = new System.Drawing.Point(19, 51);
+            this.richboxAdvice.Name = "richboxAdvice";
+            this.richboxAdvice.Size = new System.Drawing.Size(397, 134);
+            this.richboxAdvice.TabIndex = 100088;
+            this.richboxAdvice.Text = "";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.simpleButton3);
+            this.panel2.Controls.Add(this.btnRefresh);
+            this.panel2.Controls.Add(this.btnPrint);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnEdit);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(2, 514);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(948, 56);
+            this.panel2.TabIndex = 221;
+            // 
             // simpleButton3
             // 
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(640, 115);
+            this.simpleButton3.Location = new System.Drawing.Point(590, 3);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(109, 40);
             this.simpleButton3.TabIndex = 220;
@@ -444,7 +599,7 @@
             this.btnRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.Appearance.Options.UseFont = true;
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(164, 115);
+            this.btnRefresh.Location = new System.Drawing.Point(114, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(109, 40);
             this.btnRefresh.TabIndex = 220;
@@ -457,7 +612,7 @@
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.Enabled = false;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(759, 115);
+            this.btnPrint.Location = new System.Drawing.Point(709, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(148, 40);
             this.btnPrint.TabIndex = 220;
@@ -470,7 +625,7 @@
             this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(283, 115);
+            this.btnSave.Location = new System.Drawing.Point(233, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 40);
             this.btnSave.TabIndex = 220;
@@ -483,7 +638,7 @@
             this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(521, 115);
+            this.btnDelete.Location = new System.Drawing.Point(471, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 40);
             this.btnDelete.TabIndex = 220;
@@ -496,7 +651,7 @@
             this.btnEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit.Appearance.Options.UseFont = true;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(402, 115);
+            this.btnEdit.Location = new System.Drawing.Point(352, 3);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(109, 40);
             this.btnEdit.TabIndex = 220;
@@ -526,7 +681,7 @@
             this.groupControl2.Location = new System.Drawing.Point(2, 163);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(948, 143);
+            this.groupControl2.Size = new System.Drawing.Size(948, 137);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "groupControl2";
             // 
@@ -1001,7 +1156,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(958, 628);
+            this.xtraTabControl1.Size = new System.Drawing.Size(958, 600);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -1011,7 +1166,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(952, 600);
+            this.xtraTabPage1.Size = new System.Drawing.Size(952, 572);
             this.xtraTabPage1.Text = "Discharge Request";
             // 
             // xtraTabPage2
@@ -1019,7 +1174,7 @@
             this.xtraTabPage2.Controls.Add(this.panel4);
             this.xtraTabPage2.Controls.Add(this.panel1);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(992, 600);
+            this.xtraTabPage2.Size = new System.Drawing.Size(952, 572);
             this.xtraTabPage2.Text = "View Request";
             // 
             // panel4
@@ -1028,7 +1183,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 64);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(992, 536);
+            this.panel4.Size = new System.Drawing.Size(952, 508);
             this.panel4.TabIndex = 3;
             // 
             // gridControlDischarge
@@ -1037,7 +1192,7 @@
             this.gridControlDischarge.Location = new System.Drawing.Point(0, 0);
             this.gridControlDischarge.MainView = this.gridViewDischarge;
             this.gridControlDischarge.Name = "gridControlDischarge";
-            this.gridControlDischarge.Size = new System.Drawing.Size(992, 536);
+            this.gridControlDischarge.Size = new System.Drawing.Size(952, 508);
             this.gridControlDischarge.TabIndex = 0;
             this.gridControlDischarge.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDischarge});
@@ -1062,7 +1217,7 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 64);
+            this.panel1.Size = new System.Drawing.Size(952, 64);
             this.panel1.TabIndex = 1;
             // 
             // simpleButton2
@@ -1128,31 +1283,38 @@
             this.dataFromDate.Size = new System.Drawing.Size(126, 26);
             this.dataFromDate.TabIndex = 0;
             // 
-            // DischargeForm
+            // OperationNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 581);
             this.Controls.Add(this.xtraTabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DischargeForm";
+            this.Name = "OperationNote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DischargeForm";
             this.Load += new System.EventHandler(this.DischargeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).EndInit();
+            this.xtraTabControl2.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRealtedToMeal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRoute.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDoose.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDrug.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.AdvisePage.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookAdvice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -1242,7 +1404,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.DateEdit txtAdmissionOnDate;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit1;
         private DevExpress.XtraEditors.TextEdit txtAddress;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
@@ -1286,5 +1447,19 @@
         private System.Windows.Forms.RichTextBox txtDiagonsisAdmisson;
         private System.Windows.Forms.RichTextBox txtBreafHistory;
         private System.Windows.Forms.RichTextBox txtDiagOnDischarge;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraTab.XtraTabPage AdvisePage;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookAdvice;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RichTextBox richboxAdvice;
+        private System.Windows.Forms.ListView listViewAdvice;
+        private System.Windows.Forms.Button btnAddAdvice;
+        private System.Windows.Forms.ColumnHeader SL;
+        private System.Windows.Forms.ColumnHeader Advise;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
     }
 }

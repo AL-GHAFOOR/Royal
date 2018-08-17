@@ -38,6 +38,27 @@ namespace GHospital_Care.DischargeUI
             cmbPatient.Properties.DisplayMember = "PatientName";
         }
 
+        public void AdviseLoad()
+        {
+
+            List<Advice> ListOfAdvice = new List<Advice>();
+     
+            Advice advice = new Advice();
+            advice.AdviceId = 1;
+            advice.AdviceName = "নিয়মিত ঔষধ খাবেন ।";
+            ListOfAdvice.Add(advice);
+            Advice advice1 = new Advice();
+            advice1.AdviceId = 2;
+            advice1.AdviceName = "প্রচুর পরিমান পানি ও পুস্টিকর খাবার খাবেন ।";
+            ListOfAdvice.Add(advice1);
+
+            Advice advice2 = new Advice();
+            advice2.AdviceId = 3;
+            advice2.AdviceName = "পর্যন্ত স্বামী সহবাস নিষেধ ।";
+            ListOfAdvice.Add(advice2);
+
+            searchLookAdvice.Properties.DataSource = ListOfAdvice;
+        }
         public void GetDischargeInfo()
         {
             aMedicalManager = new MedicalManager();
@@ -116,8 +137,7 @@ namespace GHospital_Care.DischargeUI
 
             GetDischargeInfo();
             Refresh();
-
-        }
+            AdviseLoad();}
 
         private void cmbPatient_EditValueChanged(object sender, EventArgs e)
         {
@@ -739,6 +759,38 @@ namespace GHospital_Care.DischargeUI
             };
             model.ReportPath = "GHospital_Care.Report.rdlcDischargeSummery.rdlc";
             model.Show(model, this, true);
+        }
+
+        private void searchLookAdvice_EditValueChanged(object sender, EventArgs e)
+        {
+            richboxAdvice.Text = string.Empty;string advice = searchLookAdvice.Text;
+            richboxAdvice.Text = advice;
+
+        }
+
+        private void btnAddAdvice_Click(object sender, EventArgs e)
+        {
+            string[] row = { listViewAdvice.Items.Count.ToString(), richboxAdvice.Text};
+            var listViewItem = new ListViewItem(row);
+            listViewAdvice.Items.Add(listViewItem);
+            
+        }
+
+        private void listViewAdvice_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void listViewAdvice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                foreach (ListViewItem selectedItem in listViewAdvice.SelectedItems)
+                {
+                    listViewAdvice.Items.Remove(selectedItem);
+                }
+               
+            }
         }
 
     }
