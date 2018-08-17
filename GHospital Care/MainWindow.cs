@@ -874,7 +874,7 @@ namespace GHospital_Care
 
         private void pathologyPaymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             ConsultantPayment frm = new ConsultantPayment();
+            PathologyStatus frm = new PathologyStatus();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -894,6 +894,13 @@ namespace GHospital_Care
         private void dailyFollowupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IndoorPatient.MedicalTreatment frm = new GHospital_Care.IndoorPatient.MedicalTreatment();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void consultantPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IndoorPatient.ConsultantPayment frm = new GHospital_Care.IndoorPatient.ConsultantPayment();
             frm.MdiParent = this;
             frm.Show();
         }
