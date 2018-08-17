@@ -42,6 +42,12 @@ namespace GHospital_Care.BAL.Manager
        }
 
 
+       public DataTable GetIndentMaster(DateTime FromDate, DateTime ToDate)
+       {
+           DataTable dataTable = new DataTable();
+           dataTable = new MedicineIndentGateway().GetIndentMaster(FromDate, ToDate);
+           return dataTable;
+       }
 
        public MessageModel SaveMedicineIndent(MedicineIndent aMedicineIndent)
        {

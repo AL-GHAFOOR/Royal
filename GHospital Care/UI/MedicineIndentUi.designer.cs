@@ -70,8 +70,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.IndentgridControl = new DevExpress.XtraGrid.GridControl();
-            this.IndentGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.ToDate = new System.Windows.Forms.DateTimePicker();
+            this.FromDate = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnComissionPrint = new VistaButton.VistaButton();
+            this.btnIndentView = new VistaButton.VistaButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpMedicine.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -86,8 +99,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpNicuPatient.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IndentgridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IndentGridView)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -332,7 +347,7 @@
             this.xtraTabPage1.Controls.Add(this.label5);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(872, 354);
-            this.xtraTabPage1.Text = "xtraTabPage1";
+            this.xtraTabPage1.Text = "Input Indent";
             // 
             // DataGridCart
             // 
@@ -550,26 +565,170 @@
             // 
             // xtraTabPage2
             // 
-            this.xtraTabPage2.Controls.Add(this.IndentgridControl);
+            this.xtraTabPage2.Controls.Add(this.gridControl1);
+            this.xtraTabPage2.Controls.Add(this.panel9);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(872, 354);
-            this.xtraTabPage2.Text = "xtraTabPage2";
+            this.xtraTabPage2.Text = "View Indent";
             // 
-            // IndentgridControl
+            // panel9
             // 
-            this.IndentgridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IndentgridControl.Location = new System.Drawing.Point(0, 0);
-            this.IndentgridControl.MainView = this.IndentGridView;
-            this.IndentgridControl.Name = "IndentgridControl";
-            this.IndentgridControl.Size = new System.Drawing.Size(872, 348);
-            this.IndentgridControl.TabIndex = 1;
-            this.IndentgridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.IndentGridView});
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.ToDate);
+            this.panel9.Controls.Add(this.FromDate);
+            this.panel9.Controls.Add(this.label10);
+            this.panel9.Controls.Add(this.label12);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(872, 41);
+            this.panel9.TabIndex = 250;
             // 
-            // IndentGridView
+            // ToDate
             // 
-            this.IndentGridView.GridControl = this.IndentgridControl;
-            this.IndentGridView.Name = "IndentGridView";
+            this.ToDate.CustomFormat = "dd-MM-yyyy";
+            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ToDate.Location = new System.Drawing.Point(212, 9);
+            this.ToDate.Name = "ToDate";
+            this.ToDate.Size = new System.Drawing.Size(76, 20);
+            this.ToDate.TabIndex = 100108;
+            this.ToDate.ValueChanged += new System.EventHandler(this.ToDate_ValueChanged);
+            // 
+            // FromDate
+            // 
+            this.FromDate.CustomFormat = "dd-MM-yyyy";
+            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FromDate.Location = new System.Drawing.Point(73, 8);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.Size = new System.Drawing.Size(82, 20);
+            this.FromDate.TabIndex = 100109;
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(161, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 100107;
+            this.label10.Text = "To Date";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.TabIndex = 100106;
+            this.label12.Text = "From Date";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.btnComissionPrint);
+            this.panel10.Controls.Add(this.btnIndentView);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel10.Location = new System.Drawing.Point(713, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(157, 39);
+            this.panel10.TabIndex = 46;
+            // 
+            // btnComissionPrint
+            // 
+            this.btnComissionPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnComissionPrint.BaseColor = System.Drawing.Color.Red;
+            this.btnComissionPrint.ButtonColor = System.Drawing.Color.SaddleBrown;
+            this.btnComissionPrint.ButtonText = "Print";
+            this.btnComissionPrint.CornerRadius = 3;
+            this.btnComissionPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnComissionPrint.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnComissionPrint.HighlightColor = System.Drawing.Color.Transparent;
+            this.btnComissionPrint.Location = new System.Drawing.Point(81, 7);
+            this.btnComissionPrint.Name = "btnComissionPrint";
+            this.btnComissionPrint.Size = new System.Drawing.Size(70, 27);
+            this.btnComissionPrint.TabIndex = 47;
+            // 
+            // btnIndentView
+            // 
+            this.btnIndentView.BackColor = System.Drawing.Color.Transparent;
+            this.btnIndentView.BaseColor = System.Drawing.Color.Red;
+            this.btnIndentView.ButtonColor = System.Drawing.Color.SaddleBrown;
+            this.btnIndentView.ButtonText = "View";
+            this.btnIndentView.CornerRadius = 3;
+            this.btnIndentView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIndentView.GlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnIndentView.HighlightColor = System.Drawing.Color.Transparent;
+            this.btnIndentView.Location = new System.Drawing.Point(7, 7);
+            this.btnIndentView.Name = "btnIndentView";
+            this.btnIndentView.Size = new System.Drawing.Size(70, 27);
+            this.btnIndentView.TabIndex = 46;
+            this.btnIndentView.Click += new System.EventHandler(this.btnIndentView_Click);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 41);
+            this.gridControl1.MainView = this.gridView3;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(872, 313);
+            this.gridControl1.TabIndex = 252;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn14,
+            this.gridColumn3});
+            this.gridView3.GridControl = this.gridControl1;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "IndentNo";
+            this.gridColumn9.FieldName = "IndentNo";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
+            this.gridColumn9.Width = 111;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.FieldName = "PatientID";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            this.gridColumn10.Width = 125;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Patient Name";
+            this.gridColumn11.FieldName = "PatientName";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 3;
+            this.gridColumn11.Width = 308;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.FieldName = "Date";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            this.gridColumn14.Width = 138;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Cabin/Bed";
+            this.gridColumn3.FieldName = "BedName";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 4;
+            this.gridColumn3.Width = 172;
             // 
             // MedicineIndentUi
             // 
@@ -601,8 +760,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpNicuPatient.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IndentgridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IndentGridView)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -628,8 +790,6 @@
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraGrid.GridControl IndentgridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView IndentGridView;
         private System.Windows.Forms.TextBox txtIndentNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -652,5 +812,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dozes;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.DateTimePicker ToDate;
+        private System.Windows.Forms.DateTimePicker FromDate;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel10;
+        private VistaButton.VistaButton btnComissionPrint;
+        private VistaButton.VistaButton btnIndentView;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

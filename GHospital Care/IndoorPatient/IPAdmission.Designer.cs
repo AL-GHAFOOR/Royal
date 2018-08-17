@@ -133,6 +133,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew2 = new DevExpress.XtraEditors.SimpleButton();
@@ -166,7 +167,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBoxClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -1131,10 +1131,10 @@
             // IndoorPatientRegGridControl
             // 
             this.IndoorPatientRegGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IndoorPatientRegGridControl.Location = new System.Drawing.Point(0, 50);
+            this.IndoorPatientRegGridControl.Location = new System.Drawing.Point(0, 35);
             this.IndoorPatientRegGridControl.MainView = this.gridView1;
             this.IndoorPatientRegGridControl.Name = "IndoorPatientRegGridControl";
-            this.IndoorPatientRegGridControl.Size = new System.Drawing.Size(834, 363);
+            this.IndoorPatientRegGridControl.Size = new System.Drawing.Size(834, 378);
             this.IndoorPatientRegGridControl.TabIndex = 0;
             this.IndoorPatientRegGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1334,10 +1334,10 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Black;
+            this.label28.BackColor = System.Drawing.Color.SlateBlue;
             this.label28.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(227, 17);
+            this.label28.Location = new System.Drawing.Point(230, 10);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(26, 17);
             this.label28.TabIndex = 100103;
@@ -1346,10 +1346,10 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Black;
+            this.label27.BackColor = System.Drawing.Color.SteelBlue;
             this.label27.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label27.ForeColor = System.Drawing.Color.Transparent;
-            this.label27.Location = new System.Drawing.Point(44, 17);
+            this.label27.Location = new System.Drawing.Point(44, 11);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(44, 17);
             this.label27.TabIndex = 100103;
@@ -1359,7 +1359,7 @@
             // 
             this.ToDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ToDate.Location = new System.Drawing.Point(261, 14);
+            this.ToDate.Location = new System.Drawing.Point(261, 8);
             this.ToDate.Name = "ToDate";
             this.ToDate.Size = new System.Drawing.Size(126, 21);
             this.ToDate.TabIndex = 100102;
@@ -1369,7 +1369,7 @@
             // 
             this.FromDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FromDate.Location = new System.Drawing.Point(101, 14);
+            this.FromDate.Location = new System.Drawing.Point(101, 8);
             this.FromDate.Name = "FromDate";
             this.FromDate.Size = new System.Drawing.Size(118, 21);
             this.FromDate.TabIndex = 100102;
@@ -1389,13 +1389,13 @@
             // 
             // label7
             // 
-            this.label7.BackColor = System.Drawing.Color.Black;
+            this.label7.BackColor = System.Drawing.Color.SteelBlue;
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(834, 50);
+            this.label7.Size = new System.Drawing.Size(834, 35);
             this.label7.TabIndex = 100098;
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -1412,6 +1412,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(847, 55);
             this.panel3.TabIndex = 100102;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnPrint.Appearance.Options.UseFont = true;
+            this.btnPrint.Appearance.Options.UseForeColor = true;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.Location = new System.Drawing.Point(442, 14);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(79, 35);
+            this.btnPrint.TabIndex = 100139;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnDelete
             // 
@@ -1499,10 +1513,10 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(39, 52);
+            this.gridControl2.Location = new System.Drawing.Point(1, 52);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(184, 489);
+            this.gridControl2.Size = new System.Drawing.Size(222, 489);
             this.gridControl2.TabIndex = 222;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1727,7 +1741,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(511, 12);
+            this.label19.Location = new System.Drawing.Point(512, 12);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 13);
             this.label19.TabIndex = 100095;
@@ -1767,20 +1781,6 @@
             this.label1.Size = new System.Drawing.Size(192, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Indoor Patient Registration";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnPrint.Appearance.Options.UseFont = true;
-            this.btnPrint.Appearance.Options.UseForeColor = true;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(442, 14);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(79, 35);
-            this.btnPrint.TabIndex = 100139;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // IPAdmission
             // 

@@ -136,9 +136,18 @@ namespace GHospital_Care.IndoorPatient
         private string RefferedId = "";
         private void searchLookReffered_EditValueChanged(object sender, EventArgs e)
         {
-            DueStatusByReff();
-            RefferedId = searchLookReffered.Properties.View.GetFocusedRowCellValue("Id").ToString();
-            txtTotalAmount.Focus();
+            try
+            {
+                DueStatusByReff();
+                RefferedId = searchLookReffered.Properties.View.GetFocusedRowCellValue("Id").ToString();
+                txtTotalAmount.Focus();
+            }
+            catch (Exception)
+            {
+                
+                //throw;
+            }
+           
         }
 
         private string status = "";
@@ -238,8 +247,10 @@ namespace GHospital_Care.IndoorPatient
             txtRemarks.Text = string.Empty;
             txtTotalAmount.Text = string.Empty;
             lblInward.Text = string.Empty;
+            dateCommission.Text = System.DateTime.Today.Date.ToString("d");
             searchLookReffered.Properties.NullText = "Select";
             GetCommssionReff();
+            CommissionView();
 
         }
 
@@ -353,6 +364,57 @@ namespace GHospital_Care.IndoorPatient
         private void btnComissionPrint_Click(object sender, EventArgs e)
         {
             Print();
+        }
+
+        private string Reff = "";
+        private void gridViewPatient_DoubleClick(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void gridView3_DoubleClick(object sender, EventArgs e)
+        {
+            txtCommissionID.Text = gridView3.GetFocusedRowCellValue("CommissionID").ToString();
+            dateCommission.Text = gridView3.GetFocusedRowCellValue("Date").ToString();
+            searchLookReffered.Properties.NullText = gridView3.GetFocusedRowCellValue("Name").ToString();
+            txtTotalAmount.Text = gridView3.GetFocusedRowCellValue("Amount").ToString();
+            txtRemarks.Text = gridView3.GetFocusedRowCellValue("Remarks").ToString();
+            Reff = gridView3.GetFocusedRowCellValue("ReffId").ToString();
+            if (rdIndoor.Checked)
+            {
+                Chk = "Indoor";
+            }
+            if (rdNICU.Checked)
+            {
+                Chk = "NICU";
+            }
+            xtraTabPage1.Show();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            Comission saveService = new Comission();
+            saveService.CommissionId = txtCommissionID.Text;
+            saveService.ReffId = Reff;
+            saveService.Date = dateCommission.Value;
+            saveService.Remarks = txtRemarks.Text;
+            saveService.Inword = lblInward.Text;
+            saveService.Amount = Convert.ToDecimal(txtTotalAmount.Text);
+            saveService.UserId = MainWindow.userName;
+            saveService.Status = Chk;
+            MessageModel message = new DoctorWisePatientManager().UpdateCommission(saveService);
+            MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            Comission saveService = new Comission();
+            saveService.CommissionId = txtCommissionID.Text;
+            MessageModel message = new DoctorWisePatientManager().DeleteCommission(saveService);
+            MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
         }
     }
 }

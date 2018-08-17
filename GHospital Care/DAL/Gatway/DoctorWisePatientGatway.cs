@@ -174,6 +174,35 @@ namespace GHospital_Care.DAL.Gatway
             
             return count;
         }
+
+        public int UpdateCommission(Comission service)
+        {
+            int count = 0;
+            Command = new SqlCommand("Update tbl_CommssionMaster set Date=@Date,ReffId=@ReffId,Amount=@Amount,Remarks=@Remarks,UserId=@UserId,InWord=@InWord,Status=@Status where CommissionID= @CommissionID ", Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@CommissionID", service.CommissionId);
+            Command.Parameters.AddWithValue("@Date", service.Date);
+            Command.Parameters.AddWithValue("@ReffId", service.ReffId);
+            Command.Parameters.AddWithValue("@Amount", service.Amount);
+            Command.Parameters.AddWithValue("@Remarks", service.Remarks);
+            Command.Parameters.AddWithValue("@UserId", service.UserId);
+            Command.Parameters.AddWithValue("@InWord", service.Inword);
+            Command.Parameters.AddWithValue("@Status", service.Status);
+            count += Command.ExecuteNonQuery();
+
+            return count;
+        }
+
+        public int DeleteCommission(Comission service)
+        {
+            int count = 0;
+            Command = new SqlCommand("Delete tbl_CommssionMaster where CommissionID= @CommissionID ", Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@CommissionID", service.CommissionId);
+            count += Command.ExecuteNonQuery();
+
+            return count;
+        }
         public DataSet DbSelectQuery(string strQuery)
         {
             var dSet = new DataSet();

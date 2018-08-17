@@ -128,6 +128,32 @@ namespace GHospital_Care.BAL.Manager
              return messageModel;
          }
 
+         public MessageModel UpdateCommission(Comission aService)
+         {
+
+             int saveService = new DoctorWisePatientGatway().UpdateCommission(aService);
+             if (saveService > 0)
+             {
+                 messageModel.MessageBody = " Update successfully!";
+                 messageModel.MessageTitle = "Successfull";
+
+             }
+             return messageModel;
+         }
+
+         public MessageModel DeleteCommission(Comission aService)
+         {
+
+             int saveService = new DoctorWisePatientGatway().DeleteCommission(aService);
+             if (saveService > 0)
+             {
+                 messageModel.MessageBody = " Delete successfully!";
+                 messageModel.MessageTitle = "Successfull";
+
+             }
+             return messageModel;
+         }
+
          public MessageModel SavePathologyPayment(DAL.Model.Pathology aService)
          {
 

@@ -177,6 +177,7 @@ namespace GHospital_Care.NICU
             txtTotalAmount.Text = string.Empty;
             lblInward.Text = string.Empty;
             searchLookPathology.Text ="";
+            datePathology.Text = System.DateTime.Today.Date.ToString("d");
             txtAddress.Text = string.Empty;
             searchLookPathology.Properties.NullText = "Select";
             GetVoucherNo();

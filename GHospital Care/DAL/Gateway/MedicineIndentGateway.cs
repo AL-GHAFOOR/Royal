@@ -53,7 +53,20 @@ namespace GHospital_Care.DAL.Gatway
             data.Load(Reader);
             return data;
         }
-       
+
+
+
+        public DataTable GetIndentMaster(DateTime FromDate, DateTime ToDate)
+        {
+            Query = "SELECT * FROM ViewIndentMaster where Date between '"+FromDate+"' and '"+ToDate+"'  ORDER BY Date";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
+        }
+        
         public int SaveMedicineIndent(MedicineIndent aMedicineIndent)
         {
             int rowAffect = 0;
@@ -68,6 +81,7 @@ namespace GHospital_Care.DAL.Gatway
 
             return rowAffect;
         }
+
 
 
         public int SaveMedicineIndentDetails(MedicineIndent aMedicineIndent)

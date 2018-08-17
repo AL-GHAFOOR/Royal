@@ -189,6 +189,7 @@ namespace GHospital_Care.IndoorPatient
             lblInward.Text = string.Empty;
             searchLookConsltant.Text ="";
             txtAddress.Text = string.Empty;
+            datePathology.Text = System.DateTime.Today.Date.ToString("d");
             searchLookConsltant.Properties.NullText = "Select";
             GetVoucherNo();
             GetConsultantPayment();

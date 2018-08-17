@@ -395,6 +395,7 @@ namespace GHospital_Care.IndoorPatient
             this.gridViewPatient.GridControl = this.gridControlPatient;
             this.gridViewPatient.Name = "gridViewPatient";
             this.gridViewPatient.OptionsView.ShowGroupPanel = false;
+            this.gridViewPatient.DoubleClick += new System.EventHandler(this.gridViewPatient_DoubleClick);
             // 
             // gridColumn2
             // 
@@ -623,6 +624,7 @@ namespace GHospital_Care.IndoorPatient
             this.simpleButton3.Size = new System.Drawing.Size(86, 34);
             this.simpleButton3.TabIndex = 100098;
             this.simpleButton3.Text = "Delete";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton4
             // 
@@ -634,6 +636,7 @@ namespace GHospital_Care.IndoorPatient
             this.simpleButton4.Size = new System.Drawing.Size(90, 34);
             this.simpleButton4.TabIndex = 100097;
             this.simpleButton4.Text = "Update";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // btnSave
             // 
@@ -695,6 +698,7 @@ namespace GHospital_Care.IndoorPatient
             this.gridView3.GridControl = this.gridControl1;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.DoubleClick += new System.EventHandler(this.gridView3_DoubleClick);
             // 
             // gridColumn9
             // 

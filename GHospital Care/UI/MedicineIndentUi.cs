@@ -193,12 +193,14 @@ namespace GHospital_Care.UI
 
         private void radioBtnNicu_CheckedChanged(object sender, EventArgs e)
         {
+            searchLookUpNicuPatient.Properties.DataSource = null;
             DefaultClear();
             GetNicuPatient();
         }
 
         private void radioBtnIndoor_CheckedChanged(object sender, EventArgs e)
         {
+            searchLookUpNicuPatient.Properties.DataSource = null;
             DefaultClear();
             GetIpPatient();
         }
@@ -209,6 +211,26 @@ namespace GHospital_Care.UI
             {
                 btnAddToCart.Focus();
             }
+        }
+
+        public void ViewIndentMaster()
+        {
+            DataTable dt = new MedicineIndentManager().GetIndentMaster(FromDate.Value, ToDate.Value);
+            gridControl1.DataSource = dt;
+        }
+
+        private void btnIndentView_Click(object sender, EventArgs e)
+        {
+            ViewIndentMaster();}
+
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+            ViewIndentMaster();
+        }
+
+        private void ToDate_ValueChanged(object sender, EventArgs e)
+        {
+            ViewIndentMaster();
         }
 
     }
