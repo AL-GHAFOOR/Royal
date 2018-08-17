@@ -250,6 +250,63 @@ namespace GHospital_Care.DAL.Gatway
         }
 
 
+        public int UpdatePathologyPayment(Model.Pathology service)
+        {
+            int count = 0;
+            Command = new SqlCommand("Update tblPathologyPayment set Date= @Date,Particulars=@Particulars,Amount=@Amount,Description=@Description,UserId=@UserId,InWord=@InWord where VoucherNo= @VoucherNo ", Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@VoucherNo", service.VoucherNo);
+            Command.Parameters.AddWithValue("@Date", service.Date);
+            Command.Parameters.AddWithValue("@Particulars", service.Particulars);
+            Command.Parameters.AddWithValue("@Amount", service.Amount);
+            Command.Parameters.AddWithValue("@Description", service.Description);
+            Command.Parameters.AddWithValue("@UserId", service.UserId);
+            Command.Parameters.AddWithValue("@InWord", service.Inword);
+            count += Command.ExecuteNonQuery();
+
+            return count;
+        }
+
+        public int UpdateConsultantPayment(Model.Pathology service)
+        {
+            int count = 0;
+            Command = new SqlCommand("Update tblConsultantPayment set Date= @Date,Particulars=@Particulars,Amount=@Amount,Description=@Description,UserId=@UserId,InWord=@InWord where VoucherNo= @VoucherNo ", Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@VoucherNo", service.VoucherNo);
+            Command.Parameters.AddWithValue("@Date", service.Date);
+            Command.Parameters.AddWithValue("@Particulars", service.Particulars);
+            Command.Parameters.AddWithValue("@Amount", service.Amount);
+            Command.Parameters.AddWithValue("@Description", service.Description);
+            Command.Parameters.AddWithValue("@UserId", service.UserId);
+            Command.Parameters.AddWithValue("@InWord", service.Inword);
+            count += Command.ExecuteNonQuery();
+
+            return count;
+        }
+
+
+        public int DeletePathologyPayment(Model.Pathology service)
+        {
+            int count = 0;
+            Command = new SqlCommand("Delete tblPathologyPayment where VoucherNo= @VoucherNo ", Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@VoucherNo", service.VoucherNo);
+            count += Command.ExecuteNonQuery();
+
+            return count;
+        }
+
+        public int DeleteConsultantPayment(Model.Pathology service)
+        {
+            int count = 0;
+            Command = new SqlCommand("Delete tblConsultantPayment where VoucherNo= @VoucherNo ", Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@VoucherNo", service.VoucherNo);
+            count += Command.ExecuteNonQuery();
+
+            return count;
+        }
+
         public int SaveConsultantPayment(Model.Pathology service)
         {
             int count = 0;
@@ -261,7 +318,7 @@ namespace GHospital_Care.DAL.Gatway
             Command.Parameters.AddWithValue("@Particulars", service.Particulars);
             Command.Parameters.AddWithValue("@Amount", service.Amount);
             Command.Parameters.AddWithValue("@Description", service.Description);
-            Command.Parameters.AddWithValue("@UserId", service.UserId);
+            Command.Parameters.AddWithValue("@UserId", MainWindow.userName);
             Command.Parameters.AddWithValue("@InWord", service.Inword);
             count += Command.ExecuteNonQuery();
 

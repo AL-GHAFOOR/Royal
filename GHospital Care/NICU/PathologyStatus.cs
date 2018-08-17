@@ -99,9 +99,18 @@ namespace GHospital_Care.NICU
         private string RefferedId = "";
         private void searchLookReffered_EditValueChanged(object sender, EventArgs e)
         {
-            RefferedId = searchLookPathology.Properties.View.GetFocusedRowCellValue("PathId").ToString();
-            txtAddress.Text = searchLookPathology.Properties.View.GetFocusedRowCellValue("Address").ToString();
-            txtTotalAmount.Focus();
+            try
+            {
+                RefferedId = searchLookPathology.Properties.View.GetFocusedRowCellValue("PathId").ToString();
+                txtAddress.Text = searchLookPathology.Properties.View.GetFocusedRowCellValue("Address").ToString();
+                txtTotalAmount.Focus();
+            }
+            catch (Exception)
+            {
+                
+               
+            }
+           
         }
 
         private string status = "";
@@ -171,7 +180,7 @@ namespace GHospital_Care.NICU
             txtAddress.Text = string.Empty;
             searchLookPathology.Properties.NullText = "Select";
             GetVoucherNo();
-
+            PathologyPayment();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -300,6 +309,43 @@ namespace GHospital_Care.NICU
         private void btnComissionPrint_Click(object sender, EventArgs e)
         {
             Print();
+        }
+
+        private string pathology = "";
+        private void gridViewPatient_DoubleClick(object sender, EventArgs e)
+        {
+            txtVoucherNo.Text = gridViewPatient.GetFocusedRowCellValue("VoucherNo").ToString();
+            datePathology.Text = gridViewPatient.GetFocusedRowCellValue("Date").ToString();
+            searchLookPathology.Properties.NullText = gridViewPatient.GetFocusedRowCellValue("Alias").ToString();
+            txtTotalAmount.Text = gridViewPatient.GetFocusedRowCellValue("Amount").ToString();
+            txtDescription.Text = gridViewPatient.GetFocusedRowCellValue("Description").ToString();
+            pathology = gridViewPatient.GetFocusedRowCellValue("Particulars").ToString();
+            txtAddress.Text = gridViewPatient.GetFocusedRowCellValue("Address").ToString();
+           
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            DAL.Model.Pathology saveService = new DAL.Model.Pathology();
+            saveService.VoucherNo = txtVoucherNo.Text;
+            saveService.Particulars = pathology;
+            saveService.Date = datePathology.Value;
+            saveService.Description = txtDescription.Text;
+            saveService.Inword = lblInward.Text;
+            saveService.Amount = Convert.ToDecimal(txtTotalAmount.Text);
+            saveService.UserId = MainWindow.userName;
+            MessageModel message = new DoctorWisePatientManager().UpdatePathologyPayment(saveService);
+            MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            DAL.Model.Pathology saveService = new DAL.Model.Pathology();
+            saveService.VoucherNo = txtVoucherNo.Text;
+            MessageModel message = new DoctorWisePatientManager().DeletePathologyPayment(saveService);
+            MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
         }
     }
 }

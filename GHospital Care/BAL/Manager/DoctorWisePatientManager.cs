@@ -142,6 +142,61 @@ namespace GHospital_Care.BAL.Manager
          }
 
 
+         public MessageModel UpdatePathologyPayment(DAL.Model.Pathology aService)
+         {
+
+             int saveService = new DoctorWisePatientGatway().UpdatePathologyPayment(aService);
+             if (saveService > 0)
+             {
+                 messageModel.MessageBody = " Update successfully!";
+                 messageModel.MessageTitle = "Successfull";
+
+             }
+             return messageModel;
+         }
+
+
+        public MessageModel UpdateConsultantPayment(DAL.Model.Pathology aService)
+        {
+
+            int saveService = new DoctorWisePatientGatway().UpdateConsultantPayment(aService);
+            if (saveService > 0)
+            {
+                messageModel.MessageBody = " Update successfully!";
+                messageModel.MessageTitle = "Successfull";
+
+            }
+            return messageModel;
+
+        }
+
+        public MessageModel DeletePathologyPayment(DAL.Model.Pathology aService)
+         {
+
+             int saveService = new DoctorWisePatientGatway().DeletePathologyPayment(aService);
+             if (saveService > 0)
+             {
+                 messageModel.MessageBody = " Delete successfully!";
+                 messageModel.MessageTitle = "Successfull";
+
+             }
+             return messageModel;
+         }
+
+
+        public MessageModel DeleteConsultantPayment(DAL.Model.Pathology aService)
+        {
+
+            int saveService = new DoctorWisePatientGatway().DeleteConsultantPayment(aService);
+            if (saveService > 0)
+            {
+                messageModel.MessageBody = " Delete successfully!";
+                messageModel.MessageTitle = "Successfull";
+
+            }
+            return messageModel;
+        }
+
          public MessageModel SaveConsultantPayment(DAL.Model.Pathology aService)
          {
 

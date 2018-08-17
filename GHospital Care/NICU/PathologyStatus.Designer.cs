@@ -363,6 +363,7 @@
             this.gridViewPatient.GridControl = this.gridControlPatient;
             this.gridViewPatient.Name = "gridViewPatient";
             this.gridViewPatient.OptionsView.ShowGroupPanel = false;
+            this.gridViewPatient.DoubleClick += new System.EventHandler(this.gridViewPatient_DoubleClick);
             // 
             // gridColumn2
             // 
@@ -596,6 +597,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(86, 34);
             this.simpleButton3.TabIndex = 100098;
             this.simpleButton3.Text = "Delete";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton4
             // 
@@ -607,6 +609,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(90, 34);
             this.simpleButton4.TabIndex = 100097;
             this.simpleButton4.Text = "Update";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // btnSave
             // 

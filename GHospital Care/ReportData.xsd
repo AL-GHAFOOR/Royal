@@ -989,6 +989,30 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="viewConsultantPaymentTableAdapter" GeneratorDataComponentClassName="viewConsultantPaymentTableAdapter" Name="viewConsultantPayment" UserDataComponentName="viewConsultantPaymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RoyalDbConnectionString (Settings)" DbObjectName="RoyalDb.dbo.viewConsultantPayment" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, VoucherNo, Particulars, Date, Amount, Description, InWord, UserId, DoctorName FROM dbo.viewConsultantPayment</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="VoucherNo" DataSetColumn="VoucherNo" />
+              <Mapping SourceColumn="Particulars" DataSetColumn="Particulars" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="InWord" DataSetColumn="InWord" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="DoctorName" DataSetColumn="DoctorName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -997,7 +1021,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
   <xs:element name="ReportData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportData" msprop:Generator_UserDSName="ReportData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MoneyReceipt" msprop:Generator_TableClassName="MoneyReceiptDataTable" msprop:Generator_TableVarName="tableMoneyReceipt" msprop:Generator_TablePropName="MoneyReceipt" msprop:Generator_RowDeletingName="MoneyReceiptRowDeleting" msprop:Generator_RowChangingName="MoneyReceiptRowChanging" msprop:Generator_RowEvHandlerName="MoneyReceiptRowChangeEventHandler" msprop:Generator_RowDeletedName="MoneyReceiptRowDeleted" msprop:Generator_UserTableName="MoneyReceipt" msprop:Generator_RowChangedName="MoneyReceiptRowChanged" msprop:Generator_RowEvArgName="MoneyReceiptRowChangeEvent" msprop:Generator_RowClassName="MoneyReceiptRow">
+        <xs:element name="MoneyReceipt" msprop:Generator_TableClassName="MoneyReceiptDataTable" msprop:Generator_TableVarName="tableMoneyReceipt" msprop:Generator_RowChangedName="MoneyReceiptRowChanged" msprop:Generator_TablePropName="MoneyReceipt" msprop:Generator_RowDeletingName="MoneyReceiptRowDeleting" msprop:Generator_RowChangingName="MoneyReceiptRowChanging" msprop:Generator_RowEvHandlerName="MoneyReceiptRowChangeEventHandler" msprop:Generator_RowDeletedName="MoneyReceiptRowDeleted" msprop:Generator_RowClassName="MoneyReceiptRow" msprop:Generator_UserTableName="MoneyReceipt" msprop:Generator_RowEvArgName="MoneyReceiptRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ColType" msprop:Generator_ColumnVarNameInTable="columnColType" msprop:Generator_ColumnPropNameInRow="ColType" msprop:Generator_ColumnPropNameInTable="ColTypeColumn" msprop:Generator_UserColumnName="ColType" minOccurs="0">
@@ -1083,7 +1107,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sp_DischargeBill" msprop:Generator_TableClassName="Sp_DischargeBillDataTable" msprop:Generator_TableVarName="tableSp_DischargeBill" msprop:Generator_RowChangedName="Sp_DischargeBillRowChanged" msprop:Generator_TablePropName="Sp_DischargeBill" msprop:Generator_RowDeletingName="Sp_DischargeBillRowDeleting" msprop:Generator_RowChangingName="Sp_DischargeBillRowChanging" msprop:Generator_RowEvHandlerName="Sp_DischargeBillRowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_DischargeBillRowDeleted" msprop:Generator_RowClassName="Sp_DischargeBillRow" msprop:Generator_UserTableName="Sp_DischargeBill" msprop:Generator_RowEvArgName="Sp_DischargeBillRowChangeEvent">
+        <xs:element name="Sp_DischargeBill" msprop:Generator_TableClassName="Sp_DischargeBillDataTable" msprop:Generator_TableVarName="tableSp_DischargeBill" msprop:Generator_TablePropName="Sp_DischargeBill" msprop:Generator_RowDeletingName="Sp_DischargeBillRowDeleting" msprop:Generator_RowChangingName="Sp_DischargeBillRowChanging" msprop:Generator_RowEvHandlerName="Sp_DischargeBillRowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_DischargeBillRowDeleted" msprop:Generator_UserTableName="Sp_DischargeBill" msprop:Generator_RowChangedName="Sp_DischargeBillRowChanged" msprop:Generator_RowEvArgName="Sp_DischargeBillRowChangeEvent" msprop:Generator_RowClassName="Sp_DischargeBillRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -1163,7 +1187,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PatientBedCabinHistory" msprop:Generator_TableClassName="PatientBedCabinHistoryDataTable" msprop:Generator_TableVarName="tablePatientBedCabinHistory" msprop:Generator_RowChangedName="PatientBedCabinHistoryRowChanged" msprop:Generator_TablePropName="PatientBedCabinHistory" msprop:Generator_RowDeletingName="PatientBedCabinHistoryRowDeleting" msprop:Generator_RowChangingName="PatientBedCabinHistoryRowChanging" msprop:Generator_RowEvHandlerName="PatientBedCabinHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientBedCabinHistoryRowDeleted" msprop:Generator_RowClassName="PatientBedCabinHistoryRow" msprop:Generator_UserTableName="PatientBedCabinHistory" msprop:Generator_RowEvArgName="PatientBedCabinHistoryRowChangeEvent">
+        <xs:element name="PatientBedCabinHistory" msprop:Generator_TableClassName="PatientBedCabinHistoryDataTable" msprop:Generator_TableVarName="tablePatientBedCabinHistory" msprop:Generator_TablePropName="PatientBedCabinHistory" msprop:Generator_RowDeletingName="PatientBedCabinHistoryRowDeleting" msprop:Generator_RowChangingName="PatientBedCabinHistoryRowChanging" msprop:Generator_RowEvHandlerName="PatientBedCabinHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientBedCabinHistoryRowDeleted" msprop:Generator_UserTableName="PatientBedCabinHistory" msprop:Generator_RowChangedName="PatientBedCabinHistoryRowChanged" msprop:Generator_RowEvArgName="PatientBedCabinHistoryRowChangeEvent" msprop:Generator_RowClassName="PatientBedCabinHistoryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -1194,7 +1218,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BedHistoryPatientInfo" msprop:Generator_TableClassName="BedHistoryPatientInfoDataTable" msprop:Generator_TableVarName="tableBedHistoryPatientInfo" msprop:Generator_TablePropName="BedHistoryPatientInfo" msprop:Generator_RowDeletingName="BedHistoryPatientInfoRowDeleting" msprop:Generator_RowChangingName="BedHistoryPatientInfoRowChanging" msprop:Generator_RowEvHandlerName="BedHistoryPatientInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="BedHistoryPatientInfoRowDeleted" msprop:Generator_UserTableName="BedHistoryPatientInfo" msprop:Generator_RowChangedName="BedHistoryPatientInfoRowChanged" msprop:Generator_RowEvArgName="BedHistoryPatientInfoRowChangeEvent" msprop:Generator_RowClassName="BedHistoryPatientInfoRow">
+        <xs:element name="BedHistoryPatientInfo" msprop:Generator_TableClassName="BedHistoryPatientInfoDataTable" msprop:Generator_TableVarName="tableBedHistoryPatientInfo" msprop:Generator_RowChangedName="BedHistoryPatientInfoRowChanged" msprop:Generator_TablePropName="BedHistoryPatientInfo" msprop:Generator_RowDeletingName="BedHistoryPatientInfoRowDeleting" msprop:Generator_RowChangingName="BedHistoryPatientInfoRowChanging" msprop:Generator_RowEvHandlerName="BedHistoryPatientInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="BedHistoryPatientInfoRowDeleted" msprop:Generator_RowClassName="BedHistoryPatientInfoRow" msprop:Generator_UserTableName="BedHistoryPatientInfo" msprop:Generator_RowEvArgName="BedHistoryPatientInfoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1381,7 +1405,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DailyPatientStatus" msprop:Generator_TableClassName="DailyPatientStatusDataTable" msprop:Generator_TableVarName="tableDailyPatientStatus" msprop:Generator_RowChangedName="DailyPatientStatusRowChanged" msprop:Generator_TablePropName="DailyPatientStatus" msprop:Generator_RowDeletingName="DailyPatientStatusRowDeleting" msprop:Generator_RowChangingName="DailyPatientStatusRowChanging" msprop:Generator_RowEvHandlerName="DailyPatientStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyPatientStatusRowDeleted" msprop:Generator_RowClassName="DailyPatientStatusRow" msprop:Generator_UserTableName="DailyPatientStatus" msprop:Generator_RowEvArgName="DailyPatientStatusRowChangeEvent">
+        <xs:element name="DailyPatientStatus" msprop:Generator_TableClassName="DailyPatientStatusDataTable" msprop:Generator_TableVarName="tableDailyPatientStatus" msprop:Generator_TablePropName="DailyPatientStatus" msprop:Generator_RowDeletingName="DailyPatientStatusRowDeleting" msprop:Generator_RowChangingName="DailyPatientStatusRowChanging" msprop:Generator_RowEvHandlerName="DailyPatientStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyPatientStatusRowDeleted" msprop:Generator_UserTableName="DailyPatientStatus" msprop:Generator_RowChangedName="DailyPatientStatusRowChanged" msprop:Generator_RowEvArgName="DailyPatientStatusRowChangeEvent" msprop:Generator_RowClassName="DailyPatientStatusRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status">
@@ -1582,7 +1606,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IndoorpatientCollection" msprop:Generator_TableClassName="IndoorpatientCollectionDataTable" msprop:Generator_TableVarName="tableIndoorpatientCollection" msprop:Generator_TablePropName="IndoorpatientCollection" msprop:Generator_RowDeletingName="IndoorpatientCollectionRowDeleting" msprop:Generator_RowChangingName="IndoorpatientCollectionRowChanging" msprop:Generator_RowEvHandlerName="IndoorpatientCollectionRowChangeEventHandler" msprop:Generator_RowDeletedName="IndoorpatientCollectionRowDeleted" msprop:Generator_UserTableName="IndoorpatientCollection" msprop:Generator_RowChangedName="IndoorpatientCollectionRowChanged" msprop:Generator_RowEvArgName="IndoorpatientCollectionRowChangeEvent" msprop:Generator_RowClassName="IndoorpatientCollectionRow">
+        <xs:element name="IndoorpatientCollection" msprop:Generator_TableClassName="IndoorpatientCollectionDataTable" msprop:Generator_TableVarName="tableIndoorpatientCollection" msprop:Generator_RowChangedName="IndoorpatientCollectionRowChanged" msprop:Generator_TablePropName="IndoorpatientCollection" msprop:Generator_RowDeletingName="IndoorpatientCollectionRowDeleting" msprop:Generator_RowChangingName="IndoorpatientCollectionRowChanging" msprop:Generator_RowEvHandlerName="IndoorpatientCollectionRowChangeEventHandler" msprop:Generator_RowDeletedName="IndoorpatientCollectionRowDeleted" msprop:Generator_RowClassName="IndoorpatientCollectionRow" msprop:Generator_UserTableName="IndoorpatientCollection" msprop:Generator_RowEvArgName="IndoorpatientCollectionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" minOccurs="0">
@@ -1636,7 +1660,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OutdoorpatientCollection" msprop:Generator_TableClassName="OutdoorpatientCollectionDataTable" msprop:Generator_TableVarName="tableOutdoorpatientCollection" msprop:Generator_RowChangedName="OutdoorpatientCollectionRowChanged" msprop:Generator_TablePropName="OutdoorpatientCollection" msprop:Generator_RowDeletingName="OutdoorpatientCollectionRowDeleting" msprop:Generator_RowChangingName="OutdoorpatientCollectionRowChanging" msprop:Generator_RowEvHandlerName="OutdoorpatientCollectionRowChangeEventHandler" msprop:Generator_RowDeletedName="OutdoorpatientCollectionRowDeleted" msprop:Generator_RowClassName="OutdoorpatientCollectionRow" msprop:Generator_UserTableName="OutdoorpatientCollection" msprop:Generator_RowEvArgName="OutdoorpatientCollectionRowChangeEvent">
+        <xs:element name="OutdoorpatientCollection" msprop:Generator_TableClassName="OutdoorpatientCollectionDataTable" msprop:Generator_TableVarName="tableOutdoorpatientCollection" msprop:Generator_TablePropName="OutdoorpatientCollection" msprop:Generator_RowDeletingName="OutdoorpatientCollectionRowDeleting" msprop:Generator_RowChangingName="OutdoorpatientCollectionRowChanging" msprop:Generator_RowEvHandlerName="OutdoorpatientCollectionRowChangeEventHandler" msprop:Generator_RowDeletedName="OutdoorpatientCollectionRowDeleted" msprop:Generator_UserTableName="OutdoorpatientCollection" msprop:Generator_RowChangedName="OutdoorpatientCollectionRowChanged" msprop:Generator_RowEvArgName="OutdoorpatientCollectionRowChangeEvent" msprop:Generator_RowClassName="OutdoorpatientCollectionRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" minOccurs="0">
@@ -1683,7 +1707,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_OutDoorTotalBill" msprop:Generator_TableClassName="sp_OutDoorTotalBillDataTable" msprop:Generator_TableVarName="tablesp_OutDoorTotalBill" msprop:Generator_RowChangedName="sp_OutDoorTotalBillRowChanged" msprop:Generator_TablePropName="sp_OutDoorTotalBill" msprop:Generator_RowDeletingName="sp_OutDoorTotalBillRowDeleting" msprop:Generator_RowChangingName="sp_OutDoorTotalBillRowChanging" msprop:Generator_RowEvHandlerName="sp_OutDoorTotalBillRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_OutDoorTotalBillRowDeleted" msprop:Generator_RowClassName="sp_OutDoorTotalBillRow" msprop:Generator_UserTableName="sp_OutDoorTotalBill" msprop:Generator_RowEvArgName="sp_OutDoorTotalBillRowChangeEvent">
+        <xs:element name="sp_OutDoorTotalBill" msprop:Generator_TableClassName="sp_OutDoorTotalBillDataTable" msprop:Generator_TableVarName="tablesp_OutDoorTotalBill" msprop:Generator_TablePropName="sp_OutDoorTotalBill" msprop:Generator_RowDeletingName="sp_OutDoorTotalBillRowDeleting" msprop:Generator_RowChangingName="sp_OutDoorTotalBillRowChanging" msprop:Generator_RowEvHandlerName="sp_OutDoorTotalBillRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_OutDoorTotalBillRowDeleted" msprop:Generator_UserTableName="sp_OutDoorTotalBill" msprop:Generator_RowChangedName="sp_OutDoorTotalBillRowChanged" msprop:Generator_RowEvArgName="sp_OutDoorTotalBillRowChangeEvent" msprop:Generator_RowClassName="sp_OutDoorTotalBillRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID">
@@ -1735,7 +1759,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="viewOutdoorPatientBill" msprop:Generator_TableClassName="viewOutdoorPatientBillDataTable" msprop:Generator_TableVarName="tableviewOutdoorPatientBill" msprop:Generator_RowChangedName="viewOutdoorPatientBillRowChanged" msprop:Generator_TablePropName="viewOutdoorPatientBill" msprop:Generator_RowDeletingName="viewOutdoorPatientBillRowDeleting" msprop:Generator_RowChangingName="viewOutdoorPatientBillRowChanging" msprop:Generator_RowEvHandlerName="viewOutdoorPatientBillRowChangeEventHandler" msprop:Generator_RowDeletedName="viewOutdoorPatientBillRowDeleted" msprop:Generator_RowClassName="viewOutdoorPatientBillRow" msprop:Generator_UserTableName="viewOutdoorPatientBill" msprop:Generator_RowEvArgName="viewOutdoorPatientBillRowChangeEvent">
+        <xs:element name="viewOutdoorPatientBill" msprop:Generator_TableClassName="viewOutdoorPatientBillDataTable" msprop:Generator_TableVarName="tableviewOutdoorPatientBill" msprop:Generator_TablePropName="viewOutdoorPatientBill" msprop:Generator_RowDeletingName="viewOutdoorPatientBillRowDeleting" msprop:Generator_RowChangingName="viewOutdoorPatientBillRowChanging" msprop:Generator_RowEvHandlerName="viewOutdoorPatientBillRowChangeEventHandler" msprop:Generator_RowDeletedName="viewOutdoorPatientBillRowDeleted" msprop:Generator_UserTableName="viewOutdoorPatientBill" msprop:Generator_RowChangedName="viewOutdoorPatientBillRowChanged" msprop:Generator_RowEvArgName="viewOutdoorPatientBillRowChangeEvent" msprop:Generator_RowClassName="viewOutdoorPatientBillRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PatientName" msprop:Generator_ColumnVarNameInTable="columnPatientName" msprop:Generator_ColumnPropNameInRow="PatientName" msprop:Generator_ColumnPropNameInTable="PatientNameColumn" msprop:Generator_UserColumnName="PatientName" minOccurs="0">
@@ -1800,7 +1824,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_RptOutdoorBill" msprop:Generator_TableClassName="SP_RptOutdoorBillDataTable" msprop:Generator_TableVarName="tableSP_RptOutdoorBill" msprop:Generator_TablePropName="SP_RptOutdoorBill" msprop:Generator_RowDeletingName="SP_RptOutdoorBillRowDeleting" msprop:Generator_RowChangingName="SP_RptOutdoorBillRowChanging" msprop:Generator_RowEvHandlerName="SP_RptOutdoorBillRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RptOutdoorBillRowDeleted" msprop:Generator_UserTableName="SP_RptOutdoorBill" msprop:Generator_RowChangedName="SP_RptOutdoorBillRowChanged" msprop:Generator_RowEvArgName="SP_RptOutdoorBillRowChangeEvent" msprop:Generator_RowClassName="SP_RptOutdoorBillRow">
+        <xs:element name="SP_RptOutdoorBill" msprop:Generator_TableClassName="SP_RptOutdoorBillDataTable" msprop:Generator_TableVarName="tableSP_RptOutdoorBill" msprop:Generator_RowChangedName="SP_RptOutdoorBillRowChanged" msprop:Generator_TablePropName="SP_RptOutdoorBill" msprop:Generator_RowDeletingName="SP_RptOutdoorBillRowDeleting" msprop:Generator_RowChangingName="SP_RptOutdoorBillRowChanging" msprop:Generator_RowEvHandlerName="SP_RptOutdoorBillRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RptOutdoorBillRowDeleted" msprop:Generator_RowClassName="SP_RptOutdoorBillRow" msprop:Generator_UserTableName="SP_RptOutdoorBill" msprop:Generator_RowEvArgName="SP_RptOutdoorBillRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -1883,7 +1907,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sp_rptDischargeBill" msprop:Generator_TableClassName="Sp_rptDischargeBillDataTable" msprop:Generator_TableVarName="tableSp_rptDischargeBill" msprop:Generator_RowChangedName="Sp_rptDischargeBillRowChanged" msprop:Generator_TablePropName="Sp_rptDischargeBill" msprop:Generator_RowDeletingName="Sp_rptDischargeBillRowDeleting" msprop:Generator_RowChangingName="Sp_rptDischargeBillRowChanging" msprop:Generator_RowEvHandlerName="Sp_rptDischargeBillRowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_rptDischargeBillRowDeleted" msprop:Generator_RowClassName="Sp_rptDischargeBillRow" msprop:Generator_UserTableName="Sp_rptDischargeBill" msprop:Generator_RowEvArgName="Sp_rptDischargeBillRowChangeEvent">
+        <xs:element name="Sp_rptDischargeBill" msprop:Generator_TableClassName="Sp_rptDischargeBillDataTable" msprop:Generator_TableVarName="tableSp_rptDischargeBill" msprop:Generator_TablePropName="Sp_rptDischargeBill" msprop:Generator_RowDeletingName="Sp_rptDischargeBillRowDeleting" msprop:Generator_RowChangingName="Sp_rptDischargeBillRowChanging" msprop:Generator_RowEvHandlerName="Sp_rptDischargeBillRowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_rptDischargeBillRowDeleted" msprop:Generator_UserTableName="Sp_rptDischargeBill" msprop:Generator_RowChangedName="Sp_rptDischargeBillRowChanged" msprop:Generator_RowEvArgName="Sp_rptDischargeBillRowChangeEvent" msprop:Generator_RowClassName="Sp_rptDischargeBillRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -1971,7 +1995,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DisChargeSummery_MedicineTakeInHopital" msprop:Generator_TableClassName="DisChargeSummery_MedicineTakeInHopitalDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_MedicineTakeInHopital" msprop:Generator_TablePropName="DisChargeSummery_MedicineTakeInHopital" msprop:Generator_RowDeletingName="DisChargeSummery_MedicineTakeInHopitalRowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_MedicineTakeInHopitalRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_MedicineTakeInHopitalRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_MedicineTakeInHopitalRowDeleted" msprop:Generator_UserTableName="DisChargeSummery_MedicineTakeInHopital" msprop:Generator_RowChangedName="DisChargeSummery_MedicineTakeInHopitalRowChanged" msprop:Generator_RowEvArgName="DisChargeSummery_MedicineTakeInHopitalRowChangeEvent" msprop:Generator_RowClassName="DisChargeSummery_MedicineTakeInHopitalRow">
+        <xs:element name="DisChargeSummery_MedicineTakeInHopital" msprop:Generator_TableClassName="DisChargeSummery_MedicineTakeInHopitalDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_MedicineTakeInHopital" msprop:Generator_RowChangedName="DisChargeSummery_MedicineTakeInHopitalRowChanged" msprop:Generator_TablePropName="DisChargeSummery_MedicineTakeInHopital" msprop:Generator_RowDeletingName="DisChargeSummery_MedicineTakeInHopitalRowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_MedicineTakeInHopitalRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_MedicineTakeInHopitalRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_MedicineTakeInHopitalRowDeleted" msprop:Generator_RowClassName="DisChargeSummery_MedicineTakeInHopitalRow" msprop:Generator_UserTableName="DisChargeSummery_MedicineTakeInHopital" msprop:Generator_RowEvArgName="DisChargeSummery_MedicineTakeInHopitalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LabelName" msprop:Generator_ColumnVarNameInTable="columnLabelName" msprop:Generator_ColumnPropNameInRow="LabelName" msprop:Generator_ColumnPropNameInTable="LabelNameColumn" msprop:Generator_UserColumnName="LabelName" minOccurs="0">
@@ -2019,7 +2043,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DisChargeSummery_Pathology" msprop:Generator_TableClassName="DisChargeSummery_PathologyDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_Pathology" msprop:Generator_TablePropName="DisChargeSummery_Pathology" msprop:Generator_RowDeletingName="DisChargeSummery_PathologyRowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_PathologyRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_PathologyRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_PathologyRowDeleted" msprop:Generator_UserTableName="DisChargeSummery_Pathology" msprop:Generator_RowChangedName="DisChargeSummery_PathologyRowChanged" msprop:Generator_RowEvArgName="DisChargeSummery_PathologyRowChangeEvent" msprop:Generator_RowClassName="DisChargeSummery_PathologyRow">
+        <xs:element name="DisChargeSummery_Pathology" msprop:Generator_TableClassName="DisChargeSummery_PathologyDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_Pathology" msprop:Generator_RowChangedName="DisChargeSummery_PathologyRowChanged" msprop:Generator_TablePropName="DisChargeSummery_Pathology" msprop:Generator_RowDeletingName="DisChargeSummery_PathologyRowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_PathologyRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_PathologyRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_PathologyRowDeleted" msprop:Generator_RowClassName="DisChargeSummery_PathologyRow" msprop:Generator_UserTableName="DisChargeSummery_Pathology" msprop:Generator_RowEvArgName="DisChargeSummery_PathologyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2039,7 +2063,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ConsultSrviceBill" msprop:Generator_TableClassName="ConsultSrviceBillDataTable" msprop:Generator_TableVarName="tableConsultSrviceBill" msprop:Generator_TablePropName="ConsultSrviceBill" msprop:Generator_RowDeletingName="ConsultSrviceBillRowDeleting" msprop:Generator_RowChangingName="ConsultSrviceBillRowChanging" msprop:Generator_RowEvHandlerName="ConsultSrviceBillRowChangeEventHandler" msprop:Generator_RowDeletedName="ConsultSrviceBillRowDeleted" msprop:Generator_UserTableName="ConsultSrviceBill" msprop:Generator_RowChangedName="ConsultSrviceBillRowChanged" msprop:Generator_RowEvArgName="ConsultSrviceBillRowChangeEvent" msprop:Generator_RowClassName="ConsultSrviceBillRow">
+        <xs:element name="ConsultSrviceBill" msprop:Generator_TableClassName="ConsultSrviceBillDataTable" msprop:Generator_TableVarName="tableConsultSrviceBill" msprop:Generator_RowChangedName="ConsultSrviceBillRowChanged" msprop:Generator_TablePropName="ConsultSrviceBill" msprop:Generator_RowDeletingName="ConsultSrviceBillRowDeleting" msprop:Generator_RowChangingName="ConsultSrviceBillRowChanging" msprop:Generator_RowEvHandlerName="ConsultSrviceBillRowChangeEventHandler" msprop:Generator_RowDeletedName="ConsultSrviceBillRowDeleted" msprop:Generator_RowClassName="ConsultSrviceBillRow" msprop:Generator_UserTableName="ConsultSrviceBill" msprop:Generator_RowEvArgName="ConsultSrviceBillRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2077,7 +2101,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DisChargeSummery" msprop:Generator_TableClassName="DisChargeSummeryDataTable" msprop:Generator_TableVarName="tableDisChargeSummery" msprop:Generator_RowChangedName="DisChargeSummeryRowChanged" msprop:Generator_TablePropName="DisChargeSummery" msprop:Generator_RowDeletingName="DisChargeSummeryRowDeleting" msprop:Generator_RowChangingName="DisChargeSummeryRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummeryRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummeryRowDeleted" msprop:Generator_RowClassName="DisChargeSummeryRow" msprop:Generator_UserTableName="DisChargeSummery" msprop:Generator_RowEvArgName="DisChargeSummeryRowChangeEvent">
+        <xs:element name="DisChargeSummery" msprop:Generator_TableClassName="DisChargeSummeryDataTable" msprop:Generator_TableVarName="tableDisChargeSummery" msprop:Generator_TablePropName="DisChargeSummery" msprop:Generator_RowDeletingName="DisChargeSummeryRowDeleting" msprop:Generator_RowChangingName="DisChargeSummeryRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummeryRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummeryRowDeleted" msprop:Generator_UserTableName="DisChargeSummery" msprop:Generator_RowChangedName="DisChargeSummeryRowChanged" msprop:Generator_RowEvArgName="DisChargeSummeryRowChangeEvent" msprop:Generator_RowClassName="DisChargeSummeryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2192,7 +2216,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DisChargeSummery_Treatment" msprop:Generator_TableClassName="DisChargeSummery_TreatmentDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_Treatment" msprop:Generator_RowChangedName="DisChargeSummery_TreatmentRowChanged" msprop:Generator_TablePropName="DisChargeSummery_Treatment" msprop:Generator_RowDeletingName="DisChargeSummery_TreatmentRowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_TreatmentRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_TreatmentRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_TreatmentRowDeleted" msprop:Generator_RowClassName="DisChargeSummery_TreatmentRow" msprop:Generator_UserTableName="DisChargeSummery_Treatment" msprop:Generator_RowEvArgName="DisChargeSummery_TreatmentRowChangeEvent">
+        <xs:element name="DisChargeSummery_Treatment" msprop:Generator_TableClassName="DisChargeSummery_TreatmentDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_Treatment" msprop:Generator_TablePropName="DisChargeSummery_Treatment" msprop:Generator_RowDeletingName="DisChargeSummery_TreatmentRowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_TreatmentRowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_TreatmentRowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_TreatmentRowDeleted" msprop:Generator_UserTableName="DisChargeSummery_Treatment" msprop:Generator_RowChangedName="DisChargeSummery_TreatmentRowChanged" msprop:Generator_RowEvArgName="DisChargeSummery_TreatmentRowChangeEvent" msprop:Generator_RowClassName="DisChargeSummery_TreatmentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2240,7 +2264,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblIPVoucher" msprop:Generator_TableClassName="tblIPVoucherDataTable" msprop:Generator_TableVarName="tabletblIPVoucher" msprop:Generator_TablePropName="tblIPVoucher" msprop:Generator_RowDeletingName="tblIPVoucherRowDeleting" msprop:Generator_RowChangingName="tblIPVoucherRowChanging" msprop:Generator_RowEvHandlerName="tblIPVoucherRowChangeEventHandler" msprop:Generator_RowDeletedName="tblIPVoucherRowDeleted" msprop:Generator_UserTableName="tblIPVoucher" msprop:Generator_RowChangedName="tblIPVoucherRowChanged" msprop:Generator_RowEvArgName="tblIPVoucherRowChangeEvent" msprop:Generator_RowClassName="tblIPVoucherRow">
+        <xs:element name="tblIPVoucher" msprop:Generator_TableClassName="tblIPVoucherDataTable" msprop:Generator_TableVarName="tabletblIPVoucher" msprop:Generator_RowChangedName="tblIPVoucherRowChanged" msprop:Generator_TablePropName="tblIPVoucher" msprop:Generator_RowDeletingName="tblIPVoucherRowDeleting" msprop:Generator_RowChangingName="tblIPVoucherRowChanging" msprop:Generator_RowEvHandlerName="tblIPVoucherRowChangeEventHandler" msprop:Generator_RowDeletedName="tblIPVoucherRowDeleted" msprop:Generator_RowClassName="tblIPVoucherRow" msprop:Generator_UserTableName="tblIPVoucher" msprop:Generator_RowEvArgName="tblIPVoucherRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VoucherNo" msprop:Generator_ColumnVarNameInTable="columnVoucherNo" msprop:Generator_ColumnPropNameInRow="VoucherNo" msprop:Generator_ColumnPropNameInTable="VoucherNoColumn" msprop:Generator_UserColumnName="VoucherNo" type="xs:int" minOccurs="0" />
@@ -2320,7 +2344,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PatientBedCabinHistoryDischarge" msprop:Generator_TableClassName="PatientBedCabinHistoryDischargeDataTable" msprop:Generator_TableVarName="tablePatientBedCabinHistoryDischarge" msprop:Generator_RowChangedName="PatientBedCabinHistoryDischargeRowChanged" msprop:Generator_TablePropName="PatientBedCabinHistoryDischarge" msprop:Generator_RowDeletingName="PatientBedCabinHistoryDischargeRowDeleting" msprop:Generator_RowChangingName="PatientBedCabinHistoryDischargeRowChanging" msprop:Generator_RowEvHandlerName="PatientBedCabinHistoryDischargeRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientBedCabinHistoryDischargeRowDeleted" msprop:Generator_RowClassName="PatientBedCabinHistoryDischargeRow" msprop:Generator_UserTableName="PatientBedCabinHistoryDischarge" msprop:Generator_RowEvArgName="PatientBedCabinHistoryDischargeRowChangeEvent">
+        <xs:element name="PatientBedCabinHistoryDischarge" msprop:Generator_TableClassName="PatientBedCabinHistoryDischargeDataTable" msprop:Generator_TableVarName="tablePatientBedCabinHistoryDischarge" msprop:Generator_TablePropName="PatientBedCabinHistoryDischarge" msprop:Generator_RowDeletingName="PatientBedCabinHistoryDischargeRowDeleting" msprop:Generator_RowChangingName="PatientBedCabinHistoryDischargeRowChanging" msprop:Generator_RowEvHandlerName="PatientBedCabinHistoryDischargeRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientBedCabinHistoryDischargeRowDeleted" msprop:Generator_UserTableName="PatientBedCabinHistoryDischarge" msprop:Generator_RowChangedName="PatientBedCabinHistoryDischargeRowChanged" msprop:Generator_RowEvArgName="PatientBedCabinHistoryDischargeRowChangeEvent" msprop:Generator_RowClassName="PatientBedCabinHistoryDischargeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2351,7 +2375,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sp_rptDischargeBillNICU" msprop:Generator_TableClassName="Sp_rptDischargeBillNICUDataTable" msprop:Generator_TableVarName="tableSp_rptDischargeBillNICU" msprop:Generator_RowChangedName="Sp_rptDischargeBillNICURowChanged" msprop:Generator_TablePropName="Sp_rptDischargeBillNICU" msprop:Generator_RowDeletingName="Sp_rptDischargeBillNICURowDeleting" msprop:Generator_RowChangingName="Sp_rptDischargeBillNICURowChanging" msprop:Generator_RowEvHandlerName="Sp_rptDischargeBillNICURowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_rptDischargeBillNICURowDeleted" msprop:Generator_RowClassName="Sp_rptDischargeBillNICURow" msprop:Generator_UserTableName="Sp_rptDischargeBillNICU" msprop:Generator_RowEvArgName="Sp_rptDischargeBillNICURowChangeEvent">
+        <xs:element name="Sp_rptDischargeBillNICU" msprop:Generator_TableClassName="Sp_rptDischargeBillNICUDataTable" msprop:Generator_TableVarName="tableSp_rptDischargeBillNICU" msprop:Generator_TablePropName="Sp_rptDischargeBillNICU" msprop:Generator_RowDeletingName="Sp_rptDischargeBillNICURowDeleting" msprop:Generator_RowChangingName="Sp_rptDischargeBillNICURowChanging" msprop:Generator_RowEvHandlerName="Sp_rptDischargeBillNICURowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_rptDischargeBillNICURowDeleted" msprop:Generator_UserTableName="Sp_rptDischargeBillNICU" msprop:Generator_RowChangedName="Sp_rptDischargeBillNICURowChanged" msprop:Generator_RowEvArgName="Sp_rptDischargeBillNICURowChangeEvent" msprop:Generator_RowClassName="Sp_rptDischargeBillNICURow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ServiceId" msprop:Generator_ColumnVarNameInTable="columnServiceId" msprop:Generator_ColumnPropNameInRow="ServiceId" msprop:Generator_ColumnPropNameInTable="ServiceIdColumn" msprop:Generator_UserColumnName="ServiceId" minOccurs="0">
@@ -2465,7 +2489,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HospitalBusinessOffice" msprop:Generator_TableClassName="HospitalBusinessOfficeDataTable" msprop:Generator_TableVarName="tableHospitalBusinessOffice" msprop:Generator_TablePropName="HospitalBusinessOffice" msprop:Generator_RowDeletingName="HospitalBusinessOfficeRowDeleting" msprop:Generator_RowChangingName="HospitalBusinessOfficeRowChanging" msprop:Generator_RowEvHandlerName="HospitalBusinessOfficeRowChangeEventHandler" msprop:Generator_RowDeletedName="HospitalBusinessOfficeRowDeleted" msprop:Generator_UserTableName="HospitalBusinessOffice" msprop:Generator_RowChangedName="HospitalBusinessOfficeRowChanged" msprop:Generator_RowEvArgName="HospitalBusinessOfficeRowChangeEvent" msprop:Generator_RowClassName="HospitalBusinessOfficeRow">
+        <xs:element name="HospitalBusinessOffice" msprop:Generator_TableClassName="HospitalBusinessOfficeDataTable" msprop:Generator_TableVarName="tableHospitalBusinessOffice" msprop:Generator_RowChangedName="HospitalBusinessOfficeRowChanged" msprop:Generator_TablePropName="HospitalBusinessOffice" msprop:Generator_RowDeletingName="HospitalBusinessOfficeRowDeleting" msprop:Generator_RowChangingName="HospitalBusinessOfficeRowChanging" msprop:Generator_RowEvHandlerName="HospitalBusinessOfficeRowChangeEventHandler" msprop:Generator_RowDeletedName="HospitalBusinessOfficeRowDeleted" msprop:Generator_RowClassName="HospitalBusinessOfficeRow" msprop:Generator_UserTableName="HospitalBusinessOffice" msprop:Generator_RowEvArgName="HospitalBusinessOfficeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2672,7 +2696,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PathologyLedger" msprop:Generator_TableClassName="PathologyLedgerDataTable" msprop:Generator_TableVarName="tablePathologyLedger" msprop:Generator_RowChangedName="PathologyLedgerRowChanged" msprop:Generator_TablePropName="PathologyLedger" msprop:Generator_RowDeletingName="PathologyLedgerRowDeleting" msprop:Generator_RowChangingName="PathologyLedgerRowChanging" msprop:Generator_RowEvHandlerName="PathologyLedgerRowChangeEventHandler" msprop:Generator_RowDeletedName="PathologyLedgerRowDeleted" msprop:Generator_RowClassName="PathologyLedgerRow" msprop:Generator_UserTableName="PathologyLedger" msprop:Generator_RowEvArgName="PathologyLedgerRowChangeEvent">
+        <xs:element name="PathologyLedger" msprop:Generator_TableClassName="PathologyLedgerDataTable" msprop:Generator_TableVarName="tablePathologyLedger" msprop:Generator_TablePropName="PathologyLedger" msprop:Generator_RowDeletingName="PathologyLedgerRowDeleting" msprop:Generator_RowChangingName="PathologyLedgerRowChanging" msprop:Generator_RowEvHandlerName="PathologyLedgerRowChangeEventHandler" msprop:Generator_RowDeletedName="PathologyLedgerRowDeleted" msprop:Generator_UserTableName="PathologyLedger" msprop:Generator_RowChangedName="PathologyLedgerRowChanged" msprop:Generator_RowEvArgName="PathologyLedgerRowChangeEvent" msprop:Generator_RowClassName="PathologyLedgerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="date" msdata:DataType="System.DateTimeOffset" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:anyType" minOccurs="0" />
@@ -2686,7 +2710,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="viewPathologyPayment" msprop:Generator_TableClassName="viewPathologyPaymentDataTable" msprop:Generator_TableVarName="tableviewPathologyPayment" msprop:Generator_RowChangedName="viewPathologyPaymentRowChanged" msprop:Generator_TablePropName="viewPathologyPayment" msprop:Generator_RowDeletingName="viewPathologyPaymentRowDeleting" msprop:Generator_RowChangingName="viewPathologyPaymentRowChanging" msprop:Generator_RowEvHandlerName="viewPathologyPaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="viewPathologyPaymentRowDeleted" msprop:Generator_RowClassName="viewPathologyPaymentRow" msprop:Generator_UserTableName="viewPathologyPayment" msprop:Generator_RowEvArgName="viewPathologyPaymentRowChangeEvent">
+        <xs:element name="viewPathologyPayment" msprop:Generator_TableClassName="viewPathologyPaymentDataTable" msprop:Generator_TableVarName="tableviewPathologyPayment" msprop:Generator_TablePropName="viewPathologyPayment" msprop:Generator_RowDeletingName="viewPathologyPaymentRowDeleting" msprop:Generator_RowChangingName="viewPathologyPaymentRowChanging" msprop:Generator_RowEvHandlerName="viewPathologyPaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="viewPathologyPaymentRowDeleted" msprop:Generator_UserTableName="viewPathologyPayment" msprop:Generator_RowChangedName="viewPathologyPaymentRowChanged" msprop:Generator_RowEvArgName="viewPathologyPaymentRowChangeEvent" msprop:Generator_RowClassName="viewPathologyPaymentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -2737,7 +2761,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ViewDuebillAll" msprop:Generator_TableClassName="ViewDuebillAllDataTable" msprop:Generator_TableVarName="tableViewDuebillAll" msprop:Generator_TablePropName="ViewDuebillAll" msprop:Generator_RowDeletingName="ViewDuebillAllRowDeleting" msprop:Generator_RowChangingName="ViewDuebillAllRowChanging" msprop:Generator_RowEvHandlerName="ViewDuebillAllRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewDuebillAllRowDeleted" msprop:Generator_UserTableName="ViewDuebillAll" msprop:Generator_RowChangedName="ViewDuebillAllRowChanged" msprop:Generator_RowEvArgName="ViewDuebillAllRowChangeEvent" msprop:Generator_RowClassName="ViewDuebillAllRow">
+        <xs:element name="ViewDuebillAll" msprop:Generator_TableClassName="ViewDuebillAllDataTable" msprop:Generator_TableVarName="tableViewDuebillAll" msprop:Generator_RowChangedName="ViewDuebillAllRowChanged" msprop:Generator_TablePropName="ViewDuebillAll" msprop:Generator_RowDeletingName="ViewDuebillAllRowDeleting" msprop:Generator_RowChangingName="ViewDuebillAllRowChanging" msprop:Generator_RowEvHandlerName="ViewDuebillAllRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewDuebillAllRowDeleted" msprop:Generator_RowClassName="ViewDuebillAllRow" msprop:Generator_UserTableName="ViewDuebillAll" msprop:Generator_RowEvArgName="ViewDuebillAllRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2793,7 +2817,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ViewCommission" msprop:Generator_TableClassName="ViewCommissionDataTable" msprop:Generator_TableVarName="tableViewCommission" msprop:Generator_RowChangedName="ViewCommissionRowChanged" msprop:Generator_TablePropName="ViewCommission" msprop:Generator_RowDeletingName="ViewCommissionRowDeleting" msprop:Generator_RowChangingName="ViewCommissionRowChanging" msprop:Generator_RowEvHandlerName="ViewCommissionRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewCommissionRowDeleted" msprop:Generator_RowClassName="ViewCommissionRow" msprop:Generator_UserTableName="ViewCommission" msprop:Generator_RowEvArgName="ViewCommissionRowChangeEvent">
+        <xs:element name="ViewCommission" msprop:Generator_TableClassName="ViewCommissionDataTable" msprop:Generator_TableVarName="tableViewCommission" msprop:Generator_TablePropName="ViewCommission" msprop:Generator_RowDeletingName="ViewCommissionRowDeleting" msprop:Generator_RowChangingName="ViewCommissionRowChanging" msprop:Generator_RowEvHandlerName="ViewCommissionRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewCommissionRowDeleted" msprop:Generator_UserTableName="ViewCommission" msprop:Generator_RowChangedName="ViewCommissionRowChanged" msprop:Generator_RowEvArgName="ViewCommissionRowChangeEvent" msprop:Generator_RowClassName="ViewCommissionRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CommissionID" msprop:Generator_ColumnVarNameInTable="columnCommissionID" msprop:Generator_ColumnPropNameInRow="CommissionID" msprop:Generator_ColumnPropNameInTable="CommissionIDColumn" msprop:Generator_UserColumnName="CommissionID" minOccurs="0">
@@ -2829,7 +2853,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DisChargeSummery_TreatmentNICU" msprop:Generator_TableClassName="DisChargeSummery_TreatmentNICUDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_TreatmentNICU" msprop:Generator_TablePropName="DisChargeSummery_TreatmentNICU" msprop:Generator_RowDeletingName="DisChargeSummery_TreatmentNICURowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_TreatmentNICURowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_TreatmentNICURowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_TreatmentNICURowDeleted" msprop:Generator_UserTableName="DisChargeSummery_TreatmentNICU" msprop:Generator_RowChangedName="DisChargeSummery_TreatmentNICURowChanged" msprop:Generator_RowEvArgName="DisChargeSummery_TreatmentNICURowChangeEvent" msprop:Generator_RowClassName="DisChargeSummery_TreatmentNICURow">
+        <xs:element name="DisChargeSummery_TreatmentNICU" msprop:Generator_TableClassName="DisChargeSummery_TreatmentNICUDataTable" msprop:Generator_TableVarName="tableDisChargeSummery_TreatmentNICU" msprop:Generator_RowChangedName="DisChargeSummery_TreatmentNICURowChanged" msprop:Generator_TablePropName="DisChargeSummery_TreatmentNICU" msprop:Generator_RowDeletingName="DisChargeSummery_TreatmentNICURowDeleting" msprop:Generator_RowChangingName="DisChargeSummery_TreatmentNICURowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummery_TreatmentNICURowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummery_TreatmentNICURowDeleted" msprop:Generator_RowClassName="DisChargeSummery_TreatmentNICURow" msprop:Generator_UserTableName="DisChargeSummery_TreatmentNICU" msprop:Generator_RowEvArgName="DisChargeSummery_TreatmentNICURowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2877,7 +2901,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DisChargeSummeryNICU" msprop:Generator_TableClassName="DisChargeSummeryNICUDataTable" msprop:Generator_TableVarName="tableDisChargeSummeryNICU" msprop:Generator_TablePropName="DisChargeSummeryNICU" msprop:Generator_RowDeletingName="DisChargeSummeryNICURowDeleting" msprop:Generator_RowChangingName="DisChargeSummeryNICURowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummeryNICURowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummeryNICURowDeleted" msprop:Generator_UserTableName="DisChargeSummeryNICU" msprop:Generator_RowChangedName="DisChargeSummeryNICURowChanged" msprop:Generator_RowEvArgName="DisChargeSummeryNICURowChangeEvent" msprop:Generator_RowClassName="DisChargeSummeryNICURow">
+        <xs:element name="DisChargeSummeryNICU" msprop:Generator_TableClassName="DisChargeSummeryNICUDataTable" msprop:Generator_TableVarName="tableDisChargeSummeryNICU" msprop:Generator_RowChangedName="DisChargeSummeryNICURowChanged" msprop:Generator_TablePropName="DisChargeSummeryNICU" msprop:Generator_RowDeletingName="DisChargeSummeryNICURowDeleting" msprop:Generator_RowChangingName="DisChargeSummeryNICURowChanging" msprop:Generator_RowEvHandlerName="DisChargeSummeryNICURowChangeEventHandler" msprop:Generator_RowDeletedName="DisChargeSummeryNICURowDeleted" msprop:Generator_RowClassName="DisChargeSummeryNICURow" msprop:Generator_UserTableName="DisChargeSummeryNICU" msprop:Generator_RowEvArgName="DisChargeSummeryNICURowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPID" msprop:Generator_ColumnVarNameInTable="columnOPID" msprop:Generator_ColumnPropNameInRow="OPID" msprop:Generator_ColumnPropNameInTable="OPIDColumn" msprop:Generator_UserColumnName="OPID" minOccurs="0">
@@ -2998,7 +3022,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblServices" msprop:Generator_TableClassName="tblServicesDataTable" msprop:Generator_TableVarName="tabletblServices" msprop:Generator_RowChangedName="tblServicesRowChanged" msprop:Generator_TablePropName="tblServices" msprop:Generator_RowDeletingName="tblServicesRowDeleting" msprop:Generator_RowChangingName="tblServicesRowChanging" msprop:Generator_RowEvHandlerName="tblServicesRowChangeEventHandler" msprop:Generator_RowDeletedName="tblServicesRowDeleted" msprop:Generator_RowClassName="tblServicesRow" msprop:Generator_UserTableName="tblServices" msprop:Generator_RowEvArgName="tblServicesRowChangeEvent">
+        <xs:element name="tblServices" msprop:Generator_TableClassName="tblServicesDataTable" msprop:Generator_TableVarName="tabletblServices" msprop:Generator_TablePropName="tblServices" msprop:Generator_RowDeletingName="tblServicesRowDeleting" msprop:Generator_RowChangingName="tblServicesRowChanging" msprop:Generator_RowEvHandlerName="tblServicesRowChangeEventHandler" msprop:Generator_RowDeletedName="tblServicesRowDeleted" msprop:Generator_UserTableName="tblServices" msprop:Generator_RowChangedName="tblServicesRowChanged" msprop:Generator_RowEvArgName="tblServicesRowChangeEvent" msprop:Generator_RowClassName="tblServicesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -3034,7 +3058,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ViewAllCabins" msprop:Generator_TableClassName="ViewAllCabinsDataTable" msprop:Generator_TableVarName="tableViewAllCabins" msprop:Generator_RowChangedName="ViewAllCabinsRowChanged" msprop:Generator_TablePropName="ViewAllCabins" msprop:Generator_RowDeletingName="ViewAllCabinsRowDeleting" msprop:Generator_RowChangingName="ViewAllCabinsRowChanging" msprop:Generator_RowEvHandlerName="ViewAllCabinsRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewAllCabinsRowDeleted" msprop:Generator_RowClassName="ViewAllCabinsRow" msprop:Generator_UserTableName="ViewAllCabins" msprop:Generator_RowEvArgName="ViewAllCabinsRowChangeEvent">
+        <xs:element name="ViewAllCabins" msprop:Generator_TableClassName="ViewAllCabinsDataTable" msprop:Generator_TableVarName="tableViewAllCabins" msprop:Generator_TablePropName="ViewAllCabins" msprop:Generator_RowDeletingName="ViewAllCabinsRowDeleting" msprop:Generator_RowChangingName="ViewAllCabinsRowChanging" msprop:Generator_RowEvHandlerName="ViewAllCabinsRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewAllCabinsRowDeleted" msprop:Generator_UserTableName="ViewAllCabins" msprop:Generator_RowChangedName="ViewAllCabinsRowChanged" msprop:Generator_RowEvArgName="ViewAllCabinsRowChangeEvent" msprop:Generator_RowClassName="ViewAllCabinsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -3072,7 +3096,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ViewAllBeds" msprop:Generator_TableClassName="ViewAllBedsDataTable" msprop:Generator_TableVarName="tableViewAllBeds" msprop:Generator_RowChangedName="ViewAllBedsRowChanged" msprop:Generator_TablePropName="ViewAllBeds" msprop:Generator_RowDeletingName="ViewAllBedsRowDeleting" msprop:Generator_RowChangingName="ViewAllBedsRowChanging" msprop:Generator_RowEvHandlerName="ViewAllBedsRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewAllBedsRowDeleted" msprop:Generator_RowClassName="ViewAllBedsRow" msprop:Generator_UserTableName="ViewAllBeds" msprop:Generator_RowEvArgName="ViewAllBedsRowChangeEvent">
+        <xs:element name="ViewAllBeds" msprop:Generator_TableClassName="ViewAllBedsDataTable" msprop:Generator_TableVarName="tableViewAllBeds" msprop:Generator_TablePropName="ViewAllBeds" msprop:Generator_RowDeletingName="ViewAllBedsRowDeleting" msprop:Generator_RowChangingName="ViewAllBedsRowChanging" msprop:Generator_RowEvHandlerName="ViewAllBedsRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewAllBedsRowDeleted" msprop:Generator_UserTableName="ViewAllBeds" msprop:Generator_RowChangedName="ViewAllBedsRowChanged" msprop:Generator_RowEvArgName="ViewAllBedsRowChangeEvent" msprop:Generator_RowClassName="ViewAllBedsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BedId" msprop:Generator_ColumnVarNameInTable="columnBedId" msprop:Generator_ColumnPropNameInRow="BedId" msprop:Generator_ColumnPropNameInTable="BedIdColumn" msprop:Generator_UserColumnName="BedId" type="xs:int" />
@@ -3126,7 +3150,7 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ViewOTSchedule" msprop:Generator_TableClassName="ViewOTScheduleDataTable" msprop:Generator_TableVarName="tableViewOTSchedule" msprop:Generator_TablePropName="ViewOTSchedule" msprop:Generator_RowDeletingName="ViewOTScheduleRowDeleting" msprop:Generator_RowChangingName="ViewOTScheduleRowChanging" msprop:Generator_RowEvHandlerName="ViewOTScheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewOTScheduleRowDeleted" msprop:Generator_UserTableName="ViewOTSchedule" msprop:Generator_RowChangedName="ViewOTScheduleRowChanged" msprop:Generator_RowEvArgName="ViewOTScheduleRowChangeEvent" msprop:Generator_RowClassName="ViewOTScheduleRow">
+        <xs:element name="ViewOTSchedule" msprop:Generator_TableClassName="ViewOTScheduleDataTable" msprop:Generator_TableVarName="tableViewOTSchedule" msprop:Generator_RowChangedName="ViewOTScheduleRowChanged" msprop:Generator_TablePropName="ViewOTSchedule" msprop:Generator_RowDeletingName="ViewOTScheduleRowDeleting" msprop:Generator_RowChangingName="ViewOTScheduleRowChanging" msprop:Generator_RowEvHandlerName="ViewOTScheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewOTScheduleRowDeleted" msprop:Generator_RowClassName="ViewOTScheduleRow" msprop:Generator_UserTableName="ViewOTSchedule" msprop:Generator_RowEvArgName="ViewOTScheduleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OtRefNo" msprop:Generator_ColumnVarNameInTable="columnOtRefNo" msprop:Generator_ColumnPropNameInRow="OtRefNo" msprop:Generator_ColumnPropNameInTable="OtRefNoColumn" msprop:Generator_UserColumnName="OtRefNo" minOccurs="0">
@@ -3241,6 +3265,57 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="viewConsultantPayment" msprop:Generator_TableClassName="viewConsultantPaymentDataTable" msprop:Generator_TableVarName="tableviewConsultantPayment" msprop:Generator_TablePropName="viewConsultantPayment" msprop:Generator_RowDeletingName="viewConsultantPaymentRowDeleting" msprop:Generator_RowChangingName="viewConsultantPaymentRowChanging" msprop:Generator_RowEvHandlerName="viewConsultantPaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="viewConsultantPaymentRowDeleted" msprop:Generator_UserTableName="viewConsultantPayment" msprop:Generator_RowChangedName="viewConsultantPaymentRowChanged" msprop:Generator_RowEvArgName="viewConsultantPaymentRowChangeEvent" msprop:Generator_RowClassName="viewConsultantPaymentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="VoucherNo" msprop:Generator_ColumnVarNameInTable="columnVoucherNo" msprop:Generator_ColumnPropNameInRow="VoucherNo" msprop:Generator_ColumnPropNameInTable="VoucherNoColumn" msprop:Generator_UserColumnName="VoucherNo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Particulars" msprop:Generator_ColumnVarNameInTable="columnParticulars" msprop:Generator_ColumnPropNameInRow="Particulars" msprop:Generator_ColumnPropNameInTable="ParticularsColumn" msprop:Generator_UserColumnName="Particulars" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InWord" msprop:Generator_ColumnVarNameInTable="columnInWord" msprop:Generator_ColumnPropNameInRow="InWord" msprop:Generator_ColumnPropNameInTable="InWordColumn" msprop:Generator_UserColumnName="InWord" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DoctorName" msprop:Generator_ColumnVarNameInTable="columnDoctorName" msprop:Generator_ColumnPropNameInRow="DoctorName" msprop:Generator_ColumnPropNameInTable="DoctorNameColumn" msprop:Generator_UserColumnName="DoctorName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -3280,6 +3355,10 @@ SELECT ID, ServiceName, Description, Rate, ServiceId, Catgory FROM tblServices W
     <xs:unique name="ViewOTSchedule_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ViewOTSchedule" />
       <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="viewConsultantPayment_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:viewConsultantPayment" />
+      <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
 </xs:schema>

@@ -36,7 +36,7 @@ namespace GHospital_Care.IndoorPatient
         {
             DataTable AllDoctor = new MedicalManager().GetAllCosultDoctor(null);
             searchLookConsltant.Properties.DataSource = AllDoctor;
-            searchLookUp_Cousultant.Properties.DataSource = data;
+            searchLookUp_Cousultant.Properties.DataSource = AllDoctor;
             searchLookConsltant.Properties.DisplayMember = "DoctorName";
             searchLookConsltant.Properties.ValueMember = "DoctorID";
 
@@ -45,17 +45,16 @@ namespace GHospital_Care.IndoorPatient
 
 
         }
-
+        DataTable Consultant = new DataTable();
         private void PathologyPayment()
         {
-            DataTable data = new DataTable();
-            data = aDoctorWisePatientManager.GetPathologyPayment(FromDate.Value, ToDate.Value);
+            Consultant = aDoctorWisePatientManager.GetPathologyPayment(FromDate.Value, ToDate.Value);
             gridControlPatient.DataSource = data;
         }
 
         private void GetConsultantPayment()
         {
-            DataTable data = new DataTable();
+           // DataTable data = new DataTable();
             data = aDoctorWisePatientManager.GetConsultantPayment(FromDate.Value, ToDate.Value);
             gridControlPatient.DataSource = data;
         }
@@ -110,9 +109,18 @@ namespace GHospital_Care.IndoorPatient
         private string RefferedId = "";
         private void searchLookReffered_EditValueChanged(object sender, EventArgs e)
         {
-            RefferedId = searchLookConsltant.Properties.View.GetFocusedRowCellValue("DoctorID").ToString();
-            txtAddress.Text = searchLookConsltant.Properties.View.GetFocusedRowCellValue("Address").ToString();
-            txtTotalAmount.Focus();
+            try
+            {
+                RefferedId = searchLookConsltant.Properties.View.GetFocusedRowCellValue("DoctorID").ToString();
+                txtAddress.Text = searchLookConsltant.Properties.View.GetFocusedRowCellValue("Specialization").ToString();
+                txtTotalAmount.Focus();
+            }
+            catch (Exception)
+            {
+                
+               // throw;
+            }
+          
         }
 
         private string status = "";
@@ -156,6 +164,7 @@ namespace GHospital_Care.IndoorPatient
             MessageModel message = new DoctorWisePatientManager().SaveConsultantPayment(saveService);
             MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Clear();
+           
             
         }
 
@@ -182,6 +191,7 @@ namespace GHospital_Care.IndoorPatient
             txtAddress.Text = string.Empty;
             searchLookConsltant.Properties.NullText = "Select";
             GetVoucherNo();
+            GetConsultantPayment();
 
         }
 
@@ -211,8 +221,7 @@ namespace GHospital_Care.IndoorPatient
 
         }
 
-        private void ConsultantLedger()
-        {
+        private void ConsultantLedger(){
             try
             {
                 data = aDoctorWisePatientManager.ConsutantLedger(startDate.Value, endDate.Value, ConsultID);
@@ -283,7 +292,7 @@ namespace GHospital_Care.IndoorPatient
             ConsultantLedger();
             model.ReportDataSource.Value = data;
 
-            model.ReportPath = "GHospital_Care.Report.rptPathologyStatus.rdlc";
+            model.ReportPath = "GHospital_Care.Report.rptConsultantStatus.rdlc";
             model.Show(model, this);
         }
 
@@ -298,18 +307,54 @@ namespace GHospital_Care.IndoorPatient
                 new ReportParameter("Address",  model.Address),
                
             };
-            model.ReportDataSource.Name = "PathologyPayment";
+            model.ReportDataSource.Name = "ConsultantPayment";
 
             
-            DataTable Payment = aDoctorWisePatientManager.GetPathologyPayment(FromDate.Value, ToDate.Value);
-            model.ReportDataSource.Value = Payment;
+           GetConsultantPayment();
+           model.ReportDataSource.Value = data;
 
-            model.ReportPath = "GHospital_Care.Report.rptPathologyPayment.rdlc";
+            model.ReportPath = "GHospital_Care.Report.rptConsultantPayment.rdlc";
             model.Show(model, this);
         }
         private void btnComissionPrint_Click(object sender, EventArgs e)
         {
             Print();
+        }
+
+        private string Consultent = "";
+        private void gridViewPatient_DoubleClick(object sender, EventArgs e)
+        {
+            txtVoucherNo.Text = gridViewPatient.GetFocusedRowCellValue("VoucherNo").ToString();
+            datePathology.Text = gridViewPatient.GetFocusedRowCellValue("Date").ToString();
+            searchLookConsltant.Properties.NullText = gridViewPatient.GetFocusedRowCellValue("DoctorName").ToString();
+            txtTotalAmount.Text = gridViewPatient.GetFocusedRowCellValue("Amount").ToString();
+            txtDescription.Text = gridViewPatient.GetFocusedRowCellValue("Description").ToString();
+            Consultent = gridViewPatient.GetFocusedRowCellValue("Particulars").ToString();
+            txtAddress.Text = gridViewPatient.GetFocusedRowCellValue("Specialization").ToString();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            DAL.Model.Pathology saveService = new DAL.Model.Pathology();
+            saveService.VoucherNo = txtVoucherNo.Text;
+            saveService.Particulars = Consultent;
+            saveService.Date = datePathology.Value;
+            saveService.Description = txtDescription.Text;
+            saveService.Inword = lblInward.Text;
+            saveService.Amount = Convert.ToDecimal(txtTotalAmount.Text);
+            saveService.UserId = MainWindow.userName;
+            MessageModel message = new DoctorWisePatientManager().UpdateConsultantPayment(saveService);
+            MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            DAL.Model.Pathology saveService = new DAL.Model.Pathology();
+            saveService.VoucherNo = txtVoucherNo.Text;
+            MessageModel message = new DoctorWisePatientManager().DeleteConsultantPayment(saveService);
+            MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clear();
         }
     }
 }

@@ -173,6 +173,7 @@
             this.dueBillStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payCommissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pathologyPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultantPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -211,7 +212,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.consultantPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -1340,44 +1340,51 @@
             // billGenerateIPOPToolStripMenuItem
             // 
             this.billGenerateIPOPToolStripMenuItem.Name = "billGenerateIPOPToolStripMenuItem";
-            this.billGenerateIPOPToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.billGenerateIPOPToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.billGenerateIPOPToolStripMenuItem.Text = "Bill Generate (OPD)";
             this.billGenerateIPOPToolStripMenuItem.Click += new System.EventHandler(this.billGenerateIPOPToolStripMenuItem_Click);
             // 
             // billCollectionToolStripMenuItem1
             // 
             this.billCollectionToolStripMenuItem1.Name = "billCollectionToolStripMenuItem1";
-            this.billCollectionToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.billCollectionToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.billCollectionToolStripMenuItem1.Text = "Bill Collection";
             this.billCollectionToolStripMenuItem1.Click += new System.EventHandler(this.billCollectionToolStripMenuItem1_Click);
             // 
             // nICUBillToolStripMenuItem
             // 
             this.nICUBillToolStripMenuItem.Name = "nICUBillToolStripMenuItem";
-            this.nICUBillToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.nICUBillToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.nICUBillToolStripMenuItem.Text = "NICU Bill";
             this.nICUBillToolStripMenuItem.Click += new System.EventHandler(this.nICUBillToolStripMenuItem_Click);
             // 
             // dueBillStatusToolStripMenuItem
             // 
             this.dueBillStatusToolStripMenuItem.Name = "dueBillStatusToolStripMenuItem";
-            this.dueBillStatusToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.dueBillStatusToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.dueBillStatusToolStripMenuItem.Text = "DueBill Status";
             this.dueBillStatusToolStripMenuItem.Click += new System.EventHandler(this.dueBillStatusToolStripMenuItem_Click);
             // 
             // payCommissionToolStripMenuItem
             // 
             this.payCommissionToolStripMenuItem.Name = "payCommissionToolStripMenuItem";
-            this.payCommissionToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.payCommissionToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.payCommissionToolStripMenuItem.Text = "Pay Commission";
             this.payCommissionToolStripMenuItem.Click += new System.EventHandler(this.payCommissionToolStripMenuItem_Click);
             // 
             // pathologyPaymentToolStripMenuItem
             // 
             this.pathologyPaymentToolStripMenuItem.Name = "pathologyPaymentToolStripMenuItem";
-            this.pathologyPaymentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.pathologyPaymentToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.pathologyPaymentToolStripMenuItem.Text = "Pathology Payment";
             this.pathologyPaymentToolStripMenuItem.Click += new System.EventHandler(this.pathologyPaymentToolStripMenuItem_Click);
+            // 
+            // consultantPaymentToolStripMenuItem
+            // 
+            this.consultantPaymentToolStripMenuItem.Name = "consultantPaymentToolStripMenuItem";
+            this.consultantPaymentToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.consultantPaymentToolStripMenuItem.Text = "Consultant Payment";
+            this.consultantPaymentToolStripMenuItem.Click += new System.EventHandler(this.consultantPaymentToolStripMenuItem_Click);
             // 
             // oTToolStripMenuItem
             // 
@@ -1813,13 +1820,6 @@
             this.label1.Size = new System.Drawing.Size(140, 22);
             this.label1.TabIndex = 16;
             this.label1.Text = "Royal Hospital";
-            // 
-            // consultantPaymentToolStripMenuItem
-            // 
-            this.consultantPaymentToolStripMenuItem.Name = "consultantPaymentToolStripMenuItem";
-            this.consultantPaymentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.consultantPaymentToolStripMenuItem.Text = "ConsultantPayment";
-            this.consultantPaymentToolStripMenuItem.Click += new System.EventHandler(this.consultantPaymentToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
