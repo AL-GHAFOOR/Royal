@@ -326,8 +326,8 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "ConsultantName";
-            this.gridColumn7.FieldName = "DoctorName";
+            this.gridColumn7.Caption = "PathologyName";
+            this.gridColumn7.FieldName = "PathologyName";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
@@ -547,9 +547,9 @@
             this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(53, 171);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(98, 14);
+            this.label13.Size = new System.Drawing.Size(60, 14);
             this.label13.TabIndex = 100106;
-            this.label13.Text = "Specialization :";
+            this.label13.Text = "Address:";
             // 
             // txtAddress
             // 
