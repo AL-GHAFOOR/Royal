@@ -9,7 +9,7 @@ namespace GHospital_Care.DAL.Model
     {
        public string AdviceName { get; set; }
        public int AdviceId { get; set; }
-
+       public string PatientId { get; set; }
       public  List<Advice> ListOfAdvice { get; set; }
        public Advice()
        {

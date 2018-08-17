@@ -407,5 +407,15 @@ namespace GHospital_Care.DAL.Gateway
           return data;
       }
 
+      public DataTable DataSetAdvice(string opid)
+      {
+          Query = "select * from tbl_AdviceRecord where PatientId='" + opid + "'";
+          Command = new SqlCommand(Query, Connection);
+          Command.CommandText = Query;
+          Reader = Command.ExecuteReader();
+          DataTable data = new DataTable();
+          data.Load(Reader);
+          return data;
+      }
     }
 }

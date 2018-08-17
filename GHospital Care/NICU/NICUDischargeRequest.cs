@@ -22,7 +22,27 @@ namespace GHospital_Care.NICU
             Control buttonControl = new ButtonPermissionAccess().UserButton(this.groupControl1, this.Name);
 
         }
+        public void AdviseLoad()
+        {
 
+            List<Advice> ListOfAdvice = new List<Advice>();
+
+            Advice advice = new Advice();
+            advice.AdviceId = 1;
+            advice.AdviceName = "নিয়মিত ঔষধ খাবেন ।";
+            ListOfAdvice.Add(advice);
+            Advice advice1 = new Advice();
+            advice1.AdviceId = 2;
+            advice1.AdviceName = "প্রচুর পরিমান পানি ও পুস্টিকর খাবার খাবেন ।";
+            ListOfAdvice.Add(advice1);
+
+            Advice advice2 = new Advice();
+            advice2.AdviceId = 3;
+            advice2.AdviceName = "পর্যন্ত স্বামী সহবাস নিষেধ ।";
+            ListOfAdvice.Add(advice2);
+
+            searchLookAdvice.Properties.DataSource = ListOfAdvice;
+        }
         private void PatientLoad()
         {
             var GetAllPatient = new NICUDischargeReqManager().GetAllDischargeNICU();
@@ -109,7 +129,7 @@ namespace GHospital_Care.NICU
                 LoadTempList();
                 ConsultantLoad();
                 //SetNew();
-
+                AdviseLoad();
                 GetDischargeInfo();
                 Refresh();
 
@@ -220,6 +240,7 @@ namespace GHospital_Care.NICU
                 _dischargePatient.DiagOnAdmission = txtDiagonsisAdmisson.Text;
                 _dischargePatient.OPID = cmbPatient.Properties.View.GetFocusedRowCellValue("RegNo").ToString();
                 _dischargePatient.DischargeOn = Convert.ToDateTime(txtDischargeOnDate.Text);
+                _dischargePatient.BreffHistory = Convert.ToString(txtBreafHistory.Text);
 
                 DateTime dt = txtDischareTime.Value;
                 TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
@@ -238,7 +259,17 @@ namespace GHospital_Care.NICU
                 _dischargePatient.Tempdatatable = tempDrug;
                 _dischargePatient.Route = txtRoute.Text;
                 _dischargePatient.ReleatedToMeal = txtRealtedToMeal.Text;
-                
+
+                List<Advice> Advice = new List<Advice>();
+                foreach (ListViewItem listViewItem in listViewAdvice.Items)
+                {
+                    Advice.Add(new Advice()
+                    {
+                        AdviceName = listViewItem.SubItems[1].Text
+                    });
+                }
+                _dischargePatient.ListofAdvice = Advice;
+
                 if (btnSave.Enabled)
                 {
                     MessageModel messageModel = new NICUDischargeReqManager().SaveNICUDischargePatient(_dischargePatient);
@@ -413,7 +444,8 @@ namespace GHospital_Care.NICU
             txtDiagonsisAdmisson.Text = string.Empty;
             txtDiagOnDischarge.Text = string.Empty;
             txtBreafHistory.Text = string.Empty;
-
+            listViewAdvice.Items.Clear();
+            richboxAdvice.Text = string.Empty;
             //tempDrug = null;
             //cmbPatient.Properties.DataSource = null;
             cmbPatient.Properties.NullValuePrompt = null;
@@ -732,7 +764,8 @@ namespace GHospital_Care.NICU
             var DisChargeSummery_MedicineTakeInHopital = new IpdGateway().DisChargeSummery_MedicineTakeInHopitalNICU(opid);
             var DisChargeSummery_Pathology = new IpdGateway().DisChargeSummery_Pathology(opid);
             var DisChargeSummery_Treatment = new IpdGateway().DisChargeSummery_TreatmentNICU(opid);
-           
+            var DisChargeSummeryAdviceList = new IpdGateway().DataSetAdvice(opid);
+
             model.MultiReportDataSource = new List<ReportDataSource>()
             {
                 new ReportDataSource("DisChargeSummery",DisChargeSummery),
@@ -740,10 +773,25 @@ namespace GHospital_Care.NICU
                 new ReportDataSource("DisChargeSummery_MedicineTakeInHopital",DisChargeSummery_MedicineTakeInHopital),
                 new ReportDataSource("DisChargeSummery_Pathology",DisChargeSummery_Pathology),
                 new ReportDataSource("DisChargeSummery_Treatment",DisChargeSummery_Treatment),
-
+                new ReportDataSource("DataSetAdvice",DisChargeSummeryAdviceList),
             };
+           
             model.ReportPath = "GHospital_Care.Report.rdlcDischargeSummeryNICU.rdlc";
             model.Show(model, this, true);
+        }
+
+        private void btnAddAdvice_Click(object sender, EventArgs e)
+        {
+            string[] row = { listViewAdvice.Items.Count.ToString(), richboxAdvice.Text };
+            var listViewItem = new ListViewItem(row);
+            listViewAdvice.Items.Add(listViewItem);
+        }
+
+        private void searchLookAdvice_EditValueChanged(object sender, EventArgs e)
+        {
+            richboxAdvice.Text = string.Empty;
+            string advice = searchLookAdvice.Text;
+            richboxAdvice.Text = advice;
         }
 
     }

@@ -236,6 +236,7 @@ namespace GHospital_Care.DischargeUI
                 _dischargePatient.DiagOnAdmission = txtDiagonsisAdmisson.Text;
                 _dischargePatient.OPID = cmbPatient.Properties.View.GetFocusedRowCellValue("OPID").ToString();
                 _dischargePatient.DischargeOn = Convert.ToDateTime(txtDischargeOnDate.Text);
+                _dischargePatient.BreffHistory = txtBreafHistory.Text;
 
                 DateTime dt = txtDischareTime.Value;
                 TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
@@ -255,6 +256,17 @@ namespace GHospital_Care.DischargeUI
                 _dischargePatient.Route = txtRoute.Text;
                 _dischargePatient.ReleatedToMeal = txtRealtedToMeal.Text;
                 
+                //****************************************************************************************
+
+                List<Advice> Advice=new List<Advice>();
+                foreach (ListViewItem listViewItem in listViewAdvice.Items)
+                {
+                    Advice.Add(new Advice()
+                    {
+                        AdviceName = listViewItem.SubItems[1].Text});
+                }
+                _dischargePatient.ListofAdvice = Advice;
+
                 if (btnSave.Enabled)
                 {
                     MessageModel messageModel = new MedicalManager().SaveDischargePatient(_dischargePatient);
@@ -428,11 +440,12 @@ namespace GHospital_Care.DischargeUI
             txtDiagonsisAdmisson.Text = string.Empty;
             txtDiagOnDischarge.Text = string.Empty;
             txtBreafHistory.Text = string.Empty;
-
+            listViewAdvice.Items.Clear();
+            richboxAdvice.Text = string.Empty;
             //tempDrug = null;
             //cmbPatient.Properties.DataSource = null;
             cmbPatient.Properties.NullValuePrompt = null;
-
+            
             cmbPatient.Properties.NullText = "Select Patient";
             PatientLoad();
             GetDischargeInfo();
@@ -747,6 +760,8 @@ namespace GHospital_Care.DischargeUI
             var DisChargeSummery_MedicineTakeInHopital = new IpdGateway().DisChargeSummery_MedicineTakeInHopital(opid);
             var DisChargeSummery_Pathology = new IpdGateway().DisChargeSummery_Pathology(opid);
             var DisChargeSummery_Treatment = new IpdGateway().DisChargeSummery_Treatment(opid);
+            var DisChargeSummeryAdviceList = new IpdGateway().DataSetAdvice(opid);
+
            
             model.MultiReportDataSource = new List<ReportDataSource>()
             {
@@ -755,6 +770,8 @@ namespace GHospital_Care.DischargeUI
                 new ReportDataSource("DisChargeSummery_MedicineTakeInHopital",DisChargeSummery_MedicineTakeInHopital),
                 new ReportDataSource("DisChargeSummery_Pathology",DisChargeSummery_Pathology),
                 new ReportDataSource("DisChargeSummery_Treatment",DisChargeSummery_Treatment),
+                new ReportDataSource("DataSetAdvice",DisChargeSummeryAdviceList),
+
 
             };
             model.ReportPath = "GHospital_Care.Report.rdlcDischargeSummery.rdlc";

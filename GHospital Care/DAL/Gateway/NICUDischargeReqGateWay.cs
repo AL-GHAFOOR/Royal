@@ -88,6 +88,21 @@ namespace GHospital_Care.DAL.Gateway
                 count += Command.ExecuteNonQuery();
             }
 
+            int row = 0;
+
+            foreach (Advice advice in dischargePatient.ListofAdvice)
+            {
+                Query = "insert into tbl_AdviceRecord (AdviceName,PatientId) values(@AdviceName,@PatientId)";
+
+                Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@AdviceName", advice.AdviceName);
+                Command.Parameters.AddWithValue("@PatientId", dischargePatient.OPID);
+
+                Command.CommandText = Query;
+
+                row += Command.ExecuteNonQuery();
+
+            }
             return count;
         }
 

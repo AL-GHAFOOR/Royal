@@ -36,6 +36,7 @@ namespace GHospital_Care.DAL.Model
         public string BreffHistory { get; set; }
         public string Route { get; set; }
         public string ReleatedToMeal { get; set; }
+        public List<Advice> ListofAdvice { get; set; }
 
         public List<DischageDrugDetials> DischageDrugDetialses = new List<DischageDrugDetials>(); 
     }

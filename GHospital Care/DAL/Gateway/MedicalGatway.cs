@@ -233,9 +233,9 @@ namespace GHospital_Care.DAL.Gateway
         {
             int count = 0;
             Query = "INSERT INTO [tbl_MasterDischargeForm]" +
-                  "([OPID],[RegNo],[weight],[AddmissionOn],[DischargeOn],[DiagOnAdmission],[DiagOnDischarge],[StatusOnDischarge],[Cured],[Improved],[Dor],[Dorb],[NotImproved],[userId],[Status],FatherHusbandName,Gender,Age,BloodGroup,Consult,Cabin_BedNo,ContactNo,DischargeTime)" +
+                  "([OPID],[RegNo],[weight],[AddmissionOn],[DischargeOn],[DiagOnAdmission],[DiagOnDischarge],[StatusOnDischarge],[Cured],[Improved],[Dor],[Dorb],[NotImproved],[userId],[Status],FatherHusbandName,Gender,Age,BloodGroup,Consult,Cabin_BedNo,ContactNo,DischargeTime,BreefHistory)" +
             "VALUES(@OPID,@RegNo,@weight,@AddmissionOn,@DischargeOn,@DiagOnAdmission,@DiagOnDischarge, @StatusOnDischarge,"
-            + "@Cured,@Improved,@Dor,@Dorb,@NotImproved,@userId, @Status,@FatherHusbandName,@Gender,@Age,@BloodGroup,@Consult,@Cabin_BedNo,@ContactNo,@DischargeTime)";
+            + "@Cured,@Improved,@Dor,@Dorb,@NotImproved,@userId, @Status,@FatherHusbandName,@Gender,@Age,@BloodGroup,@Consult,@Cabin_BedNo,@ContactNo,@DischargeTime,@BreefHistory)";
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.Text;
             Command.Parameters.AddWithValue(@"OPID", dischargePatient.OPID);
@@ -262,6 +262,7 @@ namespace GHospital_Care.DAL.Gateway
             Command.Parameters.AddWithValue(@"Cabin_BedNo", dischargePatient.Cabin_BedNo ?? "");
             Command.Parameters.AddWithValue(@"ContactNo", dischargePatient.ContactNo ?? "");
             Command.Parameters.AddWithValue(@"DischargeTime", dischargePatient.DischargeTime);
+            Command.Parameters.AddWithValue(@"BreefHistory", dischargePatient.BreffHistory);
 
 
             count += Command.ExecuteNonQuery();
@@ -283,7 +284,21 @@ namespace GHospital_Care.DAL.Gateway
                     Command.Parameters.AddWithValue(@"Description", dr["Description"]);
                     count+= Command.ExecuteNonQuery();
             }
+                int row = 0;
 
+                foreach (Advice advice in dischargePatient.ListofAdvice)
+                {
+                    Query = "insert into tbl_AdviceRecord (AdviceName,PatientId) values(@AdviceName,@PatientId)";
+
+                    Command = new SqlCommand(Query, Connection);
+                    Command.Parameters.AddWithValue("@AdviceName", advice.AdviceName);
+                    Command.Parameters.AddWithValue("@PatientId", dischargePatient.OPID);
+
+                    Command.CommandText = Query;
+
+                    row += Command.ExecuteNonQuery();
+
+                }
             return count;
         }
 

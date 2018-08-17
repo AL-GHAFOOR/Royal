@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace GHospital_Care.DAL.Model
 {
@@ -37,7 +38,9 @@ namespace GHospital_Care.DAL.Model
       public string Route { get; set; }
       public string ReleatedToMeal { get; set; }
 
-      public List<DischageDrugDetials> DischageDrugDetialses=new List<DischageDrugDetials>(); 
+      public List<DischageDrugDetials> DischageDrugDetialses=new List<DischageDrugDetials>();
+
+      public List<Advice> ListofAdvice { get; set; }
 
       
 
