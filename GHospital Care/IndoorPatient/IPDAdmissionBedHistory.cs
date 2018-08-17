@@ -49,7 +49,7 @@ namespace GHospital_Care.IndoorPatient
         }
         private void GetIpInfo()
         {
-            DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value,false);
+            DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value,null);
             gridControl1.DataSource = dt;
             CountPatient();
         }

@@ -24,7 +24,7 @@ namespace GHospital_Care.BAL.Manager
         {
             return new BedHistoryGateWay().Count_OccupiedBed(Type, AddType);
         }
-        public DataTable GetIpInfo(DateTime admintdate1, DateTime admintdate2, bool chkValue)
+        public DataTable GetIpInfo(DateTime admintdate1, DateTime admintdate2, string chkValue)
         {
 
             return new BedHistoryGateWay().GetIpInfo(admintdate1, admintdate2, chkValue);

@@ -35,24 +35,24 @@ namespace GHospital_Care.IndoorPatient
 
        // private bool chkValue;
 
-        private bool chkValue()
+        private string chkValue()
         {
             Clear();
             if (rdNotDischarge.Checked == true)
             {
-                reportName = "List of Existing Patient";
-                return false;
+               return reportName = "List of Existing Patient";
+               
                
             }
             else if(rdDischarge.Checked== true)
             {
-                reportName = "List of Discharged Patient";
-                return true;
+                return reportName = "List of Discharged Patient";
+             
                
             }
             else
             {
-                return false;
+                return null;
             }
         }
         private void specialButton9_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace GHospital_Care.IndoorPatient
         private void GetIpInfo()
         {
 
-            bool chk = chkValue();
+            string chk = chkValue();
             DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value, chk);
             gridControl1.DataSource = dt;
             Totalcaluclation(gridView1, "C_SubTotal", txtConsult);
@@ -301,7 +301,7 @@ namespace GHospital_Care.IndoorPatient
             };
             model.ReportDataSource.Name = "IndoorPatientFinalBilling";
 
-            bool chk = chkValue();
+            string chk = chkValue();
             DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value, chk);
             model.ReportDataSource.Value = dt;
 

@@ -1,5 +1,2 @@
-<<<<<<< HEAD
-Data Source=.;Initial Catalog=RoyalDb;Persist Security Info=True;User ID=sa;Password=123456
-=======
 Data Source=Tuhin-PC;Initial Catalog=RoyalDb;Persist Security Info=True;User ID=sa;Password=123
->>>>>>> 7f055669cd731f34c6311d215cdb35bcc7c5ca03
+
