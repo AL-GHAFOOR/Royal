@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using CrystalDecisions.ReportAppServer.DataDefModel;
 using GHospital_Care.DAL.Gateway;
@@ -68,6 +69,18 @@ namespace GHospital_Care.DAL.Gatway
             int rowAffect = Command.ExecuteNonQuery();
             //Connection.Close();
             return rowAffect;
+        }
+
+        public DataTable CabinList()
+        {
+            Query = "SELECT * FROM ViewAllCabins ORDER BY CabinName,CategoryName,FloorName";
+            Command = new SqlCommand(Query, Connection);
+            //Connection.Open();
+           DataTable dt = new DataTable();
+           Reader = Command.ExecuteReader();
+           dt.Load(Reader);
+           return dt;
+
         }
 
        public List<CabinViewModel> GetAllCabinFromView()

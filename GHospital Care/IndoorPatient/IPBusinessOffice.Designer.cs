@@ -263,6 +263,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtConsult = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.rdDischargReq = new System.Windows.Forms.RadioButton();
             this.btnPrintView = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -2476,6 +2477,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.rdDischargReq);
             this.panel4.Controls.Add(this.btnPrintView);
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Controls.Add(this.panel9);
@@ -2490,6 +2492,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1025, 56);
             this.panel4.TabIndex = 245;
+            // 
+            // rdDischargReq
+            // 
+            this.rdDischargReq.AutoSize = true;
+            this.rdDischargReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdDischargReq.Location = new System.Drawing.Point(247, 11);
+            this.rdDischargReq.Name = "rdDischargReq";
+            this.rdDischargReq.Size = new System.Drawing.Size(147, 19);
+            this.rdDischargReq.TabIndex = 100109;
+            this.rdDischargReq.TabStop = true;
+            this.rdDischargReq.Text = "Discharge Request";
+            this.rdDischargReq.UseVisualStyleBackColor = true;
+            this.rdDischargReq.CheckedChanged += new System.EventHandler(this.rdDischargReq_CheckedChanged);
             // 
             // btnPrintView
             // 
@@ -2528,7 +2543,7 @@
             // 
             this.rdNotDischarge.AutoSize = true;
             this.rdNotDischarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdNotDischarge.Location = new System.Drawing.Point(252, 9);
+            this.rdNotDischarge.Location = new System.Drawing.Point(18, 11);
             this.rdNotDischarge.Name = "rdNotDischarge";
             this.rdNotDischarge.Size = new System.Drawing.Size(124, 19);
             this.rdNotDischarge.TabIndex = 0;
@@ -2541,7 +2556,7 @@
             // 
             this.rdDischarge.AutoSize = true;
             this.rdDischarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdDischarge.Location = new System.Drawing.Point(382, 10);
+            this.rdDischarge.Location = new System.Drawing.Point(148, 11);
             this.rdDischarge.Name = "rdDischarge";
             this.rdDischarge.Size = new System.Drawing.Size(90, 19);
             this.rdDischarge.TabIndex = 0;
@@ -2554,7 +2569,7 @@
             // 
             this.ToDate.CustomFormat = "dd-MM-yyyy";
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(717, 10);
+            this.ToDate.Location = new System.Drawing.Point(717, 11);
             this.ToDate.Name = "ToDate";
             this.ToDate.Size = new System.Drawing.Size(100, 20);
             this.ToDate.TabIndex = 100104;
@@ -2571,7 +2586,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(666, 13);
+            this.label5.Location = new System.Drawing.Point(657, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 100103;
@@ -2580,7 +2595,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(488, 13);
+            this.label4.Location = new System.Drawing.Point(465, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 100102;
@@ -2938,6 +2953,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn116;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn117;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn118;
+        private System.Windows.Forms.RadioButton rdDischargReq;
 
 
     }

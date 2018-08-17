@@ -106,11 +106,13 @@
             this.ToDate = new System.Windows.Forms.DateTimePicker();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -138,8 +140,6 @@
             this.lblFree = new System.Windows.Forms.Label();
             this.rdOccupied = new System.Windows.Forms.RadioButton();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -153,10 +153,10 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -196,7 +196,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 11);
+            this.label5.Location = new System.Drawing.Point(5, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 255;
@@ -205,7 +205,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 11);
+            this.label3.Location = new System.Drawing.Point(132, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 255;
@@ -214,7 +214,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(428, 12);
+            this.label6.Location = new System.Drawing.Point(425, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 255;
@@ -223,7 +223,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(275, 12);
+            this.label4.Location = new System.Drawing.Point(271, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 255;
@@ -857,7 +857,7 @@
             // 
             this.ToDate.CustomFormat = "dd/MM/yyyy";
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(576, 10);
+            this.ToDate.Location = new System.Drawing.Point(576, 9);
             this.ToDate.Name = "ToDate";
             this.ToDate.Size = new System.Drawing.Size(90, 20);
             this.ToDate.TabIndex = 100099;
@@ -866,7 +866,7 @@
             // 
             this.FromDate.CustomFormat = "dd/MM/yyyy";
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(463, 10);
+            this.FromDate.Location = new System.Drawing.Point(461, 9);
             this.FromDate.Name = "FromDate";
             this.FromDate.Size = new System.Drawing.Size(90, 20);
             this.FromDate.TabIndex = 100100;
@@ -884,6 +884,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(725, 41);
             this.panel4.TabIndex = 100110;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
+            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.simpleButton2.Location = new System.Drawing.Point(326, 6);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(72, 29);
+            this.simpleButton2.TabIndex = 100114;
+            this.simpleButton2.Text = "Print";
             // 
             // btnExit
             // 
@@ -945,6 +957,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(243, 467);
             this.panel3.TabIndex = 262;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.gridControl2);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 120);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(243, 347);
+            this.panel8.TabIndex = 100117;
             // 
             // gridControl2
             // 
@@ -1205,27 +1226,6 @@
             this.gridColumn32.VisibleIndex = 2;
             this.gridColumn32.Width = 90;
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.gridControl2);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 120);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(243, 347);
-            this.panel8.TabIndex = 100117;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton2.Location = new System.Drawing.Point(326, 6);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(72, 29);
-            this.simpleButton2.TabIndex = 100114;
-            this.simpleButton2.Text = "Print";
-            // 
             // IPDAdmissionBedHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1256,11 +1256,11 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

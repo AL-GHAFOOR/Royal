@@ -8,8 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using GHospital_Care.Admin;
 using GHospital_Care.BAL.Manager;
+using GHospital_Care.CustomLibry;
 using GHospital_Care.DAL.Model;
 using GHospital_Care.DAL.Model.ViewModel;
+using Microsoft.Reporting.WinForms;
 
 namespace GHospital_Care.UI
 {
@@ -276,7 +278,28 @@ namespace GHospital_Care.UI
 
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintService();
+        }
+        public void PrintService()
+        {
+            ReportModel model = new ReportModel();
+            model.Parameters = new List<ReportParameter>
+            {
+                new ReportParameter("Company", model.Company.ToUpper()),
+                new ReportParameter("Address",  model.Address),
+                
+            };
+            model.ReportDataSource.Name = "BedList";
 
+            DataTable dt = new BedManager().BedList();
+            model.ReportDataSource.Value = dt;
 
+            model.ReportPath = "GHospital_Care.Report.rptBedList.rdlc";
+            model.Show(model, this);
+        }
+
+        
     }
 }

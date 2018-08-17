@@ -102,6 +102,20 @@ namespace GHospital_Care.DAL.Gateway
           data.Load(Reader);
           return data;
       }
+
+
+      public DataTable GetAllIpAdmissionPatient(DateTime fromdate, DateTime ToDate)
+      {
+          Query = "SELECT * FROM HospitalBusinessOffice where Convert(date,InputDate) between '" + fromdate + "' and '" + ToDate + "' ORDER BY OPID DESC";
+          Command = new SqlCommand(Query, Connection);
+          Command.CommandText = Query;
+          Reader = Command.ExecuteReader();
+          DataTable data = new DataTable();
+          data.Load(Reader);
+          return data;
+      }
+
+
       public DataTable GetAllBeds(string ward)
       {
           Query = "select * from ViewAllBeds where BedId not in (select SelectedBed from tbl_IndoorAdmission where SelectedBed  != '')and WardName='"+ward+"'";
@@ -165,10 +179,8 @@ namespace GHospital_Care.DAL.Gateway
           Command.Parameters.AddWithValue("@BloodGroup", patient.BloodGroup??"");
           Command.Parameters.AddWithValue("@MotherName", patient.MotherName??"");
           Command.Parameters.AddWithValue("@FatherName", patient.FatherName??"");
-
           Command.Parameters.AddWithValue("@Gurdian", patient.Gurdian??"");
           Command.Parameters.AddWithValue("@DutyDoctorId", patient.DutyDoctorId??"");
-
           Command.Parameters.AddWithValue("@Relation", patient.Relation??"");
           Command.Parameters.AddWithValue("@WardOrCabin", patient.WardOrCabin??"");
           Command.Parameters.AddWithValue("@RefferedBy", patient.RefferedBy??"");

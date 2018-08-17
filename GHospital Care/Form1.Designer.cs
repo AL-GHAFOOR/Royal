@@ -56,7 +56,6 @@
             this.listOfActivePatientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bedDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyAdmissionAndDischargeDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iPAdmissionBedHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outPatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oUTPatientInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oPConsultationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,9 +197,12 @@
             this.specialButton3 = new Office2007Button.SpecialButton();
             this.specialButton2 = new Office2007Button.SpecialButton();
             this.btnHomeTask = new Office2007Button.SpecialButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.iPAdmissionBedHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -412,12 +414,6 @@
             this.monthlyAdmissionAndDischargeDetailsToolStripMenuItem.Name = "monthlyAdmissionAndDischargeDetailsToolStripMenuItem";
             this.monthlyAdmissionAndDischargeDetailsToolStripMenuItem.Size = new System.Drawing.Size(306, 22);
             this.monthlyAdmissionAndDischargeDetailsToolStripMenuItem.Text = "Monthly Admission and Discharge Details";
-            // 
-            // iPAdmissionBedHistoryToolStripMenuItem
-            // 
-            this.iPAdmissionBedHistoryToolStripMenuItem.Name = "iPAdmissionBedHistoryToolStripMenuItem";
-            this.iPAdmissionBedHistoryToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
-            this.iPAdmissionBedHistoryToolStripMenuItem.Text = "IP Admission Bed History";
             // 
             // outPatientToolStripMenuItem
             // 
@@ -1588,11 +1584,29 @@
             this.btnHomeTask.Text = "       Home Task";
             this.btnHomeTask.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(370, 24);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(216, 348);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // iPAdmissionBedHistoryToolStripMenuItem
+            // 
+            this.iPAdmissionBedHistoryToolStripMenuItem.Name = "iPAdmissionBedHistoryToolStripMenuItem";
+            this.iPAdmissionBedHistoryToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.iPAdmissionBedHistoryToolStripMenuItem.Text = "IP Admission Bed History";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 372);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
@@ -1604,6 +1618,7 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1779,6 +1794,7 @@
         private Office2007Button.SpecialButton specialButton3;
         private Office2007Button.SpecialButton specialButton2;
         private Office2007Button.SpecialButton btnHomeTask;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ToolStripMenuItem iPAdmissionBedHistoryToolStripMenuItem;
     }
 }

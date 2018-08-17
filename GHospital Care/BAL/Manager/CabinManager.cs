@@ -43,6 +43,12 @@ namespace GHospital_Care.BAL.Manager
             return aCabinGatway.GetAllCabinFromView();
         }
 
+
+        public DataTable CabinList()
+        {
+            DataTable dt = new CabinGatway().CabinList();
+            return dt;
+        }
         public string DeleteCabin(Cabin aCabin)
         {
 

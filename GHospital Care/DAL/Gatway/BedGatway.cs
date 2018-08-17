@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -103,6 +104,18 @@ namespace GHospital_Care.DAL.Gatway
             int rowAffect = Command.ExecuteNonQuery();
             //Connection.Close();
             return rowAffect;
+        }
+
+        public DataTable BedList()
+        {
+            Query = "SELECT * FROM ViewAllBeds ORDER BY BedName";
+            Command = new SqlCommand(Query, Connection);
+            //Connection.Open();
+            DataTable dt = new DataTable();
+            Reader = Command.ExecuteReader();
+            dt.Load(Reader);
+            return dt;
+
         }
     }
 }

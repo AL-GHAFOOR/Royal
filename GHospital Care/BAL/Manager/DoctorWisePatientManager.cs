@@ -83,6 +83,15 @@ namespace GHospital_Care.BAL.Manager
              data = aDoctorWisePatientGatway.GetPthologyPayment( FromDate, Todate);
              return data;
          }
+
+         public DataTable GetConsultantPayment(DateTime FromDate, DateTime Todate)
+         {
+             DataTable data = new DataTable();
+             aDoctorWisePatientGatway = new DoctorWisePatientGatway();
+             data = aDoctorWisePatientGatway.GetConsultantPayment(FromDate, Todate);
+             return data;
+         }
+
          public DataTable GetCommissionReff()
          {
              return new DoctorWisePatientGatway().GetCommissionReff();
@@ -91,6 +100,11 @@ namespace GHospital_Care.BAL.Manager
          public DataTable GetPathologyVch()
          {
              return new DoctorWisePatientGatway().GetPathologyVch();
+         }
+
+         public DataTable GetConslutantVch()
+         {
+             return new DoctorWisePatientGatway().GetConsultantVch();
          }
          public DataTable DueBillStatusByReff(string Chk, DateTime FromDate, DateTime Todate, string Reff)
          {
@@ -127,6 +141,20 @@ namespace GHospital_Care.BAL.Manager
              return messageModel;
          }
 
+
+         public MessageModel SaveConsultantPayment(DAL.Model.Pathology aService)
+         {
+
+             int saveService = new DoctorWisePatientGatway().SaveConsultantPayment(aService);
+             if (saveService > 0)
+             {
+                 messageModel.MessageBody = " save successfully!";
+                 messageModel.MessageTitle = "Successfull";
+
+             }
+             return messageModel;
+         }
+
          public DataTable VewCommission(DateTime FromDate, DateTime Todate, string Reff)
          {
              return new DoctorWisePatientGatway().VewCommission(FromDate, Todate, Reff);
@@ -135,6 +163,11 @@ namespace GHospital_Care.BAL.Manager
          public DataTable PathologyLedger(DateTime FromDate, DateTime Todate, string Ledger)
          {
              return new DoctorWisePatientGatway().PathologyLedger(FromDate, Todate, Ledger);
+         }
+
+         public DataTable ConsutantLedger(DateTime FromDate, DateTime Todate, string Ledger)
+         {
+             return new DoctorWisePatientGatway().ConsultLedger(FromDate, Todate, Ledger);
          }
      }
 }

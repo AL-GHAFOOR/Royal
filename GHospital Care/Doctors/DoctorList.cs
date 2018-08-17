@@ -41,5 +41,10 @@ namespace GHospital_Care.Doctors
         {
             LoadData();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

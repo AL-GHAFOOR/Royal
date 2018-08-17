@@ -8,10 +8,12 @@ using System.Text;
 using System.Windows.Forms;using System.Data.SqlClient;
 using GHospital_Care.Admin;
 using GHospital_Care.BAL.Manager;
+using GHospital_Care.CustomLibry;
 using GHospital_Care.DAL.Gateway;
 using GHospital_Care.DAL.Model;
 using GHospital_Care.Session;
 using MetroFramework;
+using Microsoft.Reporting.WinForms;
 
 namespace GHospital_Care.IndoorPatient
 {
@@ -111,6 +113,14 @@ namespace GHospital_Care.IndoorPatient
                 txtOpid.Text = data.Rows[0]["OPID"].ToString();
             }
         }
+
+
+        private void PatitientInfo()
+        {
+            DataTable data = new DataTable();
+            data = new IpdManager().GetAllIpAdmissionInfo(FromDate.Value,ToDate.Value);
+            IndoorPatientRegGridControl.DataSource = data;
+        }
         //private void GenerateReg()
         //{
         //    DataTable dt = new IpdManager().GetIpRegID();
@@ -119,7 +129,8 @@ namespace GHospital_Care.IndoorPatient
         private void GetIpdAllDoctor()
         {
             cmbDutydoctor.DataSource = new IpdManager().GetIpdAllDoctor();
-            cmbDutydoctor.DisplayMember = "DoctorName";cmbDutydoctor.ValueMember = "DoctorID";
+            cmbDutydoctor.DisplayMember = "DoctorName";
+            cmbDutydoctor.ValueMember = "DoctorID";
        }
         private void SetNew()
         {
@@ -840,7 +851,7 @@ namespace GHospital_Care.IndoorPatient
 
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
-
+            PatitientInfo();
         }
 
         private void gridView1_DragObjectDrop(object sender, DevExpress.XtraGrid.Views.Base.DragObjectDropEventArgs e)
@@ -1012,6 +1023,32 @@ namespace GHospital_Care.IndoorPatient
             this.Close();
         }
 
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+            PatitientInfo();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void PrintService()
+        {
+            ReportModel model = new ReportModel();
+            model.Parameters = new List<ReportParameter>
+            {
+                new ReportParameter("Company", model.Company.ToUpper()),
+                new ReportParameter("Address",  model.Address),
+                
+            };
+            model.ReportDataSource.Name = "BedList";
+
+            DataTable dt = new BedManager().BedList();
+            model.ReportDataSource.Value = dt;
+
+            model.ReportPath = "GHospital_Care.Report.rptBedList.rdlc";
+            model.Show(model, this);
+        }
 
 
         //public void GetPrimaryDoctor()

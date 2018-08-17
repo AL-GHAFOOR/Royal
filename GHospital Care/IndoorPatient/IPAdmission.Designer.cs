@@ -126,7 +126,6 @@
             this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label41 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
@@ -167,6 +166,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picBoxClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -1118,7 +1118,6 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.IndoorPatientRegGridControl);
-            this.xtraTabPage2.Controls.Add(this.label41);
             this.xtraTabPage2.Controls.Add(this.label28);
             this.xtraTabPage2.Controls.Add(this.label27);
             this.xtraTabPage2.Controls.Add(this.ToDate);
@@ -1131,10 +1130,11 @@
             // 
             // IndoorPatientRegGridControl
             // 
-            this.IndoorPatientRegGridControl.Location = new System.Drawing.Point(-1, 78);
+            this.IndoorPatientRegGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IndoorPatientRegGridControl.Location = new System.Drawing.Point(0, 50);
             this.IndoorPatientRegGridControl.MainView = this.gridView1;
             this.IndoorPatientRegGridControl.Name = "IndoorPatientRegGridControl";
-            this.IndoorPatientRegGridControl.Size = new System.Drawing.Size(1061, 447);
+            this.IndoorPatientRegGridControl.Size = new System.Drawing.Size(834, 363);
             this.IndoorPatientRegGridControl.TabIndex = 0;
             this.IndoorPatientRegGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1189,6 +1189,7 @@
             // 
             // gridColumn3
             // 
+            this.gridColumn3.Caption = "Patient ID";
             this.gridColumn3.FieldName = "OPID";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
@@ -1216,7 +1217,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 132;
+            this.gridColumn7.Width = 122;
             // 
             // gridColumn8
             // 
@@ -1239,7 +1240,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 6;
-            this.gridColumn11.Width = 107;
+            this.gridColumn11.Width = 110;
             // 
             // gridColumn12
             // 
@@ -1302,7 +1303,7 @@
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 7;
-            this.gridColumn23.Width = 178;
+            this.gridColumn23.Width = 185;
             // 
             // gridColumn46
             // 
@@ -1330,22 +1331,13 @@
             this.gridColumn48.VisibleIndex = 0;
             this.gridColumn48.Width = 100;
             // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(407, 19);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(21, 13);
-            this.label41.TabIndex = 100103;
-            this.label41.Text = "To";
-            // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.Black;
             this.label28.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(473, 12);
+            this.label28.Location = new System.Drawing.Point(227, 17);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(26, 17);
             this.label28.TabIndex = 100103;
@@ -1357,7 +1349,7 @@
             this.label27.BackColor = System.Drawing.Color.Black;
             this.label27.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.label27.ForeColor = System.Drawing.Color.Transparent;
-            this.label27.Location = new System.Drawing.Point(235, 12);
+            this.label27.Location = new System.Drawing.Point(44, 17);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(44, 17);
             this.label27.TabIndex = 100103;
@@ -1367,9 +1359,9 @@
             // 
             this.ToDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ToDate.Location = new System.Drawing.Point(516, 12);
+            this.ToDate.Location = new System.Drawing.Point(261, 14);
             this.ToDate.Name = "ToDate";
-            this.ToDate.Size = new System.Drawing.Size(163, 21);
+            this.ToDate.Size = new System.Drawing.Size(126, 21);
             this.ToDate.TabIndex = 100102;
             this.ToDate.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
@@ -1377,10 +1369,11 @@
             // 
             this.FromDate.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FromDate.Location = new System.Drawing.Point(297, 12);
+            this.FromDate.Location = new System.Drawing.Point(101, 14);
             this.FromDate.Name = "FromDate";
-            this.FromDate.Size = new System.Drawing.Size(163, 21);
+            this.FromDate.Size = new System.Drawing.Size(118, 21);
             this.FromDate.TabIndex = 100102;
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
             // 
             // label9
             // 
@@ -1409,6 +1402,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel3.Controls.Add(this.btnPrint);
             this.panel3.Controls.Add(this.btnDelete);
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Controls.Add(this.btnNew2);
@@ -1426,9 +1420,9 @@
             this.btnDelete.Appearance.Options.UseFont = true;
             this.btnDelete.Appearance.Options.UseForeColor = true;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(387, 15);
+            this.btnDelete.Location = new System.Drawing.Point(343, 14);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(112, 35);
+            this.btnDelete.Size = new System.Drawing.Size(93, 35);
             this.btnDelete.TabIndex = 100138;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -1440,9 +1434,9 @@
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.Appearance.Options.UseForeColor = true;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(604, 15);
+            this.btnClose.Location = new System.Drawing.Point(628, 14);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(93, 35);
+            this.btnClose.Size = new System.Drawing.Size(79, 35);
             this.btnClose.TabIndex = 100137;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -1454,7 +1448,7 @@
             this.btnNew2.Appearance.Options.UseFont = true;
             this.btnNew2.Appearance.Options.UseForeColor = true;
             this.btnNew2.Image = ((System.Drawing.Image)(resources.GetObject("btnNew2.Image")));
-            this.btnNew2.Location = new System.Drawing.Point(505, 15);
+            this.btnNew2.Location = new System.Drawing.Point(529, 14);
             this.btnNew2.Name = "btnNew2";
             this.btnNew2.Size = new System.Drawing.Size(93, 35);
             this.btnNew2.TabIndex = 100137;
@@ -1468,9 +1462,9 @@
             this.btnEdit.Appearance.Options.UseFont = true;
             this.btnEdit.Appearance.Options.UseForeColor = true;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(283, 15);
+            this.btnEdit.Location = new System.Drawing.Point(250, 14);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(98, 35);
+            this.btnEdit.Size = new System.Drawing.Size(87, 35);
             this.btnEdit.TabIndex = 100135;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -1484,7 +1478,7 @@
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(153, 14);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(124, 35);
+            this.btnSave.Size = new System.Drawing.Size(91, 35);
             this.btnSave.TabIndex = 100135;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
@@ -1505,10 +1499,10 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(1, 52);
+            this.gridControl2.Location = new System.Drawing.Point(39, 52);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(222, 489);
+            this.gridControl2.Size = new System.Drawing.Size(184, 489);
             this.gridControl2.TabIndex = 222;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1774,6 +1768,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Indoor Patient Registration";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnPrint.Appearance.Options.UseFont = true;
+            this.btnPrint.Appearance.Options.UseForeColor = true;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.Location = new System.Drawing.Point(442, 14);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(79, 35);
+            this.btnPrint.TabIndex = 100139;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // IPAdmission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -1939,7 +1947,6 @@
         internal System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.ComboBox cmbbloodGroup;
         private System.Windows.Forms.DateTimePicker dateTimeTime;
@@ -1961,6 +1968,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn36;
         private System.Windows.Forms.PictureBox picBoxClose;
         private System.Windows.Forms.TextBox txtPrimaryDoctor;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
 
 
 

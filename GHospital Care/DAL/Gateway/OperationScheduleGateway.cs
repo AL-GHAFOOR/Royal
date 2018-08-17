@@ -28,7 +28,7 @@ namespace GHospital_Care.DAL.Gateway
           Command.Parameters.AddWithValue("@OperationName", aOperationSchedule.OperationName??"");
           Command.Parameters.AddWithValue("@OperationTime", aOperationSchedule.OperationTime);
           Command.Parameters.AddWithValue("@ToTime", aOperationSchedule.ToTime);
-          Command.Parameters.AddWithValue("@UserId", aOperationSchedule.UserId??"");
+          Command.Parameters.AddWithValue("@UserId", MainWindow.userName);
           int rowAffect=Command.ExecuteNonQuery();
           return rowAffect;
       }
@@ -52,7 +52,7 @@ namespace GHospital_Care.DAL.Gateway
           Command.Parameters.AddWithValue("@OperationName", aOperationSchedule.OperationName??"");
           Command.Parameters.AddWithValue("@OperationTime", aOperationSchedule.OperationTime);
           Command.Parameters.AddWithValue("@ToTime", aOperationSchedule.ToTime);
-          Command.Parameters.AddWithValue("@UserId", aOperationSchedule.UserId??"");
+          Command.Parameters.AddWithValue("@UserId", MainWindow.userName);
 
           int rowAffect = Command.ExecuteNonQuery();
           return rowAffect;
@@ -69,7 +69,7 @@ namespace GHospital_Care.DAL.Gateway
       }
       public DataTable GetOpInfo()
       {
-          Query = "SELECT * FROM tblOP ORDER BY OPID DESC";SqlCommand Command = new SqlCommand(Query, Connection);
+          Query = "SELECT * FROM ViewOTpatient ORDER BY OPID DESC"; SqlCommand Command = new SqlCommand(Query, Connection);
           Command.CommandText = Query;
           Reader = Command.ExecuteReader();
           DataTable data = new DataTable();
@@ -87,9 +87,9 @@ namespace GHospital_Care.DAL.Gateway
           data.Load(Reader);
           return data;
       }
-      public DataTable GetOperationSchedule()
+      public DataTable GetOperationSchedule(DateTime FromDate, DateTime ToDate)
       {
-          Query = "SELECT * FROM ViewGetConsultDoctor ORDER BY Id DESC";
+          Query = "SELECT * FROM ViewOTSchedule where Convert(date,OtDate) between '"+FromDate+"' and '"+ToDate+"' ORDER BY Id DESC";
           SqlCommand Command = new SqlCommand(Query, Connection);
           Command.CommandText = Query;
           Reader = Command.ExecuteReader();

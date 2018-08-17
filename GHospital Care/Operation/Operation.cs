@@ -9,9 +9,11 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using GHospital_Care.Admin;
 using GHospital_Care.BAL.Manager;
+using GHospital_Care.CustomLibry;
 using GHospital_Care.DAL.Model;
 using GHospital_Care.Doctors;
 using GHospital_Care.Session;
+using Microsoft.Reporting.WinForms;
 
 namespace GHospital_Care.Operation
 {
@@ -46,15 +48,17 @@ namespace GHospital_Care.Operation
         {
             txtCabinName.Text = "";
             txtName.Text = "";
-            txtFistAsst.Text = "";
-        txtSecondAsst.Text = "";
+            txtFistAsst.Text = string.Empty;
+            txtSecondAsst.Text = "";
             txtAnastheisLogist.Text = "";
             txtOpName.Text = "";
             dateOtDate.Text = Convert.ToString(DateTime.Now);
             txtId.Text = "";txtOtReffNo.Text = "";
             dateOperationTime.Value = DateTime.Now;
             dateToTime.Value = DateTime.Now;
-
+            txtCabinName.Text = "";
+            lblPatientType.Text = "PatientCatetory";
+            
             btnDelete.Enabled = false;
             btnSave.Enabled = true;
             btnEdit.Enabled = false;
@@ -70,7 +74,7 @@ namespace GHospital_Care.Operation
         public void GetOpInfo()
         {
             cmbPatienId.Properties.DataSource = aOperationScheduleManager.GetOpInfo();
-            cmbPatienId.Properties.DisplayMember = "PatientName";
+            cmbPatienId.Properties.DisplayMember = "OPID";
             cmbPatienId.Properties.ValueMember = "OPID";
 
         }
@@ -83,10 +87,14 @@ namespace GHospital_Care.Operation
                 txtOtReffNo.Text = Dt.Rows[0][0].ToString();
             }
         }
+        DataTable dt= new DataTable();
         public void GetOperationSchedule()
         {
-            gridControl1.DataSource = aOperationScheduleManager.GetOperationSchedule();
-        }private void btnSave_Click(object sender, EventArgs e)
+            dt= aOperationScheduleManager.GetOperationSchedule(FromDate.Value, ToDate.Value);
+            gridControl1.DataSource = dt;
+        }
+        
+        private void btnSave_Click(object sender, EventArgs e)
         {
             OperationSchedule schedule = new DAL.Model.OperationSchedule();
             schedule.OtRefNo = txtOtReffNo.Text;
@@ -94,7 +102,7 @@ namespace GHospital_Care.Operation
             schedule.Opid = cmbPatienId.Properties.View.GetFocusedRowCellValue("OPID").ToString();
             schedule.CabinBed = txtCabinName.Text;
             schedule.PatientName = txtName.Text;
-            schedule.FirstAssist = txtFistAsst.Text;
+            schedule.FirstAssist = txtFistAsst.SelectedValue.ToString();
             schedule.SurgeonName = searchLookSurgeonName.EditValue.ToString();
             schedule.SecondAssist = txtSecondAsst.Text;
             schedule.Anaesthesiologist = txtAnastheisLogist.EditValue.ToString();
@@ -123,13 +131,15 @@ namespace GHospital_Care.Operation
             OperationSchedule schedule = new DAL.Model.OperationSchedule();
             schedule.Id = Convert.ToInt32(txtId.Text);
             schedule.OtRefNo = txtOtReffNo.Text;
-            schedule.OtDate = dateOtDate.Value;schedule.Opid = PatientID; //cmbPatienId.Properties.View.GetFocusedRowCellValue("OPID").ToString();
+            schedule.OtDate = dateOtDate.Value;
+            schedule.Opid = PatientID; 
+            //cmbPatienId.Properties.View.GetFocusedRowCellValue("OPID").ToString();
             schedule.CabinBed = txtCabinName.Text;
             schedule.PatientName = txtName.Text;
-            schedule.FirstAssist = txtFistAsst.Text;
-            schedule.SurgeonName = searchLookSurgeonName.EditValue.ToString();
+            schedule.FirstAssist = txtFistAsst.SelectedValue.ToString();
+            schedule.SurgeonName = SrugonID;
             schedule.SecondAssist = txtSecondAsst.Text;
-            schedule.Anaesthesiologist = txtAnastheisLogist.Text;
+            schedule.Anaesthesiologist = AthID;
             schedule.OperationName = txtOpName.Text;
 
 
@@ -175,9 +185,19 @@ namespace GHospital_Care.Operation
             this.Hide();
         }
 
+        private void GetFirstAsst()
+        {
+            txtFistAsst.DataSource = new IpdManager().GetIpdAllDoctor();
+            txtFistAsst.DisplayMember = "DoctorName";
+            txtFistAsst.ValueMember = "DoctorID";
+        }
+
         private void cmbPatienId_EditValueChanged(object sender, EventArgs e)
         {
             txtName.Text = cmbPatienId.Properties.View.GetFocusedRowCellValue("PatientName").ToString();
+            lblPatientType.Text = cmbPatienId.Properties.View.GetFocusedRowCellValue("Category").ToString().ToUpper();
+            txtCabinName.Text = cmbPatienId.Properties.View.GetFocusedRowCellValue("BedName").ToString();
+            searchLookSurgeonName.Focus();
         }
 
         private void Operation_Load(object sender, EventArgs e)
@@ -186,6 +206,7 @@ namespace GHospital_Care.Operation
             GetOpInfo();
             GetOperationSchedule();
             CosulultDoctor();
+            GetFirstAsst();
             _session.ChkPermission(MainWindow.userName);
             if (_session.SavePermission == false)
             {
@@ -199,20 +220,23 @@ namespace GHospital_Care.Operation
         }
 
         public string PatientID = "";
+        private string SrugonID = "";
+        private string AthID = "";
         private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             txtId.Text = gridView1.GetFocusedRowCellValue("Id").ToString();
             txtOtReffNo.Text = gridView1.GetFocusedRowCellValue("OtRefNo").ToString();
             dateOtDate.Text = gridView1.GetFocusedRowCellValue("OtDate").ToString();
-            txtCabinName.Text = gridView1.GetFocusedRowCellValue("CabinBed").ToString();
+            txtCabinName.Text = gridView1.GetFocusedRowCellValue("BedName").ToString();
             txtName.Text = gridView1.GetFocusedRowCellValue("PatientName").ToString();
-            txtFistAsst.Text = gridView1.GetFocusedRowCellValue("FirstAssist").ToString();
-            
-            
-           searchLookSurgeonName.Properties.NullText = gridView1.GetFocusedRowCellValue("DoctorName").ToString();
+            txtFistAsst.Text = gridView1.GetFocusedRowCellValue("FirstAsstName").ToString();
+            lblPatientType.Text = gridView1.GetFocusedRowCellValue("Category").ToString();
+            SrugonID = gridView1.GetFocusedRowCellValue("SurgeonName").ToString();
+            AthID = gridView1.GetFocusedRowCellValue("Anaesthesiologist").ToString();
+            searchLookSurgeonName.Properties.NullText = gridView1.GetFocusedRowCellValue("DoctorName").ToString();
           
             txtSecondAsst.Text = gridView1.GetFocusedRowCellValue("SecondAssist").ToString();
-            txtAnastheisLogist.Text = gridView1.GetFocusedRowCellValue("Anaesthesiologist").ToString();
+            txtAnastheisLogist.Properties.NullText = gridView1.GetFocusedRowCellValue("AnthName").ToString();
             txtOpName.Text = gridView1.GetFocusedRowCellValue("OperationName").ToString();
             dateOperationTime.Text = gridView1.GetFocusedRowCellValue("OperationTime").ToString();
             dateToTime.Text = gridView1.GetFocusedRowCellValue("ToTime").ToString();
@@ -220,7 +244,7 @@ namespace GHospital_Care.Operation
             PatientID = gridView1.GetFocusedRowCellValue("OPID").ToString();
             cmbPatienId.Properties.View.SetFocusedRowCellValue("OPID", PatientID);
 
-            var PatientName = gridView1.GetFocusedRowCellValue("PatientName").ToString();
+            var PatientName = gridView1.GetFocusedRowCellValue("OPID").ToString();
             cmbPatienId.Properties.NullText = PatientName;
             ChkPermission();
         }
@@ -273,6 +297,70 @@ namespace GHospital_Care.Operation
                 Operation_buttonEnable(false);
                btnDelete.Enabled= false;
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchLookSurgeonName_EditValueChanged(object sender, EventArgs e)
+        {
+            txtAnastheisLogist.Focus();
+        }
+
+        private void txtAnastheisLogist_EditValueChanged(object sender, EventArgs e)
+        {
+            txtFistAsst.Focus();
+        }
+
+        private void txtFistAsst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtFistAsst_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSecondAsst.Focus();
+            }
+                
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintService();
+        }
+
+        public void PrintService()
+        {
+            ReportModel model = new ReportModel();
+            model.Parameters = new List<ReportParameter>
+            {
+                new ReportParameter("Company", model.Company.ToUpper()),
+                new ReportParameter("Address",  model.Address),
+                new ReportParameter("dtFrom",  FromDate.Text),
+                new ReportParameter("dtTo",  ToDate.Text),
+                
+            };
+            model.ReportDataSource.Name = "Operation";
+
+            GetOperationSchedule();
+            model.ReportDataSource.Value = dt;
+
+            model.ReportPath = "GHospital_Care.Report.rdlcOperationSchedule.rdlc";
+            model.Show(model, this);
+        }
+
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+            GetOperationSchedule();
+        }
+
+        private void ToDate_ValueChanged(object sender, EventArgs e)
+        {
+            GetOperationSchedule();
         }
     }
 }

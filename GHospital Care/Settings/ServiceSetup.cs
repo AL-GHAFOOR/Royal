@@ -8,7 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.Services.Internal;
+using GHospital_Care.BAL.Manager;
+using GHospital_Care.CustomLibry;
 using GHospital_Care.DAL.Model;
+using Microsoft.Reporting.WinForms;
 using ServiceManager = GHospital_Care.BAL.Manager.ServiceManager;
 
 namespace GHospital_Care.Settings
@@ -77,6 +80,7 @@ namespace GHospital_Care.Settings
 
             ActiveControl = cmbCatgory;
         }
+        DataTable dt = new DataTable();
         private void LoadData()
         {
             Conn obcon = new Conn();
@@ -85,11 +89,10 @@ namespace GHospital_Care.Settings
             da.SelectCommand = new SqlCommand();
             da.SelectCommand.Connection = ob;
             SqlCommand ds = da.SelectCommand;
-            ds.CommandText = "select* from tblServices ORDER BY ServiceName";
+            ds.CommandText = "select* from tblServices ORDER BY Convert(int,ID)";
             ds.CommandType = CommandType.Text;
-            DataTable dt = new DataTable();
+           
             da.Fill(dt);
-
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = dt;
         }
@@ -152,6 +155,7 @@ namespace GHospital_Care.Settings
                 txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtDescription.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtRate.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cmbCatgory.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
 
                 btnSave.Enabled = false;
                 btnEdit.Enabled = true;
@@ -216,6 +220,29 @@ namespace GHospital_Care.Settings
                     MessageBox.Show(aMessageModel.MessageBody, aMessageModel.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintService();
+        }
+
+        public void PrintService()
+        {
+            ReportModel model = new ReportModel();
+            model.Parameters = new List<ReportParameter>
+            {
+                new ReportParameter("Company", model.Company.ToUpper()),
+                new ReportParameter("Address",  model.Address),
+                
+            };
+            model.ReportDataSource.Name = "ServiceList";
+
+            LoadData();
+            model.ReportDataSource.Value = dt;
+
+            model.ReportPath = "GHospital_Care.Report.rptServiceList.rdlc";
+            model.Show(model, this);
         }
     }
 }

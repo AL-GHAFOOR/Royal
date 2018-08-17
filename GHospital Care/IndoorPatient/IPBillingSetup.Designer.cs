@@ -1273,11 +1273,11 @@
             this.btnConsultBill.Appearance.Options.UseForeColor = true;
             this.btnConsultBill.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.btnConsultBill.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnConsultBill.Location = new System.Drawing.Point(687, 0);
+            this.btnConsultBill.Location = new System.Drawing.Point(650, 0);
             this.btnConsultBill.Name = "btnConsultBill";
-            this.btnConsultBill.Size = new System.Drawing.Size(173, 37);
+            this.btnConsultBill.Size = new System.Drawing.Size(210, 37);
             this.btnConsultBill.TabIndex = 100105;
-            this.btnConsultBill.Text = "SAVE CONSULT";
+            this.btnConsultBill.Text = "SAVE CONSULTANT";
             this.btnConsultBill.Click += new System.EventHandler(this.btnConsultBill_Click);
             // 
             // label5
@@ -2490,7 +2490,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         public System.Windows.Forms.ComboBox cmbPid;
         public System.Windows.Forms.TextBox txtOtReffNo;
-        private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.GridControl gridControlIssueMedine;
         private DevExpress.XtraGrid.Views.Grid.GridView griViewIssueMedine;
@@ -2596,6 +2595,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn57;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn58;
+        public DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
 
     }
 }
