@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using GHospital_Care.DAL.Gatway;
@@ -27,6 +28,12 @@ namespace GHospital_Care.BAL.Manager
             }
             return "Save failed";
 
+        }
+
+        public DataTable BedList()
+        {
+            DataTable dt = new BedGatway().BedList();
+            return dt;
         }
 
         public string UpdateBed(Bed aBed)

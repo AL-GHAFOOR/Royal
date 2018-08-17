@@ -39,7 +39,7 @@ namespace GHospital_Care.BAL.Manager
            return new BillCheckingGatewayNICU().GetOTServiceBill(patientID);
        }
 
-       public DataTable GetNICUBILLInfo(DateTime admintdate1, DateTime admintdate2, bool chkValue)
+       public DataTable GetNICUBILLInfo(DateTime admintdate1, DateTime admintdate2, string chkValue)
        {
 
            return new BillCheckingGatewayNICU().GetNICUBillINFO(admintdate1, admintdate2, chkValue);

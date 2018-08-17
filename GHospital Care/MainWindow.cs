@@ -25,6 +25,7 @@ using GHospital_Care.UI;
 using DischargeBill = GHospital_Care.IndoorPatient.DischargeBill;
 using DoctorWisePatient_IP = GHospital_Care.IndoorPatient.DoctorWisePatient_IP;
 using ComssionStauts = GHospital_Care.IndoorPatient.ComssionStauts;
+using ConsultantPayment = GHospital_Care.IndoorPatient.ConsultantPayment;
 using NICUDischargeRequest = GHospital_Care.NICU.NICUDischargeRequest;
 using IPBillingSetup = GHospital_Care.IndoorPatient.IPBillingSetup;
 using IPBusinessOffice = GHospital_Care.Operation.OTBusinessOffice;
@@ -756,6 +757,7 @@ namespace GHospital_Care
             OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage3);
             OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage4); 
             OtBilling.tabControl1.TabPages.Remove(OtBilling.IssueMedicine);
+            
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
@@ -872,7 +874,7 @@ namespace GHospital_Care
 
         private void pathologyPaymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             PathologyStatus frm = new PathologyStatus();
+             ConsultantPayment frm = new ConsultantPayment();
             frm.MdiParent = this;
             frm.Show();
         }

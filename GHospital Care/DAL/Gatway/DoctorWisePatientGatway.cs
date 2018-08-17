@@ -45,6 +45,9 @@ namespace GHospital_Care.DAL.Gatway
             return data;
         }
 
+
+       
+
         public DataTable GridLoadDutyDoctor(string Doctor)
         {
             Query = "SELECT * FROM tbl_IndoorAdmission WHERE DutyDoctorId='" + Doctor + "'";
@@ -122,6 +125,18 @@ namespace GHospital_Care.DAL.Gatway
         }
 
 
+        public DataTable GetConsultantPayment(DateTime FromDate, DateTime Todate)
+        {
+            Query = "SELECT * FROM viewConsultantPayment where date between '" + FromDate + "' and '" + Todate + "'";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
+        }
+
+
         public DataTable DueStatusByReff(string Chk, DateTime FromDate, DateTime Todate, string Reff)
         {
             if (Chk == "InDoor")
@@ -189,6 +204,13 @@ namespace GHospital_Care.DAL.Gatway
             return dt;
         }
 
+        public DataTable GetConsultantVch()
+        {
+            DataSet ds = DbSelectQuery("select Isnull(Max(Convert(int,VoucherNO))+1,1)VchNo from tblConsultantPayment");
+            DataTable dt = ds.Tables[0];
+            return dt;
+        }
+
         public DataTable VewCommission(DateTime FromDate, DateTime Todate, string Reff)
         {
             if (Reff == "All")
@@ -227,9 +249,40 @@ namespace GHospital_Care.DAL.Gatway
             return count;
         }
 
+
+        public int SaveConsultantPayment(Model.Pathology service)
+        {
+            int count = 0;
+            Command = new SqlCommand("INSERT INTO tblConsultantPayment (VoucherNo,Date,Particulars,Amount,Description,UserId,InWord)"
+                 + "VALUES(@VoucherNo,@Date,@Particulars,@Amount,@Description,@UserId,@InWord)", Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@VoucherNo", service.VoucherNo);
+            Command.Parameters.AddWithValue("@Date", service.Date);
+            Command.Parameters.AddWithValue("@Particulars", service.Particulars);
+            Command.Parameters.AddWithValue("@Amount", service.Amount);
+            Command.Parameters.AddWithValue("@Description", service.Description);
+            Command.Parameters.AddWithValue("@UserId", service.UserId);
+            Command.Parameters.AddWithValue("@InWord", service.Inword);
+            count += Command.ExecuteNonQuery();
+
+            return count;
+        }
+
+
         public DataTable PathologyLedger(DateTime fromDate, DateTime ToDate, string ledger)
         {
             Query = "PathologyLedger '" + fromDate + "','" + ToDate + "','" + ledger + "'";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
+        }
+
+        public DataTable ConsultLedger(DateTime fromDate, DateTime ToDate, string ledger)
+        {
+            Query = "ConsultantLedger '" + fromDate + "','" + ToDate + "','" + ledger + "'";
             Command = new SqlCommand(Query, Connection);
             Command.CommandText = Query;
             Reader = Command.ExecuteReader();

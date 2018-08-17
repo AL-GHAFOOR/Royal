@@ -74,18 +74,22 @@ namespace GHospital_Care.DAL.Gateway
            return dtDataTable;
        }
 
-       public DataTable GetNICUBillINFO(DateTime AdmintDate1, DateTime AdmintDate2, bool chkvalue)
+       public DataTable GetNICUBillINFO(DateTime AdmintDate1, DateTime AdmintDate2, string chkvalue)
        {
            DataTable dtDataTable = new DataTable();
            // Query = "select * from HospitalBusinessOffice B where B.InputDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.OPID NOT IN(SELECT OPID FROM dbo.tbl_DischargeBill) ";
-           if (chkvalue == true)
+           if (chkvalue == "Discharge")
            {
                Query = "select * from HospitalBusinessOfficeDichargeNICU B where Convert(date,B.DischargeDate) between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.RegNo IN(SELECT OPID FROM dbo.tbl_DischargeBillNICU) ";
 
            }
-           if (chkvalue == false)
+           if (chkvalue == "Running")
            {
                Query = "select * from HospitalBusinessOfficeNICU B where B.AdmitDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.RegNo  NOT IN(SELECT OPID FROM dbo.tbl_DischargeBillNICU) ";
+           }
+           if (chkvalue == "Req")
+           {
+               Query = "select * from HospitalBusinessOfficeDichargeReqNICU B where B.DischargeDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.RegNo  NOT IN(SELECT OPID FROM dbo.tbl_DischargeBillNICU) ";
            }
            Command = new SqlCommand(Query, Connection);
            Command.CommandType = CommandType.Text;

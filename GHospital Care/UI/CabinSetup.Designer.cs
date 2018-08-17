@@ -57,6 +57,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BtnPrint = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,6 +66,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnPrint);
             this.groupBox1.Controls.Add(this.exitButton);
             this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.newButton);
@@ -82,7 +84,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(31, 40);
+            this.groupBox1.Location = new System.Drawing.Point(28, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(464, 253);
             this.groupBox1.TabIndex = 0;
@@ -92,9 +94,9 @@
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.exitButton.Location = new System.Drawing.Point(345, 219);
+            this.exitButton.Location = new System.Drawing.Point(386, 221);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.Size = new System.Drawing.Size(57, 28);
             this.exitButton.TabIndex = 8;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -103,9 +105,9 @@
             // deleteButton
             // 
             this.deleteButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.deleteButton.Location = new System.Drawing.Point(264, 219);
+            this.deleteButton.Location = new System.Drawing.Point(251, 221);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 24);
+            this.deleteButton.Size = new System.Drawing.Size(75, 28);
             this.deleteButton.TabIndex = 7;
             this.deleteButton.Tag = "3";
             this.deleteButton.Text = "Delete";
@@ -115,9 +117,9 @@
             // newButton
             // 
             this.newButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.newButton.Location = new System.Drawing.Point(180, 219);
+            this.newButton.Location = new System.Drawing.Point(185, 221);
             this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(75, 24);
+            this.newButton.Size = new System.Drawing.Size(62, 28);
             this.newButton.TabIndex = 6;
             this.newButton.Text = "New";
             this.newButton.UseVisualStyleBackColor = false;
@@ -126,9 +128,9 @@
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.saveButton.Location = new System.Drawing.Point(97, 219);
+            this.saveButton.Location = new System.Drawing.Point(112, 221);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(70, 28);
             this.saveButton.TabIndex = 5;
             this.saveButton.Tag = "1";
             this.saveButton.Text = "Save";
@@ -138,23 +140,23 @@
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(144, 106);
+            this.categoryComboBox.Location = new System.Drawing.Point(117, 106);
             this.categoryComboBox.Name = "categoryComboBox";
-            this.categoryComboBox.Size = new System.Drawing.Size(257, 23);
+            this.categoryComboBox.Size = new System.Drawing.Size(323, 23);
             this.categoryComboBox.TabIndex = 2;
             // 
             // floorComboBox
             // 
             this.floorComboBox.FormattingEnabled = true;
-            this.floorComboBox.Location = new System.Drawing.Point(144, 79);
+            this.floorComboBox.Location = new System.Drawing.Point(117, 79);
             this.floorComboBox.Name = "floorComboBox";
-            this.floorComboBox.Size = new System.Drawing.Size(257, 23);
+            this.floorComboBox.Size = new System.Drawing.Size(323, 23);
             this.floorComboBox.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 106);
+            this.label3.Location = new System.Drawing.Point(33, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 0;
@@ -162,24 +164,24 @@
             // 
             // rateTextBox
             // 
-            this.rateTextBox.Location = new System.Drawing.Point(144, 194);
+            this.rateTextBox.Location = new System.Drawing.Point(117, 194);
             this.rateTextBox.Name = "rateTextBox";
-            this.rateTextBox.Size = new System.Drawing.Size(257, 21);
+            this.rateTextBox.Size = new System.Drawing.Size(323, 21);
             this.rateTextBox.TabIndex = 4;
             this.rateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rateTextBox_KeyPress);
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(144, 136);
+            this.descriptionTextBox.Location = new System.Drawing.Point(117, 136);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(257, 50);
+            this.descriptionTextBox.Size = new System.Drawing.Size(323, 50);
             this.descriptionTextBox.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(96, 197);
+            this.label5.Location = new System.Drawing.Point(34, 197);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 15);
             this.label5.TabIndex = 0;
@@ -188,25 +190,25 @@
             // idTextBox
             // 
             this.idTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.idTextBox.Location = new System.Drawing.Point(144, 24);
+            this.idTextBox.Location = new System.Drawing.Point(117, 24);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(257, 21);
+            this.idTextBox.Size = new System.Drawing.Size(323, 21);
             this.idTextBox.TabIndex = 9;
             this.idTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idTextBox_KeyPress);
             // 
             // cabinNameTextBox
             // 
-            this.cabinNameTextBox.Location = new System.Drawing.Point(144, 51);
+            this.cabinNameTextBox.Location = new System.Drawing.Point(117, 51);
             this.cabinNameTextBox.Name = "cabinNameTextBox";
-            this.cabinNameTextBox.Size = new System.Drawing.Size(257, 21);
+            this.cabinNameTextBox.Size = new System.Drawing.Size(323, 21);
             this.cabinNameTextBox.TabIndex = 0;
             this.cabinNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cabinNameTextBox_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 142);
+            this.label4.Location = new System.Drawing.Point(33, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 0;
@@ -215,7 +217,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(75, 27);
+            this.label7.Location = new System.Drawing.Point(33, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 15);
             this.label7.TabIndex = 0;
@@ -224,7 +226,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 79);
+            this.label2.Location = new System.Drawing.Point(33, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 0;
@@ -233,7 +235,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 54);
+            this.label1.Location = new System.Drawing.Point(33, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 0;
@@ -258,9 +260,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(34, 6);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 13);
+            this.label6.Size = new System.Drawing.Size(154, 13);
             this.label6.TabIndex = 1;
-            this.label6.Text = "GHospital Care  | CabinSetup";
+            this.label6.Text = "RB Hospital Care  | CabinSetup";
             // 
             // pictureBox1
             // 
@@ -329,6 +331,18 @@
             // 
             this.columnHeader6.Text = "Rate";
             // 
+            // BtnPrint
+            // 
+            this.BtnPrint.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BtnPrint.Location = new System.Drawing.Point(327, 220);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(64, 28);
+            this.BtnPrint.TabIndex = 10;
+            this.BtnPrint.Tag = "3";
+            this.BtnPrint.Text = "Print";
+            this.BtnPrint.UseVisualStyleBackColor = false;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
+            // 
             // CabinSetup
             // 
             this.AcceptButton = this.saveButton;
@@ -385,5 +399,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Button BtnPrint;
     }
 }

@@ -32,11 +32,11 @@ namespace GHospital_Care.BAL.Manager
             {
                 setup.Pid = listOfOtSetup.Rows[0]["OPID"].ToString();
                 setup.OtReffNo = listOfOtSetup.Rows[0]["OtRefNo"].ToString();
-                setup.Cabin_Bed = listOfOtSetup.Rows[0]["CabinBed"].ToString();
+                setup.Cabin_Bed = listOfOtSetup.Rows[0]["BedName"].ToString();
                 setup.Date = Convert.ToDateTime(listOfOtSetup.Rows[0]["OtDate"].ToString());
-                setup.SurgenId = listOfOtSetup.Rows[0]["SurgeonName"].ToString();
-                setup.Anstology = listOfOtSetup.Rows[0]["Anaesthesiologist"].ToString();
-                setup.FirstAsst = listOfOtSetup.Rows[0]["FirstAssist"].ToString();
+                setup.SurgenId = listOfOtSetup.Rows[0]["DoctorName"].ToString();
+                setup.Anstology = listOfOtSetup.Rows[0]["AnthName"].ToString();
+                setup.FirstAsst = listOfOtSetup.Rows[0]["FirstAsstName"].ToString();
                 setup.SecondAsst = listOfOtSetup.Rows[0]["SecondAssist"].ToString();
                 setup.OpName = listOfOtSetup.Rows[0]["OperationName"].ToString();
                 setup.OT_From = TimeSpan.Parse(listOfOtSetup.Rows[0]["OperationTime"].ToString());

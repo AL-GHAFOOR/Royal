@@ -679,26 +679,42 @@ namespace GHospital_Care.IndoorPatient
             MessageModel message = new ServiceManager().SavePatientService(saveService);
             MessageBox.Show(message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void OTClear()
+        {
+            txtOtReffNo.Text = "";
+            txtOTdate.Text = "";
+            txtCabinName.Text = "";
+            txtSurgenName.Text = "";
+            txtAnestheisLogist.Text = "";
+            txtFistAsst.Text = "";
+            txtSecondAsst.Text = "";
+            txtOTdate.Text = "";
+            txtOtTo.Text = "";
+            txtOpName.Text = "";
+            otFrom.Text = "";
+        }
         private void toggleSwitch1_Toggled(object sender, EventArgs e)
         {
-           // LoadDataTable();
-            //if (toggleSwitch1.IsOn)
-            //{
-            //    GetAllPatientSlNo(toggleSwitch1.Properties.OnText);
-            //    tabControl1.TabPages.Add(IssueMedicine);
-            //    LoadConsoultService(cmbPid.Text, "OPD");
-            //    LoadPatientService(cmbPid.Text, "OPD");
-            //    LoadPatientPathologyService(cmbPid.Text, "OPD");
-            //    MedineList();
-            //}
-            //else
-            //{
-            //    GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
-            //    tabControl1.TabPages.Remove(IssueMedicine);
-            //    LoadConsoultService(cmbPid.Text, "IPD");
-            //    LoadPatientService(cmbPid.Text, "IPD");
-            //    LoadPatientPathologyService(cmbPid.Text, "IPD");
-            //}
+            if (toggleSwitch1.IsOn)
+            {
+                OTClear();
+                GetAllPatientSlNo(toggleSwitch1.Properties.OnText);
+                tabControl1.TabPages.Add(IssueMedicine);
+                LoadConsoultService(cmbPid.Text, "OPD");
+                LoadPatientService(cmbPid.Text, "OPD");
+                LoadPatientPathologyService(cmbPid.Text, "OPD");
+                // MedineList();
+            }
+            else
+            {
+                OTClear();
+                GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
+                tabControl1.TabPages.Remove(IssueMedicine);
+                LoadConsoultService(cmbPid.Text, "IPD");
+                LoadPatientService(cmbPid.Text, "IPD");
+                LoadPatientPathologyService(cmbPid.Text, "IPD");
+            }
 
         }
 

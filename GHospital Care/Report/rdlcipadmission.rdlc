@@ -9,13 +9,13 @@
               <Width>0.98958in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.75917in</Width>
+              <Width>1.03in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.55333in</Width>
+              <Width>1.77208in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.63417in</Width>
+              <Width>0.81125in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.84375in</Width>
@@ -1033,8 +1033,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>IpAdmissionDataSet</DataSetName>
-        <Height>1.11333in</Height>
-        <Width>7.62375in</Width>
+        <Height>1.11332in</Height>
+        <Width>8.29042in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1069,7 +1069,7 @@
       </RightBorder>
     </Style>
   </Body>
-  <Width>7.64583in</Width>
+  <Width>8.29042in</Width>
   <Page>
     <PageHeader>
       <Height>0.77083in</Height>
@@ -1149,8 +1149,8 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>11.69in</PageHeight>
-    <PageWidth>8.27in</PageWidth>
+    <PageHeight>8.27in</PageHeight>
+    <PageWidth>11.69in</PageWidth>
     <LeftMargin>0.25in</LeftMargin>
     <RightMargin>0.25in</RightMargin>
     <TopMargin>0.25in</TopMargin>

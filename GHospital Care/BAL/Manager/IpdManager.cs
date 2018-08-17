@@ -80,6 +80,11 @@ namespace GHospital_Care.BAL.Manager
         {
             return new IpdGateway().GetIpdAllIpdPatient();
         }
+
+        public DataTable GetIpdAllIpdPatientAdmission(DateTime fromdate, DateTime ToDate)
+        {
+            return new IpdGateway().GetAllIpAdmissionPatient(fromdate, ToDate);
+        }
         IpdGateway aIpdGateway=new IpdGateway();
         
         public MessageModel UpdateAdmissionPatient(Patient patient, DAL.Model.OutdoorPatient aOutdoorPatient)

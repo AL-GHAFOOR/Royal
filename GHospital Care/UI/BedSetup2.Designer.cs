@@ -69,6 +69,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPrint = new Office2007Button.SpecialButton();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -155,25 +156,25 @@
             // wardComboBox
             // 
             this.wardComboBox.FormattingEnabled = true;
-            this.wardComboBox.Location = new System.Drawing.Point(181, 155);
+            this.wardComboBox.Location = new System.Drawing.Point(157, 155);
             this.wardComboBox.Name = "wardComboBox";
-            this.wardComboBox.Size = new System.Drawing.Size(251, 21);
+            this.wardComboBox.Size = new System.Drawing.Size(304, 21);
             this.wardComboBox.TabIndex = 3;
             // 
             // floorComboBox
             // 
             this.floorComboBox.FormattingEnabled = true;
-            this.floorComboBox.Location = new System.Drawing.Point(181, 96);
+            this.floorComboBox.Location = new System.Drawing.Point(157, 96);
             this.floorComboBox.Name = "floorComboBox";
-            this.floorComboBox.Size = new System.Drawing.Size(251, 21);
+            this.floorComboBox.Size = new System.Drawing.Size(304, 21);
             this.floorComboBox.TabIndex = 1;
             // 
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(181, 128);
+            this.categoryComboBox.Location = new System.Drawing.Point(157, 128);
             this.categoryComboBox.Name = "categoryComboBox";
-            this.categoryComboBox.Size = new System.Drawing.Size(251, 21);
+            this.categoryComboBox.Size = new System.Drawing.Size(304, 21);
             this.categoryComboBox.TabIndex = 2;
             this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
@@ -183,7 +184,7 @@
             this.newButton.BackColor = System.Drawing.Color.Transparent;
             this.newButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.newButton.Location = new System.Drawing.Point(171, 280);
+            this.newButton.Location = new System.Drawing.Point(145, 280);
             this.newButton.Name = "newButton";
             this.newButton.PressedButton = false;
             this.newButton.Size = new System.Drawing.Size(62, 28);
@@ -198,7 +199,7 @@
             this.deleteButton.BackColor = System.Drawing.Color.Transparent;
             this.deleteButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteButton.Location = new System.Drawing.Point(307, 280);
+            this.deleteButton.Location = new System.Drawing.Point(281, 280);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.PressedButton = false;
             this.deleteButton.Size = new System.Drawing.Size(62, 28);
@@ -214,7 +215,7 @@
             this.saveButton.BackColor = System.Drawing.Color.Transparent;
             this.saveButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.saveButton.Location = new System.Drawing.Point(239, 280);
+            this.saveButton.Location = new System.Drawing.Point(213, 280);
             this.saveButton.Name = "saveButton";
             this.saveButton.PressedButton = false;
             this.saveButton.Size = new System.Drawing.Size(62, 28);
@@ -255,7 +256,7 @@
             this.closeButton.BackColor = System.Drawing.Color.Transparent;
             this.closeButton.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.closeButton.Location = new System.Drawing.Point(374, 279);
+            this.closeButton.Location = new System.Drawing.Point(414, 279);
             this.closeButton.Name = "closeButton";
             this.closeButton.PressedButton = false;
             this.closeButton.Size = new System.Drawing.Size(62, 28);
@@ -266,20 +267,20 @@
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(181, 193);
+            this.descriptionTextBox.Location = new System.Drawing.Point(157, 193);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionTextBox.Size = new System.Drawing.Size(251, 46);
+            this.descriptionTextBox.Size = new System.Drawing.Size(304, 46);
             this.descriptionTextBox.TabIndex = 5;
             // 
             // IdTextBox
             // 
             this.IdTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.IdTextBox.Location = new System.Drawing.Point(167, 4);
+            this.IdTextBox.Location = new System.Drawing.Point(143, 4);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.ReadOnly = true;
-            this.IdTextBox.Size = new System.Drawing.Size(251, 20);
+            this.IdTextBox.Size = new System.Drawing.Size(304, 20);
             this.IdTextBox.TabIndex = 244;
             // 
             // label8
@@ -295,7 +296,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(79, 197);
+            this.label6.Location = new System.Drawing.Point(64, 197);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 267;
@@ -304,7 +305,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(118, 126);
+            this.label7.Location = new System.Drawing.Point(64, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 262;
@@ -312,23 +313,23 @@
             // 
             // rateTextBox
             // 
-            this.rateTextBox.Location = new System.Drawing.Point(181, 245);
+            this.rateTextBox.Location = new System.Drawing.Point(157, 245);
             this.rateTextBox.Name = "rateTextBox";
-            this.rateTextBox.Size = new System.Drawing.Size(251, 20);
+            this.rateTextBox.Size = new System.Drawing.Size(304, 20);
             this.rateTextBox.TabIndex = 6;
             this.rateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rateTextBox_KeyPress);
             // 
             // bedNameTextBox
             // 
-            this.bedNameTextBox.Location = new System.Drawing.Point(181, 67);
+            this.bedNameTextBox.Location = new System.Drawing.Point(157, 67);
             this.bedNameTextBox.Name = "bedNameTextBox";
-            this.bedNameTextBox.Size = new System.Drawing.Size(251, 20);
+            this.bedNameTextBox.Size = new System.Drawing.Size(304, 20);
             this.bedNameTextBox.TabIndex = 0;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(103, 158);
+            this.label10.Location = new System.Drawing.Point(64, 158);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 264;
@@ -337,7 +338,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(137, 249);
+            this.label4.Location = new System.Drawing.Point(64, 249);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 263;
@@ -346,7 +347,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 99);
+            this.label3.Location = new System.Drawing.Point(64, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 265;
@@ -355,7 +356,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 71);
+            this.label5.Location = new System.Drawing.Point(64, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 266;
@@ -400,7 +401,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(125, 44);
+            this.label9.Location = new System.Drawing.Point(64, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 266;
@@ -409,10 +410,10 @@
             // 
             // bedIdTextBox
             // 
-            this.bedIdTextBox.Location = new System.Drawing.Point(181, 41);
+            this.bedIdTextBox.Location = new System.Drawing.Point(157, 41);
             this.bedIdTextBox.Name = "bedIdTextBox";
             this.bedIdTextBox.ReadOnly = true;
-            this.bedIdTextBox.Size = new System.Drawing.Size(251, 20);
+            this.bedIdTextBox.Size = new System.Drawing.Size(304, 20);
             this.bedIdTextBox.TabIndex = 12;
             this.bedIdTextBox.Visible = false;
             // 
@@ -450,11 +451,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(348, 280);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.PressedButton = false;
+            this.btnPrint.Size = new System.Drawing.Size(62, 28);
+            this.btnPrint.TabIndex = 270;
+            this.btnPrint.Tag = "3";
+            this.btnPrint.Text = "Print";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // BedSetup2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 551);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.roomComboBox);
             this.Controls.Add(this.wardComboBox);
@@ -540,6 +558,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox bedIdTextBox;
+        private Office2007Button.SpecialButton btnPrint;
 
     }
 }

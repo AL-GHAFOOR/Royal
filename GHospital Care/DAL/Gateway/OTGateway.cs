@@ -53,7 +53,7 @@ namespace GHospital_Care.DAL.Gateway
       public DataTable GetOtSetupByPatientId(string pid)
       {
           //Query = "Select * from OperationSchedule where OPID='" + pid + "'";
-          Query = "Select * from OperationSchedule where OPID='" + pid + "'";
+          Query = "Select * from ViewOTSchedule where OPID='" + pid + "'";
           Command = new SqlCommand(Query, Connection);
           Command.CommandText = Query;
           Reader = Command.ExecuteReader();

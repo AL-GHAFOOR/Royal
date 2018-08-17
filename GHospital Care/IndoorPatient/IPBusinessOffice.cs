@@ -34,26 +34,27 @@ namespace GHospital_Care.IndoorPatient
         }
 
        // private bool chkValue;
-
-        private string chkValue()
+        private string check = "";
+        private void chkValue()
         {
             Clear();
             if (rdNotDischarge.Checked == true)
             {
-               return reportName = "List of Existing Patient";
-               
+                reportName = "List of Existing Patient";
+                check= "Running";
                
             }
             else if(rdDischarge.Checked== true)
             {
-                return reportName = "List of Discharged Patient";
-             
+                reportName = "List of Discharged Patient";
+                check = "Discharge";
                
             }
-            else
+            else if(rdDischargReq.Checked)
             {
-                return null;
+                check= "Req";
             }
+           
         }
         private void specialButton9_Click(object sender, EventArgs e)
         {
@@ -83,8 +84,8 @@ namespace GHospital_Care.IndoorPatient
         private void GetIpInfo()
         {
 
-            string chk = chkValue();
-            DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value, chk);
+            chkValue();
+            DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value, check);
             gridControl1.DataSource = dt;
             Totalcaluclation(gridView1, "C_SubTotal", txtConsult);
             Totalcaluclation(gridView1, "P_SubTotal", txtPharmacy);
@@ -295,18 +296,23 @@ namespace GHospital_Care.IndoorPatient
             {
                new ReportParameter("dtFrom", FromDate.Value.ToString("d")),
                 new ReportParameter("dtTo",  ToDate.Value.ToString("d")),
-                new ReportParameter("Company", model.Company.ToUpper()),
-                new ReportParameter("Address",  model.Address),
+                new ReportParameter("Company", model.Company.ToUpper()),new ReportParameter("Address",  model.Address),
                 new ReportParameter("reportName",  reportName),
             };
             model.ReportDataSource.Name = "IndoorPatientFinalBilling";
 
-            string chk = chkValue();
-            DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value, chk);
+            chkValue();
+            DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value, check);
             model.ReportDataSource.Value = dt;
 
             model.ReportPath = "GHospital_Care.Report.rdlcIndoorPatientFinalBilling.rdlc";
             model.Show(model, this);
+        }
+
+        private void rdDischargReq_CheckedChanged(object sender, EventArgs e)
+        {
+            chkValue();
+            GetIpInfo();
         }
     }
 }

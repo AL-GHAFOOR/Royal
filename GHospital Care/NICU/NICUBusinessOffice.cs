@@ -31,27 +31,27 @@ namespace GHospital_Care.NICU
 
        // private bool chkValue;
 
-        private bool chkValue()
+        private void chkValue()
         {
             Clear();
             if (rdNotDischarge.Checked == true)
             {
                 reportName = "Existing NICU Patient";
-                return false;
+                check= "Running";
             }
             else if(rdDischarge.Checked== true)
             {
                 reportName = "Discharged NICU Patient";
-                return true;
+                check= "Discharge";
             }
-            else
+            else if (rdDischargReq.Checked == true)
             {
-                return false;
+                reportName = "Discharg Requested NICU Patient";
+                check = "Req";
             }
         }
         private void specialButton9_Click(object sender, EventArgs e)
-        {
-            GetIpInfo();
+        {GetIpInfo();
           
         }
 
@@ -72,10 +72,12 @@ namespace GHospital_Care.NICU
             TxtAllTotal.Text = "0.00";
             txtNetAmount.Text = "0.00";
         }
+
+        private string check = "";
         private void GetIpInfo()
         {
-            bool chk = chkValue();
-            DataTable dt = new BillCheckingManagerNICU().GetNICUBILLInfo(FromDate.Value, ToDate.Value, chk);
+            chkValue();
+            DataTable dt = new BillCheckingManagerNICU().GetNICUBILLInfo(FromDate.Value, ToDate.Value, check);
             gridControl1.DataSource = dt;
             Totalcaluclation(gridView1, "C_SubTotal", txtConsult);
             Totalcaluclation(gridView1, "P_SubTotal", txtPharmacy);
@@ -289,8 +291,8 @@ namespace GHospital_Care.NICU
             };
             model.ReportDataSource.Name = "IndoorPatientFinalBilling";
 
-            bool chk = chkValue();
-            DataTable dt = new BillCheckingManagerNICU().GetNICUBILLInfo(FromDate.Value, ToDate.Value, chk);
+            chkValue();
+            DataTable dt = new BillCheckingManagerNICU().GetNICUBILLInfo(FromDate.Value, ToDate.Value, check);
             model.ReportDataSource.Value = dt;
 
             model.ReportPath = "GHospital_Care.Report.rdlcIndoorPatientFinalBilling.rdlc";

@@ -33,6 +33,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPatientType = new System.Windows.Forms.Label();
             this.cmbPatienId = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,7 +45,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtFistAsst = new System.Windows.Forms.ComboBox();
             this.btnAddSurgeon = new DevExpress.XtraEditors.SimpleButton();
+            this.txtAnastheisLogist = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookSurgeonName = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,9 +71,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtOpName = new System.Windows.Forms.TextBox();
             this.txtSecondAsst = new System.Windows.Forms.TextBox();
-            this.txtFistAsst = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new Office2007Button.SpecialButton();
             this.btnClose = new Office2007Button.SpecialButton();
             this.lblUserId = new System.Windows.Forms.Label();
             this.btnEdit = new Office2007Button.SpecialButton();
@@ -86,16 +94,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtAnastheisLogist = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.FromDate = new System.Windows.Forms.DateTimePicker();
+            this.ToDate = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPatienId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAnastheisLogist.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookSurgeonName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -103,13 +113,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnastheisLogist.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCabinName
             // 
-            this.txtCabinName.Location = new System.Drawing.Point(493, 49);
+            this.txtCabinName.Location = new System.Drawing.Point(493, 42);
             this.txtCabinName.Name = "txtCabinName";
             this.txtCabinName.Size = new System.Drawing.Size(103, 21);
             this.txtCabinName.TabIndex = 2;
@@ -117,7 +127,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(418, 46);
+            this.label12.Location = new System.Drawing.Point(411, 46);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 13);
             this.label12.TabIndex = 200;
@@ -126,7 +136,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(434, 23);
+            this.label11.Location = new System.Drawing.Point(278, 17);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 13);
             this.label11.TabIndex = 200;
@@ -134,6 +144,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblPatientType);
             this.groupBox1.Controls.Add(this.cmbPatienId);
             this.groupBox1.Controls.Add(this.txtOtReffNo);
             this.groupBox1.Controls.Add(this.label2);
@@ -149,9 +160,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General Info";
             // 
+            // lblPatientType
+            // 
+            this.lblPatientType.AutoSize = true;
+            this.lblPatientType.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lblPatientType.ForeColor = System.Drawing.Color.Red;
+            this.lblPatientType.Location = new System.Drawing.Point(493, 17);
+            this.lblPatientType.Name = "lblPatientType";
+            this.lblPatientType.Size = new System.Drawing.Size(81, 14);
+            this.lblPatientType.TabIndex = 204;
+            this.lblPatientType.Text = "PatientType";
+            // 
             // cmbPatienId
             // 
-            this.cmbPatienId.Location = new System.Drawing.Point(146, 44);
+            this.cmbPatienId.Location = new System.Drawing.Point(146, 41);
             this.cmbPatienId.Name = "cmbPatienId";
             this.cmbPatienId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.cmbPatienId.Properties.Appearance.Options.UseFont = true;
@@ -208,7 +230,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 16);
+            this.label2.Location = new System.Drawing.Point(28, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 200;
@@ -217,7 +239,7 @@
             // dateOtDate
             // 
             this.dateOtDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateOtDate.Location = new System.Drawing.Point(493, 19);
+            this.dateOtDate.Location = new System.Drawing.Point(335, 13);
             this.dateOtDate.Name = "dateOtDate";
             this.dateOtDate.Size = new System.Drawing.Size(105, 21);
             this.dateOtDate.TabIndex = 1;
@@ -225,7 +247,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(71, 46);
+            this.label10.Location = new System.Drawing.Point(28, 42);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 201;
@@ -233,7 +255,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(24, 20);
+            this.txtId.Location = new System.Drawing.Point(24, 12);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(31, 21);
@@ -242,6 +264,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.panel7);
+            this.groupBox2.Controls.Add(this.txtFistAsst);
             this.groupBox2.Controls.Add(this.btnAddSurgeon);
             this.groupBox2.Controls.Add(this.txtAnastheisLogist);
             this.groupBox2.Controls.Add(this.searchLookSurgeonName);
@@ -257,14 +281,26 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtOpName);
             this.groupBox2.Controls.Add(this.txtSecondAsst);
-            this.groupBox2.Controls.Add(this.txtFistAsst);
             this.groupBox2.Controls.Add(this.txtName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 102);
+            this.groupBox2.Location = new System.Drawing.Point(3, 102);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(683, 130);
+            this.groupBox2.Size = new System.Drawing.Size(709, 163);
             this.groupBox2.TabIndex = 226;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient Information";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtFistAsst
+            // 
+            this.txtFistAsst.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtFistAsst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtFistAsst.FormattingEnabled = true;
+            this.txtFistAsst.Location = new System.Drawing.Point(493, 11);
+            this.txtFistAsst.Name = "txtFistAsst";
+            this.txtFistAsst.Size = new System.Drawing.Size(184, 21);
+            this.txtFistAsst.TabIndex = 100087;
+            this.txtFistAsst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFistAsst_KeyDown);
+            this.txtFistAsst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFistAsst_KeyPress);
             // 
             // btnAddSurgeon
             // 
@@ -276,6 +312,62 @@
             this.btnAddSurgeon.TabIndex = 217;
             this.btnAddSurgeon.Click += new System.EventHandler(this.btnAddSurgeon_Click);
             // 
+            // txtAnastheisLogist
+            // 
+            this.txtAnastheisLogist.Location = new System.Drawing.Point(146, 70);
+            this.txtAnastheisLogist.Name = "txtAnastheisLogist";
+            this.txtAnastheisLogist.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtAnastheisLogist.Properties.NullText = "";
+            this.txtAnastheisLogist.Properties.View = this.gridView3;
+            this.txtAnastheisLogist.Size = new System.Drawing.Size(202, 20);
+            this.txtAnastheisLogist.TabIndex = 216;
+            this.txtAnastheisLogist.EditValueChanged += new System.EventHandler(this.txtAnastheisLogist_EditValueChanged);
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "DoctorID";
+            this.gridColumn13.FieldName = "DoctorID";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "DoctorName";
+            this.gridColumn14.FieldName = "DoctorName";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "AcademicDegree";
+            this.gridColumn15.FieldName = "AcademicDegree";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 2;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Specialization";
+            this.gridColumn16.FieldName = "Specialization";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 3;
+            // 
             // searchLookSurgeonName
             // 
             this.searchLookSurgeonName.Location = new System.Drawing.Point(146, 42);
@@ -286,6 +378,7 @@
             this.searchLookSurgeonName.Properties.View = this.gridView2;
             this.searchLookSurgeonName.Size = new System.Drawing.Size(202, 20);
             this.searchLookSurgeonName.TabIndex = 216;
+            this.searchLookSurgeonName.EditValueChanged += new System.EventHandler(this.searchLookSurgeonName_EditValueChanged);
             // 
             // gridView2
             // 
@@ -334,7 +427,7 @@
             // dateOperationTime
             // 
             this.dateOperationTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateOperationTime.Location = new System.Drawing.Point(146, 96);
+            this.dateOperationTime.Location = new System.Drawing.Point(146, 98);
             this.dateOperationTime.Name = "dateOperationTime";
             this.dateOperationTime.ShowUpDown = true;
             this.dateOperationTime.Size = new System.Drawing.Size(87, 21);
@@ -343,7 +436,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(404, 48);
+            this.label13.Location = new System.Drawing.Point(411, 45);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 13);
             this.label13.TabIndex = 201;
@@ -352,7 +445,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(418, 17);
+            this.label8.Location = new System.Drawing.Point(411, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 13);
             this.label8.TabIndex = 201;
@@ -361,7 +454,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(53, 17);
+            this.label5.Location = new System.Drawing.Point(28, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 201;
@@ -370,7 +463,7 @@
             // dateToTime
             // 
             this.dateToTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateToTime.Location = new System.Drawing.Point(310, 96);
+            this.dateToTime.Location = new System.Drawing.Point(280, 98);
             this.dateToTime.Name = "dateToTime";
             this.dateToTime.ShowUpDown = true;
             this.dateToTime.Size = new System.Drawing.Size(87, 21);
@@ -379,7 +472,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(431, 71);
+            this.label6.Location = new System.Drawing.Point(411, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 202;
@@ -388,7 +481,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 96);
+            this.label7.Location = new System.Drawing.Point(26, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 202;
@@ -397,7 +490,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 71);
+            this.label4.Location = new System.Drawing.Point(28, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 214;
@@ -406,7 +499,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 45);
+            this.label3.Location = new System.Drawing.Point(28, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 214;
@@ -415,7 +508,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(261, 99);
+            this.label9.Location = new System.Drawing.Point(255, 102);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(21, 13);
             this.label9.TabIndex = 202;
@@ -436,13 +529,6 @@
             this.txtSecondAsst.Size = new System.Drawing.Size(184, 21);
             this.txtSecondAsst.TabIndex = 3;
             // 
-            // txtFistAsst
-            // 
-            this.txtFistAsst.Location = new System.Drawing.Point(493, 14);
-            this.txtFistAsst.Name = "txtFistAsst";
-            this.txtFistAsst.Size = new System.Drawing.Size(184, 21);
-            this.txtFistAsst.TabIndex = 1;
-            // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(146, 14);
@@ -452,6 +538,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnPrint);
             this.groupBox3.Controls.Add(this.btnClose);
             this.groupBox3.Controls.Add(this.txtId);
             this.groupBox3.Controls.Add(this.lblUserId);
@@ -460,11 +547,27 @@
             this.groupBox3.Controls.Add(this.btnNew);
             this.groupBox3.Controls.Add(this.btnDelete);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(4, 402);
+            this.groupBox3.Location = new System.Drawing.Point(4, 413);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(707, 57);
+            this.groupBox3.Size = new System.Drawing.Size(707, 46);
             this.groupBox3.TabIndex = 227;
             this.groupBox3.TabStop = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(360, 12);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.PressedButton = false;
+            this.btnPrint.Size = new System.Drawing.Size(64, 25);
+            this.btnPrint.TabIndex = 204;
+            this.btnPrint.Tag = "2";
+            this.btnPrint.Text = "Print";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnClose
             // 
@@ -472,7 +575,7 @@
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(464, 20);
+            this.btnClose.Location = new System.Drawing.Point(504, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedButton = false;
             this.btnClose.Size = new System.Drawing.Size(64, 25);
@@ -484,7 +587,7 @@
             // lblUserId
             // 
             this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(61, 23);
+            this.lblUserId.Location = new System.Drawing.Point(61, 15);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(49, 13);
             this.lblUserId.TabIndex = 200;
@@ -497,7 +600,7 @@
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
             this.btnEdit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(304, 20);
+            this.btnEdit.Location = new System.Drawing.Point(290, 12);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PressedButton = false;
             this.btnEdit.Size = new System.Drawing.Size(64, 25);
@@ -513,7 +616,7 @@
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(224, 20);
+            this.btnSave.Location = new System.Drawing.Point(219, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.PressedButton = false;
             this.btnSave.Size = new System.Drawing.Size(64, 25);
@@ -529,7 +632,7 @@
             this.btnNew.BackColor = System.Drawing.Color.Transparent;
             this.btnNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(147, 21);
+            this.btnNew.Location = new System.Drawing.Point(147, 12);
             this.btnNew.Name = "btnNew";
             this.btnNew.PressedButton = false;
             this.btnNew.Size = new System.Drawing.Size(64, 25);
@@ -544,7 +647,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(384, 20);
+            this.btnDelete.Location = new System.Drawing.Point(432, 12);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.PressedButton = false;
             this.btnDelete.Size = new System.Drawing.Size(64, 25);
@@ -556,10 +659,11 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 238);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(683, 173);
+            this.gridControl1.Size = new System.Drawing.Size(707, 142);
             this.gridControl1.TabIndex = 228;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -579,11 +683,12 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "OPID";
+            this.gridColumn1.Caption = "PatientID";
             this.gridColumn1.FieldName = "OPID";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 123;
             // 
             // gridColumn2
             // 
@@ -592,14 +697,16 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 135;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "OtDate";
+            this.gridColumn3.Caption = "OT Date";
             this.gridColumn3.FieldName = "OtDate";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 135;
             // 
             // gridColumn4
             // 
@@ -608,6 +715,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 135;
             // 
             // gridColumn5
             // 
@@ -616,6 +724,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 137;
             // 
             // panel2
             // 
@@ -687,67 +796,69 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // txtAnastheisLogist
+            // panel6
             // 
-            this.txtAnastheisLogist.Location = new System.Drawing.Point(146, 70);
-            this.txtAnastheisLogist.Name = "txtAnastheisLogist";
-            this.txtAnastheisLogist.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtAnastheisLogist.Properties.NullText = "";
-            this.txtAnastheisLogist.Properties.View = this.gridView3;
-            this.txtAnastheisLogist.Size = new System.Drawing.Size(202, 20);
-            this.txtAnastheisLogist.TabIndex = 216;
+            this.panel6.Controls.Add(this.gridControl1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(4, 271);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(707, 142);
+            this.panel6.TabIndex = 228;
             // 
-            // gridView3
+            // panel7
             // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16});
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Controls.Add(this.ToDate);
+            this.panel7.Controls.Add(this.FromDate);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(3, 125);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(703, 35);
+            this.panel7.TabIndex = 100088;
             // 
-            // gridColumn13
+            // FromDate
             // 
-            this.gridColumn13.Caption = "DoctorID";
-            this.gridColumn13.FieldName = "DoctorID";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 0;
+            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FromDate.Location = new System.Drawing.Point(72, 7);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.Size = new System.Drawing.Size(105, 21);
+            this.FromDate.TabIndex = 205;
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
             // 
-            // gridColumn14
+            // ToDate
             // 
-            this.gridColumn14.Caption = "DoctorName";
-            this.gridColumn14.FieldName = "DoctorName";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
+            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ToDate.Location = new System.Drawing.Point(220, 7);
+            this.ToDate.Name = "ToDate";
+            this.ToDate.Size = new System.Drawing.Size(105, 21);
+            this.ToDate.TabIndex = 206;
+            this.ToDate.ValueChanged += new System.EventHandler(this.ToDate_ValueChanged);
             // 
-            // gridColumn15
+            // label14
             // 
-            this.gridColumn15.Caption = "AcademicDegree";
-            this.gridColumn15.FieldName = "AcademicDegree";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 2;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(25, 11);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 13);
+            this.label14.TabIndex = 205;
+            this.label14.Text = "FORM :";
             // 
-            // gridColumn16
+            // label15
             // 
-            this.gridColumn16.Caption = "Specialization";
-            this.gridColumn16.FieldName = "Specialization";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 3;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(187, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 13);
+            this.label15.TabIndex = 207;
+            this.label15.Text = "TO :";
             // 
             // Operation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 463);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -765,6 +876,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAnastheisLogist.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookSurgeonName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -774,8 +887,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAnastheisLogist.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -808,7 +922,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtOpName;
         private System.Windows.Forms.TextBox txtSecondAsst;
-        private System.Windows.Forms.TextBox txtFistAsst;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.GroupBox groupBox3;
         private Office2007Button.SpecialButton btnClose;
@@ -845,5 +958,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private System.Windows.Forms.Label lblPatientType;
+        private System.Windows.Forms.ComboBox txtFistAsst;
+        private Office2007Button.SpecialButton btnPrint;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker ToDate;
+        private System.Windows.Forms.DateTimePicker FromDate;
+        private System.Windows.Forms.Panel panel6;
     }
 }

@@ -274,6 +274,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridColumn108 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn111 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rdDischargReq = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
@@ -2467,6 +2468,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.rdDischargReq);
             this.panel4.Controls.Add(this.btnPrintView);
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Controls.Add(this.panel9);
@@ -2519,7 +2521,7 @@
             // 
             this.rdNotDischarge.AutoSize = true;
             this.rdNotDischarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdNotDischarge.Location = new System.Drawing.Point(252, 10);
+            this.rdNotDischarge.Location = new System.Drawing.Point(40, 11);
             this.rdNotDischarge.Name = "rdNotDischarge";
             this.rdNotDischarge.Size = new System.Drawing.Size(124, 19);
             this.rdNotDischarge.TabIndex = 0;
@@ -2532,7 +2534,7 @@
             // 
             this.rdDischarge.AutoSize = true;
             this.rdDischarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdDischarge.Location = new System.Drawing.Point(382, 11);
+            this.rdDischarge.Location = new System.Drawing.Point(170, 11);
             this.rdDischarge.Name = "rdDischarge";
             this.rdDischarge.Size = new System.Drawing.Size(90, 19);
             this.rdDischarge.TabIndex = 0;
@@ -2562,7 +2564,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(667, 13);
+            this.label5.Location = new System.Drawing.Point(657, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 100103;
@@ -2571,7 +2573,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(491, 13);
+            this.label4.Location = new System.Drawing.Point(469, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 100102;
@@ -2607,6 +2609,18 @@
             this.gridColumn111.Visible = true;
             this.gridColumn111.VisibleIndex = 9;
             this.gridColumn111.Width = 48;
+            // 
+            // rdDischargReq
+            // 
+            this.rdDischargReq.AutoSize = true;
+            this.rdDischargReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdDischargReq.Location = new System.Drawing.Point(264, 11);
+            this.rdDischargReq.Name = "rdDischargReq";
+            this.rdDischargReq.Size = new System.Drawing.Size(147, 19);
+            this.rdDischargReq.TabIndex = 100110;
+            this.rdDischargReq.TabStop = true;
+            this.rdDischargReq.Text = "Discharge Request";
+            this.rdDischargReq.UseVisualStyleBackColor = true;
             // 
             // NICUBusinessOffice
             // 
@@ -2951,6 +2965,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn108;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn111;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.RadioButton rdDischargReq;
 
 
     }

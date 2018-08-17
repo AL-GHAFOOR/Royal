@@ -32,7 +32,7 @@ namespace GHospital_Care.BAL.Manager
             if (aOperationScheduleGateway.UpdateOperationSchedule(operationSchedule) > 0)
             {
                 aMessageModel.MessageTitle = "Successfull";
-                aMessageModel.MessageTitle = "OT Setup information saved successfully.";
+                aMessageModel.MessageBody = "OT Setup information saved successfully.";
             }
             return aMessageModel;
         }
@@ -66,10 +66,10 @@ namespace GHospital_Care.BAL.Manager
             data = aOperationScheduleGateway.GenerateOTRef();
             return data;
         }
-        public DataTable GetOperationSchedule()
+        public DataTable GetOperationSchedule(DateTime FromDate, DateTime ToDate)
         {
             data = new DataTable();
-            data = aOperationScheduleGateway.GetOperationSchedule();
+            data = aOperationScheduleGateway.GetOperationSchedule(FromDate, ToDate);
             return data;
         }
 
