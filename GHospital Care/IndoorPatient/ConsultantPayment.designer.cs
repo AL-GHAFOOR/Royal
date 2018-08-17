@@ -326,8 +326,8 @@
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "PathologyName";
-            this.gridColumn7.FieldName = "PathologyName";
+            this.gridColumn7.Caption = "ConsultantName";
+            this.gridColumn7.FieldName = "DoctorName";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
@@ -363,6 +363,7 @@
             this.gridViewPatient.GridControl = this.gridControlPatient;
             this.gridViewPatient.Name = "gridViewPatient";
             this.gridViewPatient.OptionsView.ShowGroupPanel = false;
+            this.gridViewPatient.DoubleClick += new System.EventHandler(this.gridViewPatient_DoubleClick);
             // 
             // gridColumn2
             // 
@@ -410,7 +411,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(54, 297);
+            this.label19.Location = new System.Drawing.Point(53, 297);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(66, 13);
             this.label19.TabIndex = 100102;
@@ -547,9 +548,9 @@
             this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(53, 171);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 14);
+            this.label13.Size = new System.Drawing.Size(98, 14);
             this.label13.TabIndex = 100106;
-            this.label13.Text = "Address:";
+            this.label13.Text = "Specialization :";
             // 
             // txtAddress
             // 
@@ -596,6 +597,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(86, 34);
             this.simpleButton3.TabIndex = 100098;
             this.simpleButton3.Text = "Delete";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton4
             // 
@@ -607,6 +609,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(90, 34);
             this.simpleButton4.TabIndex = 100097;
             this.simpleButton4.Text = "Update";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // btnSave
             // 
@@ -780,8 +783,8 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "PathologyName";
-            this.gridColumn1.FieldName = "PathologyName";
+            this.gridColumn1.Caption = "ConsultantName";
+            this.gridColumn1.FieldName = "DoctorName";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
