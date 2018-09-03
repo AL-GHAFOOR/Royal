@@ -19,6 +19,9 @@ namespace GHospital_Care.UI
             InitializeComponent();
         }
 
+
+       
+
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             DataRow row = CartTable.NewRow();
@@ -52,8 +55,8 @@ namespace GHospital_Care.UI
             if (dataTable.Rows.Count > 0)
             {
                 searchLookUpNicuPatient.Properties.DataSource = dataTable;
-                searchLookUpNicuPatient.Properties.DisplayMember = "PatientName";
-                searchLookUpNicuPatient.Properties.ValueMember = "OPID";
+                searchLookUpNicuPatient.Properties.DisplayMember = "PatientId";
+                searchLookUpNicuPatient.Properties.ValueMember = "PatientId";
             }
         }
 
@@ -64,8 +67,8 @@ namespace GHospital_Care.UI
             if (dataTable.Rows.Count > 0)
             {
                 searchLookUpNicuPatient.Properties.DataSource = dataTable;
-                searchLookUpNicuPatient.Properties.DisplayMember = "MotherName";
-                searchLookUpNicuPatient.Properties.ValueMember = "RegNo";
+                searchLookUpNicuPatient.Properties.DisplayMember = "PatientId";
+                searchLookUpNicuPatient.Properties.ValueMember = "PatientId";
             }
 
         }
@@ -97,13 +100,14 @@ namespace GHospital_Care.UI
         private void MedicineIndent_Load(object sender, EventArgs e)
         {
             radioBtnIndoor.Checked = true;
-        }
+           }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             GetIndentNo();
             GetIpPatient();
-            DefaultClear();
+            DefaultClear(); 
+            LoadDatatable();
         
         }
 
@@ -136,6 +140,7 @@ namespace GHospital_Care.UI
 
         public void DefaultClear()
         {
+            searchLookUpNicuPatient.Properties.NullText = "";
             txtPatientName.Text = "";
             txtCabin.Text = "";
             txtAdmitDate.Text = "";
@@ -181,28 +186,38 @@ namespace GHospital_Care.UI
             aMedicineIndent.PatientId = PatientID;
             aMedicineIndent.DrugsDatatable = CartTable;
 
+
             MessageModel aMessageModel=new MessageModel();
-
+            
+            if (btnSave.Text == "Save")
+            {
             aMessageModel = new MedicineIndentManager().SaveMedicineIndent(aMedicineIndent);
-            MessageBox.Show(aMessageModel.MessageTitle, aMessageModel.MessageBody, MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-            btnRefresh_Click(sender,e);
-
-
-        }
+            MessageBox.Show(aMessageModel.MessageTitle, aMessageModel.MessageBody, MessageBoxButtons.OK,MessageBoxIcon.Information);
+            btnRefresh_Click(sender,e);       
+            }
+            else
+            {
+                aMessageModel = new MedicineIndentManager().UpdateMedicineIndent(aMedicineIndent);
+                MessageBox.Show(aMessageModel.MessageTitle, aMessageModel.MessageBody, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnRefresh_Click(sender, e);
+                btnSave.Text = "Save";
+            }
+           }
 
         private void radioBtnNicu_CheckedChanged(object sender, EventArgs e)
         {
             searchLookUpNicuPatient.Properties.DataSource = null;
             DefaultClear();
             GetNicuPatient();
+            btnRefresh_Click(sender,e);
         }
 
         private void radioBtnIndoor_CheckedChanged(object sender, EventArgs e)
         {
             searchLookUpNicuPatient.Properties.DataSource = null;
             DefaultClear();
-            GetIpPatient();
+            GetIpPatient(); 
+            btnRefresh_Click(sender, e);
         }
 
         private void txtQuantity_KeyDown(object sender, KeyEventArgs e)
@@ -221,7 +236,8 @@ namespace GHospital_Care.UI
 
         private void btnIndentView_Click(object sender, EventArgs e)
         {
-            ViewIndentMaster();}
+            ViewIndentMaster();
+        }
 
         private void FromDate_ValueChanged(object sender, EventArgs e)
         {
@@ -231,6 +247,42 @@ namespace GHospital_Care.UI
         private void ToDate_ValueChanged(object sender, EventArgs e)
         {
             ViewIndentMaster();
+        }
+
+        private void gridView3_DoubleClick(object sender, EventArgs e)
+        {
+            xtraTabPage1.Show();
+
+            searchLookUpNicuPatient.Properties.NullText = gridView3.GetFocusedRowCellValue("PatientID").ToString();
+            txtPatientName.Text = gridView3.GetFocusedRowCellValue("PatientName").ToString();
+            txtCabin.Text = gridView3.GetFocusedRowCellValue("BedName").ToString();
+            txtAdmitDate.Text = gridView3.GetFocusedRowCellValue("InputDate").ToString();
+            txtIndentNo.Text = gridView3.GetFocusedRowCellValue("IndentNo").ToString();
+            dateTimeIndentDate.Text = gridView3.GetFocusedRowCellValue("Date").ToString();
+            string Category = gridView3.GetFocusedRowCellValue("Category").ToString();
+            PatientID = gridView3.GetFocusedRowCellValue("PatientID").ToString();
+        if (Category == "Indoor")
+            {
+                radioBtnIndoor.Checked = true;}
+            if (Category == "NICU")
+            {
+                radioBtnNicu.Checked = true;
+            }
+            MedicineIndentManager IndentManager = new MedicineIndentManager();
+
+            DataTable dt = IndentManager.GetIndentDetails(txtIndentNo.Text);
+            CartTable.Rows.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow rows1 = CartTable.NewRow();
+                rows1["ProductCode"] = dt.Rows[i]["ProductCode"];
+                rows1["ProductName"] = dt.Rows[i]["ProductName"];
+                rows1["Qty"] = dt.Rows[i]["ProductQty"];
+                CartTable.Rows.Add(rows1);
+              }
+
+            DataGridCart.DataSource = CartTable;
+            btnSave.Text = "Update";
         }
 
     }

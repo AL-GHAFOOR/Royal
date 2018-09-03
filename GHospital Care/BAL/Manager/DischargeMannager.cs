@@ -103,6 +103,16 @@ namespace GHospital_Care.BAL.Manager
             return new DischargeGateway().PrintDischarge(PatientID);
         }
 
+
+        public DataTable PrintHospitalInflow(DateTime FromDate, DateTime ToDate)
+        {
+            return new DischargeGateway().HospitalInflow(FromDate, ToDate);
+        }
+
+        public DataTable PrintHospitalOutflow(DateTime FromDate, DateTime ToDate)
+        {
+            return new DischargeGateway().HospitalOutflow(FromDate, ToDate);
+        }
         public DataTable BedHistory(string PatientID)
         {
             return new DischargeGateway().BedHistory(PatientID);

@@ -380,6 +380,7 @@
     <Compile Include="DAL\Gateway\UserGateway.cs" />
     <Compile Include="DAL\Gatway\ConsultantCallGatWay.cs" />
     <Compile Include="DAL\Gatway\NicuAdmissionGatway.cs" />
+    <Compile Include="DAL\Model\Advice.cs" />
     <Compile Include="DAL\Model\Comission.cs" />
     <Compile Include="DAL\Model\ConsultantCall.cs" />
     <Compile Include="DAL\Model\DischargeRequestNICU.cs" />
@@ -438,6 +439,7 @@
     <Compile Include="DAL\Model\OutDoorBill.cs" />
     <Compile Include="DAL\Model\OutdoorPatient.cs" />
     <Compile Include="DAL\Model\Pathology.cs" />
+    <Compile Include="DAL\Model\PathologyMaster.cs" />
     <Compile Include="DAL\Model\Patient.cs" />
     <Compile Include="DAL\Model\PatientService.cs" />
     <Compile Include="DAL\Model\ReceivedAmount.cs" />
@@ -481,6 +483,7 @@
       <DependentUpon>SalarySheet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DGVPrinter.cs" />
+    <Compile Include="DischargeUI\DataManager\Conn.cs" />
     <Compile Include="DischargeUI\DischargeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -673,6 +676,18 @@
     <Compile Include="IndoorPatient\ComssionStauts.Designer.cs">
       <DependentUpon>ComssionStauts.cs</DependentUpon>
     </Compile>
+    <Compile Include="IndoorPatient\frmRcvPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndoorPatient\frmRcvPayment.Designer.cs">
+      <DependentUpon>frmRcvPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndoorPatient\HospitalRcvPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndoorPatient\HospitalRcvPayment.Designer.cs">
+      <DependentUpon>HospitalRcvPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="IndoorPatient\IndoorBilllDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -720,12 +735,6 @@
     </Compile>
     <Compile Include="IndoorPatient\IPDAdmissionBedHistory.Designer.cs">
       <DependentUpon>IPDAdmissionBedHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IndoorPatient\IPList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IndoorPatient\IPList.Designer.cs">
-      <DependentUpon>IPList.cs</DependentUpon>
     </Compile>
     <Compile Include="IndoorPatient\MedicalTreatment.cs">
       <SubType>Form</SubType>
@@ -817,6 +826,12 @@
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NICU\NICUAdmissionBedHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NICU\NICUAdmissionBedHistory.Designer.cs">
+      <DependentUpon>NICUAdmissionBedHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="NICU\PathologyStatus.cs">
       <SubType>Form</SubType>
@@ -1056,6 +1071,12 @@
     </Compile>
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Session\PathologyMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Session\PathologyMaster.Designer.cs">
+      <DependentUpon>PathologyMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\FollowupListMaster.cs">
       <SubType>Form</SubType>
@@ -1335,6 +1356,9 @@
       <DependentUpon>ComssionStauts.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="IndoorPatient\frmRcvPayment.resx">
+      <DependentUpon>frmRcvPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IndoorPatient\IndoorBilllDetails.resx">
       <DependentUpon>IndoorBilllDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -1361,10 +1385,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IndoorPatient\IPDAdmissionBedHistory.resx">
       <DependentUpon>IPDAdmissionBedHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IndoorPatient\IPList.resx">
-      <DependentUpon>IPList.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IndoorPatient\MedicalTreatment.resx">
       <DependentUpon>MedicalTreatment.cs</DependentUpon>
@@ -1423,6 +1443,9 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NICU\NICUAdmissionBedHistory.resx">
+      <DependentUpon>NICUAdmissionBedHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NICU\PathologyStatus.resx">
       <DependentUpon>PathologyStatus.cs</DependentUpon>
@@ -1564,12 +1587,16 @@
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rdlcDischargeSummeryNICU.rdlc" />
+    <EmbeddedResource Include="Report\rdlcNICUPatientFinalBilling.rdlc" />
     <EmbeddedResource Include="Report\rdlcIndoorPatientFinalBilling.rdlc" />
     <EmbeddedResource Include="Report\rdlcDischargeSummery.rdlc" />
+    <EmbeddedResource Include="Report\rptHospitalRvcPayment.rdlc" />
     <EmbeddedResource Include="Report\rdlcOperationSchedule.rdlc" />
     <EmbeddedResource Include="Report\rptBedList.rdlc" />
     <EmbeddedResource Include="Report\rptComissionStatus.rdlc" />
     <EmbeddedResource Include="Report\rptCabinList.rdlc" />
+    <EmbeddedResource Include="Report\rptConsultantPayment.rdlc" />
+    <EmbeddedResource Include="Report\rptConsultantStatus.rdlc" />
     <EmbeddedResource Include="Report\rptServiceList.rdlc" />
     <EmbeddedResource Include="Report\rptPathologyPayment.rdlc" />
     <EmbeddedResource Include="Report\rptDueBillStatus.rdlc" />
@@ -1584,6 +1611,9 @@
     <EmbeddedResource Include="Report\rptIndoorPatientBill.rdlc" />
     <EmbeddedResource Include="Report\rptOutdoorPatientBill.rdlc" />
     <EmbeddedResource Include="Report\rptMoneyReceipt.rdlc" />
+    <EmbeddedResource Include="Session\PathologyMaster.resx">
+      <DependentUpon>PathologyMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Settings\FollowupListMaster.resx">
       <DependentUpon>FollowupListMaster.cs</DependentUpon>
     </EmbeddedResource>

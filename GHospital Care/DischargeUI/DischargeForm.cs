@@ -810,5 +810,37 @@ namespace GHospital_Care.DischargeUI
             }
         }
 
+        private void txtDoose_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRoute.Focus();
+            }
+        }
+
+        private void txtRoute_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtRealtedToMeal.Focus();
+            }
+        }
+
+        private void txtRealtedToMeal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtDescription.Focus();
+            }
+        }
+
+        private void txtDescription_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                simpleButton1_Click(sender,e);
+            }
+        }
+
     }
 }

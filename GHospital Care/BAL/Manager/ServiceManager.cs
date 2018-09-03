@@ -65,6 +65,29 @@ namespace GHospital_Care.BAL.Manager
             }
             return messageModel;
         }
+
+        public MessageModel SavePathology(PathologyMaster Pathology)
+        {
+            int saveService = new ServiceGateway().PathologySave(Pathology);
+            if (saveService > 0)
+            {
+                messageModel.MessageBody = "save successfully.";
+                messageModel.MessageTitle = "Successfull";
+            }
+            return messageModel;
+        }
+
+
+        public MessageModel UpdatePathology(DAL.Model.PathologyMaster Pathology)
+        {
+            int UpdatePathology = new ServiceGateway().PathologyUpdate(Pathology);
+            if (UpdatePathology > 0)
+            {
+                messageModel.MessageBody = "Update successfully.";
+                messageModel.MessageTitle = "Successfull";
+            }
+            return messageModel;}
+
         public MessageModel UpdateService(Service service)
         {
             int saveService = new ServiceGateway().ServiceUpdate(service);
@@ -92,6 +115,19 @@ namespace GHospital_Care.BAL.Manager
         {
             return new ServiceGateway().GetIpdAllSerialNo();
         }
+
+
+        public DataTable GetPathology()
+        {
+            return new ServiceGateway().GetPathology();
+        }
+
+
+        public DataTable GeneratePatholgyId()
+        {
+            return new ServiceGateway().GetPathologyID();
+        }
+
         public DataTable GetPatientServiceBill(string Opid, string status, string Service, DateTime IssueDate)
         {
             DataTable dt = new ServiceGateway().GetAllPatientserviceBill(Opid, status, Service, IssueDate.Date);

@@ -97,7 +97,7 @@ namespace GHospital_Care.Settings
                         master.SubItems.Add(new FollowUpSubItem
                         {
                             ItemId = Convert.ToInt16(followupItem),
-                            Id = Convert.ToInt16(subItem)
+                             Id = subItem.ToString()
 
                         });
                     }

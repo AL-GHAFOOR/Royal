@@ -31,9 +31,9 @@ namespace GHospital_Care.DAL.Model
         public String RoleName { get; set; }
 
 
-       public UserMaster  AllUser { get; set; }
-       public  List<UserMaster> MenuPermission { get; set; } 
-       public  List<UserMaster> UserRoleList { get; set; }
+        public UserMaster  AllUser { get; set; }
+        public  List<UserMaster> MenuPermission { get; set; } 
+        public  List<UserMaster> UserRoleList { get; set; }
         public string FormName { get; set; }
         public string FormCaption { get; set; }
     }

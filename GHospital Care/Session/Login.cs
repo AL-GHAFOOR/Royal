@@ -92,7 +92,8 @@ namespace GHospital_Care.Session
               
                 aUserMaster.AllUser = new UserMaster();
                 aUserMaster.UserId = txtLoginName.Text;
-                aUserMaster.Password = txtPassword.Text;DataTable userData = new UserManager().LoadUser(aUserMaster);
+                aUserMaster.Password = txtPassword.Text;
+                DataTable userData = new UserManager().LoadUser(aUserMaster);
                 if (userData != null && userData.Rows.Count > 0)
                 {
                     aUserMaster.ID = userData.Rows[0]["Id"].ToString();

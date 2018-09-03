@@ -36,10 +36,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.picBoxAddRefferedBy = new System.Windows.Forms.PictureBox();
             this.chkCabin = new System.Windows.Forms.CheckBox();
-            this.dateTimeTime = new System.Windows.Forms.DateTimePicker();
+            this.AdmissionTime = new System.Windows.Forms.DateTimePicker();
             this.label42 = new System.Windows.Forms.Label();
             this.txtPrimaryDoctor = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.AdmissionDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRegFf = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -58,6 +58,8 @@
             this.cmbDepartment = new System.Windows.Forms.TextBox();
             this.txtPatientCondition = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbArea = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtGurdian = new System.Windows.Forms.TextBox();
@@ -207,7 +209,7 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(7, 76);
+            this.xtraTabControl1.Location = new System.Drawing.Point(7, 73);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.Size = new System.Drawing.Size(840, 441);
@@ -215,6 +217,7 @@
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2});
+            this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
             // 
             // xtraTabPage1
             // 
@@ -228,10 +231,10 @@
             // 
             this.groupBox2.Controls.Add(this.picBoxAddRefferedBy);
             this.groupBox2.Controls.Add(this.chkCabin);
-            this.groupBox2.Controls.Add(this.dateTimeTime);
+            this.groupBox2.Controls.Add(this.AdmissionTime);
             this.groupBox2.Controls.Add(this.label42);
             this.groupBox2.Controls.Add(this.txtPrimaryDoctor);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.AdmissionDate);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtRegFf);
             this.groupBox2.Controls.Add(this.label25);
@@ -279,16 +282,16 @@
             this.chkCabin.Visible = false;
             this.chkCabin.CheckedChanged += new System.EventHandler(this.chkCabin_CheckedChanged);
             // 
-            // dateTimeTime
+            // AdmissionTime
             // 
-            this.dateTimeTime.CustomFormat = "dd/MM/yyyy";
-            this.dateTimeTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimeTime.Location = new System.Drawing.Point(413, 100);
-            this.dateTimeTime.Name = "dateTimeTime";
-            this.dateTimeTime.ShowUpDown = true;
-            this.dateTimeTime.Size = new System.Drawing.Size(164, 21);
-            this.dateTimeTime.TabIndex = 100091;
-            this.dateTimeTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimeTime_KeyDown);
+            this.AdmissionTime.CustomFormat = "dd/MM/yyyy";
+            this.AdmissionTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.AdmissionTime.Location = new System.Drawing.Point(413, 100);
+            this.AdmissionTime.Name = "AdmissionTime";
+            this.AdmissionTime.ShowUpDown = true;
+            this.AdmissionTime.Size = new System.Drawing.Size(164, 21);
+            this.AdmissionTime.TabIndex = 100091;
+            this.AdmissionTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimeTime_KeyDown);
             // 
             // label42
             // 
@@ -317,15 +320,15 @@
             this.txtPrimaryDoctor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbDepartment_KeyDown);
             this.txtPrimaryDoctor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDepartment_KeyPress);
             // 
-            // dateTimePicker1
+            // AdmissionDate
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(413, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(164, 21);
-            this.dateTimePicker1.TabIndex = 100091;
-            this.dateTimePicker1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePicker1_KeyDown);
+            this.AdmissionDate.CustomFormat = "dd/MM/yyyy";
+            this.AdmissionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.AdmissionDate.Location = new System.Drawing.Point(413, 71);
+            this.AdmissionDate.Name = "AdmissionDate";
+            this.AdmissionDate.Size = new System.Drawing.Size(164, 21);
+            this.AdmissionDate.TabIndex = 100091;
+            this.AdmissionDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePicker1_KeyDown);
             // 
             // label2
             // 
@@ -541,6 +544,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbArea);
+            this.groupBox1.Controls.Add(this.label41);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtGurdian);
@@ -586,6 +591,32 @@
             this.groupBox1.TabIndex = 100089;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Basic Information";
+            // 
+            // cmbArea
+            // 
+            this.cmbArea.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cmbArea.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.cmbArea.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbArea.Location = new System.Drawing.Point(126, 128);
+            this.cmbArea.MaxLength = 250;
+            this.cmbArea.Name = "cmbArea";
+            this.cmbArea.Size = new System.Drawing.Size(255, 21);
+            this.cmbArea.TabIndex = 100098;
+            this.cmbArea.TabStop = false;
+            this.cmbArea.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbArea_KeyDown);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.Transparent;
+            this.label41.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.Black;
+            this.label41.Location = new System.Drawing.Point(86, 132);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(34, 13);
+            this.label41.TabIndex = 100099;
+            this.label41.Tag = "Father ";
+            this.label41.Text = "Area";
             // 
             // checkBox2
             // 
@@ -796,7 +827,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(479, 144);
+            this.label20.Location = new System.Drawing.Point(479, 139);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(48, 13);
             this.label20.TabIndex = 100094;
@@ -906,7 +937,7 @@
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(70, 135);
+            this.label23.Location = new System.Drawing.Point(70, 153);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(53, 13);
             this.label23.TabIndex = 100091;
@@ -916,12 +947,12 @@
             // 
             this.txtAddress.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtAddress.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(126, 132);
+            this.txtAddress.Location = new System.Drawing.Point(126, 153);
             this.txtAddress.MaxLength = 500;
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAddress.Size = new System.Drawing.Size(255, 54);
+            this.txtAddress.Size = new System.Drawing.Size(255, 36);
             this.txtAddress.TabIndex = 100085;
             this.txtAddress.TabStop = false;
             this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
@@ -932,7 +963,7 @@
             this.txtMother.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtMother.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMother.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMother.Location = new System.Drawing.Point(126, 107);
+            this.txtMother.Location = new System.Drawing.Point(126, 104);
             this.txtMother.MaxLength = 250;
             this.txtMother.Name = "txtMother";
             this.txtMother.Size = new System.Drawing.Size(255, 21);
@@ -946,7 +977,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(40, 110);
+            this.label11.Location = new System.Drawing.Point(40, 107);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 13);
             this.label11.TabIndex = 100080;
@@ -1126,7 +1157,7 @@
             this.xtraTabPage2.Controls.Add(this.label7);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Size = new System.Drawing.Size(834, 413);
-            this.xtraTabPage2.Text = "View";
+            this.xtraTabPage2.Text = "View Patient";
             // 
             // IndoorPatientRegGridControl
             // 
@@ -1856,7 +1887,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker AdmissionDate;
         internal System.Windows.Forms.Label label2;
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.TextBox txtReg;
@@ -1876,33 +1907,7 @@
         internal System.Windows.Forms.Label label36;
         internal System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox cmbDepartment;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkCabin;
-        internal System.Windows.Forms.TextBox txtPhone;
-        internal System.Windows.Forms.TextBox txtGurdian;
-        private System.Windows.Forms.ComboBox cmbReligion;
-        internal System.Windows.Forms.Label label17;
-        internal System.Windows.Forms.Label label16;
-        internal System.Windows.Forms.TextBox txtAge;
-        internal System.Windows.Forms.Label label20;
-        internal System.Windows.Forms.Label label18;
-        internal System.Windows.Forms.Label label8;
-        internal System.Windows.Forms.Label label12;
-        internal System.Windows.Forms.TextBox txtNationality;
-        internal System.Windows.Forms.TextBox txtRelation;
-        internal System.Windows.Forms.Label label14;
-        internal System.Windows.Forms.Label label13;
-        internal System.Windows.Forms.Label label15;
-        internal System.Windows.Forms.Label label22;
-        internal System.Windows.Forms.Label label23;
-        internal System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtMother;
-        internal System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtFatherName;
-        internal System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtWeight;
-        private System.Windows.Forms.TextBox txtName;
-        internal System.Windows.Forms.Label label24;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraGrid.GridControl IndoorPatientRegGridControl;
@@ -1931,32 +1936,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cmbMaritalStatus;
-        private System.Windows.Forms.TextBox txtOpid;
-        internal System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPatientCondition;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker ToDate;
         private System.Windows.Forms.DateTimePicker FromDate;
-        internal System.Windows.Forms.Label label29;
-        internal System.Windows.Forms.Label label32;
-        internal System.Windows.Forms.Label label31;
-        internal System.Windows.Forms.Label label40;
-        internal System.Windows.Forms.Label label39;
-        internal System.Windows.Forms.Label label38;
-        internal System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ComboBox cmbGender;
-        private System.Windows.Forms.ComboBox cmbbloodGroup;
-        private System.Windows.Forms.DateTimePicker dateTimeTime;
+        private System.Windows.Forms.DateTimePicker AdmissionTime;
         internal System.Windows.Forms.Label label42;
         private System.Windows.Forms.ComboBox cmbRefferBy;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.PictureBox picBoxAddRefferedBy;
         public DevExpress.XtraEditors.SimpleButton btnSave;
         public DevExpress.XtraEditors.SimpleButton btnDelete;
@@ -1969,6 +1960,48 @@
         private System.Windows.Forms.PictureBox picBoxClose;
         private System.Windows.Forms.TextBox txtPrimaryDoctor;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        internal System.Windows.Forms.TextBox txtGurdian;
+        internal System.Windows.Forms.TextBox txtRelation;
+        private System.Windows.Forms.TextBox txtName;
+        internal System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.ComboBox cmbMaritalStatus;
+        private System.Windows.Forms.ComboBox cmbbloodGroup;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.ComboBox cmbReligion;
+        internal System.Windows.Forms.Label label17;
+        internal System.Windows.Forms.Label label16;
+        internal System.Windows.Forms.TextBox txtAge;
+        internal System.Windows.Forms.Label label20;
+        internal System.Windows.Forms.Label label18;
+        internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.Label label12;
+        internal System.Windows.Forms.TextBox txtNationality;
+        internal System.Windows.Forms.Label label14;
+        internal System.Windows.Forms.Label label13;
+        internal System.Windows.Forms.Label label15;
+        internal System.Windows.Forms.Label label22;
+        internal System.Windows.Forms.Label label23;
+        internal System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtMother;
+        internal System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtFatherName;
+        internal System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtWeight;
+        private System.Windows.Forms.TextBox txtOpid;
+        internal System.Windows.Forms.Label label32;
+        internal System.Windows.Forms.Label label31;
+        internal System.Windows.Forms.Label label40;
+        internal System.Windows.Forms.Label label39;
+        internal System.Windows.Forms.Label label38;
+        internal System.Windows.Forms.Label label33;
+        internal System.Windows.Forms.Label label29;
+        internal System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox cmbArea;
+        internal System.Windows.Forms.Label label41;
 
 
 

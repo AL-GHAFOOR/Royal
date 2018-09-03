@@ -44,10 +44,24 @@ namespace GHospital_Care.BAL.Manager
             return dt;
         }
 
+        public DataTable GetAllBedsNICU()
+        {
+            aIpdGateway = new IpdGateway();
+            DataTable dt = aIpdGateway.GetAllBedNICU();
+            return dt;
+        }
+
         public DataTable GetAllCabin()
         {
             return new IpdGateway().GetAllCabin();
         }
+
+        public DataTable GetAllCabinUpdate()
+        {
+            return new IpdGateway().GetAllCabinUpdate();
+        }
+
+
 
         public DataTable GetAllWard()
         {
@@ -56,6 +70,11 @@ namespace GHospital_Care.BAL.Manager
         public DataTable GetBeadCabinHistory(String PID)
         {
             return new IpdGateway().GetBedCabinHistory(PID);
+        }
+
+        public DataTable GetBeadCabinHistoryNICU(String PID)
+        {
+            return new IpdGateway().GetBedCabinHistoryNICU(PID);
         }
         public DataTable GetAllDischargeIP()
         {

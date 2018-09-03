@@ -82,7 +82,7 @@ namespace GHospital_Care.BAL.Manager
             //aNicuDischargeBill.TotalBedCharge = dt.Rows[0]["cabin_Total"].ToString();
             //aNicuDischargeBill.TConsultBill = dt.Rows[0]["Con_Total"].ToString();
             //aNicuDischargeBill.TotalBill = Convert.ToDouble(dt.Rows[0]["TotalBill"]);
-            //aNicuDischargeBill.AdvancedPayble = Convert.ToDouble(dt.Rows[0]["Advance"]);
+            aNicuDischargeBill.AdvancedPayble = Convert.ToDouble(dt.Rows[0]["Advance"]);
             return aNicuDischargeBill;
         }
 

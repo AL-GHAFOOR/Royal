@@ -100,7 +100,7 @@
             this.txtCurrentBed = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtDishcarge = new System.Windows.Forms.TextBox();
             this.txtTodayAdmit = new System.Windows.Forms.TextBox();
             this.txtTotalPatient = new System.Windows.Forms.TextBox();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
@@ -140,6 +140,8 @@
             this.lblFree = new System.Windows.Forms.Label();
             this.rdOccupied = new System.Windows.Forms.RadioButton();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -295,7 +297,8 @@
             this.gridColumn14,
             this.gridColumn15,
             this.gridColumn41,
-            this.gridColumn43});
+            this.gridColumn43,
+            this.gridColumn46});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -321,7 +324,7 @@
             this.gridColumn3.FieldName = "BedName";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 102;
             // 
             // gridColumn4
@@ -337,7 +340,7 @@
             this.gridColumn5.FieldName = "OPID";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 0;
+            this.gridColumn5.VisibleIndex = 1;
             this.gridColumn5.Width = 84;
             // 
             // gridColumn6
@@ -346,7 +349,7 @@
             this.gridColumn6.FieldName = "InputDate";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.VisibleIndex = 3;
             this.gridColumn6.Width = 84;
             // 
             // gridColumn7
@@ -376,7 +379,7 @@
             this.gridColumn10.FieldName = "Mobile";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 4;
+            this.gridColumn10.VisibleIndex = 5;
             this.gridColumn10.Width = 105;
             // 
             // gridColumn11
@@ -412,7 +415,7 @@
             this.gridColumn15.FieldName = "PatientName";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
+            this.gridColumn15.VisibleIndex = 4;
             this.gridColumn15.Width = 158;
             // 
             // gridColumn41
@@ -420,7 +423,7 @@
             this.gridColumn41.FieldName = "Rate";
             this.gridColumn41.Name = "gridColumn41";
             this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 5;
+            this.gridColumn41.VisibleIndex = 6;
             // 
             // gridColumn43
             // 
@@ -803,7 +806,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.simpleButton1);
-            this.panel5.Controls.Add(this.textBox8);
+            this.panel5.Controls.Add(this.txtDishcarge);
             this.panel5.Controls.Add(this.txtTodayAdmit);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.txtTotalPatient);
@@ -830,12 +833,12 @@
             this.simpleButton1.TabIndex = 100113;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // textBox8
+            // txtDishcarge
             // 
-            this.textBox8.Location = new System.Drawing.Point(369, 9);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(47, 20);
-            this.textBox8.TabIndex = 100112;
+            this.txtDishcarge.Location = new System.Drawing.Point(369, 9);
+            this.txtDishcarge.Name = "txtDishcarge";
+            this.txtDishcarge.Size = new System.Drawing.Size(47, 20);
+            this.txtDishcarge.TabIndex = 100112;
             // 
             // txtTodayAdmit
             // 
@@ -992,7 +995,8 @@
             this.gridColumn29,
             this.gridColumn30,
             this.gridColumn31,
-            this.gridColumn33});
+            this.gridColumn33,
+            this.gridColumn47});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
@@ -1074,7 +1078,7 @@
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Visible = true;
             this.gridColumn31.VisibleIndex = 0;
-            this.gridColumn31.Width = 167;
+            this.gridColumn31.Width = 88;
             // 
             // gridColumn33
             // 
@@ -1082,8 +1086,8 @@
             this.gridColumn33.FieldName = "Charge";
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 1;
-            this.gridColumn33.Width = 100;
+            this.gridColumn33.VisibleIndex = 2;
+            this.gridColumn33.Width = 70;
             // 
             // panel9
             // 
@@ -1226,6 +1230,23 @@
             this.gridColumn32.VisibleIndex = 2;
             this.gridColumn32.Width = 90;
             // 
+            // gridColumn46
+            // 
+            this.gridColumn46.Caption = "Level";
+            this.gridColumn46.FieldName = "FloorName";
+            this.gridColumn46.Name = "gridColumn46";
+            this.gridColumn46.Visible = true;
+            this.gridColumn46.VisibleIndex = 0;
+            // 
+            // gridColumn47
+            // 
+            this.gridColumn47.Caption = "Category";
+            this.gridColumn47.FieldName = "CategoryName";
+            this.gridColumn47.Name = "gridColumn47";
+            this.gridColumn47.Visible = true;
+            this.gridColumn47.VisibleIndex = 1;
+            this.gridColumn47.Width = 67;
+            // 
             // IPDAdmissionBedHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1295,7 +1316,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtDishcarge;
         private System.Windows.Forms.TextBox txtTodayAdmit;
         private System.Windows.Forms.TextBox txtTotalPatient;
         private System.Windows.Forms.TextBox txtTotal;
@@ -1376,6 +1397,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel8;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
 
 
     }

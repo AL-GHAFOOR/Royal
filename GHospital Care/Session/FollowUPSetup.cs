@@ -27,21 +27,21 @@ namespace GHospital_Care.Session
                 txtRate.Text ="0";
                FollowUPMaster FollowUP = new FollowUPMaster();
                FollowUP.Description = Convert.ToString(txtDescription.Text);
+                FollowUP.ID = Convert.ToInt32(txtID.Text);
                 FollowUP.Rate = Convert.ToDouble(txtRate.Text);
                 FollowUP.DepartmentId = cmbDeparment.SelectedValue.ToString();
                 FollowUP.FollowUpItemName = txtName.Text;
-                var subItems = listOfSubItem.Items;
-                FollowUP.ID = Convert.ToInt16(txtID.Text);
+                var subItems = listOfSubItem.Items;FollowUP.ID = Convert.ToInt16(txtID.Text);
                 FollowUP.SubItems=new List<FollowUpSubItem>();
                 for (int i = 0; i < subItems.Count; i++)
                 {
                     
                     FollowUpSubItem item=new FollowUpSubItem();
-                    item.ItemId = i;
+                    item.ItemId = Convert.ToInt32(txtID.Text);
+                    item.Id = subItems[i].SubItems[1].Text;
                     item.SubItemName = subItems[i].SubItems[2].Text;
                     FollowUP.SubItems.Add(item);
                 }
-
                 MessageModel messageModel = new FollowUpManager().SaveService(FollowUP);
                 MessageBox.Show(messageModel.MessageBody, messageModel.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SetNew();
@@ -60,15 +60,14 @@ namespace GHospital_Care.Session
             FollowUP.Rate = Convert.ToDouble(txtRate.Text);
             FollowUP.DepartmentId = cmbDeparment.SelectedValue.ToString();
             FollowUP.FollowUpItemName = txtName.Text;
-           var subItems = listOfSubItem.Items;
+            var subItems = listOfSubItem.Items;
             FollowUP.ID = Convert.ToInt16(txtID.Text);
             FollowUP.SubItems = new List<FollowUpSubItem>();
 
             for (int i = 0; i < subItems.Count; i++)
             {
-
                 FollowUpSubItem item = new FollowUpSubItem();
-                item.ItemId = i;
+                item.ItemId = Convert.ToInt32(txtID.Text);item.Id = subItems[i].SubItems[1].Text;
                 item.SubItemName = subItems[i].SubItems[2].Text;
                 FollowUP.SubItems.Add(item);
             }
@@ -86,7 +85,7 @@ namespace GHospital_Care.Session
             listOfSubItem.Items.Clear();
             GenerateID();
             LoadData();
-
+            getItemID(txtID.Text);
             txtName.Focus();
 
             btnSave.Enabled = true;
@@ -192,31 +191,47 @@ namespace GHospital_Care.Session
         public void GetSubItems(int ItemId)
         {
             var subItem =new FollowUpManager().GetALLFollowUpWithSubItems().FirstOrDefault(a => a.ID == ItemId);
-            if (subItem!=null)
+            if (subItem != null)
             {
                 if (subItem.SubItems.Count > 0)
                 {
-                   
-
                     foreach (FollowUpSubItem followUpSubItem in subItem.SubItems)
                     {
                         ListViewItem lvi = new ListViewItem();
-                  
+
                         lvi.SubItems.Add(followUpSubItem.Id.ToString());
                         lvi.SubItems.Add(followUpSubItem.SubItemName);
                         lvi.SubItems.Add(followUpSubItem.ItemId.ToString());
                         listOfSubItem.Items.Add(lvi);
                     }
-                  }
-            
+                }
             }
-          
-          
         }
 
+        private void getSubID()
+        {
+            DataTable dt = new FollowUpManager().GetSubItemID();
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                ID = dt.Rows[0][0].ToString();
+            }
+        }
+
+
+        private void getItemID(string ID)
+        {
+            DataTable dt = new FollowUpManager().GetMasterItemID();
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                ID = dt.Rows[0][0].ToString();
+            }
+        }
+        private string ID = "";
         private void FollowUPSetup_Load(object sender, EventArgs e)
         {
             GetDeparment();
+            getItemID(txtID.Text);
+            getSubID();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -226,13 +241,14 @@ namespace GHospital_Care.Session
                 if (txtSubItem.Text!=String.Empty)
                 {
                     ListViewItem lvi = new ListViewItem();
-                    lvi.SubItems.Add("");
+                    lvi.SubItems.Add(ID);
                     lvi.SubItems.Add(txtSubItem.Text);
                     lvi.SubItems.Add("");
                     listOfSubItem.Items.Add(lvi);
                     txtSubItem.Text = String.Empty;
-               
-                    
+                    ID = (Convert.ToInt32(ID) + 1).ToString();
+
+
                 }
             }
             catch (Exception)

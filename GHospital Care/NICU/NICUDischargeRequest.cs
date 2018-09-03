@@ -738,10 +738,10 @@ namespace GHospital_Care.NICU
             {
                 new ReportDataSource("DisChargeSummery",DisChargeSummery),
                 new ReportDataSource("ConsultSrviceBill",ConsultSrviceBill),
-                 new ReportDataSource("DisChargeSummery_MedicineTakeInHopital",DisChargeSummery_MedicineTakeInHopital),
-                  new ReportDataSource("DisChargeSummery_Pathology",DisChargeSummery_Pathology),
-                   new ReportDataSource("DisChargeSummery_Treatment",DisChargeSummery_Treatment),
-                   new ReportDataSource("DisChargeSummery_Treatment",DisChargeSummery_Treatment),
+                new ReportDataSource("DisChargeSummery_MedicineTakeInHopital",DisChargeSummery_MedicineTakeInHopital),
+                new ReportDataSource("DisChargeSummery_Pathology",DisChargeSummery_Pathology),
+                new ReportDataSource("DisChargeSummery_Treatment",DisChargeSummery_Treatment),
+                new ReportDataSource("DisChargeSummery_Treatment",DisChargeSummery_Treatment),
                   
             };
             model.ReportPath = "GHospital_Care.Report.rdlcDischargeSummery.rdlc";
@@ -759,8 +759,8 @@ namespace GHospital_Care.NICU
             };
             var opid = gridViewDischarge.GetFocusedRowCellValue("OPID").ToString();
 
-            var DisChargeSummery = new IpdGateway().DisChargeSummeryNICU(opid);var ConsultSrviceBill = new IpdGateway().DisChargeSummery_ConsultanName(opid);
-
+            var DisChargeSummery = new IpdGateway().DisChargeSummeryNICU(opid);
+            var ConsultSrviceBill = new IpdGateway().DisChargeSummery_ConsultanName(opid);
             var DisChargeSummery_MedicineTakeInHopital = new IpdGateway().DisChargeSummery_MedicineTakeInHopitalNICU(opid);
             var DisChargeSummery_Pathology = new IpdGateway().DisChargeSummery_Pathology(opid);
             var DisChargeSummery_Treatment = new IpdGateway().DisChargeSummery_TreatmentNICU(opid);

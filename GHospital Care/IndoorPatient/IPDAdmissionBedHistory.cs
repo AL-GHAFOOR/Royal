@@ -49,7 +49,7 @@ namespace GHospital_Care.IndoorPatient
         }
         private void GetIpInfo()
         {
-            DataTable dt = new BedHistoryManager().GetIpInfo(FromDate.Value, ToDate.Value,"Running");
+            DataTable dt = new BedHistoryManager().GetIpDpatientList(FromDate.Value, ToDate.Value);
             gridControl1.DataSource = dt;
             CountPatient();
         }
@@ -66,9 +66,11 @@ namespace GHospital_Care.IndoorPatient
         {
             DataTable dt = new BedHistoryManager().CountIP(FromDate.Value, ToDate.Value);
             DataTable dt1 = new BedHistoryManager().CountIP(System.DateTime.Today, System.DateTime.Today);
+            DataTable dt2 = new BedHistoryManager().CountIPDischarge(System.DateTime.Today, System.DateTime.Today);
 
             txtTotalPatient.Text = dt.Rows[0][0].ToString();
             txtTodayAdmit.Text = dt1.Rows[0][0].ToString();
+            txtDishcarge.Text = dt2.Rows[0][0].ToString();
             //txtReg.Text = dt.Rows[0][0].ToString();
         }
 
@@ -96,6 +98,7 @@ namespace GHospital_Care.IndoorPatient
         private void IPDAdmissionBedHistory_Load(object sender, EventArgs e)
         {
             cmbWardorCabin.SelectedIndex = 0;
+            rdFree.Checked = true;
         }
 
         private void gridControl2_Click(object sender, EventArgs e)

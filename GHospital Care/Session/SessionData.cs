@@ -4,8 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+using System.Text;using System.Windows.Forms;
 using GHospital_Care.DAL.Gateway;
 using GHospital_Care.DAL.Model;
 

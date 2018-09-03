@@ -49,6 +49,14 @@ namespace GHospital_Care.BAL.Manager
            return dataTable;
        }
 
+
+       public DataTable GetIndentDetails(string Indent)
+       {
+           DataTable dataTable = new DataTable();
+           dataTable = new MedicineIndentGateway().GetIndentDetails(Indent);
+           return dataTable;
+       }
+
        public MessageModel SaveMedicineIndent(MedicineIndent aMedicineIndent)
        {
            int rowAffect = 0;
@@ -64,6 +72,30 @@ namespace GHospital_Care.BAL.Manager
            {
                aMessageModel.MessageTitle = "Successfull";
                aMessageModel.MessageBody = "Saved Successfully.";
+           }
+           return aMessageModel;
+
+       }
+
+       public MessageModel UpdateMedicineIndent(MedicineIndent aMedicineIndent)
+       {
+           int rowAffect = 0;
+           int rowAffect2 = 0;
+           MessageModel aMessageModel = new MessageModel();
+
+           rowAffect = new MedicineIndentGateway().UpdateMedicineIndent(aMedicineIndent);
+           if (rowAffect > 0)
+           {
+               if (rowAffect>0)
+               {
+                   rowAffect = new MedicineIndentGateway().DeleteIndentDetails(aMedicineIndent);
+               }
+               rowAffect2 = new MedicineIndentGateway().SaveMedicineIndentDetails(aMedicineIndent);
+           }
+           if (rowAffect2 > 0)
+           {
+               aMessageModel.MessageTitle = "Successfull";
+               aMessageModel.MessageBody = "Update Successfully.";
            }
            return aMessageModel;
 

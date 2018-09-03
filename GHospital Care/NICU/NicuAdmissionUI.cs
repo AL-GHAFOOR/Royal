@@ -25,6 +25,14 @@ namespace GHospital_Care.UI
             NicuGridControl.DataSource = new NicuAdmissionManager().GetNicuPatient(FromDate.Value, ToDate.Value);
         }
 
+        DataTable data = new DataTable();
+        public void GetRefferedInfo()
+        {
+            data = new RefferedInfoManager().PopulateGridView();
+            txtRefferedInfo.DataSource = data;
+            txtRefferedInfo.DisplayMember = "Name";
+            txtRefferedInfo.ValueMember = "Id";
+         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -53,7 +61,7 @@ namespace GHospital_Care.UI
             aNicuAddmission.FatherOccupation = txtFathersOccupation.Text;
             aNicuAddmission.MotherOccupation = txtMothersOccupation.Text;
             aNicuAddmission.Address = txtAddress.Text;
-            aNicuAddmission.RefferedInfo = txtRefferedInfo.Text;
+            aNicuAddmission.RefferedInfo = txtRefferedInfo.SelectedValue.ToString();
             aNicuAddmission.Remarks = txtRemarks.Text;
             aNicuAddmission.ComplaintsOne = txtComplaintsOne.Text;
             aNicuAddmission.ComplaintsTwo = txtComplaintsTwo.Text;
@@ -154,13 +162,11 @@ namespace GHospital_Care.UI
             }
             //New Added start 
             Service aService = new Service();
-            aService.NicuRegNo = txtRegNo.Text;
-            aService.ServiceId = "Serv-02";
-
+            aService.OPID = txtRegNo.Text;
+            aService.ServiceId = "N-Serv-02";
 
             aService.Rate = Convert.ToDouble(txtAdmissionFee.Text);
             aService.Total = Convert.ToDouble(txtAdmissionFee.Text);
-
 
             aService.Qty = 1;
             aService.IssueDate = dateAdmitDate.Value;
@@ -340,6 +346,7 @@ namespace GHospital_Care.UI
             GetNicuRegId();
             GetNicuPatient();
             GetNicuBed();
+            GetRefferedInfo();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -441,7 +448,7 @@ namespace GHospital_Care.UI
             txtMothersOccupation.Text = NicuGridView.GetFocusedRowCellValue("MotherOccupation").ToString();
             txtContactNo.Text = NicuGridView.GetFocusedRowCellValue("ContactNo").ToString();
             txtAddress.Text = NicuGridView.GetFocusedRowCellValue("Address").ToString();
-            txtRefferedInfo.Text = NicuGridView.GetFocusedRowCellValue("RefferedInfo").ToString();
+            txtRefferedInfo.Text = NicuGridView.GetFocusedRowCellValue("ReffName").ToString();
             txtRemarks.Text = NicuGridView.GetFocusedRowCellValue("Remarks").ToString();
             txtComplaintsOne.Text = NicuGridView.GetFocusedRowCellValue("ComplaintsOne").ToString();
             txtComplaintsTwo.Text = NicuGridView.GetFocusedRowCellValue("ComplaintsTwo").ToString();

@@ -26,6 +26,7 @@ namespace GHospital_Care.DAL.Model
        public string MotherName { get; set; }
        public string Gurdian { get; set; }
        public string Relation { get; set; }
+       public string Area { get; set; }
        public string Religion { get; set; }
        public string WardOrCabin { get; set; }
        public string DutyDoctorId { get; set; }

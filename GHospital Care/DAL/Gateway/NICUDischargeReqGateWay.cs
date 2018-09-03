@@ -98,7 +98,7 @@ namespace GHospital_Care.DAL.Gateway
                 Command.Parameters.AddWithValue("@AdviceName", advice.AdviceName);
                 Command.Parameters.AddWithValue("@PatientId", dischargePatient.OPID);
 
-                Command.CommandText = Query;
+                //Command.CommandText = Query;
 
                 row += Command.ExecuteNonQuery();
 

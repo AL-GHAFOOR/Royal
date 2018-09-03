@@ -340,10 +340,11 @@
             // 
             // txtRealtedToMeal
             // 
-            this.txtRealtedToMeal.Location = new System.Drawing.Point(423, 38);
+            this.txtRealtedToMeal.Location = new System.Drawing.Point(424, 38);
             this.txtRealtedToMeal.Name = "txtRealtedToMeal";
             this.txtRealtedToMeal.Size = new System.Drawing.Size(153, 20);
             this.txtRealtedToMeal.TabIndex = 9;
+            this.txtRealtedToMeal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRealtedToMeal_KeyDown);
             // 
             // label24
             // 
@@ -379,6 +380,7 @@
             this.txtDescription.Size = new System.Drawing.Size(189, 48);
             this.txtDescription.TabIndex = 5;
             this.txtDescription.Text = "";
+            this.txtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyDown);
             this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
             // 
             // txtRoute
@@ -387,6 +389,7 @@
             this.txtRoute.Name = "txtRoute";
             this.txtRoute.Size = new System.Drawing.Size(153, 20);
             this.txtRoute.TabIndex = 4;
+            this.txtRoute.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRoute_KeyDown);
             this.txtRoute.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
             // 
             // label23
@@ -405,6 +408,7 @@
             this.txtDoose.Name = "txtDoose";
             this.txtDoose.Size = new System.Drawing.Size(226, 20);
             this.txtDoose.TabIndex = 4;
+            this.txtDoose.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDoose_KeyDown);
             this.txtDoose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
             // 
             // label18

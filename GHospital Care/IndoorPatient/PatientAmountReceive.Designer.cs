@@ -543,6 +543,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(778, 64);
             this.panel7.TabIndex = 100098;
+            this.panel7.Tag = "1";
             // 
             // btnDelete
             // 
@@ -553,6 +554,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(106, 34);
             this.btnDelete.TabIndex = 100095;
+            this.btnDelete.Tag = "3";
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -577,6 +579,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(106, 34);
             this.btnUpdate.TabIndex = 100095;
+            this.btnUpdate.Tag = "2";
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -589,6 +592,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 34);
             this.btnSave.TabIndex = 100095;
+            this.btnSave.Tag = "1";
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

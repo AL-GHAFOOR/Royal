@@ -75,10 +75,31 @@ namespace GHospital_Care.DAL.Gateway
           Command = new SqlCommand(Query, Connection);
           Command.CommandType = CommandType.Text;
           Reader = Command.ExecuteReader();
-          dtDataTable.Load(Reader);return dtDataTable;
+          dtDataTable.Load(Reader);
+          return dtDataTable;
       }
 
 
+      public DataTable HospitalInflow(DateTime FromDate, DateTime ToDate)
+      {
+          DataTable dtDataTable = new DataTable();
+          Query = " select * from ViewHospitalInflow where Convert(date,Date) between '" + FromDate + "' and '" + ToDate + "' order by Convert(date,Date)";
+          Command = new SqlCommand(Query, Connection);
+          Command.CommandType = CommandType.Text;
+          Reader = Command.ExecuteReader();
+          dtDataTable.Load(Reader); return dtDataTable;
+      }
+
+
+      public DataTable HospitalOutflow(DateTime FromDate, DateTime ToDate)
+      {
+          DataTable dtDataTable = new DataTable();
+          Query = " select * from ViewHospitalOutFlow where Convert(date,Date) between '" + FromDate + "' and '" + ToDate + "' order by Convert(date,Date)";
+          Command = new SqlCommand(Query, Connection);
+          Command.CommandType = CommandType.Text;
+          Reader = Command.ExecuteReader();
+          dtDataTable.Load(Reader); return dtDataTable;
+      }
       public DataTable BedHistory(string patientID)
       {
           DataTable dtDataTable = new DataTable();

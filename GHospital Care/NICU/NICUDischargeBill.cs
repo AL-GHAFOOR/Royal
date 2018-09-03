@@ -104,7 +104,7 @@ namespace GHospital_Care.NICU
             txtpathology.Text = patientBill.PBill.ToString("f");
             txtdischargeTime.Text = patientBill.DiscTime;
             txtdischargedate.Text = Convert.ToDateTime(patientBill.DeisDate).ToString("d");
-            lblPatientName.Text = patientBill.PatientName;
+            lblPatientName.Text = "B/O"+" "+ patientBill.PatientName;
             txtBedCharge.Text = patientBill.TotalBedCharge;
             txtmedicaineCharge.Text = patientBill.PharmacyBill.ToString("f");
             txtOTSerivce.Text = patientBill.OTservice.ToString("f");
@@ -173,9 +173,8 @@ namespace GHospital_Care.NICU
 
             for (int i = 0; i < gridView3.RowCount; i++)
             {
-                DAL.Model.DischargeBillNICU aDischargeBills = new DAL.Model.DischargeBillNICU();
-                aDischargeBills.BillNo = txtbill.Text;
-                aDischargeBills.ServiceId = gridView3.GetRowCellValue(i, gridView3.Columns["ServiceID"]).ToString();
+                DAL.Model.DischargeBillNICU aDischargeBills = new DAL.Model.DischargeBillNICU();aDischargeBills.BillNo = txtbill.Text;
+                aDischargeBills.ServiceId = gridView3.GetRowCellValue(i, gridView3.Columns["ServiceId"]).ToString();
                 aDischargeBills.ServiceName = gridView3.GetRowCellValue(i, gridView3.Columns["Particulars"]).ToString();
                 aDischargeBills.ServiceStatus = gridView3.GetRowCellValue(i, gridView3.Columns["Status"]).ToString();
                 aDischargeBills.Total = Convert.ToDecimal(gridView3.GetRowCellValue(i, gridView3.Columns["Total"]));

@@ -27,6 +27,19 @@ namespace GHospital_Care.BAL.Manager
             }
             return "Saved Failed";
         }
+
+        public DataTable GetSubItemID()
+        {
+            DataTable Dt = new FollowUPGateway().SubItemID();
+            return Dt;
+        }
+
+        public DataTable GetMasterItemID()
+        {
+            DataTable Dt = new FollowUPGateway().followUPItemID();
+            return Dt;
+        }
+
         public List<FollowUPMaster> GetALLFollowUpWithSubItems()
         {
             List<FollowUPMaster> ListOfList = new List<FollowUPMaster>();
@@ -48,7 +61,7 @@ namespace GHospital_Care.BAL.Manager
                             followup.SubItems.Add(new FollowUpSubItem()
                             {
                                 ItemId = followup.ID,
-                                Id = Convert.ToInt16(row["SubId"]),
+                                Id = row["SubId"].ToString(),
                                 SubItemName = row["SubItemName"].ToString()
                             });
                         }
@@ -107,7 +120,7 @@ namespace GHospital_Care.BAL.Manager
                             followup.SubItems.Add(new FollowUpSubItem()
                             {
                                 ItemId = followup.ID,
-                                Id = Convert.ToInt16(row["SubId"]),
+                                Id =row["SubId"].ToString(),
                                 SubItemName = row["SubItemName"].ToString()
                             });
                         }
@@ -152,7 +165,7 @@ namespace GHospital_Care.BAL.Manager
                             followup.SubItems.Add(new FollowUpSubItem()
                             {
                                 ItemId = followup.ID,
-                                Id = Convert.ToInt16(row["SubId"]),
+                                Id = row["SubId"].ToString(),
                                 SubItemName = row["SubItemName"].ToString()
                             });
                         }

@@ -34,6 +34,7 @@
             this.lblHeadingName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtCabinBed = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
@@ -321,6 +322,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.SeaShell;
+            this.groupBox1.Controls.Add(this.btnPrint);
             this.groupBox1.Controls.Add(this.txtCabinBed);
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Controls.Add(this.toggleSwitch1);
@@ -362,6 +364,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Basic Information";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnPrint.Appearance.BorderColor = System.Drawing.Color.RosyBrown;
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.btnPrint.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Appearance.Options.UseBackColor = true;
+            this.btnPrint.Appearance.Options.UseBorderColor = true;
+            this.btnPrint.Appearance.Options.UseFont = true;
+            this.btnPrint.Appearance.Options.UseForeColor = true;
+            this.btnPrint.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.Location = new System.Drawing.Point(736, 11);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(100, 41);
+            this.btnPrint.TabIndex = 100108;
+            this.btnPrint.Text = "PRINT";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // txtCabinBed
             // 
             this.txtCabinBed.BackColor = System.Drawing.Color.White;
@@ -388,7 +409,7 @@
             // 
             // toggleSwitch1
             // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(688, 10);
+            this.toggleSwitch1.Location = new System.Drawing.Point(691, 10);
             this.toggleSwitch1.Name = "toggleSwitch1";
             this.toggleSwitch1.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
             this.toggleSwitch1.Properties.Appearance.BackColor = System.Drawing.Color.Yellow;
@@ -405,8 +426,9 @@
             this.toggleSwitch1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.toggleSwitch1.Properties.OffText = "IPD";
             this.toggleSwitch1.Properties.OnText = "OPD";
-            this.toggleSwitch1.Size = new System.Drawing.Size(153, 42);
+            this.toggleSwitch1.Size = new System.Drawing.Size(145, 42);
             this.toggleSwitch1.TabIndex = 100102;
+            this.toggleSwitch1.Visible = false;
             this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
             // 
             // cmbPid
@@ -816,6 +838,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(874, 283);
             this.tabControl1.TabIndex = 100091;
+            this.tabControl1.Tag = "1";
             this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
             // 
             // tabPage3
@@ -1014,6 +1037,7 @@
             this.btnPatientEdit.Name = "btnPatientEdit";
             this.btnPatientEdit.Size = new System.Drawing.Size(87, 26);
             this.btnPatientEdit.TabIndex = 2;
+            this.btnPatientEdit.Tag = "2";
             this.btnPatientEdit.Text = "SEARCH";
             this.btnPatientEdit.UseVisualStyleBackColor = true;
             this.btnPatientEdit.Click += new System.EventHandler(this.button2_Click);
@@ -1029,12 +1053,12 @@
             this.btnSavePSBill.Appearance.Options.UseFont = true;
             this.btnSavePSBill.Appearance.Options.UseForeColor = true;
             this.btnSavePSBill.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.btnSavePSBill.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSavePSBill.Image = ((System.Drawing.Image)(resources.GetObject("btnSavePSBill.Image")));
             this.btnSavePSBill.Location = new System.Drawing.Point(637, 0);
             this.btnSavePSBill.Name = "btnSavePSBill";
-            this.btnSavePSBill.Size = new System.Drawing.Size(223, 41);
+            this.btnSavePSBill.Size = new System.Drawing.Size(220, 41);
             this.btnSavePSBill.TabIndex = 100107;
+            this.btnSavePSBill.Tag = "1";
             this.btnSavePSBill.Text = "SAVE SERVICE BILL";
             this.btnSavePSBill.Click += new System.EventHandler(this.btnSavePSBill_Click);
             // 
@@ -1246,6 +1270,7 @@
             this.btnConsultEdit.Name = "btnConsultEdit";
             this.btnConsultEdit.Size = new System.Drawing.Size(87, 26);
             this.btnConsultEdit.TabIndex = 2;
+            this.btnConsultEdit.Tag = "2";
             this.btnConsultEdit.Text = "SEARCH";
             this.btnConsultEdit.UseVisualStyleBackColor = true;
             this.btnConsultEdit.Click += new System.EventHandler(this.button1_Click);
@@ -1277,6 +1302,7 @@
             this.btnConsultBill.Name = "btnConsultBill";
             this.btnConsultBill.Size = new System.Drawing.Size(210, 37);
             this.btnConsultBill.TabIndex = 100105;
+            this.btnConsultBill.Tag = "1";
             this.btnConsultBill.Text = "SAVE CONSULTANT";
             this.btnConsultBill.Click += new System.EventHandler(this.btnConsultBill_Click);
             // 
@@ -1476,6 +1502,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(164, 45);
             this.simpleButton3.TabIndex = 100106;
             this.simpleButton3.Text = "REPORT";
+            this.simpleButton3.Visible = false;
             // 
             // lblReMarks
             // 
@@ -2019,6 +2046,7 @@
             this.btnMedicineEdit.Name = "btnMedicineEdit";
             this.btnMedicineEdit.Size = new System.Drawing.Size(87, 26);
             this.btnMedicineEdit.TabIndex = 2;
+            this.btnMedicineEdit.Tag = "2";
             this.btnMedicineEdit.Text = "SEARCH";
             this.btnMedicineEdit.UseVisualStyleBackColor = true;
             this.btnMedicineEdit.Click += new System.EventHandler(this.button3_Click);
@@ -2039,6 +2067,7 @@
             this.btnSaveIssueMedicine.Name = "btnSaveIssueMedicine";
             this.btnSaveIssueMedicine.Size = new System.Drawing.Size(173, 37);
             this.btnSaveIssueMedicine.TabIndex = 100107;
+            this.btnSaveIssueMedicine.Tag = "1";
             this.btnSaveIssueMedicine.Text = "ISSUE MEDICINE";
             this.btnSaveIssueMedicine.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
@@ -2303,6 +2332,7 @@
             this.btnSavePathology.Name = "btnSavePathology";
             this.btnSavePathology.Size = new System.Drawing.Size(223, 41);
             this.btnSavePathology.TabIndex = 100107;
+            this.btnSavePathology.Tag = "1";
             this.btnSavePathology.Text = "SAVE SERVICE BILL";
             this.btnSavePathology.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
@@ -2596,6 +2626,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn58;
         public DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
+        public DevExpress.XtraEditors.SimpleButton btnPrint;
 
     }
 }

@@ -121,9 +121,20 @@ namespace GHospital_Care.Nurses
             {
             }
         }
+
+        private string Service = "";
         public void PatientService()
         {
-            DataTable AllDoctor = new ServiceManager().GetPatientService("Hospital");
+
+            if (radioBtnIndoor.Checked)
+            {
+                Service = "Hospital";
+            }
+            if (radioBtnNicu.Checked)
+            {
+                Service = "NICU";
+            }
+            DataTable AllDoctor = new ServiceManager().GetPatientService(Service);
             repositoryItemLookUpEdit2.DataSource = AllDoctor;
             repositoryItemLookUpEdit2.DisplayMember = "ServiceName";
             repositoryItemLookUpEdit2.ValueMember = "ServiceName";
@@ -133,40 +144,39 @@ namespace GHospital_Care.Nurses
 
         DataTable patientDataTable = new DataTable();
 
-        
+        private void load()
+        {
+                if (radioBtnNicu.Checked)
+                {
+                    DataTable slNo = new DataTable();
+                    PatientService();
+                    slNo = new IpdManager().GetAllNICUpatientSl();
+                    cmbPid.DataSource = slNo;
+                    cmbPid.DisplayMember = "RegNo";
+                    cmbPid.ValueMember = "RegNo";
+               }
+                if (radioBtnIndoor.Checked)
+                {
+                    PatientService();
+                    GetAllPatientSlNo("IPD");
+                    LoadPatientService(cmbPid.Text, "IPD");
+                   
+                }   
+        }
+
         private void IPBillingSetup_Load(object sender, EventArgs e)
         {
             try
             {
-                PatientService();
-                //LoadDataTable();
-                 MedineList();
-                if (toggleSwitch1.IsOn)
-                {
-                    GetAllPatientSlNo(toggleSwitch1.Properties.OnText);
-                    LoadPatientService(cmbPid.Text, "OPD");
-                   
-                   // MedineList();
-                }
-                else
-                {
-                    GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
-                    LoadPatientService(cmbPid.Text, "IPD");
-                   
-                }
-               //GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
+                radioBtnIndoor.Checked = true;
                 
-               
-                Patient_buttonEnable(true);
-                //-----for patientService---
+                 Patient_buttonEnable(true);
                 _session.ChkPermission(MainWindow.userName);
                 if (_session.SavePermission == false)
                 {
                     Patient_buttonEnable(true);
-                    
                     btnSavePSBill.Enabled = false;
-                    
-                }
+               }
                 else
                 {
                     Patient_buttonEnable(true);
@@ -216,30 +226,81 @@ namespace GHospital_Care.Nurses
 
         public void LoadDataForIPD(string pslNo)
         {
-            Patient patient = new Patient();
-            if (toggleSwitch1.IsOn)
+            try
             {
-                patient = new OPD_Manager().GetPatientInformationBySl(pslNo);
+                Patient patient = new Patient();
+                if (radioBtnNicu.Checked)
+                {
+                    NicuAddmission setup = new NICUBillManager().GetNICUPatientInfo(cmbPid.Text);
+                    cmbPid.Text = setup.RegNo;
+                    txtAge.Text = setup.Age;
+                    txtName.Text = "Baby of" + " " + setup.MotherName;
+                    txtFatherName.Text = setup.FatherName;
+                    txtMotherName.Text = setup.MotherName;
+                    admitDate.Value = setup.AdmitDate;
+                    txtAddress.Text = setup.Address;
+                    txtCabinBed.Text = setup.Bed;
+                    txtBloodGroup.Text = setup.BabysBloodGroup;
+                    txtPhone.Text = setup.ContactNo;
+                    txtGender.Text = setup.Sex;
+                    LoadPatientServiceNICU(cmbPid.Text, "NICU");
+                }
+                else
+                {
+                    patient = new IpdManager().GetPatientInformationBySl(pslNo);
+                    txtName.Text = patient.PatientName;
+                    txtFatherName.Text = patient.FatherName;
+                    txtMotherName.Text = patient.MotherName;
+                    txtAddress.Text = patient.Address;
+                    txtAge.Text = patient.Age;
+                    txtPhone.Text = patient.Phone;
+                    txtMobile.Text = patient.Mobile;
+                    txtGuirdian.Text = patient.Gurdian;
+                    txtRelation.Text = patient.Relation;
+                    txtGender.Text = patient.Gender;
+                    txtBloodGroup.Text = patient.BloodGroup;
+                    txtReligion.Text = patient.Religion;
+                    txtCabinBed.Text = patient.SelectedBed;
+                    LoadPatientService(cmbPid.Text, "IPD");
+                }
             }
-            else
+            catch (Exception)
             {
-                patient = new IpdManager().GetPatientInformationBySl(pslNo);
+                
+                //throw;
             }
+            
+
+         }
 
 
-            txtName.Text = patient.PatientName;
-            txtFatherName.Text = patient.FatherName;
-            txtMotherName.Text = patient.MotherName;
-            txtAddress.Text = patient.Address;
-            txtAge.Text = patient.Age;
-            txtPhone.Text = patient.Phone;
-            txtMobile.Text = patient.Mobile;
-            txtGuirdian.Text = patient.Gurdian;
-            txtRelation.Text = patient.Relation;
-            txtGender.Text = patient.Gender;
-            txtBloodGroup.Text = patient.BloodGroup;
-            txtReligion.Text = patient.Religion;
-            txtCabinBed.Text = patient.SelectedBed;
+        public void LoadPatientServiceNICU(string patientId, string status)
+        {
+            try
+            {
+                Patientservice = new DataTable();
+                Int64 MaxID = new ServiceGateway().GetPateintServiceMaxValue();
+                patientId = cmbPid.Text;
+                Patientservice = new ServiceManager().GetPatientServiceBill(patientId, status, "NICU", dtpPatientService.Value);
+                if (Patientservice.Rows.Count > 0)
+                {
+
+                    gridControlPSBill.DataSource = Patientservice;
+
+                }
+                else
+                {
+                    DataRow row = Patientservice.NewRow();
+                    Patientservice.Rows.Add(row);
+                    Patientservice.Rows[0]["OPID"] = "NA";
+                    gridControlPSBill.DataSource = Patientservice;
+                }
+                gridViewServiceBill.SetRowCellValue(gridViewServiceBill.RowCount - 1, "VchNo", MaxID);
+            }
+            catch (Exception)
+            {
+
+            }
         }
         private void cmbPid_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -247,22 +308,22 @@ namespace GHospital_Care.Nurses
             {
                 var selectId = cmbPid.Text;
                 LoadDataForIPD(selectId);
-                if (IpBillingStatus== "OPD")
-                {
-                    //LoadOtSetupByPId(cmbPid.Text);
-                   LoadPatientService(cmbPid.Text, toggleSwitch1.Properties.OnText);
+                //if (IpBillingStatus== "OPD")
+                //{
+                //    //LoadOtSetupByPId(cmbPid.Text);
+                //   LoadPatientService(cmbPid.Text, toggleSwitch1.Properties.OnText);
                    
 
-                }
-                else if (IpBillingStatus == "IPD")
-                {
-                    //Consult---
-                    LoadDataForIPD(cmbPid.Text);
-                    LoadPatientService(selectId, toggleSwitch1.Properties.OffText);
+                //}
+                //else if (IpBillingStatus == "IPD")
+                //{
+                //    //Consult---
+                //    LoadDataForIPD(cmbPid.Text);
+                //    LoadPatientService(selectId, toggleSwitch1.Properties.OffText);
                    
 
 
-                }
+                //}
             }
             catch (Exception)
             {
@@ -455,9 +516,9 @@ namespace GHospital_Care.Nurses
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (toggleSwitch1.IsOn)
+            if (radioBtnNicu.Checked)
             {
-                LoadPatientService(cmbPid.Text, "OPD");
+                LoadPatientServiceNICU(cmbPid.Text, "NICU");
             }
             else
             {
@@ -564,6 +625,34 @@ namespace GHospital_Care.Nurses
         {
 
         }
+
+        private void radioBtnIndoor_CheckedChanged(object sender, EventArgs e)
+        {
+            load();
+            PatientService();
+            var selectId = cmbPid.Text;
+            LoadDataForIPD(selectId);
+            GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
+            LoadPatientService(cmbPid.Text, "IPD");
+        }
+
+        private void radioBtnNicu_CheckedChanged(object sender, EventArgs e)
+        {
+            load();
+            PatientService();
+            var selectId = cmbPid.Text;
+            LoadDataForIPD(selectId);
+            LoadPatientServiceNICU(cmbPid.Text, "NICU");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridControlPSBill_Click(object sender, EventArgs e)
+        {
+            }
        
 
     }

@@ -78,7 +78,8 @@ namespace GHospital_Care.DAL.Gateway
         {
             Query = "select Id, UserId, Password, insertPermission, editPermission, deletePermission, reportingPermission, Type,UserRoll from ViewPermission where UserId = '" + UserId.UserId + "' and Password = '" + UserId.Password + "'";
             Command = new SqlCommand(Query, Connection);
-            Command.CommandType = CommandType.Text;Reader = Command.ExecuteReader();
+            Command.CommandType = CommandType.Text;
+            Reader = Command.ExecuteReader();
             DataTable dtDataTable = new DataTable();dtDataTable.Load(Reader);
             return dtDataTable;
            }

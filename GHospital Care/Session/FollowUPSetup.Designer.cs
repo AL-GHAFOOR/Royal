@@ -61,9 +61,9 @@
             this.txtSubItem = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.listOfSubItem = new System.Windows.Forms.ListView();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ItemId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SubItemName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -377,9 +377,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(338, 91);
+            this.button1.Location = new System.Drawing.Point(336, 91);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 23);
+            this.button1.Size = new System.Drawing.Size(31, 23);
             this.button1.TabIndex = 100088;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
@@ -410,13 +410,17 @@
             this.SubItemName});
             this.listOfSubItem.FullRowSelect = true;
             this.listOfSubItem.GridLines = true;
-            this.listOfSubItem.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listOfSubItem.Location = new System.Drawing.Point(131, 121);
+            this.listOfSubItem.Location = new System.Drawing.Point(130, 121);
             this.listOfSubItem.Name = "listOfSubItem";
-            this.listOfSubItem.Size = new System.Drawing.Size(211, 59);
+            this.listOfSubItem.Size = new System.Drawing.Size(217, 59);
             this.listOfSubItem.TabIndex = 100089;
             this.listOfSubItem.UseCompatibleStateImageBehavior = false;
             this.listOfSubItem.View = System.Windows.Forms.View.Details;
+            // 
+            // Id
+            // 
+            this.Id.DisplayIndex = 2;
+            this.Id.Width = 0;
             // 
             // ItemId
             // 
@@ -427,11 +431,6 @@
             // 
             this.SubItemName.DisplayIndex = 1;
             this.SubItemName.Width = 200;
-            // 
-            // Id
-            // 
-            this.Id.DisplayIndex = 2;
-            this.Id.Width = 0;
             // 
             // FollowUPSetup
             // 

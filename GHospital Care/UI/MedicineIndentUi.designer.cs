@@ -70,6 +70,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel9 = new System.Windows.Forms.Panel();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
@@ -78,13 +85,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnComissionPrint = new VistaButton.VistaButton();
             this.btnIndentView = new VistaButton.VistaButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpMedicine.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -99,10 +99,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpNicuPatient.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -571,6 +571,73 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(872, 354);
             this.xtraTabPage2.Text = "View Indent";
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 41);
+            this.gridControl1.MainView = this.gridView3;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(872, 313);
+            this.gridControl1.TabIndex = 252;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn14,
+            this.gridColumn3});
+            this.gridView3.GridControl = this.gridControl1;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.DoubleClick += new System.EventHandler(this.gridView3_DoubleClick);
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "IndentNo";
+            this.gridColumn9.FieldName = "IndentNo";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
+            this.gridColumn9.Width = 111;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.FieldName = "PatientID";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            this.gridColumn10.Width = 125;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Patient Name";
+            this.gridColumn11.FieldName = "PatientName";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 3;
+            this.gridColumn11.Width = 308;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.FieldName = "Date";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            this.gridColumn14.Width = 138;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Cabin/Bed";
+            this.gridColumn3.FieldName = "BedName";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 4;
+            this.gridColumn3.Width = 172;
+            // 
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -664,72 +731,6 @@
             this.btnIndentView.TabIndex = 46;
             this.btnIndentView.Click += new System.EventHandler(this.btnIndentView_Click);
             // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 41);
-            this.gridControl1.MainView = this.gridView3;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(872, 313);
-            this.gridControl1.TabIndex = 252;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn14,
-            this.gridColumn3});
-            this.gridView3.GridControl = this.gridControl1;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "IndentNo";
-            this.gridColumn9.FieldName = "IndentNo";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 0;
-            this.gridColumn9.Width = 111;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.FieldName = "PatientID";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 2;
-            this.gridColumn10.Width = 125;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Patient Name";
-            this.gridColumn11.FieldName = "PatientName";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 3;
-            this.gridColumn11.Width = 308;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.FieldName = "Date";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
-            this.gridColumn14.Width = 138;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Cabin/Bed";
-            this.gridColumn3.FieldName = "BedName";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
-            this.gridColumn3.Width = 172;
-            // 
             // MedicineIndentUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,11 +761,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpNicuPatient.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
 
         }

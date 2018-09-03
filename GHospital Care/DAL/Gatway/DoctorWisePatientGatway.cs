@@ -249,7 +249,7 @@ namespace GHospital_Care.DAL.Gatway
             else
             {
                 Query = "SELECT * FROM ViewCommission where date between '" + FromDate + "' and '" + Todate +"'" +
-                        " and RefferedBy = '" + Reff + "'";
+                        " and ReffId = '" + Reff + "'";
             }
             Command = new SqlCommand(Query, Connection);
             Command.CommandText = Query;

@@ -93,12 +93,13 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnNew2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave2 = new DevExpress.XtraEditors.SimpleButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOutdorPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOutdorPatient)).BeginInit();
@@ -135,6 +136,7 @@
             this.gridControlOutdorPatient.TabIndex = 0;
             this.gridControlOutdorPatient.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOutdorPatient});
+            this.gridControlOutdorPatient.Click += new System.EventHandler(this.gridControlOutdorPatient_Click);
             this.gridControlOutdorPatient.DoubleClick += new System.EventHandler(this.gridControlOutdorPatient_DoubleClick);
             // 
             // gridViewOutdorPatient
@@ -369,6 +371,7 @@
             this.txtDoctorFees.TabIndex = 13;
             this.txtDoctorFees.TabStop = false;
             this.txtDoctorFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDoctorFees.Visible = false;
             this.txtDoctorFees.TextChanged += new System.EventHandler(this.txtDoctorFees_TextChanged);
             this.txtDoctorFees.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDoctorFees_KeyDown);
             // 
@@ -468,6 +471,7 @@
             this.label11.Size = new System.Drawing.Size(33, 13);
             this.label11.TabIndex = 100120;
             this.label11.Text = "Fees";
+            this.label11.Visible = false;
             // 
             // label10
             // 
@@ -556,6 +560,7 @@
             this.groupBox1.TabIndex = 100137;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Info : ";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // picBoxAddRefferedBy
             // 
@@ -1372,6 +1377,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel4.Controls.Add(this.simpleButton1);
             this.panel4.Controls.Add(this.btnDelete2);
             this.panel4.Controls.Add(this.btnClose);
             this.panel4.Controls.Add(this.btnPrint);
@@ -1383,6 +1389,20 @@
             this.panel4.Size = new System.Drawing.Size(960, 57);
             this.panel4.TabIndex = 100140;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(609, 10);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(93, 35);
+            this.simpleButton1.TabIndex = 100137;
+            this.simpleButton1.Text = "Create Bill";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // btnDelete2
             // 
             this.btnDelete2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1390,12 +1410,26 @@
             this.btnDelete2.Appearance.Options.UseFont = true;
             this.btnDelete2.Appearance.Options.UseForeColor = true;
             this.btnDelete2.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete2.Image")));
-            this.btnDelete2.Location = new System.Drawing.Point(383, 14);
+            this.btnDelete2.Location = new System.Drawing.Point(308, 10);
             this.btnDelete2.Name = "btnDelete2";
             this.btnDelete2.Size = new System.Drawing.Size(93, 35);
             this.btnDelete2.TabIndex = 100136;
             this.btnDelete2.Text = "Delete";
             this.btnDelete2.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnClose.Appearance.Options.UseFont = true;
+            this.btnClose.Appearance.Options.UseForeColor = true;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(708, 10);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(93, 35);
+            this.btnClose.TabIndex = 100135;
+            this.btnClose.Text = "Close";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // btnPrint
             // 
@@ -1404,7 +1438,7 @@
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.Appearance.Options.UseForeColor = true;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(585, 14);
+            this.btnPrint.Location = new System.Drawing.Point(510, 10);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(93, 35);
             this.btnPrint.TabIndex = 100135;
@@ -1417,7 +1451,7 @@
             this.btnNew2.Appearance.Options.UseFont = true;
             this.btnNew2.Appearance.Options.UseForeColor = true;
             this.btnNew2.Image = ((System.Drawing.Image)(resources.GetObject("btnNew2.Image")));
-            this.btnNew2.Location = new System.Drawing.Point(484, 14);
+            this.btnNew2.Location = new System.Drawing.Point(409, 10);
             this.btnNew2.Name = "btnNew2";
             this.btnNew2.Size = new System.Drawing.Size(93, 35);
             this.btnNew2.TabIndex = 100135;
@@ -1431,7 +1465,7 @@
             this.btnSave2.Appearance.Options.UseFont = true;
             this.btnSave2.Appearance.Options.UseForeColor = true;
             this.btnSave2.Image = ((System.Drawing.Image)(resources.GetObject("btnSave2.Image")));
-            this.btnSave2.Location = new System.Drawing.Point(282, 14);
+            this.btnSave2.Location = new System.Drawing.Point(207, 10);
             this.btnSave2.Name = "btnSave2";
             this.btnSave2.Size = new System.Drawing.Size(93, 35);
             this.btnSave2.TabIndex = 100134;
@@ -1447,20 +1481,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(960, 387);
             this.panel3.TabIndex = 100141;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnClose.Appearance.Options.UseFont = true;
-            this.btnClose.Appearance.Options.UseForeColor = true;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(684, 14);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(93, 35);
-            this.btnClose.TabIndex = 100135;
-            this.btnClose.Text = "Close";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // OutdoorPatientUi
             // 
@@ -1568,6 +1588,7 @@
         private System.Windows.Forms.PictureBox picBoxSearch;
         internal System.Windows.Forms.Label label29;
         private DevExpress.XtraEditors.SimpleButton btnClose;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
 
     }
 }
