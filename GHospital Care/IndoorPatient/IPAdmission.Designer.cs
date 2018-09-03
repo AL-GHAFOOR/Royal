@@ -1757,7 +1757,7 @@
             this.txtReg.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtReg.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtReg.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg.Location = new System.Drawing.Point(351, 5);
+            this.txtReg.Location = new System.Drawing.Point(569, 5);
             this.txtReg.MaxLength = 3;
             this.txtReg.Name = "txtReg";
             this.txtReg.ReadOnly = true;
@@ -1773,7 +1773,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(318, 9);
+            this.label19.Location = new System.Drawing.Point(541, 9);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 13);
             this.label19.TabIndex = 100095;
