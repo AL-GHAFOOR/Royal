@@ -1084,6 +1084,11 @@ namespace GHospital_Care.IndoorPatient
         {
             PatitientInfo();}
 
+        private void txtReg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         //public void GetPrimaryDoctor()
         //{
