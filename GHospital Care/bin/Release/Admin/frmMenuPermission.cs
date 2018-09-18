@@ -46,15 +46,7 @@ namespace BABInventory.forms
                 Description.Text = dt1.Rows[0][2].ToString();
             }
 
-            //string queryPerm = "select insertPermission, deletePermission, EditPermission, ReportPermission, Permission from tblUserInfo where UserId = '"+ cmbAccountName.Text.Trim() +"'";
-            //DataTable dtperm = dataconn.dataread(queryPerm);
-            //if (dtperm != null && dtperm.Rows.Count > 0)
-            //{
-            //    chkSave.Checked = bool.Parse(dtperm.Rows[0][0].ToString());
-            //    chkEdit.Checked = bool.Parse(dtperm.Rows[0][2].ToString());
-            //    chkDelete.Checked = bool.Parse(dtperm.Rows[0][1].ToString());
-            //    chkReporting.Checked = bool.Parse(dtperm.Rows[0][3].ToString());
-            //}
+            
           
             string query = "select F.SlNo, F.formName, F.formCaption, F.MenuName, F.MenuCaption,  M.Permission,M.insertPermission, M.EditPermission,M.deletePermission, M.ReportPermission from tblMenuPermissionHospital M " +
                            "left join tblFormNameHospital F on M.FormID = F.SlNo where M.RoleId = '" + cmbAccountName.SelectedValue + "'";

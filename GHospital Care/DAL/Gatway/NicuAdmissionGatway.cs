@@ -196,24 +196,26 @@ namespace GHospital_Care.DAL.Gatway
         }
         public int SaveNicuService(Service service)
         {
-
             int count = 0;
-            Command = new SqlCommand("INSERT INTO dbo.tblPatientServiceBill (NicuRegNo,ServiceId,Rate,Qty,Total,userid,serviceDate)"
-       + "VALUES(@NicuRegNo,@ServiceId,@Rate,@Qty,@Total,@userid,@serviceDate)", Connection);
+            Command = new SqlCommand("INSERT INTO dbo.tblPatientServiceBill (NicuRegNo,ServiceId,Rate,Qty,Total,userid,serviceDate, OPID)"
+       + "VALUES(@NicuRegNo,@ServiceId,@Rate,@Qty,@Total,@userid,@serviceDate, @OPID)", Connection);
 
             Command.CommandType = CommandType.Text;
 
-            Command.Parameters.AddWithValue("@NicuRegNo", service.NicuRegNo);
+            Command.Parameters.AddWithValue("@NicuRegNo", service.OPID);
             Command.Parameters.AddWithValue("@ServiceId", service.ServiceId);
             Command.Parameters.AddWithValue("@Rate", service.Rate);
             Command.Parameters.AddWithValue("@Total", service.Total);
             Command.Parameters.AddWithValue("@Qty", service.Qty);
-            Command.Parameters.AddWithValue("@userid", "");
+            Command.Parameters.AddWithValue("@userid",MainWindow.userName);
             Command.Parameters.AddWithValue("@serviceDate", service.IssueDate);
+            Command.Parameters.AddWithValue("@OPID", service.OPID);
             count = Command.ExecuteNonQuery();
 
             return count;
         }
+
+
         
         public int DeleteNicuRegNoTblPatientServiceBill(Service service)
         {

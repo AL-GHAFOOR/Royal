@@ -325,6 +325,7 @@ namespace GHospital_Care.IndoorPatient
         private string Consultent = "";
         private void gridViewPatient_DoubleClick(object sender, EventArgs e)
         {
+
             txtVoucherNo.Text = gridViewPatient.GetFocusedRowCellValue("VoucherNo").ToString();
             datePathology.Text = gridViewPatient.GetFocusedRowCellValue("Date").ToString();
             searchLookConsltant.Properties.NullText = gridViewPatient.GetFocusedRowCellValue("DoctorName").ToString();

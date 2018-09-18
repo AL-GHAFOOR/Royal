@@ -1,2 +1,1 @@
-
-Data Source=.;Initial Catalog=RoyalDb;Persist Security Info=True;User ID=sa;Password=123456
+Data Source=ZUNAID\SQLEXPRESS;Initial Catalog=RoyalDb;Integrated Security=True

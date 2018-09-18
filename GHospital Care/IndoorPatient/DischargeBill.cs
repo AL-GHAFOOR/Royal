@@ -450,5 +450,20 @@ namespace GHospital_Care.IndoorPatient
             }
         }
 
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+            ViewDischarge();
+        }
+
+        private void ToDate_ValueChanged_1(object sender, EventArgs e)
+        {
+            ViewDischarge();
+        }
+
+        private void picBoxSearch_Click(object sender, EventArgs e)
+        {
+            ViewDischarge();
+        }
+
     }
 }

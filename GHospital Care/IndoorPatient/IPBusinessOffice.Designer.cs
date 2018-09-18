@@ -265,7 +265,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.rdDischargReq = new System.Windows.Forms.RadioButton();
             this.btnPrintView = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.rdNotDischarge = new System.Windows.Forms.RadioButton();
             this.rdDischarge = new System.Windows.Forms.RadioButton();
@@ -274,6 +273,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
@@ -346,6 +346,7 @@
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView8
@@ -2477,9 +2478,9 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.picBoxSearch);
             this.panel4.Controls.Add(this.rdDischargReq);
             this.panel4.Controls.Add(this.btnPrintView);
-            this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.rdNotDischarge);
             this.panel4.Controls.Add(this.rdDischarge);
@@ -2511,24 +2512,12 @@
             this.btnPrintView.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrintView.Appearance.Options.UseFont = true;
             this.btnPrintView.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintView.Image")));
-            this.btnPrintView.Location = new System.Drawing.Point(933, 6);
+            this.btnPrintView.Location = new System.Drawing.Point(780, 6);
             this.btnPrintView.Name = "btnPrintView";
             this.btnPrintView.Size = new System.Drawing.Size(85, 28);
             this.btnPrintView.TabIndex = 100108;
             this.btnPrintView.Text = "Print";
             this.btnPrintView.Click += new System.EventHandler(this.btnPrintView_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Appearance.Options.UseFont = true;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(833, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 31);
-            this.btnSearch.TabIndex = 100108;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel9
             // 
@@ -2569,37 +2558,43 @@
             // 
             this.ToDate.CustomFormat = "dd-MM-yyyy";
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(717, 11);
+            this.ToDate.Location = new System.Drawing.Point(613, 10);
             this.ToDate.Name = "ToDate";
             this.ToDate.Size = new System.Drawing.Size(100, 20);
             this.ToDate.TabIndex = 100104;
+            this.ToDate.ValueChanged += new System.EventHandler(this.ToDate_ValueChanged);
             // 
             // FromDate
             // 
             this.FromDate.CustomFormat = "dd-MM-yyyy";
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(551, 11);
+            this.FromDate.Location = new System.Drawing.Point(469, 10);
             this.FromDate.Name = "FromDate";
             this.FromDate.Size = new System.Drawing.Size(100, 20);
             this.FromDate.TabIndex = 100105;
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(657, 14);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label5.Location = new System.Drawing.Point(584, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.Size = new System.Drawing.Size(23, 15);
             this.label5.TabIndex = 100103;
-            this.label5.Text = "To Date";
+            this.label5.Text = "To";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(465, 14);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(425, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(40, 15);
             this.label4.TabIndex = 100102;
-            this.label4.Text = "From Date";
+            this.label4.Text = "From";
             // 
             // panel1
             // 
@@ -2614,6 +2609,17 @@
             this.panel1.Size = new System.Drawing.Size(1025, 534);
             this.panel1.TabIndex = 0;
             // 
+            // picBoxSearch
+            // 
+            this.picBoxSearch.Image = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.Image")));
+            this.picBoxSearch.Location = new System.Drawing.Point(722, 5);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(45, 32);
+            this.picBoxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxSearch.TabIndex = 100137;
+            this.picBoxSearch.TabStop = false;
+            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
+            // 
             // IPBusinessOffice
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2623,6 +2629,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IPBusinessOffice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.IPBusinessOffice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
@@ -2706,6 +2713,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2945,7 +2953,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn115;
         private System.Windows.Forms.TextBox txtBedCabin;
         private System.Windows.Forms.Label label25;
-        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnPrintView;
         private System.Windows.Forms.TextBox txtServiceCharge;
@@ -2954,6 +2961,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn117;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn118;
         private System.Windows.Forms.RadioButton rdDischargReq;
+        private System.Windows.Forms.PictureBox picBoxSearch;
 
 
     }

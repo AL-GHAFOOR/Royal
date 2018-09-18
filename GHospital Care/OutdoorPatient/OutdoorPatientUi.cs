@@ -36,21 +36,10 @@ namespace GHospital_Care.OutdoorPatient
             _session.ChkPermission(MainWindow.userName);
 
 
-            if (_session.SavePermission == false)
-            {
-                buttonEnable(true);
-                btnSave2.Enabled = false;
-            }
-            else
-            {
-                buttonEnable(true);
-
-            }
-
             aOutdoorPatientManager = new OutdoorPatientManager();
             ActiveControl = cmbTreatmentType;
             
-            //Control buttonControl = new ButtonPermissionAccess().UserButton(this.panel4, this.Name);
+           //Control buttonControl = new ButtonPermissionAccess().UserButton(this.panel4, this.Name);
         }
         private void buttonEnable(bool stat)
         {
@@ -629,6 +618,21 @@ namespace GHospital_Care.OutdoorPatient
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gridControlOutdorPatient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            IPBillingSetup frm = new IPBillingSetup("billGenerateIPOPToolStripMenuItem");
+            frm.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e){
+
         }
     }
 }

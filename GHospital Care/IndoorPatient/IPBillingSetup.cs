@@ -12,6 +12,7 @@ using GHospital_Care.BAL.Manager;
 using GHospital_Care.DAL.Gateway;
 using GHospital_Care.DAL.Model;
 using GHospital_Care.Operation;
+using GHospital_Care.OutdoorPatient;
 using GHospital_Care.Session;
 
 namespace GHospital_Care.IndoorPatient
@@ -23,42 +24,43 @@ namespace GHospital_Care.IndoorPatient
         public IPBillingSetup(string menuName)
         {
             InitializeComponent();
-          //Control buttonControl = new ButtonPermissionAccess().UserButton(this, this.Name);
+            UserMaster master = GlobalPermission.UserPermission.FirstOrDefault(a => a.FormName == this.Name && a.Permission && a.MenuName == menuName);
+            //ButtonPermissionAccess access = new ButtonPermissionAccess();
+            //access.Permissionchek(this, typeof(Button), this.Name,menuName);
+       
             try
             {
-                UserMaster master = GlobalPermission.UserPermission.FirstOrDefault(a => a.FormName == this.Name && a.Permission && a.MenuName == menuName);
-                if (master != null)
+               if (master != null)
                 {
                     if (master.FormCaption == "IPD")
                     {
                         toggleSwitch1.IsOn = false;
                         IpBillingStatus = "IPD";
                         GetAllPatientSlNo("IPD");
-                        lblHeadingName.Text = "RB Hospital Care  | Indoor Patient Billing";
-
+                        btnPrint.Hide();
+                        lblHeadingName.Text = @"RB Hospital Care | Indoor Patient Billing";
                     }
                     else if (master.FormCaption == "OPD")
                     {
                         GetAllPatientSlNo("OPD");
                         IpBillingStatus = "OPD";
+                        btnPrint.Show();
                         toggleSwitch1.IsOn = true;
-                        lblHeadingName.Text = "RB Hospital Care  | Outdoor Patient Billing";
-
-                    }
+                        lblHeadingName.Text = @"RB Hospital Care  | Outdoor Patient Billing";
+                     }
                     toggleSwitch1.Enabled = false;
                 }
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.GetBaseException().ToString());
                 this.Activate();
             }
-        // Control buttonControl = new ButtonPermissionAccess().TabControl(this.tabControl1, this.Name);
-          //  tabControl1 = (TabControl)buttonControl;
-            
-
-
+         //Control buttonControl = new ButtonPermissionAccess().TabControl(this.tabControl1, this.Name);
+         // tabControl1 = (TabControl)buttonControl;
         }
-        
+      
+
         private void specialButton6_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -182,16 +184,21 @@ namespace GHospital_Care.IndoorPatient
         }
         private void IPBillingSetup_Load(object sender, EventArgs e)
         {
+            loaditm();
+        }
+
+        private void loaditm()
+        {
+
             try
             {
-                ClearAllEvent();
                 CosulultDoctor();
                 PathologyMaster();
                 PatientService();
                 PathologyService();
-               
+
                 //LoadDataTable();
-                 MedineList();
+                MedineList();
                 if (toggleSwitch1.IsOn)
                 {
                     GetAllPatientSlNo(toggleSwitch1.Properties.OnText);
@@ -199,7 +206,7 @@ namespace GHospital_Care.IndoorPatient
                     LoadConsoultService(cmbPid.Text, "OPD");
                     LoadPatientService(cmbPid.Text, "OPD");
                     LoadPatientPathologyService(cmbPid.Text, "OPD");
-                   // MedineList();
+                    // MedineList();
                 }
                 else
                 {
@@ -209,42 +216,39 @@ namespace GHospital_Care.IndoorPatient
                     LoadPatientService(cmbPid.Text, "IPD");
                     LoadPatientPathologyService(cmbPid.Text, "IPD");
                 }
-               //GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
-                
-               
-                Patient_buttonEnable(true);
-                //-----for patientService---
-                _session.ChkPermission(MainWindow.userName);
-                if (_session.SavePermission == false)
-                {
-                    Patient_buttonEnable(true);
-                    Consult_buttonEnable(true);
-                    IssueMedcine_buttonEnable(true);
-                    Pathology_buttonEnable(true);
-                    btnSavePSBill.Enabled = false;
-                    btnConsultBill.Enabled = false;
-                    btnSaveIssueMedicine.Enabled = false;
-                    btnSavePathology.Enabled = false;
-                }
-                else
-                {
-                    Patient_buttonEnable(true);
-                    Consult_buttonEnable(true);
-                    IssueMedcine_buttonEnable(true);
-                    Pathology_buttonEnable(true);
-                }
+                //GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
+
+                //Patient_buttonEnable(true);
+                ////-----for patientService---
+                //_session.ChkPermission(MainWindow.userName);
+                //if (_session.SavePermission == false)
+                //{
+                //    Patient_buttonEnable(true);
+                //    Consult_buttonEnable(true);
+                //    IssueMedcine_buttonEnable(true);
+                //    Pathology_buttonEnable(true);
+                //    btnSavePSBill.Enabled = false;
+                //    btnConsultBill.Enabled = false;
+                //    btnSaveIssueMedicine.Enabled = false;
+                //    btnSavePathology.Enabled = false;
+                //}
+                //else
+                //{
+                //    Patient_buttonEnable(true);
+                //    Consult_buttonEnable(true);
+                //    IssueMedcine_buttonEnable(true);
+                //    Pathology_buttonEnable(true);
+                //}
                 //chkPermission();
             }
             catch (Exception ex)
             {
-                
-               
+
+
                 MessageBox.Show(ex.GetBaseException().ToString());
                 this.Activate();
             }
-          
         }
-
         private void gridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             try
@@ -696,6 +700,9 @@ namespace GHospital_Care.IndoorPatient
         }
         private void toggleSwitch1_Toggled(object sender, EventArgs e)
         {
+
+            loaditm();
+
             if (toggleSwitch1.IsOn)
             {
                 OTClear();
@@ -704,13 +711,17 @@ namespace GHospital_Care.IndoorPatient
                 LoadConsoultService(cmbPid.Text, "OPD");
                 LoadPatientService(cmbPid.Text, "OPD");
                 LoadPatientPathologyService(cmbPid.Text, "OPD");
+                if (MainWindow.MedicineFalge=="OT")
+                {
+                    tabControl1.TabPages.Remove(IssueMedicine);
+                }
                 // MedineList();
             }
             else
             {
                 OTClear();
                 GetAllPatientSlNo(toggleSwitch1.Properties.OffText);
-                tabControl1.TabPages.Remove(IssueMedicine);
+                tabControl1.TabPages.Remove(IssueMedicine);    
                 LoadConsoultService(cmbPid.Text, "IPD");
                 LoadPatientService(cmbPid.Text, "IPD");
                 LoadPatientPathologyService(cmbPid.Text, "IPD");
@@ -1248,6 +1259,12 @@ namespace GHospital_Care.IndoorPatient
                 gridView1.SetFocusedRowCellValue("PathID", PathID);
                 
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            OPBILL frm = new OPBILL();
+            frm.ShowDialog();
         }
     }
 }

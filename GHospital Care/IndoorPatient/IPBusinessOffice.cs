@@ -314,5 +314,28 @@ namespace GHospital_Care.IndoorPatient
             chkValue();
             GetIpInfo();
         }
+
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+            chkValue();
+            GetIpInfo();
+        }
+
+        private void ToDate_ValueChanged(object sender, EventArgs e)
+        {
+            chkValue();
+            GetIpInfo();
+        }
+
+        private void picBoxSearch_Click(object sender, EventArgs e)
+        {
+            chkValue();
+            GetIpInfo();
+        }
+
+        private void IPBusinessOffice_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

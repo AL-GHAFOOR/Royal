@@ -52,12 +52,13 @@ namespace GHospital_Care.DAL.Gateway
             count = Command.ExecuteNonQuery();
             foreach (FollowUpSubItem subItem in followUp.SubItems)
             {
-                Command = new SqlCommand("INSERT INTO dbo.tblFollowSubItems (ItemID,SubItemName)"
-                 + "VALUES(@ItemID,@SubItemName)", Connection);
+                Command = new SqlCommand("INSERT INTO dbo.tblFollowSubItems (ItemID,SubItemName,Id)"
+                 + "VALUES(@ItemID,@SubItemName,@Id)", Connection);
 
                 Command.CommandType = CommandType.Text;
                 Command.Parameters.AddWithValue("@ItemID", followUp.ID);
                 Command.Parameters.AddWithValue("@SubItemName", subItem.SubItemName);
+                Command.Parameters.AddWithValue("@Id", subItem.Id);
                 count = Command.ExecuteNonQuery();
             }
             return count;
@@ -97,6 +98,29 @@ namespace GHospital_Care.DAL.Gateway
         }
 
 
+
+        public DataTable followUPItemID()
+        {
+            Query = "select Isnull(Max(ID),0)+1 from tblFollowUp ";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
+        }
+
+
+        public DataTable SubItemID()
+        {
+            Query = "select Isnull(Max(id),0)+1 from tblFollowSubItems ";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
+        }
         public int InsertFollowupSheet(List<FollowUPMaster> FollowUp)
         {
             int count = 0;
@@ -147,26 +171,28 @@ namespace GHospital_Care.DAL.Gateway
         {
             int count = 0;
 
-            Command = new SqlCommand("INSERT INTO dbo.tblFollowUp (FollowUpItemName,Description,DepartmentID,Rate)"
-                  + "VALUES(@FollowUpItemName,@Description,@DepartmentID,@Rate)", Connection);
+            Command = new SqlCommand("INSERT INTO dbo.tblFollowUp (FollowUpItemName,Description,DepartmentID,Rate, ID)"
+                  + "VALUES(@FollowUpItemName,@Description,@DepartmentID,@Rate,@ID)", Connection);
 
             Command.CommandType = CommandType.Text;
             Command.Parameters.AddWithValue("@FollowUpItemName", followUp.FollowUpItemName);
             Command.Parameters.AddWithValue("@Description", followUp.Description);
             Command.Parameters.AddWithValue("@DepartmentID", "");
             Command.Parameters.AddWithValue("@Rate", followUp.Rate);
+            Command.Parameters.AddWithValue("@ID", followUp.ID);
 
 
             count = Command.ExecuteNonQuery();
 
             foreach (FollowUpSubItem subItem in followUp.SubItems)
             {
-                Command = new SqlCommand("INSERT INTO dbo.tblFollowSubItems (ItemID,SubItemName)"
-                 + "VALUES(@ItemID,@SubItemName)", Connection);
+                Command = new SqlCommand("INSERT INTO dbo.tblFollowSubItems (ItemID,SubItemName,Id)"
+                 + "VALUES(@ItemID,@SubItemName, @Id)", Connection);
 
                 Command.CommandType = CommandType.Text;
                 Command.Parameters.AddWithValue("@ItemID", followUp.ID);
                 Command.Parameters.AddWithValue("@SubItemName", subItem.SubItemName);
+                Command.Parameters.AddWithValue("@Id", subItem.Id);
                 count = Command.ExecuteNonQuery();
             }
 

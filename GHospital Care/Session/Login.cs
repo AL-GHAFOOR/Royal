@@ -89,10 +89,10 @@ namespace GHospital_Care.Session
         {
             try
             {
-              
-                aUserMaster.AllUser = new UserMaster();
+              aUserMaster.AllUser = new UserMaster();
                 aUserMaster.UserId = txtLoginName.Text;
-                aUserMaster.Password = txtPassword.Text;DataTable userData = new UserManager().LoadUser(aUserMaster);
+                aUserMaster.Password = txtPassword.Text;
+                DataTable userData = new UserManager().LoadUser(aUserMaster);
                 if (userData != null && userData.Rows.Count > 0)
                 {
                     aUserMaster.ID = userData.Rows[0]["Id"].ToString();
@@ -157,6 +157,7 @@ namespace GHospital_Care.Session
         {
             TryLogin();
         }
+        
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r')

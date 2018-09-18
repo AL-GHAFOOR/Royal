@@ -34,6 +34,7 @@ namespace GHospital_Care.Doctors
                 cmd.Parameters.Add("@NickName", SqlDbType.VarChar, 50);
                 cmd.Parameters.Add("@Gender", SqlDbType.VarChar, 50);
                 cmd.Parameters.Add("@DateOfBirth", SqlDbType.VarChar, 50);
+                cmd.Parameters.Add("@DateOfJoining", SqlDbType.VarChar, 50);
                 cmd.Parameters.Add("@Address", SqlDbType.VarChar, 50);
                 cmd.Parameters.Add("@Phone", SqlDbType.VarChar, 50);
                 cmd.Parameters.Add("@Mobile", SqlDbType.VarChar, 50);
@@ -46,12 +47,13 @@ namespace GHospital_Care.Doctors
                 cmd.Parameters[2].Value = txtNickName.Text;
                 cmd.Parameters[3].Value = cmbGender.Text;
                 cmd.Parameters[4].Value = dtDOB.Text;
-                cmd.Parameters[5].Value = txtAddress.Text;
-                cmd.Parameters[6].Value = txtPhone.Text;
-                cmd.Parameters[7].Value = txtMobile.Text;
-                cmd.Parameters[8].Value = txtLicense.Text;
-                cmd.Parameters[9].Value = cmbSpecialization.Text;
-                cmd.Parameters[10].Value = txtNotes.Text;
+                cmd.Parameters[5].Value = dtDOJ.Text;
+                cmd.Parameters[6].Value = txtAddress.Text;
+                cmd.Parameters[7].Value = txtPhone.Text;
+                cmd.Parameters[8].Value = txtMobile.Text;
+                cmd.Parameters[9].Value = txtLicense.Text;
+                cmd.Parameters[10].Value = cmbSpecialization.Text;
+                cmd.Parameters[11].Value = txtNotes.Text;
 
                 ob.Open();
                 cmd.ExecuteNonQuery();
@@ -65,6 +67,7 @@ namespace GHospital_Care.Doctors
                 MessageBox.Show("Failed to save doctor! " + error.Message.ToString(), "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
         private void SetNew()
         {
             txtAddress.Text = "";
@@ -77,6 +80,7 @@ namespace GHospital_Care.Doctors
             txtPhone.Text = "";
 
             dtDOB.Value = DateTime.Now;
+            dtDOJ.Value = DateTime.Now;
 
             cmbGender.SelectedIndex = 0;
 
@@ -174,6 +178,7 @@ namespace GHospital_Care.Doctors
                     cmbGender.Text = dt.Rows[0]["Gender"].ToString();
                     cmbSpecialization.Text = dt.Rows[0]["Specialization"].ToString();
                     dtDOB.Text = dt.Rows[0]["DateOfBirth"].ToString();
+                    dtDOJ.Text = dt.Rows[0]["DateOfJoining"].ToString();
 
                     btnEdit.Enabled = true;
                     btnSave.Enabled = false;

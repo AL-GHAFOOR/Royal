@@ -19,6 +19,7 @@ namespace GHospital_Care.IndoorPatient
 {
     public partial class IPAdmission : Form
     {
+
         Tools tools = new Tools();
         private OutdoorPatientManager aOutdoorPatientManager;
         private RefferedInfoManager _aRefferedInfoManager;
@@ -114,12 +115,11 @@ namespace GHospital_Care.IndoorPatient
             }
         }
 
-
+        DataTable Admission = new DataTable();
         private void PatitientInfo()
         {
-            DataTable data = new DataTable();
-            data = new IpdManager().GetAllIpAdmissionInfo(FromDate.Value,ToDate.Value);
-            IndoorPatientRegGridControl.DataSource = data;
+            Admission = new IpdManager().GetAllIpAdmissionInfo(FromDate.Value, ToDate.Value);
+            IndoorPatientRegGridControl.DataSource = Admission;
         }
         //private void GenerateReg()
         //{
@@ -165,7 +165,8 @@ namespace GHospital_Care.IndoorPatient
         private void LoadData()
         {
             IndoorPatientRegGridControl.DataSource = new IpdManager().GetAllIpAdmissionInfo(FromDate.Value, ToDate.Value);
-            //GetAllWard();//GetAllCabin();
+            //GetAllWard();
+            //GetAllCabin();
             GetAllCabin();
             GetRefferedInfo();
             GetIpRegID();
@@ -234,6 +235,14 @@ namespace GHospital_Care.IndoorPatient
             cmbwardCabin.DisplayMember = "CabinName";
             cmbwardCabin.ValueMember = "Id";
         }
+
+        private void GetAllCabinUpdate()
+        {
+            IpdManager aIpdManager = new IpdManager();
+            cmbwardCabin.DataSource = aIpdManager.GetAllCabinUpdate();
+            cmbwardCabin.DisplayMember = "CabinName";
+            cmbwardCabin.ValueMember = "Id";
+        }
         private void LoadBeds()
         {
             IpdManager aIpdManager = new IpdManager();
@@ -251,6 +260,9 @@ namespace GHospital_Care.IndoorPatient
             txtAge.Clear();
             txtPhone.Clear();
             txtGurdian.Clear();
+            cmbMaritalStatus.Text = "";
+            txtNationality.Text = "";
+
             txtRelation.Clear();
             GetAllCabin();
             
@@ -265,8 +277,9 @@ namespace GHospital_Care.IndoorPatient
             cmbDepartment.Clear();
             txtNationality.Clear();
             txtReg.Clear();
-            dateTimeTime.Value = DateTime.Now.ToLocalTime();
-            txtNationality.Text = "Bangladeshi";//btnSave.Text == "Save";
+            AdmissionTime.Value = DateTime.Now.ToLocalTime();
+            txtNationality.Text = "Bangladeshi";
+            //btnSave.Text == "Save";
             id = null;
             GeneratePatientId();
             //btnSave.Enabled = true;
@@ -319,8 +332,7 @@ namespace GHospital_Care.IndoorPatient
         {
        
             Control buttonControl=new ButtonPermissionAccess().UserButton(this.panel3,this.Name);
-           
-            //chkCabin.Checked = false;
+           //chkCabin.Checked = false;
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
             LoadData();
@@ -349,11 +361,12 @@ namespace GHospital_Care.IndoorPatient
                 //patient.RefferedBy = cmbRefferBy.SelectedValue.ToString();
                 DAL.Model.OutdoorPatient aOutdoorPatient = new DAL.Model.OutdoorPatient();
                 aOutdoorPatient.Opid = txtOpid.Text;
-                aOutdoorPatient.ServiceDate = dateTimePicker1.Value;
+                aOutdoorPatient.ServiceDate = AdmissionDate.Value;
                 aOutdoorPatient.TreatementType = "IPD";
                 aOutdoorPatient.PatientName = txtName.Text;
                 aOutdoorPatient.GurdianName = txtGurdian.Text;
                 aOutdoorPatient.Address = txtAddress.Text;
+
                 if (txtAge.Text != null)
                 {
                   aOutdoorPatient.Age = Convert.ToInt32(txtAge.Text);
@@ -376,8 +389,9 @@ namespace GHospital_Care.IndoorPatient
                 patient.FatherName = txtFatherName.Text;
                 patient.MotherName = txtMother.Text;
                 patient.Address = txtAddress.Text;
+                patient.Area = cmbArea.Text;
                 patient.Age = txtAge.Text;
-
+                patient.Area = cmbArea.Text;
                 if (cmbMaritalStatus.Text == "Married" || cmbMaritalStatus.Text == "Single" || cmbMaritalStatus.Text == "Divorced" || txtAge.Text == "Separated" || cmbMaritalStatus.Text == "Widowed")
                 {
                     patient.MaritalStatus = cmbMaritalStatus.Text;
@@ -421,22 +435,26 @@ namespace GHospital_Care.IndoorPatient
                 patient.Nationality = txtNationality.Text;
 
 
-                patient.InputDate = dateTimePicker1.Value;
+                patient.InputDate = AdmissionDate.Value;
 
-                DateTime dt = dateTimeTime.Value;
+                DateTime dt = AdmissionTime.Value;
                 TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
                 patient.AdmissionTime = st;
 
                 patient.DutyDoctorId = cmbDutydoctor.SelectedValue.ToString();
                 //patient.Doctor = comPrimaryDoctor.Text;
-                patient.RefferedBy = cmbRefferBy.Tag.ToString(); patient.RegNo = txtReg.Text;
+                patient.RefferedBy = cmbRefferBy.Tag.ToString(); 
+                patient.RegNo = txtReg.Text;
 
                 service.OPID = txtOpid.Text;
-                service.ServiceId = "Serv-01";
+                service.ServiceId = "I-Serv-01";
                 service.Rate = Convert.ToDouble(txtRegFf.Text);
                 service.Total = Convert.ToDouble(txtRegFf.Text);
                 service.Qty = 1;
-                service.IssueDate = dateTimePicker1.Value;
+                service.IssueDate = AdmissionDate.Value;
+                service.Catgory = "Hospital";
+                
+
                 MessageModel message = new IpdManager().SaveIpdPatient(patient, service, aOutdoorPatient);
                 if (message.MessageTitle == "Successful")
                 {
@@ -516,7 +534,7 @@ namespace GHospital_Care.IndoorPatient
             {
                 DAL.Model.OutdoorPatient aOutdoorPatient = new DAL.Model.OutdoorPatient();
                 aOutdoorPatient.Opid = txtOpid.Text;
-                aOutdoorPatient.ServiceDate = dateTimePicker1.Value;
+                aOutdoorPatient.ServiceDate = AdmissionDate.Value;
                 aOutdoorPatient.TreatementType = "IPD";
                 aOutdoorPatient.PatientName = txtName.Text;
                 aOutdoorPatient.GurdianName = txtGurdian.Text;
@@ -528,6 +546,7 @@ namespace GHospital_Care.IndoorPatient
                 //aOutdoorPatient.Doctor = comPrimaryDoctor.Text;
                 aOutdoorPatient.Fees = txtRegFf.Text;
                 aOutdoorPatient.ContactPerson = txtGurdian.Text;
+
                 aOutdoorPatient.Gender = cmbGender.Text;
                 if (cmbbloodGroup.Text == "A+" || cmbbloodGroup.Text == "A-" || cmbbloodGroup.Text == "AB+" || cmbbloodGroup.Text == "AB-" || cmbbloodGroup.Text == "B+" || cmbbloodGroup.Text == "B-" || cmbbloodGroup.Text == "O+" || cmbbloodGroup.Text == "O-" || cmbbloodGroup.Text == "N/A")
                 {
@@ -544,7 +563,7 @@ namespace GHospital_Care.IndoorPatient
                 patient.Mobile = txtPhone.Text;
                 patient.Gurdian = txtGurdian.Text;
                 patient.Phone = txtPhone.Text;
-                
+                patient.Area = cmbArea.Text;
                 patient.Gender = cmbGender.Text;
                 patient.BloodGroup = cmbbloodGroup.Text;
                 patient.Religion = cmbReligion.Text;
@@ -552,9 +571,11 @@ namespace GHospital_Care.IndoorPatient
                 patient.Department = cmbDepartment.Text;
                 patient.Weight = txtWeight.Text;
                 patient.Nationality = txtNationality.Text;
-                patient.InputDate = dateTimePicker1.Value;
-                patient.DutyDoctorId = cmbDutydoctor.SelectedValue.ToString();
-               // patient.Doctor = comPrimaryDoctor.Text;
+                patient.InputDate = AdmissionDate.Value;
+                DateTime dt = AdmissionTime.Value;
+                TimeSpan st = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+                patient.AdmissionTime = st;patient.DutyDoctorId = cmbDutydoctor.SelectedValue.ToString();
+                patient.Doctor = txtPrimaryDoctor.Text;
 
                 MessageModel message = new IpdManager().UpdateAdmissionPatient(patient, aOutdoorPatient);
                 if (message.MessageTitle == "Successfull")
@@ -582,8 +603,10 @@ namespace GHospital_Care.IndoorPatient
             {
                 xtraTabPage1.Show();
                 flag = true;
-
+                GetAllCabinUpdate();
                 txtOpid.Text = gridView1.GetFocusedRowCellValue("OPID").ToString();
+                AdmissionDate.Text = gridView1.GetFocusedRowCellValue("InputDate").ToString();
+                AdmissionTime.Text = gridView1.GetFocusedRowCellValue("AdmissionTime").ToString();
                 txtName.Text = gridView1.GetFocusedRowCellValue("PatientName").ToString();
                 txtFatherName.Text = gridView1.GetFocusedRowCellValue("FatherName").ToString();
                 txtMother.Text = gridView1.GetFocusedRowCellValue("MotherName").ToString();
@@ -597,7 +620,7 @@ namespace GHospital_Care.IndoorPatient
                 //comPrimaryDoctor.Text = gridView1.GetFocusedRowCellValue("Doctor").ToString();
                 txtPatientCondition.Text = gridView1.GetFocusedRowCellValue("paitentConditon").ToString();
                 cmbDepartment.Text = gridView1.GetFocusedRowCellValue("Department").ToString();
-                cmbDutydoctor.Text = gridView1.GetFocusedRowCellValue("DutyDoctorId").ToString();
+                cmbDutydoctor.SelectedValue = gridView1.GetFocusedRowCellValue("DutyDoctorId").ToString();
                 cmbGender.Text = gridView1.GetFocusedRowCellValue("Gender").ToString();
                 cmbbloodGroup.Text = gridView1.GetFocusedRowCellValue("BloodGroup").ToString();
                 txtWeight.Text = gridView1.GetFocusedRowCellValue("Weight").ToString();
@@ -605,16 +628,21 @@ namespace GHospital_Care.IndoorPatient
                 cmbwardCabin.Text = gridView1.GetFocusedRowCellValue("WardOrCabin").ToString();
                 txtseletedBed.Text = gridView1.GetFocusedRowCellValue("SelectedBed").ToString();
                 txtReg.Text = gridView1.GetFocusedRowCellValue("RegNo").ToString();
-
+                cmbMaritalStatus.Text = gridView1.GetFocusedRowCellValue("MaritalStatus").ToString();
+                cmbwardCabin.Text = gridView1.GetFocusedRowCellValue("BedName").ToString();
+                cmbArea.Text = gridView1.GetFocusedRowCellValue("Area").ToString();
+                
                 pidSearchLookUpEdit.Enabled = false;
+
+
+
                 _session.ChkPermission(MainWindow.userName);
                 if (_session.EditPermission == true && _session.DeletePermission == true)
                 {
                     buttonEnable(false);
                 }
                 if (_session.EditPermission == true && _session.DeletePermission == false)
-                {
-                    buttonEnable(false);
+                {buttonEnable(false);
                     btnDelete.Enabled = _session.DeletePermission;
                 }
                 if (_session.EditPermission == false && _session.DeletePermission == true)
@@ -627,10 +655,14 @@ namespace GHospital_Care.IndoorPatient
                     buttonEnable(true);
                     btnSave.Enabled = false;
                 }
-               
 
-                   
 
+
+                //for test only
+
+                btnEdit.Enabled = true;
+
+                //for test only
             }
             catch (Exception ex)
             {
@@ -647,8 +679,7 @@ namespace GHospital_Care.IndoorPatient
         private void rdOccupied_CheckedChanged(object sender, EventArgs e)
         {
             ChkFreeOccupied();
-            GetBadorCabin();
-        }
+            GetBadorCabin();}
         private bool flag = false;
         public object id;
         private object OpId;
@@ -719,8 +750,9 @@ namespace GHospital_Care.IndoorPatient
         }
         private void txtMother_KeyPress(object sender, KeyPressEventArgs e)
         {
-            focus(sender, e, txtAddress, null);
+            focus(sender, e, cmbArea, null);
         }
+
         private void txtAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -981,7 +1013,7 @@ namespace GHospital_Care.IndoorPatient
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dateTimePicker1.Focus();
+                AdmissionDate.Focus();
             }
         }
 
@@ -989,7 +1021,7 @@ namespace GHospital_Care.IndoorPatient
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dateTimeTime.Focus();
+                AdmissionTime.Focus();
             }
         }
 
@@ -1030,25 +1062,38 @@ namespace GHospital_Care.IndoorPatient
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            PrintAdmissionList();
         }
-        public void PrintService()
+        public void PrintAdmissionList()
         {
             ReportModel model = new ReportModel();
             model.Parameters = new List<ReportParameter>
             {
                 new ReportParameter("Company", model.Company.ToUpper()),
                 new ReportParameter("Address",  model.Address),
+                new ReportParameter("dtFrom",  FromDate.Text),new ReportParameter("dtTo",  ToDate.Text),
                 
             };
-            model.ReportDataSource.Name = "BedList";
+            model.ReportDataSource.Name = "IpAdmissionDataSet";
 
-            DataTable dt = new BedManager().BedList();
-            model.ReportDataSource.Value = dt;
+            PatitientInfo();
+            model.ReportDataSource.Value = Admission;
 
-            model.ReportPath = "GHospital_Care.Report.rptBedList.rdlc";
+            model.ReportPath = "GHospital_Care.Report.rdlcipadmission.rdlc";
             model.Show(model, this);
         }
+
+        private void cmbArea_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtAddress.Focus();
+            }
+        }
+
+        private void xtraTabControl1_Click(object sender, EventArgs e)
+        {
+            PatitientInfo();}
 
 
         //public void GetPrimaryDoctor()

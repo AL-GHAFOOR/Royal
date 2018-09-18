@@ -51,7 +51,8 @@ namespace GHospital_Care.NICU
             }
         }
         private void specialButton9_Click(object sender, EventArgs e)
-        {GetIpInfo();
+        {
+            GetIpInfo();
           
         }
 
@@ -295,8 +296,19 @@ namespace GHospital_Care.NICU
             DataTable dt = new BillCheckingManagerNICU().GetNICUBILLInfo(FromDate.Value, ToDate.Value, check);
             model.ReportDataSource.Value = dt;
 
-            model.ReportPath = "GHospital_Care.Report.rdlcIndoorPatientFinalBilling.rdlc";
+            model.ReportPath = "GHospital_Care.Report.rdlcNICUPatientFinalBilling.rdlc";
             model.Show(model, this);
+        }
+
+        private void rdDischargReq_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            chkValue();
+            GetIpInfo();
         }
     }
 }

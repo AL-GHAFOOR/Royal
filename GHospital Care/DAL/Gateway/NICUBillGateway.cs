@@ -16,7 +16,7 @@ namespace GHospital_Care.DAL
 
         public DataTable GetNICUAllSerialNo()
         {
-            Query = "select * from BedHistoryPatientInfoNICU";
+            Query = "select * from BedHistoryPatientInfoNICU where RegNo not in (select OPID from tbl_MasterDischargeFormNICU) ";
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.Text;
             Reader = Command.ExecuteReader();
@@ -69,13 +69,13 @@ namespace GHospital_Care.DAL
         public DataTable DischargeRequestNICU()
         {
             DataTable dtDataTable = new DataTable();
-            Query = "select OPID from tbl_MasterDischargeFormNICU where OPID not in(Select OPID from tbl_DischargeBillNICU)";
+            Query = "select N.OPID, P.PatientName, P.AdmitDate, P.BedName from tbl_MasterDischargeFormNICU n " +
+                    "inner join BedHistoryPatientInfoNICU P on N.OPID= P.RegNo where OPID not in(Select OPID from tbl_DischargeBillNICU)";
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.Text;
             Reader = Command.ExecuteReader();
 
-            dtDataTable.Load(Reader);
-            return dtDataTable;
+            dtDataTable.Load(Reader);return dtDataTable;
         }
 
         public DataTable GetDischargeBillNICUByPatient(string OPID)

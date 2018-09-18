@@ -1358,7 +1358,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox60">
+                    <Textbox Name="SName1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1377,7 +1377,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox60</rd:DefaultName>
+                      <rd:DefaultName>SName1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -1687,7 +1687,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>IN WARD :</Value>
+                              <Value>IN WORD:</Value>
                               <Style>
                                 <FontFamily>Courier New</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -1874,7 +1874,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.92015in</Height>
+    <Height>3.06194in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -1884,44 +1884,10 @@
   <Width>6.29666in</Width>
   <Page>
     <PageHeader>
-      <Height>1.08264in</Height>
+      <Height>0.7493in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox15">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Out Door Patient Bill</Value>
-                  <Style>
-                    <FontFamily>Courier New</FontFamily>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox15</rd:DefaultName>
-          <Top>0.76819in</Top>
-          <Height>0.28597in</Height>
-          <Width>6.28626in</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox16">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1955,12 +1921,26 @@
                 <TextAlign>Center</TextAlign>
               </Style>
             </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Out Door Patient Bill</Value>
+                  <Style>
+                    <FontFamily>Courier New</FontFamily>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox15</rd:DefaultName>
-          <Top>0.13847in</Top>
-          <Height>0.50472in</Height>
+          <Top>0.05097in</Top>
+          <Height>0.6193in</Height>
           <Width>6.28626in</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

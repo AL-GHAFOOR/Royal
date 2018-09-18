@@ -131,7 +131,7 @@ namespace GHospital_Care.IndoorPatient
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.picBoxSearch = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
@@ -157,6 +157,7 @@ namespace GHospital_Care.IndoorPatient
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1345,7 +1346,7 @@ namespace GHospital_Care.IndoorPatient
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.simpleButton1);
+            this.panel4.Controls.Add(this.picBoxSearch);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.ToDate);
@@ -1356,20 +1357,21 @@ namespace GHospital_Care.IndoorPatient
             this.panel4.Size = new System.Drawing.Size(873, 40);
             this.panel4.TabIndex = 0;
             // 
-            // simpleButton1
+            // picBoxSearch
             // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(287, 8);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(77, 22);
-            this.simpleButton1.TabIndex = 100114;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.picBoxSearch.Image = ((System.Drawing.Image)(resources.GetObject("picBoxSearch.Image")));
+            this.picBoxSearch.Location = new System.Drawing.Point(528, 8);
+            this.picBoxSearch.Name = "picBoxSearch";
+            this.picBoxSearch.Size = new System.Drawing.Size(60, 28);
+            this.picBoxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxSearch.TabIndex = 100137;
+            this.picBoxSearch.TabStop = false;
+            this.picBoxSearch.Click += new System.EventHandler(this.picBoxSearch_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 12);
+            this.label9.Location = new System.Drawing.Point(267, 16);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 13);
             this.label9.TabIndex = 100101;
@@ -1378,7 +1380,7 @@ namespace GHospital_Care.IndoorPatient
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(163, 13);
+            this.label10.Location = new System.Drawing.Point(405, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(21, 13);
             this.label10.TabIndex = 100102;
@@ -1388,19 +1390,21 @@ namespace GHospital_Care.IndoorPatient
             // 
             this.ToDate.CustomFormat = "dd/MM/yyyy";
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ToDate.Location = new System.Drawing.Point(189, 9);
+            this.ToDate.Location = new System.Drawing.Point(432, 12);
             this.ToDate.Name = "ToDate";
             this.ToDate.Size = new System.Drawing.Size(90, 21);
             this.ToDate.TabIndex = 100103;
+            this.ToDate.ValueChanged += new System.EventHandler(this.ToDate_ValueChanged_1);
             // 
             // FromDate
             // 
             this.FromDate.CustomFormat = "dd/MM/yyyy";
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(66, 8);
+            this.FromDate.Location = new System.Drawing.Point(309, 12);
             this.FromDate.Name = "FromDate";
             this.FromDate.Size = new System.Drawing.Size(90, 21);
             this.FromDate.TabIndex = 100104;
+            this.FromDate.ValueChanged += new System.EventHandler(this.FromDate_ValueChanged);
             // 
             // contextMenuStrip1
             // 
@@ -1460,6 +1464,7 @@ namespace GHospital_Care.IndoorPatient
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxSearch)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1551,7 +1556,6 @@ namespace GHospital_Care.IndoorPatient
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker ToDate;
         private System.Windows.Forms.DateTimePicker FromDate;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -1574,6 +1578,7 @@ namespace GHospital_Care.IndoorPatient
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkPrint;
         private System.Windows.Forms.Label lblPatientID;
+        private System.Windows.Forms.PictureBox picBoxSearch;
 
     }
 }

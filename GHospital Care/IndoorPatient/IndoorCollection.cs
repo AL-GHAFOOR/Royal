@@ -96,6 +96,7 @@ namespace GHospital_Care.IndoorPatient
             model.ReportDataSource.Value = dt;
 
             model.ReportPath = "GHospital_Care.Report.rdlcipcollection.rdlc";
-            model.Show(model, this);}
+            model.Show(model, this);
+        }
     }
 }

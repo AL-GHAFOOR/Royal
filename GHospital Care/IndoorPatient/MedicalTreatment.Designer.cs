@@ -288,7 +288,7 @@
             // txtSuggetion
             // 
             this.txtSuggetion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSuggetion.Location = new System.Drawing.Point(140, 84);
+            this.txtSuggetion.Location = new System.Drawing.Point(137, 88);
             this.txtSuggetion.Multiline = true;
             this.txtSuggetion.Name = "txtSuggetion";
             this.txtSuggetion.Size = new System.Drawing.Size(515, 40);
@@ -314,7 +314,7 @@
             this.txtExtraNotes.Location = new System.Drawing.Point(140, 13);
             this.txtExtraNotes.Multiline = true;
             this.txtExtraNotes.Name = "txtExtraNotes";
-            this.txtExtraNotes.Size = new System.Drawing.Size(194, 36);
+            this.txtExtraNotes.Size = new System.Drawing.Size(353, 36);
             this.txtExtraNotes.TabIndex = 100105;
             this.txtExtraNotes.Text = "Na";
             this.txtExtraNotes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtraNotes_KeyPress);
@@ -322,9 +322,9 @@
             // txtDose
             // 
             this.txtDose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDose.Location = new System.Drawing.Point(487, 57);
+            this.txtDose.Location = new System.Drawing.Point(356, 58);
             this.txtDose.Name = "txtDose";
-            this.txtDose.Size = new System.Drawing.Size(168, 21);
+            this.txtDose.Size = new System.Drawing.Size(138, 21);
             this.txtDose.TabIndex = 100104;
             this.txtDose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDose_KeyPress);
             // 
@@ -365,7 +365,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(443, 60);
+            this.label8.Location = new System.Drawing.Point(319, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 2;

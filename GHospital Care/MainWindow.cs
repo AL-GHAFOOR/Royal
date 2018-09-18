@@ -26,9 +26,11 @@ using DischargeBill = GHospital_Care.IndoorPatient.DischargeBill;
 using DoctorWisePatient_IP = GHospital_Care.IndoorPatient.DoctorWisePatient_IP;
 using ComssionStauts = GHospital_Care.IndoorPatient.ComssionStauts;
 using ConsultantPayment = GHospital_Care.IndoorPatient.ConsultantPayment;
+using Departments = GHospital_Care.Session.PathologyMaster;
 using NICUDischargeRequest = GHospital_Care.NICU.NICUDischargeRequest;
 using IPBillingSetup = GHospital_Care.IndoorPatient.IPBillingSetup;
 using IPBusinessOffice = GHospital_Care.Operation.OTBusinessOffice;
+using IPDAdmissionBedHistory = GHospital_Care.NICU.NICUAdmissionBedHistory;
 using NICUBill = GHospital_Care.DischargeUI.NICUBill;
 using OperationNote = GHospital_Care.Operation.OperationNote;
 
@@ -66,7 +68,7 @@ namespace GHospital_Care
                 mnuAccount.Enabled = true;
                 mnuDoctor.Enabled = true;
                 mnuEmployee.Enabled = true;
-                mnuHospitalProfile.Enabled = true;
+                //mnuHospitalProfile.Enabled = true;
                 mnuIP.Enabled = true;
                 mnuNurses.Enabled = true;
                 mnuOP.Enabled = true;
@@ -82,7 +84,7 @@ namespace GHospital_Care
                 mnuAccount.Enabled = false;
                 mnuDoctor.Enabled = true;
                 mnuEmployee.Enabled = false;
-                mnuHospitalProfile.Enabled = false;
+               // mnuHospitalProfile.Enabled = false;
                 mnuIP.Enabled = true;
                 mnuNurses.Enabled = false;
                 mnuOP.Enabled = true;
@@ -98,7 +100,7 @@ namespace GHospital_Care
                 mnuAccount.Enabled = true;
                 mnuDoctor.Enabled = false;
                 mnuEmployee.Enabled = false;
-                mnuHospitalProfile.Enabled = false;
+               // mnuHospitalProfile.Enabled = false;
                 mnuIP.Enabled = false;
                 mnuNurses.Enabled = false;
                 mnuOP.Enabled = false;
@@ -114,10 +116,9 @@ namespace GHospital_Care
                 mnuAccount.Enabled = false;
                 mnuDoctor.Enabled = false;
                 mnuEmployee.Enabled = false;
-                mnuHospitalProfile.Enabled = false;
+               // mnuHospitalProfile.Enabled = false;
                 mnuIP.Enabled = false;
-                mnuNurses.Enabled = false;
-                mnuOP.Enabled = false;
+                mnuNurses.Enabled = false;mnuOP.Enabled = false;
                 mnuPathology.Enabled = true;
                 mnuPharmacy.Enabled = false;
                 mnuReports.Enabled = false;
@@ -165,11 +166,10 @@ namespace GHospital_Care
         }
         private void departmentSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Settings.Departments frm = new GHospital_Care.Settings.Departments();
+            Departments frm = new Departments();
             frm.MdiParent = this;
             frm.Show();
-        }
-        private void deseaseSToolStripMenuItem_Click(object sender, EventArgs e)
+        }private void deseaseSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Settings.Deseases frm = new GHospital_Care.Settings.Deseases();
             frm.MdiParent = this;
@@ -391,7 +391,7 @@ namespace GHospital_Care
         }
         private void patientListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IndoorPatient.IPList frm = new GHospital_Care.IndoorPatient.IPList();
+            IndoorPatient.HospitalRcvPayment frm = new GHospital_Care.IndoorPatient.HospitalRcvPayment();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -626,7 +626,7 @@ namespace GHospital_Care
 
         private void iPAdmissionBedHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IndoorPatient.IPDAdmissionBedHistory frm = new GHospital_Care.IndoorPatient.IPDAdmissionBedHistory();
+            IndoorPatient.IPDAdmissionBedHistory frm = new IndoorPatient.IPDAdmissionBedHistory();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -692,7 +692,8 @@ namespace GHospital_Care
 
         private void billGenerateIPOPToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IPBillingSetup frm = new IPBillingSetup(billGenerateIPOPToolStripMenuItem.Name);
+            IPBillingSetup frm = new IPBillingSetup("");
+            MainWindow.MedicineFalge = "OPD";
             frm.MdiParent = this;
             frm.Show();
         }
@@ -746,16 +747,19 @@ namespace GHospital_Care
             Operation.MdiParent = this;
             Operation.Show();
         }
-
+        public static string MedicineFalge = "";
         private void operationBillToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IPBillingSetup OtBilling = new IPBillingSetup(operationBillToolStripMenuItem.Name);
 
             OtBilling.MdiParent = this;
             OtBilling.Show();
+            MedicineFalge = "OT";
+            OtBilling.toggleSwitch1.Show();
+            OtBilling.btnPrint.Hide();
             OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage1);
             OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage3);
-            OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage4); 
+            OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage4);
             OtBilling.tabControl1.TabPages.Remove(OtBilling.IssueMedicine);
             
         }
@@ -816,12 +820,11 @@ namespace GHospital_Care
             NicuBill.MdiParent = this;
             NicuBill.Show();
         }
-
         private void createBillToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IPBillingSetup frm = new IPBillingSetup(billGenerateIPOPToolStripMenuItem.Name);
-            frm.MdiParent = this;
-            frm.Show();
+            IPBillingSetup frm = new IPBillingSetup("");
+            MainWindow.MedicineFalge = "OPD";
+            frm.MdiParent = this;frm.Show();
         }
         private void consultantServiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -894,8 +897,7 @@ namespace GHospital_Care
         private void dailyFollowupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IndoorPatient.MedicalTreatment frm = new GHospital_Care.IndoorPatient.MedicalTreatment();
-            frm.MdiParent = this;
-            frm.Show();
+            frm.MdiParent = this;frm.Show();
         }
 
         private void consultantPaymentToolStripMenuItem_Click(object sender, EventArgs e)
@@ -905,5 +907,25 @@ namespace GHospital_Care
             frm.Show();
         }
 
+        private void nICUBedHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NICUAdmissionBedHistory frm = new NICUAdmissionBedHistory();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void pathologySetupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Session.PathologyMaster frm = new Session.PathologyMaster();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void hopitalReceivePaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRcvPayment frm = new frmRcvPayment();
+            frm.MdiParent = this;
+            frm.Show();
+        }
         }
 }

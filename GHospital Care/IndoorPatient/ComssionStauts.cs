@@ -303,6 +303,10 @@ namespace GHospital_Care.IndoorPatient
             {
                 RefferedId = "All";
             }
+            else
+            {
+                RefferedId = searchLookUpEdit1.Properties.View.GetFocusedRowCellValue("Id").ToString();
+            }
             CommissionView();
         }
 

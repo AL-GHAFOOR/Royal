@@ -32,13 +32,12 @@ namespace GHospital_Care.DAL.Gateway
 
           }
          
-
-
           Command = new SqlCommand(Query, Connection);
           Command.CommandText = Query;
            return Command.ExecuteNonQuery();
-      
       }
+
+
 
       public DataTable DisChargeSummery_MedicineTakeInHopital(string opid)
       {
@@ -50,6 +49,7 @@ namespace GHospital_Care.DAL.Gateway
           data.Load(Reader);
           return data;
       }
+
       public DataTable DisChargeSummery(string opid)
       {
           Query = "select * from DisChargeSummery where OPID='" + opid + "'";
@@ -94,7 +94,7 @@ namespace GHospital_Care.DAL.Gateway
       }
       public DataTable GetAllIpAdmissionInfo(DateTime fromdate, DateTime ToDate)
       {
-          Query = "SELECT * FROM BedHistoryPatientInfo where Convert(date,InputDate) between '" + fromdate + "' and '" + ToDate + "' ORDER BY OPID DESC";
+          Query = "SELECT * FROM BedHistoryPatientInfo where OPID not in(select OPID from tbl_DischargeBill) and Convert(date,InputDate) between '" + fromdate + "' and '" + ToDate + "' ORDER BY OPID DESC";
           Command = new SqlCommand(Query, Connection);
           Command.CommandText = Query;
           Reader = Command.ExecuteReader();
@@ -128,9 +128,29 @@ namespace GHospital_Care.DAL.Gateway
       }
 
 
+      public DataTable GetAllBedNICU()
+      {
+          Query = "select * from ViewAllBeds where BedId not in (select Bed from NICUAdmission) and WardName= 'NICU'";
+          Command = new SqlCommand(Query, Connection);
+          Command.CommandType = CommandType.Text;
+          DataTable dtDataTable = new DataTable();
+          Reader = Command.ExecuteReader();
+          dtDataTable.Load(Reader);
+          return dtDataTable;
+      }
+
       public DataTable GetAllCabin()
       {
           Query = "select * from ViewAllCabins where Convert(varchar(50),id) not in (select WardOrCabin from tbl_IndoorAdmission where SelectedBed ='')";
+          Command = new SqlCommand(Query, Connection);Command.CommandType = CommandType.Text;
+          DataTable dtDataTable = new DataTable();
+          Reader = Command.ExecuteReader();
+          dtDataTable.Load(Reader);
+          return dtDataTable;
+      }
+      public DataTable GetAllCabinUpdate()
+      {
+          Query = "select * from ViewAllCabins ";
           Command = new SqlCommand(Query, Connection);
           Command.CommandType = CommandType.Text;
           DataTable dtDataTable = new DataTable();
@@ -160,10 +180,21 @@ namespace GHospital_Care.DAL.Gateway
           dtDataTable.Load(Reader);
           return dtDataTable;
       }
+
+      public DataTable GetBedCabinHistoryNICU(string pID)
+      {
+          Query = "SELECT * FROM PatientBedCabinHistoryNICU where OPID = '" + pID + "' ";
+          Command = new SqlCommand(Query, Connection);
+          Command.CommandType = CommandType.Text;
+          DataTable dtDataTable = new DataTable();
+          Reader = Command.ExecuteReader();
+          dtDataTable.Load(Reader);
+          return dtDataTable;
+      }
       public int SaveAdmissionPatient(Patient patient)
       {
-          Query = "INSERT INTO tbl_IndoorAdmission (OPID,PatientName,Address,Gender,Age,Phone,Mobile,Nationality,Doctor,BloodGroup,FatherName,MotherName,Gurdian,Relation,WardOrCabin,DutyDoctorId,RefferedBy,SelectedBed,InputDate,paitentConditon,Religion,Department,Weight,RegNo,AdmissionTime,MaritalStatus)"
-              + "VALUES (@OPID,@PatientName,@Address,@Gender,@Age,@Phone,@Mobile,@Nationality,@Doctor,@BloodGroup,@FatherName,@MotherName,@Gurdian,@Relation,@WardOrCabin,@DutyDoctorId,@RefferedBy,@SelectedBed,@InputDate,@paitentConditon,@Religion,@Department,@Weight,@RegNo,@AdmissionTime,@MaritalStatus)";
+          Query = "INSERT INTO tbl_IndoorAdmission (OPID,PatientName,Address,Gender,Age,Phone,Mobile,Nationality,Doctor,BloodGroup,FatherName,MotherName,Gurdian,Relation,WardOrCabin,DutyDoctorId,RefferedBy,SelectedBed,InputDate,paitentConditon,Religion,Department,Weight,RegNo,AdmissionTime,MaritalStatus,Area)"
+              + "VALUES (@OPID,@PatientName,@Address,@Gender,@Age,@Phone,@Mobile,@Nationality,@Doctor,@BloodGroup,@FatherName,@MotherName,@Gurdian,@Relation,@WardOrCabin,@DutyDoctorId,@RefferedBy,@SelectedBed,@InputDate,@paitentConditon,@Religion,@Department,@Weight,@RegNo,@AdmissionTime,@MaritalStatus,@Area)";
           
           Command=new SqlCommand(Query,Connection);
           Command.CommandType = CommandType.Text;
@@ -191,7 +222,9 @@ namespace GHospital_Care.DAL.Gateway
           Command.Parameters.AddWithValue("@Department", patient.Department ?? "");
           Command.Parameters.AddWithValue("@Weight", patient.Weight ?? "");
           Command.Parameters.AddWithValue("@RegNo", patient.RegNo ?? "");
-          Command.Parameters.AddWithValue("@AdmissionTime", patient.AdmissionTime);Command.Parameters.AddWithValue("@MaritalStatus", patient.MaritalStatus);             
+          Command.Parameters.AddWithValue("@AdmissionTime", patient.AdmissionTime);
+          Command.Parameters.AddWithValue("@MaritalStatus", patient.MaritalStatus);             
+          Command.Parameters.AddWithValue("@Area", patient.Area);             
           int count=Command.ExecuteNonQuery();
           return count;
       }
@@ -304,7 +337,7 @@ namespace GHospital_Care.DAL.Gateway
                   "Address=@Address,Gender=@Gender,Age=@Age,Mobile=@mobile,Nationality=@nationality," +
                   "BloodGroup=@bloodGroup,FatherName=@fatherName,MotherName=@motherName," +
                   "Gurdian=@gurdian,Relation=@relation, Religion=@religion,RefferedBy=@refferedBy," +
-                  "InputDate=@InputDate,paitentConditon=@paitentConditon, Department=@Department,Weight=@Weight,Doctor=@Doctor,DutyDoctorId=@DutyDoctorId,AdmissionTime=@AdmissionTime WHERE OPID=@OPID";
+                  "InputDate=@InputDate,paitentConditon=@paitentConditon, Department=@Department,Weight=@Weight,Doctor=@Doctor,DutyDoctorId=@DutyDoctorId,AdmissionTime=@AdmissionTime,Area=@Area WHERE OPID=@OPID";
           Command = new SqlCommand(Query, Connection);
           Command.Parameters.AddWithValue("@OPID", patient.OPID);
           Command.Parameters.AddWithValue("@PatientName", patient.PatientName);
@@ -324,9 +357,10 @@ namespace GHospital_Care.DAL.Gateway
           Command.Parameters.AddWithValue("@paitentConditon", patient.PatientCondition ?? "");
           Command.Parameters.AddWithValue("@Department", patient.Department ?? "");
           Command.Parameters.AddWithValue("@Weight", patient.Weight);
-          Command.Parameters.AddWithValue("@Doctor", patient.Doctor);
+          Command.Parameters.AddWithValue("@Doctor", patient.Doctor ?? "");
           Command.Parameters.AddWithValue("@DutyDoctorId", patient.DutyDoctorId);
           Command.Parameters.AddWithValue("@AdmissionTime", patient.AdmissionTime);
+          Command.Parameters.AddWithValue("@Area", patient.Area);
 
           int rowAffect = Command.ExecuteNonQuery();
           return rowAffect;
@@ -390,8 +424,7 @@ namespace GHospital_Care.DAL.Gateway
           Query = "select * from DisChargeSummery_TreatmentNICU where OPID='" + opid + "'";
           Command = new SqlCommand(Query, Connection);
           Command.CommandText = Query;
-          Reader = Command.ExecuteReader();
-          DataTable data = new DataTable();
+          Reader = Command.ExecuteReader();DataTable data = new DataTable();
           data.Load(Reader);
           return data;
       }
@@ -419,3 +452,4 @@ namespace GHospital_Care.DAL.Gateway
       }
     }
 }
+

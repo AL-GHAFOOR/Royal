@@ -65,7 +65,7 @@ namespace GHospital_Care.DAL.Gateway
 
        public DataTable GetOTMedicineBill(string patientID)
        {
-           Query = "select OT.*,OT.Rate*OT.Qty subTotal,P.* from tbl_OT_SeviceBill OT inner join productList P on p.ProductCode = OT.ProductId where PatientId = '" + patientID + "' ";
+           Query = "select OT.*,OT.Rate*OT.Qty subTotal,P.* from tbl_OT_SeviceBill OT inner join productList_Medicine P on p.ProductCode = OT.ProductId where PatientId = '" + patientID + "' ";
            Command = new SqlCommand(Query, Connection);
            Command.CommandType = CommandType.Text;
            DataTable dtDataTable = new DataTable();
@@ -73,6 +73,8 @@ namespace GHospital_Care.DAL.Gateway
            dtDataTable.Load(Reader);
            return dtDataTable;
        }
+      
+
 
        public DataTable GetNICUBillINFO(DateTime AdmintDate1, DateTime AdmintDate2, string chkvalue)
        {
@@ -85,9 +87,8 @@ namespace GHospital_Care.DAL.Gateway
            }
            if (chkvalue == "Running")
            {
-               Query = "select * from HospitalBusinessOfficeNICU B where B.AdmitDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.RegNo  NOT IN(SELECT OPID FROM dbo.tbl_DischargeBillNICU) ";
-           }
-           if (chkvalue == "Req")
+               Query = "select * from HospitalBusinessOfficeNICU B where B.AdmitDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.RegNo  NOT IN(SELECT OPID FROM dbo.tbl_MasterDischargeFormNICU) ";
+           }if (chkvalue == "Req")
            {
                Query = "select * from HospitalBusinessOfficeDichargeReqNICU B where B.DischargeDate between  '" + AdmintDate1 + "' and '" + AdmintDate2 + "' and B.RegNo  NOT IN(SELECT OPID FROM dbo.tbl_DischargeBillNICU) ";
            }

@@ -36,7 +36,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCabinBed = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
             this.cmbPid = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
             this.admitDate = new System.Windows.Forms.DateTimePicker();
@@ -68,7 +67,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.radioBtnNicu = new System.Windows.Forms.RadioButton();
+            this.radioBtnIndoor = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -100,6 +103,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -169,7 +174,6 @@
             this.groupBox1.BackColor = System.Drawing.Color.SeaShell;
             this.groupBox1.Controls.Add(this.txtCabinBed);
             this.groupBox1.Controls.Add(this.label31);
-            this.groupBox1.Controls.Add(this.toggleSwitch1);
             this.groupBox1.Controls.Add(this.cmbPid);
             this.groupBox1.Controls.Add(this.label43);
             this.groupBox1.Controls.Add(this.admitDate);
@@ -201,6 +205,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.toggleSwitch1);
             this.groupBox1.Location = new System.Drawing.Point(6, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(864, 203);
@@ -212,7 +217,7 @@
             // 
             this.txtCabinBed.BackColor = System.Drawing.Color.White;
             this.txtCabinBed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCabinBed.Location = new System.Drawing.Point(433, 40);
+            this.txtCabinBed.Location = new System.Drawing.Point(433, 57);
             this.txtCabinBed.MaxLength = 11;
             this.txtCabinBed.Name = "txtCabinBed";
             this.txtCabinBed.ReadOnly = true;
@@ -226,34 +231,11 @@
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(364, 44);
+            this.label31.Location = new System.Drawing.Point(364, 61);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(65, 13);
             this.label31.TabIndex = 100104;
             this.label31.Text = "Cabin/Bed";
-            // 
-            // toggleSwitch1
-            // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(688, 10);
-            this.toggleSwitch1.Name = "toggleSwitch1";
-            this.toggleSwitch1.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.toggleSwitch1.Properties.Appearance.BackColor = System.Drawing.Color.Yellow;
-            this.toggleSwitch1.Properties.Appearance.BackColor2 = System.Drawing.Color.Red;
-            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.toggleSwitch1.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toggleSwitch1.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.toggleSwitch1.Properties.Appearance.Options.UseBackColor = true;
-            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
-            this.toggleSwitch1.Properties.Appearance.Options.UseForeColor = true;
-            this.toggleSwitch1.Properties.Appearance.Options.UseTextOptions = true;
-            this.toggleSwitch1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.toggleSwitch1.Properties.AutoHeight = false;
-            this.toggleSwitch1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.toggleSwitch1.Properties.OffText = "IPD";
-            this.toggleSwitch1.Properties.OnText = "OPD";
-            this.toggleSwitch1.Size = new System.Drawing.Size(153, 42);
-            this.toggleSwitch1.TabIndex = 100102;
-            this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
             // 
             // cmbPid
             // 
@@ -282,7 +264,7 @@
             // 
             this.admitDate.CustomFormat = "dd-MM-yyyy";
             this.admitDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.admitDate.Location = new System.Drawing.Point(689, 141);
+            this.admitDate.Location = new System.Drawing.Point(689, 153);
             this.admitDate.Name = "admitDate";
             this.admitDate.Size = new System.Drawing.Size(152, 20);
             this.admitDate.TabIndex = 100098;
@@ -293,7 +275,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(616, 144);
+            this.label2.Location = new System.Drawing.Point(616, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 100097;
@@ -306,7 +288,7 @@
             this.cmbMatialStatus.Items.AddRange(new object[] {
             "Married",
             "Unmarrid"});
-            this.cmbMatialStatus.Location = new System.Drawing.Point(689, 116);
+            this.cmbMatialStatus.Location = new System.Drawing.Point(689, 128);
             this.cmbMatialStatus.Name = "cmbMatialStatus";
             this.cmbMatialStatus.Size = new System.Drawing.Size(152, 21);
             this.cmbMatialStatus.TabIndex = 100086;
@@ -315,7 +297,7 @@
             // 
             this.txtPhone.BackColor = System.Drawing.Color.White;
             this.txtPhone.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(433, 65);
+            this.txtPhone.Location = new System.Drawing.Point(433, 82);
             this.txtPhone.MaxLength = 11;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
@@ -327,7 +309,7 @@
             // 
             this.txtGuirdian.BackColor = System.Drawing.Color.White;
             this.txtGuirdian.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGuirdian.Location = new System.Drawing.Point(433, 89);
+            this.txtGuirdian.Location = new System.Drawing.Point(433, 106);
             this.txtGuirdian.MaxLength = 250;
             this.txtGuirdian.Name = "txtGuirdian";
             this.txtGuirdian.ReadOnly = true;
@@ -353,7 +335,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(378, 93);
+            this.label16.Location = new System.Drawing.Point(378, 110);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(51, 13);
             this.label16.TabIndex = 100096;
@@ -364,7 +346,7 @@
             this.txtReligion.BackColor = System.Drawing.Color.White;
             this.txtReligion.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtReligion.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReligion.Location = new System.Drawing.Point(688, 92);
+            this.txtReligion.Location = new System.Drawing.Point(688, 104);
             this.txtReligion.MaxLength = 3;
             this.txtReligion.Name = "txtReligion";
             this.txtReligion.ReadOnly = true;
@@ -378,7 +360,7 @@
             this.txtBloodGroup.BackColor = System.Drawing.Color.White;
             this.txtBloodGroup.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtBloodGroup.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBloodGroup.Location = new System.Drawing.Point(688, 67);
+            this.txtBloodGroup.Location = new System.Drawing.Point(688, 79);
             this.txtBloodGroup.MaxLength = 3;
             this.txtBloodGroup.Name = "txtBloodGroup";
             this.txtBloodGroup.ReadOnly = true;
@@ -445,7 +427,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(612, 67);
+            this.label12.Location = new System.Drawing.Point(612, 79);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 13);
             this.label12.TabIndex = 100094;
@@ -455,7 +437,7 @@
             // 
             this.txtRelation.BackColor = System.Drawing.Color.White;
             this.txtRelation.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRelation.Location = new System.Drawing.Point(433, 137);
+            this.txtRelation.Location = new System.Drawing.Point(433, 154);
             this.txtRelation.MaxLength = 50;
             this.txtRelation.Name = "txtRelation";
             this.txtRelation.ReadOnly = true;
@@ -469,7 +451,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(688, 98);
+            this.label13.Location = new System.Drawing.Point(688, 110);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 13);
             this.label13.TabIndex = 100094;
@@ -481,7 +463,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(375, 141);
+            this.label15.Location = new System.Drawing.Point(375, 158);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(54, 13);
             this.label15.TabIndex = 100093;
@@ -493,7 +475,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(600, 120);
+            this.label14.Location = new System.Drawing.Point(600, 132);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 13);
             this.label14.TabIndex = 100094;
@@ -505,7 +487,7 @@
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(387, 69);
+            this.label22.Location = new System.Drawing.Point(387, 86);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(42, 13);
             this.label22.TabIndex = 100093;
@@ -517,7 +499,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(385, 117);
+            this.label19.Location = new System.Drawing.Point(385, 134);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(44, 13);
             this.label19.TabIndex = 100093;
@@ -527,7 +509,7 @@
             // 
             this.txtMobile.BackColor = System.Drawing.Color.White;
             this.txtMobile.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobile.Location = new System.Drawing.Point(433, 113);
+            this.txtMobile.Location = new System.Drawing.Point(433, 130);
             this.txtMobile.MaxLength = 50;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.ReadOnly = true;
@@ -638,9 +620,62 @@
             this.label24.TabIndex = 100078;
             this.label24.Text = "Patient Name";
             // 
+            // toggleSwitch1
+            // 
+            this.toggleSwitch1.Location = new System.Drawing.Point(688, 10);
+            this.toggleSwitch1.Name = "toggleSwitch1";
+            this.toggleSwitch1.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
+            this.toggleSwitch1.Properties.Appearance.BackColor = System.Drawing.Color.Yellow;
+            this.toggleSwitch1.Properties.Appearance.BackColor2 = System.Drawing.Color.Red;
+            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.toggleSwitch1.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toggleSwitch1.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.toggleSwitch1.Properties.Appearance.Options.UseBackColor = true;
+            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
+            this.toggleSwitch1.Properties.Appearance.Options.UseForeColor = true;
+            this.toggleSwitch1.Properties.Appearance.Options.UseTextOptions = true;
+            this.toggleSwitch1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.toggleSwitch1.Properties.AutoHeight = false;
+            this.toggleSwitch1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.toggleSwitch1.Properties.OffText = "IPD";
+            this.toggleSwitch1.Properties.OnText = "OPD";
+            this.toggleSwitch1.Size = new System.Drawing.Size(17, 42);
+            this.toggleSwitch1.TabIndex = 100102;
+            this.toggleSwitch1.Visible = false;
+            this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
+            // 
+            // radioBtnNicu
+            // 
+            this.radioBtnNicu.AutoSize = true;
+            this.radioBtnNicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnNicu.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioBtnNicu.Location = new System.Drawing.Point(98, 44);
+            this.radioBtnNicu.Name = "radioBtnNicu";
+            this.radioBtnNicu.Size = new System.Drawing.Size(62, 20);
+            this.radioBtnNicu.TabIndex = 100106;
+            this.radioBtnNicu.TabStop = true;
+            this.radioBtnNicu.Text = "NICU";
+            this.radioBtnNicu.UseVisualStyleBackColor = true;
+            this.radioBtnNicu.CheckedChanged += new System.EventHandler(this.radioBtnNicu_CheckedChanged);
+            // 
+            // radioBtnIndoor
+            // 
+            this.radioBtnIndoor.AutoSize = true;
+            this.radioBtnIndoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnIndoor.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioBtnIndoor.Location = new System.Drawing.Point(10, 44);
+            this.radioBtnIndoor.Name = "radioBtnIndoor";
+            this.radioBtnIndoor.Size = new System.Drawing.Size(70, 20);
+            this.radioBtnIndoor.TabIndex = 100105;
+            this.radioBtnIndoor.TabStop = true;
+            this.radioBtnIndoor.Text = "Indoor";
+            this.radioBtnIndoor.UseVisualStyleBackColor = true;
+            this.radioBtnIndoor.CheckedChanged += new System.EventHandler(this.radioBtnIndoor_CheckedChanged);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Snow;
+            this.panel1.Controls.Add(this.groupControl1);
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.panel2);
@@ -648,6 +683,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(874, 492);
             this.panel1.TabIndex = 0;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.groupControl1.Appearance.Options.UseFont = true;
+            this.groupControl1.Appearance.Options.UseForeColor = true;
+            this.groupControl1.Appearance.Options.UseTextOptions = true;
+            this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.Controls.Add(this.radioBtnIndoor);
+            this.groupControl1.Controls.Add(this.radioBtnNicu);
+            this.groupControl1.Location = new System.Drawing.Point(675, 32);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(172, 69);
+            this.groupControl1.TabIndex = 100107;
+            this.groupControl1.Text = "Patient Category";
             // 
             // tabControl1
             // 
@@ -695,6 +745,7 @@
             this.gridControlPSBill.TabIndex = 100105;
             this.gridControlPSBill.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewServiceBill});
+            this.gridControlPSBill.Click += new System.EventHandler(this.gridControlPSBill_Click);
             // 
             // gridViewServiceBill
             // 
@@ -847,7 +898,7 @@
             // btnPatientEdit
             // 
             this.btnPatientEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientEdit.Location = new System.Drawing.Point(165, 8);
+            this.btnPatientEdit.Location = new System.Drawing.Point(162, 8);
             this.btnPatientEdit.Name = "btnPatientEdit";
             this.btnPatientEdit.Size = new System.Drawing.Size(87, 26);
             this.btnPatientEdit.TabIndex = 2;
@@ -922,6 +973,9 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -1004,6 +1058,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit3;
         internal System.Windows.Forms.TextBox txtCabinBed;
         internal System.Windows.Forms.Label label31;
+        private System.Windows.Forms.RadioButton radioBtnNicu;
+        private System.Windows.Forms.RadioButton radioBtnIndoor;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
 
     }
 }

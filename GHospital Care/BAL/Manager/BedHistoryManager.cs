@@ -15,19 +15,40 @@ namespace GHospital_Care.BAL.Manager
             return new BedHistoryGateWay().GetIpdBedorCabin(Type,AddType);
         }
 
+        public DataTable GetFreeOccupiedBedNICU(string Type, string AddType)
+        {
+            return new BedHistoryGateWay().GetIpdBedorCabinNICU(Type, AddType);
+        }
+
         public DataTable CountFreeOccupiedBed(string Type, string AddType)
         {
             return new BedHistoryGateWay().Count_Free_OccupiedBed(Type, AddType);
+        }
+
+        public DataTable CountFreeOccupiedBedNICU(string Type, string AddType)
+        {
+            return new BedHistoryGateWay().Count_Free_OccupiedBed_NICU(Type, AddType);
         }
 
         public DataTable CountOccupiedBed(string Type, string AddType)
         {
             return new BedHistoryGateWay().Count_OccupiedBed(Type, AddType);
         }
+
+        public DataTable CountOccupiedBedNICU(string Type, string AddType)
+        {
+            return new BedHistoryGateWay().Count_OccupiedBed_NICU(Type, AddType);
+        }
         public DataTable GetIpInfo(DateTime admintdate1, DateTime admintdate2, string chkValue)
         {
 
             return new BedHistoryGateWay().GetIpInfo(admintdate1, admintdate2, chkValue);
+        }
+
+        public DataTable GetIpDpatientList(DateTime admintdate1, DateTime admintdate2)
+        {
+
+            return new BedHistoryGateWay().GetIndoorPatientList(admintdate1, admintdate2);
         }
 
         public DataTable GetOPInfo(DateTime admintdate1, DateTime admintdate2, bool chkValue)
@@ -48,6 +69,10 @@ namespace GHospital_Care.BAL.Manager
             return new BedHistoryGateWay().GetIpBedCabinList(patientID);
         }
 
+        public DataTable GetIpCabinBedListNICU(string patientID)
+        {
+            return new BedHistoryGateWay().GetIpBedCabinListNICU(patientID);
+        }
 
         private BedHistoryGateWay aBedHistoryGateWay;
         public MessageModel SaveBedShipment(IPDBedHistory aBedHistory,Patient patient)
@@ -67,9 +92,28 @@ namespace GHospital_Care.BAL.Manager
         }
 
 
+        public DataTable GetNICUpatientList(DateTime admintdate1, DateTime admintdate2)
+        {
+            return new BedHistoryGateWay().GetNICUPatientList(admintdate1, admintdate2);
+        }
+
         public DataTable CountIP(DateTime admintdate1, DateTime admintdate2)
         {
             return new BedHistoryGateWay().Countpatient(admintdate1, admintdate2);
+        }
+
+        public DataTable CountIPDischarge(DateTime admintdate1, DateTime admintdate2)
+        {
+            return new BedHistoryGateWay().CountpatientDischarge(admintdate1, admintdate2);
+        }
+
+        public DataTable CountNICU(DateTime admintdate1, DateTime admintdate2)
+        {
+            return new BedHistoryGateWay().CountpatientNICU(admintdate1, admintdate2);
+        }
+        public DataTable CountNICUDischarge(DateTime admintdate1, DateTime admintdate2)
+        {
+            return new BedHistoryGateWay().CountpatientNICUDischarge(admintdate1, admintdate2);
         }
     }
 }

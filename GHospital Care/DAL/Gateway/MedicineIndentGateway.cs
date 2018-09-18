@@ -34,7 +34,7 @@ namespace GHospital_Care.DAL.Gatway
         }
         public DataTable GetNicuPatient()
         {
-            Query = "SELECT RegNo AS PatientId, MotherName AS PatientName,AdmitDate, Address FROM HospitalBusinessOfficeNICU where RegNo not in(select RegNo from tbl_DischargeBillNICU)";
+            Query = "SELECT RegNo AS PatientId, PatientName AS PatientName,AdmitDate, Address FROM BedHistoryPatientInfoNICU where RegNo not in(select RegNo from tbl_DischargeBillNICU)";
             Command = new SqlCommand(Query, Connection);
             Command.CommandText = Query;
             Reader = Command.ExecuteReader();
@@ -66,7 +66,19 @@ namespace GHospital_Care.DAL.Gatway
             data.Load(Reader);
             return data;
         }
-        
+
+
+
+        public DataTable GetIndentDetails(string Indent)
+        {
+            Query = "select I.ProductCode, p.ProductName,I.ProductQty, I.IndentNo, I.Note from MedicineIndentDetails I inner join productList_medicine P on p.ProductCode= I.ProductCode where IndentNo= '" + Indent + "'";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
+        }
         public int SaveMedicineIndent(MedicineIndent aMedicineIndent)
         {
             int rowAffect = 0;
@@ -82,6 +94,37 @@ namespace GHospital_Care.DAL.Gatway
             return rowAffect;
         }
 
+
+        public int UpdateMedicineIndent(MedicineIndent aMedicineIndent)
+        {
+            int rowAffect = 0;
+
+            Query = "Update MedicineIndentPrimary set Date = @Date,PatientType = @PatientType,PatientID=@PatientID where IndentNo= @IndentNo ";
+            Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@IndentNo", aMedicineIndent.IndentNo ?? "");
+            Command.Parameters.AddWithValue("@Date", aMedicineIndent.Date);
+            Command.Parameters.AddWithValue("@PatientType", aMedicineIndent.PatientType ?? "");
+            Command.Parameters.AddWithValue("@PatientID", aMedicineIndent.PatientId ?? "");
+            rowAffect = Command.ExecuteNonQuery();
+
+            return rowAffect;
+        }
+
+
+        public int DeleteIndentDetails(MedicineIndent aMedicineIndent)
+        {
+            int count = 0;
+            if (aMedicineIndent.DrugsDatatable != null)
+            {
+                    Query = "Delete MedicineIndentDetails where IndentNo= @IndentNo";
+                    Command = new SqlCommand(Query, Connection);
+                    Command.CommandType = CommandType.Text;
+                    Command.Parameters.AddWithValue(@"IndentNo", aMedicineIndent.IndentNo);
+                    count += Command.ExecuteNonQuery();
+                
+            }
+            return count;
+        }
 
 
         public int SaveMedicineIndentDetails(MedicineIndent aMedicineIndent)

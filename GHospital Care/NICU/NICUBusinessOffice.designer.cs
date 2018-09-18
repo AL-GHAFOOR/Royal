@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NICUBusinessOffice));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl6 = new DevExpress.XtraGrid.GridControl();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -262,6 +262,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtConsult = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.rdDischargReq = new System.Windows.Forms.RadioButton();
             this.btnPrintView = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -274,7 +275,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridColumn108 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn111 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rdDischargReq = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
@@ -358,9 +358,9 @@
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode4.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode4});
             this.gridControl6.Location = new System.Drawing.Point(2, 2);
             this.gridControl6.MainView = this.gridView6;
             this.gridControl6.Name = "gridControl6";
@@ -711,9 +711,9 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -1596,9 +1596,9 @@
             // gridControl4
             // 
             this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl4.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode2});
             this.gridControl4.Location = new System.Drawing.Point(2, 2);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
@@ -2299,9 +2299,9 @@
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.txtOtService);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(979, 6);
+            this.panel6.Location = new System.Drawing.Point(982, 6);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(23, 36);
+            this.panel6.Size = new System.Drawing.Size(20, 36);
             this.panel6.TabIndex = 270;
             this.panel6.Visible = false;
             // 
@@ -2483,6 +2483,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1025, 56);
             this.panel4.TabIndex = 245;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // rdDischargReq
+            // 
+            this.rdDischargReq.AutoSize = true;
+            this.rdDischargReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdDischargReq.Location = new System.Drawing.Point(264, 11);
+            this.rdDischargReq.Name = "rdDischargReq";
+            this.rdDischargReq.Size = new System.Drawing.Size(147, 19);
+            this.rdDischargReq.TabIndex = 100110;
+            this.rdDischargReq.TabStop = true;
+            this.rdDischargReq.Text = "Discharge Request";
+            this.rdDischargReq.UseVisualStyleBackColor = true;
+            this.rdDischargReq.CheckedChanged += new System.EventHandler(this.rdDischargReq_CheckedChanged);
             // 
             // btnPrintView
             // 
@@ -2609,18 +2623,6 @@
             this.gridColumn111.Visible = true;
             this.gridColumn111.VisibleIndex = 9;
             this.gridColumn111.Width = 48;
-            // 
-            // rdDischargReq
-            // 
-            this.rdDischargReq.AutoSize = true;
-            this.rdDischargReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdDischargReq.Location = new System.Drawing.Point(264, 11);
-            this.rdDischargReq.Name = "rdDischargReq";
-            this.rdDischargReq.Size = new System.Drawing.Size(147, 19);
-            this.rdDischargReq.TabIndex = 100110;
-            this.rdDischargReq.TabStop = true;
-            this.rdDischargReq.Text = "Discharge Request";
-            this.rdDischargReq.UseVisualStyleBackColor = true;
             // 
             // NICUBusinessOffice
             // 

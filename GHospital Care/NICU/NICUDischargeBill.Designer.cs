@@ -38,6 +38,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkPrint = new System.Windows.Forms.CheckBox();
@@ -229,7 +233,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 463);
+            this.groupBox1.Size = new System.Drawing.Size(285, 463);
             this.groupBox1.TabIndex = 255;
             this.groupBox1.TabStop = false;
             // 
@@ -239,7 +243,7 @@
             this.gridControl1.Location = new System.Drawing.Point(3, 17);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(258, 443);
+            this.gridControl1.Size = new System.Drawing.Size(279, 443);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -251,12 +255,51 @@
             this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "RegNo";
+            this.gridColumn13.FieldName = "OPID";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            this.gridColumn13.Width = 46;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.FieldName = "PatientName";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            this.gridColumn14.Width = 83;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.FieldName = "AdmitDate";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 2;
+            this.gridColumn15.Width = 63;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Bed / Cabin";
+            this.gridColumn16.FieldName = "BedName";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 3;
+            this.gridColumn16.Width = 69;
             // 
             // label19
             // 
@@ -292,9 +335,9 @@
             this.groupBox2.Controls.Add(this.txtdischargedate);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(287, 74);
+            this.groupBox2.Location = new System.Drawing.Point(307, 74);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(553, 420);
+            this.groupBox2.Size = new System.Drawing.Size(533, 420);
             this.groupBox2.TabIndex = 256;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Discharge/Make Bill";
@@ -311,14 +354,14 @@
             // 
             // gridControlNICU
             // 
-            this.gridControlNICU.Location = new System.Drawing.Point(10, 70);
+            this.gridControlNICU.Location = new System.Drawing.Point(5, 70);
             this.gridControlNICU.MainView = this.gridView3;
             this.gridControlNICU.Name = "gridControlNICU";
             this.gridControlNICU.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox4,
             this.repositoryItemLookUpEdit4,
             this.repositoryItemHyperLinkEdit5});
-            this.gridControlNICU.Size = new System.Drawing.Size(534, 150);
+            this.gridControlNICU.Size = new System.Drawing.Size(519, 150);
             this.gridControlNICU.TabIndex = 100106;
             this.gridControlNICU.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -355,7 +398,7 @@
             // 
             // gridColumn11
             // 
-            this.gridColumn11.FieldName = "ServiceID";
+            this.gridColumn11.FieldName = "ServiceId";
             this.gridColumn11.Name = "gridColumn11";
             // 
             // gridColumn12
@@ -390,7 +433,7 @@
             // 
             this.lblInward.AutoSize = true;
             this.lblInward.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInward.Location = new System.Drawing.Point(80, 324);
+            this.lblInward.Location = new System.Drawing.Point(67, 324);
             this.lblInward.Name = "lblInward";
             this.lblInward.Size = new System.Drawing.Size(157, 13);
             this.lblInward.TabIndex = 191;
@@ -401,7 +444,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 323);
+            this.label5.Location = new System.Drawing.Point(2, 323);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 191;
@@ -417,7 +460,7 @@
             this.panel10.Controls.Add(this.label27);
             this.panel10.Controls.Add(this.cmbBillType);
             this.panel10.Controls.Add(this.label12);
-            this.panel10.Location = new System.Drawing.Point(289, 226);
+            this.panel10.Location = new System.Drawing.Point(269, 226);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(260, 87);
             this.panel10.TabIndex = 190;
@@ -505,9 +548,9 @@
             this.panel8.Controls.Add(this.txtPrcentService);
             this.panel8.Controls.Add(this.txttotalBill);
             this.panel8.Controls.Add(this.label7);
-            this.panel8.Location = new System.Drawing.Point(10, 228);
+            this.panel8.Location = new System.Drawing.Point(5, 228);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(275, 85);
+            this.panel8.Size = new System.Drawing.Size(260, 85);
             this.panel8.TabIndex = 189;
             // 
             // txtSubTotal
@@ -515,7 +558,7 @@
             this.txtSubTotal.BackColor = System.Drawing.Color.White;
             this.txtSubTotal.Enabled = false;
             this.txtSubTotal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubTotal.Location = new System.Drawing.Point(161, 58);
+            this.txtSubTotal.Location = new System.Drawing.Point(156, 58);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(103, 21);
@@ -529,7 +572,7 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 58);
+            this.label4.Location = new System.Drawing.Point(15, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 20);
             this.label4.TabIndex = 25;
@@ -541,7 +584,7 @@
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(6, 33);
+            this.label21.Location = new System.Drawing.Point(16, 33);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(94, 20);
             this.label21.TabIndex = 39;
@@ -554,7 +597,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 8);
+            this.label2.Location = new System.Drawing.Point(16, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 20);
             this.label2.TabIndex = 187;
@@ -563,7 +606,7 @@
             // txtservicecharge
             // 
             this.txtservicecharge.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicecharge.Location = new System.Drawing.Point(161, 32);
+            this.txtservicecharge.Location = new System.Drawing.Point(156, 32);
             this.txtservicecharge.Name = "txtservicecharge";
             this.txtservicecharge.Size = new System.Drawing.Size(103, 21);
             this.txtservicecharge.TabIndex = 194;
@@ -574,7 +617,7 @@
             // txtPrcentService
             // 
             this.txtPrcentService.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrcentService.Location = new System.Drawing.Point(124, 34);
+            this.txtPrcentService.Location = new System.Drawing.Point(134, 34);
             this.txtPrcentService.Name = "txtPrcentService";
             this.txtPrcentService.Size = new System.Drawing.Size(19, 21);
             this.txtPrcentService.TabIndex = 189;
@@ -586,7 +629,7 @@
             // 
             this.txttotalBill.Enabled = false;
             this.txttotalBill.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalBill.Location = new System.Drawing.Point(161, 7);
+            this.txttotalBill.Location = new System.Drawing.Point(156, 7);
             this.txttotalBill.Name = "txttotalBill";
             this.txttotalBill.Size = new System.Drawing.Size(103, 21);
             this.txttotalBill.TabIndex = 0;
@@ -598,7 +641,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(102, 37);
+            this.label7.Location = new System.Drawing.Point(112, 37);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 13);
             this.label7.TabIndex = 188;
@@ -670,17 +713,17 @@
             // txtremarks
             // 
             this.txtremarks.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtremarks.Location = new System.Drawing.Point(16, 356);
+            this.txtremarks.Location = new System.Drawing.Point(5, 356);
             this.txtremarks.Multiline = true;
             this.txtremarks.Name = "txtremarks";
-            this.txtremarks.Size = new System.Drawing.Size(534, 27);
+            this.txtremarks.Size = new System.Drawing.Size(518, 27);
             this.txtremarks.TabIndex = 60;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(15, 337);
+            this.label30.Location = new System.Drawing.Point(4, 337);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(61, 13);
             this.label30.TabIndex = 59;
@@ -689,7 +732,7 @@
             // txtnoofdays
             // 
             this.txtnoofdays.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnoofdays.Location = new System.Drawing.Point(438, 18);
+            this.txtnoofdays.Location = new System.Drawing.Point(418, 18);
             this.txtnoofdays.Name = "txtnoofdays";
             this.txtnoofdays.Size = new System.Drawing.Size(103, 21);
             this.txtnoofdays.TabIndex = 34;
@@ -702,7 +745,7 @@
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(292, 17);
+            this.label16.Location = new System.Drawing.Point(276, 17);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(136, 20);
             this.label16.TabIndex = 33;
@@ -712,7 +755,7 @@
             // txtdischargeTime
             // 
             this.txtdischargeTime.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdischargeTime.Location = new System.Drawing.Point(159, 43);
+            this.txtdischargeTime.Location = new System.Drawing.Point(151, 43);
             this.txtdischargeTime.Name = "txtdischargeTime";
             this.txtdischargeTime.Size = new System.Drawing.Size(121, 21);
             this.txtdischargeTime.TabIndex = 32;
@@ -723,7 +766,7 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(159, 18);
+            this.label15.Location = new System.Drawing.Point(151, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(121, 20);
             this.label15.TabIndex = 31;
@@ -733,7 +776,7 @@
             // txtdischargedate
             // 
             this.txtdischargedate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdischargedate.Location = new System.Drawing.Point(10, 43);
+            this.txtdischargedate.Location = new System.Drawing.Point(5, 43);
             this.txtdischargedate.Name = "txtdischargedate";
             this.txtdischargedate.Size = new System.Drawing.Size(139, 21);
             this.txtdischargedate.TabIndex = 30;
@@ -744,7 +787,7 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(10, 18);
+            this.label14.Location = new System.Drawing.Point(5, 18);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(139, 20);
             this.label14.TabIndex = 29;
@@ -1043,9 +1086,9 @@
             this.panel9.Controls.Add(this.label11);
             this.panel9.Controls.Add(this.txtbill);
             this.panel9.Controls.Add(this.label13);
-            this.panel9.Location = new System.Drawing.Point(293, 10);
+            this.panel9.Location = new System.Drawing.Point(314, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(547, 57);
+            this.panel9.Size = new System.Drawing.Size(526, 57);
             this.panel9.TabIndex = 257;
             // 
             // lblReg
@@ -1070,7 +1113,7 @@
             // 
             this.billDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.billDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.billDate.Location = new System.Drawing.Point(428, 31);
+            this.billDate.Location = new System.Drawing.Point(404, 29);
             this.billDate.Name = "billDate";
             this.billDate.Size = new System.Drawing.Size(111, 20);
             this.billDate.TabIndex = 29;
@@ -1099,7 +1142,7 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(294, 5);
+            this.label11.Location = new System.Drawing.Point(270, 3);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 20);
             this.label11.TabIndex = 23;
@@ -1108,7 +1151,7 @@
             // txtbill
             // 
             this.txtbill.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbill.Location = new System.Drawing.Point(428, 5);
+            this.txtbill.Location = new System.Drawing.Point(404, 3);
             this.txtbill.Name = "txtbill";
             this.txtbill.Size = new System.Drawing.Size(111, 21);
             this.txtbill.TabIndex = 24;
@@ -1119,7 +1162,7 @@
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(294, 32);
+            this.label13.Location = new System.Drawing.Point(270, 30);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(132, 20);
             this.label13.TabIndex = 28;
@@ -1265,7 +1308,7 @@
             // 
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
             this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(287, 8);
+            this.simpleButton1.Location = new System.Drawing.Point(303, 9);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(77, 22);
             this.simpleButton1.TabIndex = 100114;
@@ -1274,7 +1317,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 12);
+            this.label9.Location = new System.Drawing.Point(6, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(30, 13);
             this.label9.TabIndex = 100101;
@@ -1295,16 +1338,16 @@
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ToDate.Location = new System.Drawing.Point(189, 9);
             this.ToDate.Name = "ToDate";
-            this.ToDate.Size = new System.Drawing.Size(90, 20);
+            this.ToDate.Size = new System.Drawing.Size(108, 20);
             this.ToDate.TabIndex = 100103;
             // 
             // FromDate
             // 
             this.FromDate.CustomFormat = "dd/MM/yyyy";
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FromDate.Location = new System.Drawing.Point(66, 8);
+            this.FromDate.Location = new System.Drawing.Point(42, 8);
             this.FromDate.Name = "FromDate";
-            this.FromDate.Size = new System.Drawing.Size(90, 20);
+            this.FromDate.Size = new System.Drawing.Size(114, 20);
             this.FromDate.TabIndex = 100104;
             // 
             // NICUDischargeBill
@@ -1455,5 +1498,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private System.Windows.Forms.CheckBox chkPrint;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
     }
 }

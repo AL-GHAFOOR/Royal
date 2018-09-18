@@ -340,10 +340,11 @@
             // 
             // txtRealtedToMeal
             // 
-            this.txtRealtedToMeal.Location = new System.Drawing.Point(423, 38);
+            this.txtRealtedToMeal.Location = new System.Drawing.Point(424, 38);
             this.txtRealtedToMeal.Name = "txtRealtedToMeal";
             this.txtRealtedToMeal.Size = new System.Drawing.Size(153, 20);
             this.txtRealtedToMeal.TabIndex = 9;
+            this.txtRealtedToMeal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRealtedToMeal_KeyDown);
             // 
             // label24
             // 
@@ -379,6 +380,7 @@
             this.txtDescription.Size = new System.Drawing.Size(189, 48);
             this.txtDescription.TabIndex = 5;
             this.txtDescription.Text = "";
+            this.txtDescription.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescription_KeyDown);
             this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
             // 
             // txtRoute
@@ -387,6 +389,7 @@
             this.txtRoute.Name = "txtRoute";
             this.txtRoute.Size = new System.Drawing.Size(153, 20);
             this.txtRoute.TabIndex = 4;
+            this.txtRoute.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRoute_KeyDown);
             this.txtRoute.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
             // 
             // label23
@@ -405,6 +408,7 @@
             this.txtDoose.Name = "txtDoose";
             this.txtDoose.Size = new System.Drawing.Size(226, 20);
             this.txtDoose.TabIndex = 4;
+            this.txtDoose.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDoose_KeyDown);
             this.txtDoose.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDoose_KeyPress);
             // 
             // label18
@@ -479,7 +483,7 @@
             this.listViewAdvice.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.SL,
             this.Advise});
-            this.listViewAdvice.Font = new System.Drawing.Font("Kalpurush", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewAdvice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewAdvice.FullRowSelect = true;
             this.listViewAdvice.GridLines = true;
             this.listViewAdvice.Location = new System.Drawing.Point(422, 3);
@@ -561,7 +565,7 @@
             // richboxAdvice
             // 
             this.richboxAdvice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richboxAdvice.Font = new System.Drawing.Font("Kalpurush", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richboxAdvice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richboxAdvice.Location = new System.Drawing.Point(19, 51);
             this.richboxAdvice.Name = "richboxAdvice";
             this.richboxAdvice.Size = new System.Drawing.Size(397, 134);
@@ -882,6 +886,7 @@
             this.txtConsult.Name = "txtConsult";
             this.txtConsult.Size = new System.Drawing.Size(299, 21);
             this.txtConsult.TabIndex = 100087;
+            this.txtConsult.Visible = false;
             this.txtConsult.SelectedIndexChanged += new System.EventHandler(this.txtConsult_SelectedIndexChanged);
             // 
             // txtAddress
@@ -1016,6 +1021,7 @@
             this.label12.Size = new System.Drawing.Size(71, 15);
             this.label12.TabIndex = 1;
             this.label12.Text = "Consultant :";
+            this.label12.Visible = false;
             // 
             // label8
             // 

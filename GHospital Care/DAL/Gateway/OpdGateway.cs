@@ -53,7 +53,7 @@ namespace GHospital_Care.DAL.Gateway
 
         public DataTable GetIpdAllSerialNo()
         {
-            Query = "SELECT OPID,PatientName from tbl_IndoorAdmission where OPID not in (select OPID from tbl_DischargeBill)";
+            Query = "SELECT OPID,PatientName from tbl_IndoorAdmission where OPID not in (select OPID from tbl_MasterDischargeForm)";
             //"SELECT OPID,PatientName from tbl_IndoorAdmission";
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.Text;
@@ -67,7 +67,7 @@ namespace GHospital_Care.DAL.Gateway
         public DataTable GetNICUPatienSlNo()
         {
 
-            Query = "select * from BedHistoryPatientInfoNICU where RegNo Not in (select OPID from tbl_DischargeBillNICU)";
+            Query = "select * from BedHistoryPatientInfoNICU where RegNo Not in (select OPID from tbl_MasterDischargeFormNICU)";
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.Text;
             Reader = Command.ExecuteReader();
@@ -384,8 +384,7 @@ namespace GHospital_Care.DAL.Gateway
             return dtDataTable;
         }
 
-        public DataTable GetOutdoorPatient(string opid)
-        {
+        public DataTable GetOutdoorPatient(string opid){
             Query = "SP_RptOutdoorBill";
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.StoredProcedure;

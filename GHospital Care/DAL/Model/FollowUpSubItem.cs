@@ -7,10 +7,9 @@ namespace GHospital_Care.DAL.Model
 {
     public class FollowUpSubItem
     {
-        public int ItemId { get; set; }
+        public Int32 ItemId { get; set; }
         public string SubItemName { get; set; }
-
-        public int Id { get; set; }
+        public string Id { get; set; }
     }
 
 }

@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using GHospital_Care.Admin;
 using GHospital_Care.BAL.Manager;
 using GHospital_Care.DAL.Gateway;
 using GHospital_Care.DAL.Model;
@@ -18,7 +19,7 @@ namespace GHospital_Care.DischargeUI
         public NICUBill(string menuName)
         {
             InitializeComponent();
-          //Control buttonControl = new ButtonPermissionAccess().UserButton(this, this.Name);
+          Control buttonControl = new ButtonPermissionAccess().UserButton(this, this.Name);
 
             //UserMaster master = GlobalPermission.UserPermission.FirstOrDefault(a => a.FormName == this.Name && a.Permission && a.MenuName==menuName);
             //if (master!=null)
@@ -53,7 +54,7 @@ namespace GHospital_Care.DischargeUI
                 cmbPid.DisplayMember = "RegNo";
                 cmbPid.ValueMember = "RegNo";
           
-            }
+     }
 
         private DataTable IssueDatatble;
         public void LoadDataTable()

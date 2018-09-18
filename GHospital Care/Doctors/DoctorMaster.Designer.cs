@@ -67,6 +67,8 @@
             this.DoctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Specialization = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMobile = new System.Windows.Forms.MaskedTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtDOJ = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,16 +80,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(4, 415);
+            this.panel2.Size = new System.Drawing.Size(4, 482);
             this.panel2.TabIndex = 240;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 419);
+            this.panel4.Location = new System.Drawing.Point(0, 486);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(678, 4);
+            this.panel4.Size = new System.Drawing.Size(698, 4);
             this.panel4.TabIndex = 238;
             // 
             // panel5
@@ -96,23 +98,23 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(678, 4);
+            this.panel5.Size = new System.Drawing.Size(698, 4);
             this.panel5.TabIndex = 239;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(678, 0);
+            this.panel3.Location = new System.Drawing.Point(698, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(4, 423);
+            this.panel3.Size = new System.Drawing.Size(4, 490);
             this.panel3.TabIndex = 237;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(12, 331);
+            this.label13.Location = new System.Drawing.Point(63, 366);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 13);
             this.label13.TabIndex = 264;
@@ -121,7 +123,7 @@
             // txtNotes
             // 
             this.txtNotes.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotes.Location = new System.Drawing.Point(109, 324);
+            this.txtNotes.Location = new System.Drawing.Point(109, 359);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -133,7 +135,7 @@
             this.cmbSpecialization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSpecialization.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSpecialization.FormattingEnabled = true;
-            this.cmbSpecialization.Location = new System.Drawing.Point(109, 297);
+            this.cmbSpecialization.Location = new System.Drawing.Point(109, 332);
             this.cmbSpecialization.Name = "cmbSpecialization";
             this.cmbSpecialization.Size = new System.Drawing.Size(169, 21);
             this.cmbSpecialization.TabIndex = 261;
@@ -141,7 +143,7 @@
             // txtLicense
             // 
             this.txtLicense.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicense.Location = new System.Drawing.Point(109, 272);
+            this.txtLicense.Location = new System.Drawing.Point(109, 307);
             this.txtLicense.Name = "txtLicense";
             this.txtLicense.Size = new System.Drawing.Size(169, 21);
             this.txtLicense.TabIndex = 260;
@@ -149,7 +151,7 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(109, 222);
+            this.txtPhone.Location = new System.Drawing.Point(109, 257);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(169, 21);
             this.txtPhone.TabIndex = 258;
@@ -157,7 +159,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(109, 164);
+            this.txtAddress.Location = new System.Drawing.Point(109, 199);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -216,7 +218,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 301);
+            this.label11.Location = new System.Drawing.Point(17, 336);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 13);
             this.label11.TabIndex = 250;
@@ -226,7 +228,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 275);
+            this.label10.Location = new System.Drawing.Point(33, 310);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 13);
             this.label10.TabIndex = 249;
@@ -236,7 +238,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 250);
+            this.label9.Location = new System.Drawing.Point(69, 285);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 13);
             this.label9.TabIndex = 248;
@@ -246,7 +248,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 224);
+            this.label8.Location = new System.Drawing.Point(38, 259);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 13);
             this.label8.TabIndex = 247;
@@ -256,7 +258,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 165);
+            this.label6.Location = new System.Drawing.Point(49, 200);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 246;
@@ -266,7 +268,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 139);
+            this.label5.Location = new System.Drawing.Point(24, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 245;
@@ -276,7 +278,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 115);
+            this.label4.Location = new System.Drawing.Point(54, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 244;
@@ -286,7 +288,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 89);
+            this.label3.Location = new System.Drawing.Point(37, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 243;
@@ -296,7 +298,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 65);
+            this.label2.Location = new System.Drawing.Point(22, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 242;
@@ -306,7 +308,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Location = new System.Drawing.Point(32, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 241;
@@ -321,7 +323,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(674, 24);
+            this.panel1.Size = new System.Drawing.Size(694, 24);
             this.panel1.TabIndex = 266;
             // 
             // label7
@@ -354,10 +356,10 @@
             this.btnPrint.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.Black;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(538, 385);
+            this.btnPrint.Location = new System.Drawing.Point(376, 434);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.PressedButton = false;
-            this.btnPrint.Size = new System.Drawing.Size(64, 25);
+            this.btnPrint.Size = new System.Drawing.Size(82, 25);
             this.btnPrint.TabIndex = 100097;
             this.btnPrint.Text = "Print";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -369,10 +371,10 @@
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(608, 385);
+            this.btnClose.Location = new System.Drawing.Point(464, 434);
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedButton = false;
-            this.btnClose.Size = new System.Drawing.Size(64, 25);
+            this.btnClose.Size = new System.Drawing.Size(82, 25);
             this.btnClose.TabIndex = 100093;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -386,10 +388,10 @@
             this.btnNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.Black;
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(329, 385);
+            this.btnNew.Location = new System.Drawing.Point(110, 434);
             this.btnNew.Name = "btnNew";
             this.btnNew.PressedButton = false;
-            this.btnNew.Size = new System.Drawing.Size(64, 25);
+            this.btnNew.Size = new System.Drawing.Size(82, 25);
             this.btnNew.TabIndex = 100096;
             this.btnNew.Text = "New";
             this.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -403,10 +405,10 @@
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(398, 385);
+            this.btnSave.Location = new System.Drawing.Point(200, 434);
             this.btnSave.Name = "btnSave";
             this.btnSave.PressedButton = false;
-            this.btnSave.Size = new System.Drawing.Size(64, 25);
+            this.btnSave.Size = new System.Drawing.Size(82, 25);
             this.btnSave.TabIndex = 100094;
             this.btnSave.Tag = "1";
             this.btnSave.Text = "Save";
@@ -421,10 +423,10 @@
             this.btnEdit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(468, 385);
+            this.btnEdit.Location = new System.Drawing.Point(288, 434);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.PressedButton = false;
-            this.btnEdit.Size = new System.Drawing.Size(64, 25);
+            this.btnEdit.Size = new System.Drawing.Size(82, 25);
             this.btnEdit.TabIndex = 100095;
             this.btnEdit.Tag = "2";
             this.btnEdit.Text = "Edit";
@@ -448,7 +450,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(388, 339);
+            this.dataGridView1.Size = new System.Drawing.Size(388, 374);
             this.dataGridView1.TabIndex = 100098;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
@@ -478,19 +480,38 @@
             // 
             // txtMobile
             // 
-            this.txtMobile.Location = new System.Drawing.Point(109, 247);
+            this.txtMobile.Location = new System.Drawing.Point(109, 282);
             this.txtMobile.Mask = "000";
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(169, 21);
             this.txtMobile.TabIndex = 100099;
             this.txtMobile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(11, 166);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 13);
+            this.label12.TabIndex = 245;
+            this.label12.Text = "Date of Joining";
+            // 
+            // dtDOJ
+            // 
+            this.dtDOJ.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDOJ.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDOJ.Location = new System.Drawing.Point(109, 166);
+            this.dtDOJ.Name = "dtDOJ";
+            this.dtDOJ.Size = new System.Drawing.Size(169, 21);
+            this.dtDOJ.TabIndex = 256;
+            // 
             // DoctorMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(682, 423);
+            this.ClientSize = new System.Drawing.Size(702, 490);
             this.Controls.Add(this.txtMobile);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnPrint);
@@ -505,6 +526,7 @@
             this.Controls.Add(this.txtLicense);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.dtDOJ);
             this.Controls.Add(this.dtDOB);
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.txtNickName);
@@ -514,6 +536,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -578,5 +601,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DoctorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Specialization;
         private System.Windows.Forms.MaskedTextBox txtMobile;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtDOJ;
     }
 }

@@ -12,7 +12,7 @@ namespace GHospital_Care.DAL.Gateway
     {
         public DataTable GetAllIpAdmissionInfo()
         {
-            Query = "SELECT * FROM ViewGetAllIndoorPatient";
+            Query = "SELECT * FROM ViewGetAllIndoorPatient WHERE OPID NOT IN (SELECT OPID FROM tbl_DischargeBill)";
             Command = new SqlCommand(Query, Connection);
             Command.CommandText = Query;
             Reader = Command.ExecuteReader();
@@ -33,19 +33,46 @@ namespace GHospital_Care.DAL.Gateway
         }
 
 
+        public DataTable ViewConsultent(DateTime FromDate, DateTime ToDate)
+        {
+            Query = "select * from ViewCF_Form where Date between '" + FromDate + "' and '" + ToDate + "'";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
+        }
+
 
         public int SaveConsultantCall(ConsultantCall aConsultantCall)
         {
-            Query = "INSERT INTO ConsultantCall (OPID,ConsultantId)VALUES (@OPID,@ConsultantId)";
+            Query = "INSERT INTO ConsultantCall (OPID,ConsultantId,VoucherNo)VALUES (@OPID,@ConsultantId,@VoucherNo)";
 
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.Text;
             Command.Parameters.AddWithValue("@OPID", aConsultantCall.OpId);
             Command.Parameters.AddWithValue("@ConsultantId", aConsultantCall.ConsultantId);
+            Command.Parameters.AddWithValue("@VoucherNo", aConsultantCall.Id);
 
             int count = Command.ExecuteNonQuery();
             return count;
         }
+
+        public int UpdateConsultantCall(ConsultantCall aConsultantCall)
+        {
+            Query = "Update ConsultantCall set OPID= @OPID,ConsultantId= @ConsultantId where VoucherNo= @VoucherNo";
+
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@OPID", aConsultantCall.OpId);
+            Command.Parameters.AddWithValue("@ConsultantId", aConsultantCall.ConsultantId);
+            Command.Parameters.AddWithValue("@VoucherNo", aConsultantCall.Id);
+
+            int count = Command.ExecuteNonQuery();
+            return count;
+        }
+
         public int SaveCosultBilling(ConsultBillService aConsultBillService)
         {
             Query ="INSERT INTO [tbl_ConsultBillService] ([OPID],[ConsultId],[ConsultBillDate],[ConFee],[ConQty],[VchNo])" +
@@ -60,8 +87,34 @@ namespace GHospital_Care.DAL.Gateway
                 Command.Parameters.AddWithValue("@ConQty", aConsultBillService.ConQty);
                 Command.Parameters.AddWithValue("@VchNo", aConsultBillService.VchNo);
                int count = Command.ExecuteNonQuery();
-   
             return count;
+        }
+
+        public int UpdateCosultBilling(ConsultBillService aConsultBillService)
+        {
+            Query = "Update tbl_ConsultBillService set OPID = @OPID ,ConsultId= @ConsultId,ConsultBillDate= @ConsultBillDate,ConFee= @ConFee,ConQty= @ConQty where VchNo = @VchNo ";
+
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandType = CommandType.Text;
+            Command.Parameters.AddWithValue("@OpId", aConsultBillService.OPID);
+            Command.Parameters.AddWithValue("@ConsultId", aConsultBillService.ConsultId);
+            Command.Parameters.AddWithValue("@ConsultBillDate", aConsultBillService.ConsultBillDate);
+            Command.Parameters.AddWithValue("@ConFee", aConsultBillService.ConFee);
+            Command.Parameters.AddWithValue("@ConQty", aConsultBillService.ConQty);
+            Command.Parameters.AddWithValue("@VchNo", aConsultBillService.VchNo);
+            int count = Command.ExecuteNonQuery();
+            return count;
+        }
+
+        public DataTable GetNicuPatient()
+        {
+            Query = "SELECT RegNo AS OPID,  PatientName,AdmitDate, Address FROM BedHistoryPatientInfoNICU where RegNo not in(select RegNo from tbl_DischargeBillNICU)";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandText = Query;
+            Reader = Command.ExecuteReader();
+            DataTable data = new DataTable();
+            data.Load(Reader);
+            return data;
         }
 
         //Need to edit.... 

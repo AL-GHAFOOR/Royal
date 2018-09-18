@@ -55,9 +55,11 @@ namespace GHospital_Care.DAL.Gateway
             }
             return count;
         }
+
+
+
         public int ServiceSave(Service service)
         {
-
             Command = new SqlCommand("INSERT INTO tblServices (ServiceName,Description,Rate,ServiceId,Catgory)"
                 + "VALUES(@ServiceName,@Description,@Rate,@ServiceId,@Catgory)", Connection);
 
@@ -68,11 +70,47 @@ namespace GHospital_Care.DAL.Gateway
             Command.Parameters.AddWithValue("@Rate", service.Rate);
             Command.Parameters.AddWithValue("@ServiceId", service.ServiceId);
             Command.Parameters.AddWithValue("@Catgory", service.Catgory);
-
-
+            
             int count = Command.ExecuteNonQuery();
             return count;
-        }public int ServiceUpdate(Service service)
+        }
+
+        
+
+        public int PathologySave(PathologyMaster Pathology)
+        {
+
+            Command = new SqlCommand("INSERT INTO tblPathology (PathologyName,Address,Alias,PathId,UserID)"
+                + "VALUES(@PathologyName,@Address,@Alias,@PathId,@UserID)", Connection);
+
+            Command.CommandType = CommandType.Text;
+
+            Command.Parameters.AddWithValue("@PathologyName", Pathology.PathologyName);
+            Command.Parameters.AddWithValue("@Address", Pathology.Address);
+            Command.Parameters.AddWithValue("@Alias", Pathology.Alias);
+            Command.Parameters.AddWithValue("@PathId", Pathology.PathId);
+            Command.Parameters.AddWithValue("@UserID", Pathology.UserId);
+            int count = Command.ExecuteNonQuery();
+            return count;
+        }
+
+        public int PathologyUpdate(DAL.Model.PathologyMaster Pathology)
+        {
+
+            Command = new SqlCommand("Update tblPathology set PathologyName=@PathologyName ,Address=@Address,Alias=@Alias,UserID= @UserID where PathId=@PathId ", Connection);
+
+            Command.CommandType = CommandType.Text;
+
+            Command.Parameters.AddWithValue("@PathologyName", Pathology.PathologyName);
+            Command.Parameters.AddWithValue("@Address", Pathology.Address);
+            Command.Parameters.AddWithValue("@Alias", Pathology.Alias);Command.Parameters.AddWithValue("@PathId", Pathology.PathId);
+            Command.Parameters.AddWithValue("@UserID", Pathology.UserId);
+            int count = Command.ExecuteNonQuery();
+            return count;
+        }
+
+        
+        public int ServiceUpdate(Service service)
         {
             Command = new SqlCommand("UPDATE tblServices SET ServiceName=@ServiceName,Description=@Description,Rate=@Rate," +
                                      "ServiceId=@ServiceId,Catgory=@Catgory WHERE ID='" + service.ID + "'", Connection);
@@ -138,6 +176,32 @@ namespace GHospital_Care.DAL.Gateway
         public DataTable GetPatientBillService()
         {
             Query = "select * from tblServices ";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandType = CommandType.Text;
+            Reader = Command.ExecuteReader();
+            DataTable dtDataTable = new DataTable();
+            dtDataTable.Load(Reader);
+
+            return dtDataTable;
+        }
+
+
+
+        public DataTable GetPathologyID()
+        {
+            Query = "Select Max(ID)+1 as ID from tblPathology ";Command = new SqlCommand(Query, Connection);
+            Command.CommandType = CommandType.Text;
+            Reader = Command.ExecuteReader();
+            DataTable dtDataTable = new DataTable();
+            dtDataTable.Load(Reader);
+
+            return dtDataTable;
+        }
+
+
+        public DataTable GetPathology()
+        {
+            Query = "Select * from tblPathology ";
             Command = new SqlCommand(Query, Connection);
             Command.CommandType = CommandType.Text;
             Reader = Command.ExecuteReader();

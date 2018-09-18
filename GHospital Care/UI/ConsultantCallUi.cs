@@ -17,17 +17,19 @@ namespace GHospital_Care.UI
         public ConsultantCallUi()
         {
             InitializeComponent();
-
-            
         }
-
-
 
         public void GetAllIpPatient()
         {
-            searchLookUpGetPatient.Properties.DataSource = new ConsultantCallManager().GetAllIpAdmissionInfo();
-            searchLookUpGetPatient.Properties.DisplayMember = "PatientName";
-            searchLookUpGetPatient.Properties.DisplayMember = "OPID";
+            DataTable dt = new DataTable();
+            dt = new ConsultantCallManager().GetAllIpAdmissionInfo();
+
+            if (dt.Rows.Count > 0)
+            {
+                searchLookUpGetPatient.Properties.DataSource = dt;
+                searchLookUpGetPatient.Properties.DisplayMember = "PatientName";
+                searchLookUpGetPatient.Properties.ValueMember = "OPID";
+            }
         }
 
         public void GenerateVoucherNo()
@@ -48,9 +50,12 @@ namespace GHospital_Care.UI
 
         private void ConsultantCallUi_Load(object sender, EventArgs e)
         {
-            GetAllIpPatient();
+            radioBtnIndoor.Checked = true;
+            // GetAllIpPatient();
             GetIpdAllDoctor();
             GenerateVoucherNo();
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -61,27 +66,24 @@ namespace GHospital_Care.UI
 
         public void Refresh()
         {
-            GetAllIpPatient();
-            GetIpdAllDoctor();
-            GenerateVoucherNo();
-
+            searchLookUpGetPatient.Properties.DataSource = null;
             searchLookUpGetPatient.Properties.NullText = "---Select---";
             searchLookUpEditConsultant.Properties.NullText = "---Select---";
             txtPatientID.Text = "";
             txtPatientName.Text = "";
             txtFee.Text = "";
             txtAddress.Text = "";
+            GenerateVoucherNo();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
-            ConsultBillService aConsultBillService=new ConsultBillService();
+            ConsultBillService aConsultBillService = new ConsultBillService();
             ConsultantCall aConsultantCall = new ConsultantCall();
 
             aConsultantCall.OpId = txtPatientID.Text;
             aConsultantCall.ConsultantId = searchLookUpEditConsultant.EditValue.ToString();
-
+            aConsultantCall.Id = Convert.ToInt32(txtVoucherNo.Text);
 
             aConsultBillService.OPID = txtPatientID.Text;
             aConsultBillService.ConsultId = searchLookUpEditConsultant.EditValue.ToString();
@@ -89,8 +91,6 @@ namespace GHospital_Care.UI
             aConsultBillService.ConFee = Convert.ToDouble(txtFee.Text);
             aConsultBillService.ConQty = 1;
             aConsultBillService.VchNo = Convert.ToInt64(txtVoucherNo.Text);
-
-
 
             MessageModel message = new ConsultantCallManager().SaveConsultantCall(aConsultantCall, aConsultBillService);
             if (message.MessageTitle == "Successful")
@@ -108,10 +108,13 @@ namespace GHospital_Care.UI
 
         private void GetIpdAllDoctor()
         {
-            searchLookUpEditConsultant.Properties.DataSource = new IpdManager().GetIpdAllDoctor();
+            DataTable AllDoctor = new MedicalManager().GetAllCosultDoctor(null);
+            searchLookUpEditConsultant.Properties.DataSource = AllDoctor;
             searchLookUpEditConsultant.Properties.DisplayMember = "DoctorName";
             searchLookUpEditConsultant.Properties.ValueMember = "DoctorID";
         }
+
+
 
         private void picBox_Click(object sender, EventArgs e)
         {
@@ -123,7 +126,7 @@ namespace GHospital_Care.UI
             txtPatientID.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("OPID").ToString();
             txtPatientName.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("PatientName").ToString();
             txtAddress.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("PatientName").ToString();
-            
+
         }
         private void searchLookUpEditConsultant_EditValueChanged(object sender, EventArgs e)
         {
@@ -132,31 +135,142 @@ namespace GHospital_Care.UI
 
         private void searchLookUpGetPatient_EditValueChanged_1(object sender, EventArgs e)
         {
-            txtPatientID.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("OPID").ToString();
-            txtPatientName.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("PatientName").ToString();
-            txtAddress.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("Address").ToString();
-            searchLookUpEditConsultant.Focus();
+            try
+            {
+                // searchLookUpGetPatient.Properties.View.SetFocusedRowCellValue("PatientName", txtPatientName.Text);
+                txtPatientID.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("OPID").ToString();
+
+                string patientName = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("PatientName").ToString();
+                txtPatientName.Text = patientName;
+
+                txtCabin.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("CabinName").ToString();
+                txtAddress.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("Address").ToString();
+                searchLookUpEditConsultant.Focus();
+            }
+            catch (Exception)
+            {
+
+
+            }
+
         }
 
         private void searchLookUpEditConsultant_EditValueChanged_1(object sender, EventArgs e)
         {
             txtFee.Focus();
+        }
+
+        public void GetNicuPatient()
+        {
+            searchLookUpGetPatient.Properties.DataSource = new ConsultantCallManager().GetNICUPatient();
+            searchLookUpGetPatient.Properties.DisplayMember = "PatientName";
+            searchLookUpGetPatient.Properties.ValueMember = "OPID";
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void radioBtnNicu_CheckedChanged(object sender, EventArgs e)
         {
+            searchLookUpGetPatient.Properties.DataSource = null;
+            Refresh();
+            GetNicuPatient();
 
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+
+
+        private void radioBtnIndoor_CheckedChanged(object sender, EventArgs e)
         {
 
+            searchLookUpGetPatient.Properties.DataSource = null;
+            Refresh();
+            GetAllIpPatient();
+        }
+
+        public void ViewConsultant()
+        {
+            DataTable dt = new ConsultantCallManager().ViewConsultantMaster(FromDate.Value, ToDate.Value);
+            gridControl1.DataSource = dt;
         }
 
         private void btnCommissionView_Click(object sender, EventArgs e)
         {
-
+            ViewConsultant();
         }
+
+        private void FromDate_ValueChanged(object sender, EventArgs e)
+        {
+            ViewConsultant();
+        }
+
+        private void ToDate_ValueChanged(object sender, EventArgs e)
+        {
+            ViewConsultant();
+        }
+
+        private void xtraTabControl1_Click(object sender, EventArgs e)
+        {
+            ViewConsultant();
+        }
+
+        private string Consultent = "";
+        private string PatientID = "";
+        private string category = "";
+        private void gridView3_DoubleClick(object sender, EventArgs e)
+        {
+            category = gridView3.GetFocusedRowCellValue("Status").ToString();
+            if (category == "Indoor")
+            {
+                radioBtnIndoor.Checked = true;
+            }
+            if (category == "NICU")
+            {
+                radioBtnNicu.Checked = true;
+            }
+            searchLookUpGetPatient.Properties.DataSource = null;
+            txtVoucherNo.Text = gridView3.GetFocusedRowCellValue("VoucherNo").ToString();
+            dateServiceDate.Text = gridView3.GetFocusedRowCellValue("Date").ToString();
+            searchLookUpEditConsultant.Properties.NullText = gridView3.GetFocusedRowCellValue("DoctorName").ToString();
+            txtPatientID.Text = gridView3.GetFocusedRowCellValue("OPID").ToString();
+            txtPatientName.Text = gridView3.GetFocusedRowCellValue("PatientName").ToString();
+            Consultent = gridView3.GetFocusedRowCellValue("ConsultantId").ToString();
+            PatientID = gridView3.GetFocusedRowCellValue("OPID").ToString();
+            txtAddress.Text = gridView3.GetFocusedRowCellValue("Address").ToString();
+            txtFee.Text = gridView3.GetFocusedRowCellValue("ConFee").ToString();
+            searchLookUpGetPatient.Properties.NullText = txtPatientName.Text;
+            xtraTabPage1.Show();
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ConsultBillService aConsultBillService = new ConsultBillService();
+            ConsultantCall aConsultantCall = new ConsultantCall();
+
+            aConsultantCall.OpId = txtPatientID.Text;
+            aConsultantCall.ConsultantId = Consultent;
+            aConsultantCall.Id = Convert.ToInt32(txtVoucherNo.Text);
+
+            aConsultBillService.OPID = txtPatientID.Text;
+            aConsultBillService.ConsultId = Consultent;
+            aConsultBillService.ConsultBillDate = dateServiceDate.Text;
+            aConsultBillService.ConFee = Convert.ToDouble(txtFee.Text);
+            aConsultBillService.ConQty = 1;
+            aConsultBillService.VchNo = Convert.ToInt64(txtVoucherNo.Text);
+
+            MessageModel message = new ConsultantCallManager().UpdateConsultantCall(aConsultantCall, aConsultBillService);
+            if (message.MessageTitle == "Successful")
+            {
+                MetroFramework.MetroMessageBox.Show(this, message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Refresh();
+            }
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(this, message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
     }
 }

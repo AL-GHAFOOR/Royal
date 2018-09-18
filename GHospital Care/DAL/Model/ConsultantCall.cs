@@ -10,6 +10,7 @@ namespace GHospital_Care.DAL.Model
         public int Id { get; set; }
         public string OpId { get; set; }
         public string ConsultantId { get; set; }
+       
 
     }
 }

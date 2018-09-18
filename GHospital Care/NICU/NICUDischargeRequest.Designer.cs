@@ -695,7 +695,7 @@
             // 
             // txtBreafHistory
             // 
-            this.txtBreafHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBreafHistory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBreafHistory.Location = new System.Drawing.Point(166, 101);
             this.txtBreafHistory.Name = "txtBreafHistory";
             this.txtBreafHistory.Size = new System.Drawing.Size(464, 28);
@@ -704,7 +704,7 @@
             // 
             // txtDiagOnDischarge
             // 
-            this.txtDiagOnDischarge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiagOnDischarge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiagOnDischarge.Location = new System.Drawing.Point(166, 60);
             this.txtDiagOnDischarge.Name = "txtDiagOnDischarge";
             this.txtDiagOnDischarge.Size = new System.Drawing.Size(464, 37);
@@ -713,7 +713,7 @@
             // 
             // txtDiagonsisAdmisson
             // 
-            this.txtDiagonsisAdmisson.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiagonsisAdmisson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiagonsisAdmisson.Location = new System.Drawing.Point(166, 7);
             this.txtDiagonsisAdmisson.Name = "txtDiagonsisAdmisson";
             this.txtDiagonsisAdmisson.Size = new System.Drawing.Size(226, 49);
@@ -1233,9 +1233,9 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(680, 16);
+            this.simpleButton2.Location = new System.Drawing.Point(663, 16);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(148, 40);
+            this.simpleButton2.Size = new System.Drawing.Size(107, 35);
             this.simpleButton2.TabIndex = 221;
             this.simpleButton2.Tag = "3";
             this.simpleButton2.Text = "Print";
@@ -1248,7 +1248,7 @@
             this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
             this.btnShow.Location = new System.Drawing.Point(547, 16);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(127, 35);
+            this.btnShow.Size = new System.Drawing.Size(110, 35);
             this.btnShow.TabIndex = 2;
             this.btnShow.Text = "Show";
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);

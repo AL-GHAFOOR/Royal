@@ -44,10 +44,24 @@ namespace GHospital_Care.BAL.Manager
             return dt;
         }
 
+        public DataTable GetAllBedsNICU()
+        {
+            aIpdGateway = new IpdGateway();
+            DataTable dt = aIpdGateway.GetAllBedNICU();
+            return dt;
+        }
+
         public DataTable GetAllCabin()
         {
             return new IpdGateway().GetAllCabin();
         }
+
+        public DataTable GetAllCabinUpdate()
+        {
+            return new IpdGateway().GetAllCabinUpdate();
+        }
+
+
 
         public DataTable GetAllWard()
         {
@@ -56,6 +70,11 @@ namespace GHospital_Care.BAL.Manager
         public DataTable GetBeadCabinHistory(String PID)
         {
             return new IpdGateway().GetBedCabinHistory(PID);
+        }
+
+        public DataTable GetBeadCabinHistoryNICU(String PID)
+        {
+            return new IpdGateway().GetBedCabinHistoryNICU(PID);
         }
         public DataTable GetAllDischargeIP()
         {
@@ -125,14 +144,6 @@ namespace GHospital_Care.BAL.Manager
             {
                 message = "Please insert patient name. \n Thank You";
             }
-            else if (patient.Gurdian == String.Empty)
-            {
-                message = "Please insert gurdian name. \n Thank You";
-            }
-            else if (patient.Relation == String.Empty)
-            {
-                message = "Please insert gurdian relation. \n Thank You";
-            }
             else if (string.IsNullOrEmpty(patient.Age) || (Convert.ToInt32(patient.Age) > 150) || (Convert.ToInt32(patient.Age) < 0))
             {
                 message = "Please insert valid age. \n Thank You";
@@ -140,22 +151,9 @@ namespace GHospital_Care.BAL.Manager
             else if (string.IsNullOrEmpty(patient.Phone))
             {
                 message = "Please insert valid phone no. \n Thank You";
-            }
-            else if (string.IsNullOrEmpty(patient.MaritalStatus))
-            {
-                message = "Please select Marital Status. \n Thank You";
-            }
-            else if (string.IsNullOrEmpty(patient.Nationality))
-            {
-                message = "Please write nationality. \n Thank You";
-            }
-            else if (string.IsNullOrEmpty(patient.Gender))
+            }else if (string.IsNullOrEmpty(patient.Gender))
             {
                 message = "Please select Gender. \n Thank You";
-            }
-            else if (string.IsNullOrEmpty(patient.BloodGroup))
-            {
-                message = "Please select Blood Group. \n Thank You";
             }
             else
             {

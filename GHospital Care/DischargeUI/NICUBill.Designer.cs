@@ -181,16 +181,16 @@
             this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemHyperLinkEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridColumn58 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnPathologyEdit = new System.Windows.Forms.Button();
             this.btnSavePathology = new DevExpress.XtraEditors.SimpleButton();
             this.dtpPathologyDate = new System.Windows.Forms.DateTimePicker();
             this.label30 = new System.Windows.Forms.Label();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn58 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -233,8 +233,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit5)).BeginInit();
-            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit5)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -1917,6 +1917,33 @@
             this.repositoryItemHyperLinkEdit5.Name = "repositoryItemHyperLinkEdit5";
             this.repositoryItemHyperLinkEdit5.Click += new System.EventHandler(this.repositoryItemHyperLinkEdit5_Click);
             // 
+            // gridColumn57
+            // 
+            this.gridColumn57.Caption = "Pathology";
+            this.gridColumn57.ColumnEdit = this.repositoryItemLookUpEdit5;
+            this.gridColumn57.FieldName = "Alias";
+            this.gridColumn57.Name = "gridColumn57";
+            this.gridColumn57.Visible = true;
+            this.gridColumn57.VisibleIndex = 2;
+            this.gridColumn57.Width = 101;
+            // 
+            // repositoryItemLookUpEdit5
+            // 
+            this.repositoryItemLookUpEdit5.AutoHeight = false;
+            this.repositoryItemLookUpEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit5.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Alias", "Alias")});
+            this.repositoryItemLookUpEdit5.Name = "repositoryItemLookUpEdit5";
+            this.repositoryItemLookUpEdit5.EditValueChanged += new System.EventHandler(this.repositoryItemLookUpEdit5_EditValueChanged);
+            // 
+            // gridColumn58
+            // 
+            this.gridColumn58.FieldName = "PathID";
+            this.gridColumn58.Name = "gridColumn58";
+            this.gridColumn58.Width = 73;
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label3);
@@ -1929,6 +1956,16 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(860, 41);
             this.panel9.TabIndex = 100109;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(287, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(262, 17);
+            this.label3.TabIndex = 100108;
+            this.label3.Text = "PATHOLOGY SERVICE ISSUE LIST";
             // 
             // btnPathologyEdit
             // 
@@ -1988,43 +2025,6 @@
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 5;
-            // 
-            // gridColumn57
-            // 
-            this.gridColumn57.Caption = "Pathology";
-            this.gridColumn57.ColumnEdit = this.repositoryItemLookUpEdit5;
-            this.gridColumn57.FieldName = "Alias";
-            this.gridColumn57.Name = "gridColumn57";
-            this.gridColumn57.Visible = true;
-            this.gridColumn57.VisibleIndex = 2;
-            this.gridColumn57.Width = 101;
-            // 
-            // gridColumn58
-            // 
-            this.gridColumn58.FieldName = "PathID";
-            this.gridColumn58.Name = "gridColumn58";
-            this.gridColumn58.Width = 73;
-            // 
-            // repositoryItemLookUpEdit5
-            // 
-            this.repositoryItemLookUpEdit5.AutoHeight = false;
-            this.repositoryItemLookUpEdit5.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit5.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Alias", "Alias")});
-            this.repositoryItemLookUpEdit5.Name = "repositoryItemLookUpEdit5";
-            this.repositoryItemLookUpEdit5.EditValueChanged += new System.EventHandler(this.repositoryItemLookUpEdit5_EditValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(287, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(262, 17);
-            this.label3.TabIndex = 100108;
-            this.label3.Text = "PATHOLOGY SERVICE ISSUE LIST";
             // 
             // NICUBill
             // 
@@ -2086,9 +2086,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit5)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit5)).EndInit();
             this.ResumeLayout(false);
 
         }

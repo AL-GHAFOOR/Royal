@@ -39,25 +39,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHospitalProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.cabinSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wardSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wardCabinCatagorySetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roomSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.followItemSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.followUPListSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bedSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.departmentSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deseaseSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctorSpecializationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem26 = new System.Windows.Forms.ToolStripMenuItem();
-            this.labsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.servicesSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subServiceSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pathologistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addConsultantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPatientRefferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pathologySetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDiscountAuthorityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPermissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,21 +100,15 @@
             this.cFFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNurses = new System.Windows.Forms.ToolStripMenuItem();
             this.nurseInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nurseSalaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nurseGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salarySheetToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dutyScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dutyByCommonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dutyByNurseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultantServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicineIndentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOP = new System.Windows.Forms.ToolStripMenuItem();
-            this.informationReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patientInformationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oPListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oPListByDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outDoorCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oPBillCheckingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -167,13 +154,13 @@
             this.aboutGHospitalCareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.billCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.billGenerateIPOPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billCollectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nICUBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dueBillStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payCommissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pathologyPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultantPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hopitalReceivePaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -185,6 +172,7 @@
             this.nICUBusinessOfficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewNICUCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nICUDischargeRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nICUBedHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createDBBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUserName = new System.Windows.Forms.ToolStripMenuItem();
@@ -309,25 +297,18 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuHospitalProfile,
             this.toolStripMenuItem4,
             this.cabinSetupToolStripMenuItem,
             this.wardSetupToolStripMenuItem,
             this.wardCabinCatagorySetupToolStripMenuItem,
-            this.roomSetupToolStripMenuItem,
             this.followItemSetupToolStripMenuItem,
             this.followUPListSetupToolStripMenuItem,
             this.bedSetupToolStripMenuItem,
-            this.departmentSetupToolStripMenuItem,
-            this.deseaseSToolStripMenuItem,
             this.doctorSpecializationToolStripMenuItem,
-            this.toolStripMenuItem26,
-            this.labsToolStripMenuItem,
             this.servicesSettingToolStripMenuItem,
-            this.subServiceSettingToolStripMenuItem,
-            this.pathologistToolStripMenuItem,
             this.addConsultantToolStripMenuItem,
             this.addPatientRefferenceToolStripMenuItem,
+            this.pathologySetupToolStripMenuItem,
             this.addDiscountAuthorityToolStripMenuItem,
             this.mnuUser,
             this.menuPermissionToolStripMenuItem});
@@ -335,13 +316,6 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.settingsToolStripMenuItem.Text = "Setup";
-            // 
-            // mnuHospitalProfile
-            // 
-            this.mnuHospitalProfile.Name = "mnuHospitalProfile";
-            this.mnuHospitalProfile.Size = new System.Drawing.Size(232, 22);
-            this.mnuHospitalProfile.Text = "Hospital Profile";
-            this.mnuHospitalProfile.Click += new System.EventHandler(this.mnuHospitalProfile_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -370,14 +344,6 @@
             this.wardCabinCatagorySetupToolStripMenuItem.Visible = false;
             this.wardCabinCatagorySetupToolStripMenuItem.Click += new System.EventHandler(this.wardCabinCatagorySetupToolStripMenuItem_Click);
             // 
-            // roomSetupToolStripMenuItem
-            // 
-            this.roomSetupToolStripMenuItem.Name = "roomSetupToolStripMenuItem";
-            this.roomSetupToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.roomSetupToolStripMenuItem.Text = "Room Setup";
-            this.roomSetupToolStripMenuItem.Visible = false;
-            this.roomSetupToolStripMenuItem.Click += new System.EventHandler(this.roomSetupToolStripMenuItem_Click);
-            // 
             // followItemSetupToolStripMenuItem
             // 
             this.followItemSetupToolStripMenuItem.Name = "followItemSetupToolStripMenuItem";
@@ -399,22 +365,6 @@
             this.bedSetupToolStripMenuItem.Text = "Bed Setup";
             this.bedSetupToolStripMenuItem.Click += new System.EventHandler(this.bedSetupToolStripMenuItem_Click);
             // 
-            // departmentSetupToolStripMenuItem
-            // 
-            this.departmentSetupToolStripMenuItem.Name = "departmentSetupToolStripMenuItem";
-            this.departmentSetupToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.departmentSetupToolStripMenuItem.Text = "Department Setup";
-            this.departmentSetupToolStripMenuItem.Visible = false;
-            this.departmentSetupToolStripMenuItem.Click += new System.EventHandler(this.departmentSetupToolStripMenuItem_Click);
-            // 
-            // deseaseSToolStripMenuItem
-            // 
-            this.deseaseSToolStripMenuItem.Name = "deseaseSToolStripMenuItem";
-            this.deseaseSToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.deseaseSToolStripMenuItem.Text = "Desease Setup";
-            this.deseaseSToolStripMenuItem.Visible = false;
-            this.deseaseSToolStripMenuItem.Click += new System.EventHandler(this.deseaseSToolStripMenuItem_Click);
-            // 
             // doctorSpecializationToolStripMenuItem
             // 
             this.doctorSpecializationToolStripMenuItem.Name = "doctorSpecializationToolStripMenuItem";
@@ -423,42 +373,12 @@
             this.doctorSpecializationToolStripMenuItem.Visible = false;
             this.doctorSpecializationToolStripMenuItem.Click += new System.EventHandler(this.doctorSpecializationToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem26
-            // 
-            this.toolStripMenuItem26.Name = "toolStripMenuItem26";
-            this.toolStripMenuItem26.Size = new System.Drawing.Size(232, 22);
-            this.toolStripMenuItem26.Text = "Medicine Setup";
-            this.toolStripMenuItem26.Click += new System.EventHandler(this.toolStripMenuItem26_Click);
-            // 
-            // labsToolStripMenuItem
-            // 
-            this.labsToolStripMenuItem.Name = "labsToolStripMenuItem";
-            this.labsToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.labsToolStripMenuItem.Text = "Labs";
-            this.labsToolStripMenuItem.Visible = false;
-            this.labsToolStripMenuItem.Click += new System.EventHandler(this.labsToolStripMenuItem_Click);
-            // 
             // servicesSettingToolStripMenuItem
             // 
             this.servicesSettingToolStripMenuItem.Name = "servicesSettingToolStripMenuItem";
             this.servicesSettingToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.servicesSettingToolStripMenuItem.Text = "Services Setting";
             this.servicesSettingToolStripMenuItem.Click += new System.EventHandler(this.servicesSettingToolStripMenuItem_Click_1);
-            // 
-            // subServiceSettingToolStripMenuItem
-            // 
-            this.subServiceSettingToolStripMenuItem.Name = "subServiceSettingToolStripMenuItem";
-            this.subServiceSettingToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.subServiceSettingToolStripMenuItem.Text = "Sub Service Setting";
-            this.subServiceSettingToolStripMenuItem.Click += new System.EventHandler(this.subServiceSettingToolStripMenuItem_Click);
-            // 
-            // pathologistToolStripMenuItem
-            // 
-            this.pathologistToolStripMenuItem.Name = "pathologistToolStripMenuItem";
-            this.pathologistToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.pathologistToolStripMenuItem.Text = "Pathologist";
-            this.pathologistToolStripMenuItem.Visible = false;
-            this.pathologistToolStripMenuItem.Click += new System.EventHandler(this.pathologistToolStripMenuItem_Click);
             // 
             // addConsultantToolStripMenuItem
             // 
@@ -472,6 +392,13 @@
             this.addPatientRefferenceToolStripMenuItem.Name = "addPatientRefferenceToolStripMenuItem";
             this.addPatientRefferenceToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.addPatientRefferenceToolStripMenuItem.Text = "Add Patient Refference";
+            // 
+            // pathologySetupToolStripMenuItem
+            // 
+            this.pathologySetupToolStripMenuItem.Name = "pathologySetupToolStripMenuItem";
+            this.pathologySetupToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.pathologySetupToolStripMenuItem.Text = "Pathology Setup";
+            this.pathologySetupToolStripMenuItem.Click += new System.EventHandler(this.pathologySetupToolStripMenuItem_Click);
             // 
             // addDiscountAuthorityToolStripMenuItem
             // 
@@ -748,7 +675,7 @@
             // 
             this.IpAdmissionSubMenu.Name = "IpAdmissionSubMenu";
             this.IpAdmissionSubMenu.Size = new System.Drawing.Size(258, 22);
-            this.IpAdmissionSubMenu.Text = "IP Admission";
+            this.IpAdmissionSubMenu.Text = "Admission";
             this.IpAdmissionSubMenu.Click += new System.EventHandler(this.patientAdmissionToolStripMenuItem_Click);
             // 
             // iPBillingToolStripMenuItem
@@ -763,7 +690,7 @@
             // 
             this.iPAllBillCheckingToolStripMenuItem.Name = "iPAllBillCheckingToolStripMenuItem";
             this.iPAllBillCheckingToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.iPAllBillCheckingToolStripMenuItem.Text = "IP All Bill Checking";
+            this.iPAllBillCheckingToolStripMenuItem.Text = "IP BusinessOffice (Search Bill)";
             this.iPAllBillCheckingToolStripMenuItem.Click += new System.EventHandler(this.iPAllBillCheckingToolStripMenuItem_Click);
             // 
             // iPAdmissionBedHistoryToolStripMenuItem
@@ -841,10 +768,7 @@
             // 
             this.mnuNurses.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nurseInformationToolStripMenuItem,
-            this.nurseSalaryToolStripMenuItem,
-            this.nurseGeneratorToolStripMenuItem,
             this.salarySheetToolStripMenuItem1,
-            this.dutyScheduleToolStripMenuItem,
             this.dutyByCommonToolStripMenuItem,
             this.dutyByNurseToolStripMenuItem,
             this.consultantServiceToolStripMenuItem,
@@ -861,22 +785,6 @@
             this.nurseInformationToolStripMenuItem.Text = "Nurse Information";
             this.nurseInformationToolStripMenuItem.Click += new System.EventHandler(this.nurseInformationToolStripMenuItem_Click);
             // 
-            // nurseSalaryToolStripMenuItem
-            // 
-            this.nurseSalaryToolStripMenuItem.Name = "nurseSalaryToolStripMenuItem";
-            this.nurseSalaryToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.nurseSalaryToolStripMenuItem.Text = "Nurse Salary";
-            this.nurseSalaryToolStripMenuItem.Visible = false;
-            this.nurseSalaryToolStripMenuItem.Click += new System.EventHandler(this.nurseSalaryToolStripMenuItem_Click);
-            // 
-            // nurseGeneratorToolStripMenuItem
-            // 
-            this.nurseGeneratorToolStripMenuItem.Name = "nurseGeneratorToolStripMenuItem";
-            this.nurseGeneratorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.nurseGeneratorToolStripMenuItem.Text = "Nurse Generator";
-            this.nurseGeneratorToolStripMenuItem.Visible = false;
-            this.nurseGeneratorToolStripMenuItem.Click += new System.EventHandler(this.nurseGeneratorToolStripMenuItem_Click);
-            // 
             // salarySheetToolStripMenuItem1
             // 
             this.salarySheetToolStripMenuItem1.Name = "salarySheetToolStripMenuItem1";
@@ -884,14 +792,6 @@
             this.salarySheetToolStripMenuItem1.Text = "Salary Sheet";
             this.salarySheetToolStripMenuItem1.Visible = false;
             this.salarySheetToolStripMenuItem1.Click += new System.EventHandler(this.salarySheetToolStripMenuItem1_Click);
-            // 
-            // dutyScheduleToolStripMenuItem
-            // 
-            this.dutyScheduleToolStripMenuItem.Name = "dutyScheduleToolStripMenuItem";
-            this.dutyScheduleToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.dutyScheduleToolStripMenuItem.Text = "Duty Schedule";
-            this.dutyScheduleToolStripMenuItem.Visible = false;
-            this.dutyScheduleToolStripMenuItem.Click += new System.EventHandler(this.dutyScheduleToolStripMenuItem_Click);
             // 
             // dutyByCommonToolStripMenuItem
             // 
@@ -926,12 +826,9 @@
             // mnuOP
             // 
             this.mnuOP.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informationReportToolStripMenuItem,
             this.patientInformationToolStripMenuItem1,
             this.billingToolStripMenuItem,
             this.consultationToolStripMenuItem,
-            this.oPListToolStripMenuItem,
-            this.oPListByDoctorToolStripMenuItem,
             this.outDoorCollectionToolStripMenuItem,
             this.oPBillCheckingToolStripMenuItem,
             this.createBillToolStripMenuItem});
@@ -941,19 +838,11 @@
             this.mnuOP.Text = "Outdoor Patient";
             this.mnuOP.Click += new System.EventHandler(this.mnuOP_Click);
             // 
-            // informationReportToolStripMenuItem
-            // 
-            this.informationReportToolStripMenuItem.Name = "informationReportToolStripMenuItem";
-            this.informationReportToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.informationReportToolStripMenuItem.Text = "Information Report";
-            this.informationReportToolStripMenuItem.Visible = false;
-            this.informationReportToolStripMenuItem.Click += new System.EventHandler(this.informationReportToolStripMenuItem_Click);
-            // 
             // patientInformationToolStripMenuItem1
             // 
             this.patientInformationToolStripMenuItem1.Name = "patientInformationToolStripMenuItem1";
-            this.patientInformationToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.patientInformationToolStripMenuItem1.Text = "Patient Information";
+            this.patientInformationToolStripMenuItem1.Size = new System.Drawing.Size(198, 22);
+            this.patientInformationToolStripMenuItem1.Text = "Emergency Admission";
             this.patientInformationToolStripMenuItem1.Click += new System.EventHandler(this.patientInformationToolStripMenuItem1_Click);
             // 
             // billingToolStripMenuItem
@@ -969,21 +858,6 @@
             this.consultationToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.consultationToolStripMenuItem.Text = "Consultation";
             this.consultationToolStripMenuItem.Visible = false;
-            // 
-            // oPListToolStripMenuItem
-            // 
-            this.oPListToolStripMenuItem.Name = "oPListToolStripMenuItem";
-            this.oPListToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.oPListToolStripMenuItem.Text = "OP List";
-            this.oPListToolStripMenuItem.Visible = false;
-            this.oPListToolStripMenuItem.Click += new System.EventHandler(this.oPListToolStripMenuItem_Click);
-            // 
-            // oPListByDoctorToolStripMenuItem
-            // 
-            this.oPListByDoctorToolStripMenuItem.Name = "oPListByDoctorToolStripMenuItem";
-            this.oPListByDoctorToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.oPListByDoctorToolStripMenuItem.Text = "OP List by Doctor";
-            this.oPListByDoctorToolStripMenuItem.Click += new System.EventHandler(this.oPListByDoctorToolStripMenuItem_Click);
             // 
             // outDoorCollectionToolStripMenuItem
             // 
@@ -1300,15 +1174,15 @@
             this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
+            this.mnuOP,
             this.mnuAccount,
             this.mnuIP,
+            this.nICUToolStripMenuItem,
+            this.mnuNurses,
+            this.oTToolStripMenuItem,
             this.billCollectionToolStripMenuItem,
             this.mnuDoctor,
             this.mnuEmployee,
-            this.oTToolStripMenuItem,
-            this.nICUToolStripMenuItem,
-            this.mnuNurses,
-            this.mnuOP,
             this.mnuPathology,
             this.mnuPharmacy,
             this.mnuReports,
@@ -1325,66 +1199,67 @@
             // billCollectionToolStripMenuItem
             // 
             this.billCollectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.billGenerateIPOPToolStripMenuItem,
             this.billCollectionToolStripMenuItem1,
             this.nICUBillToolStripMenuItem,
             this.dueBillStatusToolStripMenuItem,
             this.payCommissionToolStripMenuItem,
             this.pathologyPaymentToolStripMenuItem,
-            this.consultantPaymentToolStripMenuItem});
+            this.consultantPaymentToolStripMenuItem,
+            this.hopitalReceivePaymentToolStripMenuItem});
             this.billCollectionToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.billCollectionToolStripMenuItem.Name = "billCollectionToolStripMenuItem";
             this.billCollectionToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.billCollectionToolStripMenuItem.Text = "Bill/Collection";
             // 
-            // billGenerateIPOPToolStripMenuItem
-            // 
-            this.billGenerateIPOPToolStripMenuItem.Name = "billGenerateIPOPToolStripMenuItem";
-            this.billGenerateIPOPToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.billGenerateIPOPToolStripMenuItem.Text = "Bill Generate (OPD)";
-            this.billGenerateIPOPToolStripMenuItem.Click += new System.EventHandler(this.billGenerateIPOPToolStripMenuItem_Click);
-            // 
             // billCollectionToolStripMenuItem1
             // 
             this.billCollectionToolStripMenuItem1.Name = "billCollectionToolStripMenuItem1";
-            this.billCollectionToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.billCollectionToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
             this.billCollectionToolStripMenuItem1.Text = "Bill Collection";
             this.billCollectionToolStripMenuItem1.Click += new System.EventHandler(this.billCollectionToolStripMenuItem1_Click);
             // 
             // nICUBillToolStripMenuItem
             // 
             this.nICUBillToolStripMenuItem.Name = "nICUBillToolStripMenuItem";
-            this.nICUBillToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.nICUBillToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.nICUBillToolStripMenuItem.Text = "NICU Bill";
+            this.nICUBillToolStripMenuItem.Visible = false;
             this.nICUBillToolStripMenuItem.Click += new System.EventHandler(this.nICUBillToolStripMenuItem_Click);
             // 
             // dueBillStatusToolStripMenuItem
             // 
             this.dueBillStatusToolStripMenuItem.Name = "dueBillStatusToolStripMenuItem";
-            this.dueBillStatusToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.dueBillStatusToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.dueBillStatusToolStripMenuItem.Text = "DueBill Status";
             this.dueBillStatusToolStripMenuItem.Click += new System.EventHandler(this.dueBillStatusToolStripMenuItem_Click);
             // 
             // payCommissionToolStripMenuItem
             // 
             this.payCommissionToolStripMenuItem.Name = "payCommissionToolStripMenuItem";
-            this.payCommissionToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.payCommissionToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.payCommissionToolStripMenuItem.Text = "Pay Commission";
             this.payCommissionToolStripMenuItem.Click += new System.EventHandler(this.payCommissionToolStripMenuItem_Click);
             // 
             // pathologyPaymentToolStripMenuItem
             // 
             this.pathologyPaymentToolStripMenuItem.Name = "pathologyPaymentToolStripMenuItem";
-            this.pathologyPaymentToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.pathologyPaymentToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.pathologyPaymentToolStripMenuItem.Text = "Pathology Payment";
             this.pathologyPaymentToolStripMenuItem.Click += new System.EventHandler(this.pathologyPaymentToolStripMenuItem_Click);
             // 
             // consultantPaymentToolStripMenuItem
             // 
             this.consultantPaymentToolStripMenuItem.Name = "consultantPaymentToolStripMenuItem";
-            this.consultantPaymentToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.consultantPaymentToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.consultantPaymentToolStripMenuItem.Text = "Consultant Payment";
             this.consultantPaymentToolStripMenuItem.Click += new System.EventHandler(this.consultantPaymentToolStripMenuItem_Click);
+            // 
+            // hopitalReceivePaymentToolStripMenuItem
+            // 
+            this.hopitalReceivePaymentToolStripMenuItem.Name = "hopitalReceivePaymentToolStripMenuItem";
+            this.hopitalReceivePaymentToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.hopitalReceivePaymentToolStripMenuItem.Text = "Hopital ReceivePayment";
+            this.hopitalReceivePaymentToolStripMenuItem.Click += new System.EventHandler(this.hopitalReceivePaymentToolStripMenuItem_Click);
             // 
             // oTToolStripMenuItem
             // 
@@ -1427,7 +1302,8 @@
             this.dischargeBillNICUToolStripMenuItem,
             this.nICUBusinessOfficeToolStripMenuItem,
             this.viewNICUCollectionToolStripMenuItem,
-            this.nICUDischargeRequestToolStripMenuItem});
+            this.nICUDischargeRequestToolStripMenuItem,
+            this.nICUBedHistoryToolStripMenuItem});
             this.nICUToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.nICUToolStripMenuItem.Name = "nICUToolStripMenuItem";
             this.nICUToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
@@ -1474,6 +1350,13 @@
             this.nICUDischargeRequestToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.nICUDischargeRequestToolStripMenuItem.Text = "NICU Discharge Request";
             this.nICUDischargeRequestToolStripMenuItem.Click += new System.EventHandler(this.nICUDischargeRequestToolStripMenuItem_Click);
+            // 
+            // nICUBedHistoryToolStripMenuItem
+            // 
+            this.nICUBedHistoryToolStripMenuItem.Name = "nICUBedHistoryToolStripMenuItem";
+            this.nICUBedHistoryToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.nICUBedHistoryToolStripMenuItem.Text = "NICU BedHistory";
+            this.nICUBedHistoryToolStripMenuItem.Click += new System.EventHandler(this.nICUBedHistoryToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -1783,6 +1666,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -1794,9 +1678,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(67, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
@@ -1814,7 +1700,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(49, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 22);
@@ -1875,11 +1761,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem bedSetupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem departmentSetupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deseaseSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doctorSpecializationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem labsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem roomSetupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem servicesSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuUser;
         private System.Windows.Forms.ToolStripMenuItem wardSetupToolStripMenuItem;
@@ -1923,7 +1805,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuOP;
         private System.Windows.Forms.ToolStripMenuItem consultationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patientInformationToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem informationReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuPathology;
         private System.Windows.Forms.ToolStripMenuItem bloodTestToolStripMenuItem;
@@ -1950,21 +1831,13 @@
         private System.Windows.Forms.ToolStripMenuItem recieveToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem25;
         private System.Windows.Forms.ToolStripMenuItem lossProfitStatementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oPListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oPListByDoctorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem26;
-        private System.Windows.Forms.ToolStripMenuItem pathologistToolStripMenuItem;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripMenuItem nurseInformationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nurseSalaryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nurseGeneratorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salarySheetToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem dutyScheduleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dutyByCommonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dutyByNurseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createDBBackupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subServiceSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lblUserName;
         private System.Windows.Forms.ToolStripMenuItem lnkUserType;
         private System.Windows.Forms.Timer timer1;
@@ -2004,7 +1877,6 @@
         private System.Windows.Forms.ToolStripMenuItem skinScrappingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iPAdmissionBedHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wardCabinCatagorySetupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuHospitalProfile;
         private System.Windows.Forms.ToolStripMenuItem iPBillingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iPAllBillCheckingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cabinSetupToolStripMenuItem;
@@ -2012,7 +1884,6 @@
         private System.Windows.Forms.ToolStripMenuItem iPCollecctionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem outDoorCollectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billCollectionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem billGenerateIPOPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billCollectionToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem oPBillCheckingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem birthDeathCertificateToolStripMenuItem;
@@ -2049,5 +1920,8 @@
         private System.Windows.Forms.ToolStripMenuItem medicineIndentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dailyFollowupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultantPaymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nICUBedHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pathologySetupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hopitalReceivePaymentToolStripMenuItem;
     }
 }

@@ -2281,7 +2281,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DisChargeSummery_MedicineTakeInHopital</DataSetName>
-        <Top>4.46611in</Top>
+        <Top>4.54111in</Top>
         <Left>0.025in</Left>
         <Height>0.72918in</Height>
         <Width>8.25889in</Width>
@@ -2720,7 +2720,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DisChargeSummery_Treatment</DataSetName>
-        <Top>5.22027in</Top>
+        <Top>5.45777in</Top>
         <Left>0.02551in</Left>
         <Height>0.75in</Height>
         <Width>8.25838in</Width>
@@ -2808,7 +2808,7 @@
                             <TextRun>
                               <Value>=Fields!AdviceName.Value</Value>
                               <Style>
-                                <FontFamily>Play</FontFamily>
+                                <FontFamily>sutonnyMJ</FontFamily>
                                 <FontSize>13pt</FontSize>
                               </Style>
                             </TextRun>
@@ -2818,10 +2818,7 @@
                       </Paragraphs>
                       <rd:DefaultName>LabelName</rd:DefaultName>
                       <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
+                        <Border />
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2859,7 +2856,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetAdvice</DataSetName>
-        <Top>6.27583in</Top>
+        <Top>6.36333in</Top>
         <Left>0.02551in</Left>
         <Height>0.54167in</Height>
         <Width>8.25838in</Width>
@@ -2871,7 +2868,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>6.8175in</Height>
+    <Height>7.0175in</Height>
     <Style>
       <Border>
         <Style>None</Style>
