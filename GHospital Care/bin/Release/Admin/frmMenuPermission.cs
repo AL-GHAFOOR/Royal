@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using GHospital_Care.DAL.Model;
 using Paragon;
-
 namespace BABInventory.forms
 {
     public partial class frmMenuPermission : DevExpress.XtraEditors.XtraForm
@@ -83,6 +84,11 @@ namespace BABInventory.forms
             btnSave.Enabled = false;
         }
 
+        public void LoadAllForm()
+        {
+            gridControl2.DataSource = GlobalPermission.DefaultMenuNameList;
+
+        }
         protected internal void frmMenuPermission_Load(object sender, EventArgs e)
         {   
             //buttongEnable(true);
@@ -90,7 +96,7 @@ namespace BABInventory.forms
             userLoad();
             formLoad();
             btnEdit.Enabled = false;
-
+            LoadAllForm();
         }
 
         private void userLoad()
@@ -316,6 +322,37 @@ namespace BABInventory.forms
                 MessageBox.Show("Please select Account Name.", "Rashed Brothers", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbAccountName.Focus();
             }
+        }
+        private void copyAlltoClipboard()
+        {
+          
+        }
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+           
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            gridControl2.ExportToXlsx(@"C:\\data.xlsx");
+            
         }
     }
 }

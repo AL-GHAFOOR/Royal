@@ -1599,6 +1599,7 @@
     <EmbeddedResource Include="Report\rdlcNICUPatientFinalBilling.rdlc" />
     <EmbeddedResource Include="Report\rdlcIndoorPatientFinalBilling.rdlc" />
     <EmbeddedResource Include="Report\rdlcDischargeSummery.rdlc" />
+    <EmbeddedResource Include="Report\rptDailyFollowupSheet.rdlc" />
     <EmbeddedResource Include="Report\rptHospitalRvcPayment.rdlc" />
     <EmbeddedResource Include="Report\rdlcOperationSchedule.rdlc" />
     <EmbeddedResource Include="Report\rptBedList.rdlc" />

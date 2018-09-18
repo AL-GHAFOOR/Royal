@@ -1081,6 +1081,8 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
+            this.gridView1.ShownEditor += new System.EventHandler(this.gridView1_ShownEditor);
             // 
             // gridColumn1
             // 
@@ -1142,7 +1144,9 @@
             this.gridControlFollowUp.TabIndex = 0;
             this.gridControlFollowUp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewFollowUp});
+            this.gridControlFollowUp.Click += new System.EventHandler(this.gridControlFollowUp_Click);
             this.gridControlFollowUp.DoubleClick += new System.EventHandler(this.gridControlFollowUp_DoubleClick);
+            this.gridControlFollowUp.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridControlFollowUp_MouseDoubleClick);
             // 
             // gridViewFollowUp
             // 
@@ -1187,6 +1191,7 @@
             this.btnPrint.Size = new System.Drawing.Size(98, 39);
             this.btnPrint.TabIndex = 100110;
             this.btnPrint.Text = "Print";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label28
             // 

@@ -153,18 +153,6 @@
             this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutGHospitalCareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.billCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.billCollectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nICUBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dueBillStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.payCommissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pathologyPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultantPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hopitalReceivePaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operationScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operationBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oTBusinessofficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nICUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nICUAdmissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBillNICUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,6 +161,18 @@
             this.viewNICUCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nICUDischargeRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nICUBedHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operationScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operationBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oTBusinessofficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.billCollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.billCollectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nICUBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dueBillStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payCommissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pathologyPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultantPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hopitalReceivePaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createDBBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUserName = new System.Windows.Forms.ToolStripMenuItem();
@@ -848,35 +848,35 @@
             // billingToolStripMenuItem
             // 
             this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
-            this.billingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.billingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.billingToolStripMenuItem.Text = "Print Bill";
             this.billingToolStripMenuItem.Click += new System.EventHandler(this.billingToolStripMenuItem_Click);
             // 
             // consultationToolStripMenuItem
             // 
             this.consultationToolStripMenuItem.Name = "consultationToolStripMenuItem";
-            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.consultationToolStripMenuItem.Text = "Consultation";
             this.consultationToolStripMenuItem.Visible = false;
             // 
             // outDoorCollectionToolStripMenuItem
             // 
             this.outDoorCollectionToolStripMenuItem.Name = "outDoorCollectionToolStripMenuItem";
-            this.outDoorCollectionToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.outDoorCollectionToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.outDoorCollectionToolStripMenuItem.Text = "View OP Collection";
             this.outDoorCollectionToolStripMenuItem.Click += new System.EventHandler(this.outDoorCollectionToolStripMenuItem_Click);
             // 
             // oPBillCheckingToolStripMenuItem
             // 
             this.oPBillCheckingToolStripMenuItem.Name = "oPBillCheckingToolStripMenuItem";
-            this.oPBillCheckingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.oPBillCheckingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.oPBillCheckingToolStripMenuItem.Text = "OP Bill Checking";
             this.oPBillCheckingToolStripMenuItem.Click += new System.EventHandler(this.oPBillCheckingToolStripMenuItem_Click);
             // 
             // createBillToolStripMenuItem
             // 
             this.createBillToolStripMenuItem.Name = "createBillToolStripMenuItem";
-            this.createBillToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.createBillToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.createBillToolStripMenuItem.Text = "Create Bill";
             this.createBillToolStripMenuItem.Click += new System.EventHandler(this.createBillToolStripMenuItem_Click);
             // 
@@ -1196,6 +1196,103 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // nICUToolStripMenuItem
+            // 
+            this.nICUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nICUAdmissionToolStripMenuItem,
+            this.createBillNICUToolStripMenuItem,
+            this.dischargeBillNICUToolStripMenuItem,
+            this.nICUBusinessOfficeToolStripMenuItem,
+            this.viewNICUCollectionToolStripMenuItem,
+            this.nICUDischargeRequestToolStripMenuItem,
+            this.nICUBedHistoryToolStripMenuItem});
+            this.nICUToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.nICUToolStripMenuItem.Name = "nICUToolStripMenuItem";
+            this.nICUToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.nICUToolStripMenuItem.Text = "NICU";
+            // 
+            // nICUAdmissionToolStripMenuItem
+            // 
+            this.nICUAdmissionToolStripMenuItem.Name = "nICUAdmissionToolStripMenuItem";
+            this.nICUAdmissionToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.nICUAdmissionToolStripMenuItem.Text = "NICU Admission";
+            this.nICUAdmissionToolStripMenuItem.Click += new System.EventHandler(this.nICUAdmissionToolStripMenuItem_Click);
+            // 
+            // createBillNICUToolStripMenuItem
+            // 
+            this.createBillNICUToolStripMenuItem.Name = "createBillNICUToolStripMenuItem";
+            this.createBillNICUToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.createBillNICUToolStripMenuItem.Text = "Create Bill(NICU)";
+            this.createBillNICUToolStripMenuItem.Click += new System.EventHandler(this.createBillNICUToolStripMenuItem_Click);
+            // 
+            // dischargeBillNICUToolStripMenuItem
+            // 
+            this.dischargeBillNICUToolStripMenuItem.Name = "dischargeBillNICUToolStripMenuItem";
+            this.dischargeBillNICUToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.dischargeBillNICUToolStripMenuItem.Text = "Discharge Bill(NICU)";
+            this.dischargeBillNICUToolStripMenuItem.Click += new System.EventHandler(this.dischargeBillNICUToolStripMenuItem_Click);
+            // 
+            // nICUBusinessOfficeToolStripMenuItem
+            // 
+            this.nICUBusinessOfficeToolStripMenuItem.Name = "nICUBusinessOfficeToolStripMenuItem";
+            this.nICUBusinessOfficeToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.nICUBusinessOfficeToolStripMenuItem.Text = "NICU BusinessOffice";
+            this.nICUBusinessOfficeToolStripMenuItem.Click += new System.EventHandler(this.nICUBusinessOfficeToolStripMenuItem_Click);
+            // 
+            // viewNICUCollectionToolStripMenuItem
+            // 
+            this.viewNICUCollectionToolStripMenuItem.Name = "viewNICUCollectionToolStripMenuItem";
+            this.viewNICUCollectionToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.viewNICUCollectionToolStripMenuItem.Text = "View NICU Collection";
+            this.viewNICUCollectionToolStripMenuItem.Click += new System.EventHandler(this.viewNICUCollectionToolStripMenuItem_Click);
+            // 
+            // nICUDischargeRequestToolStripMenuItem
+            // 
+            this.nICUDischargeRequestToolStripMenuItem.Name = "nICUDischargeRequestToolStripMenuItem";
+            this.nICUDischargeRequestToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.nICUDischargeRequestToolStripMenuItem.Text = "NICU Discharge Request";
+            this.nICUDischargeRequestToolStripMenuItem.Click += new System.EventHandler(this.nICUDischargeRequestToolStripMenuItem_Click);
+            // 
+            // nICUBedHistoryToolStripMenuItem
+            // 
+            this.nICUBedHistoryToolStripMenuItem.Name = "nICUBedHistoryToolStripMenuItem";
+            this.nICUBedHistoryToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.nICUBedHistoryToolStripMenuItem.Text = "NICU BedHistory";
+            this.nICUBedHistoryToolStripMenuItem.Click += new System.EventHandler(this.nICUBedHistoryToolStripMenuItem_Click);
+            // 
+            // oTToolStripMenuItem
+            // 
+            this.oTToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
+            this.oTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operationScheduleToolStripMenuItem,
+            this.operationBillToolStripMenuItem,
+            this.oTBusinessofficeToolStripMenuItem});
+            this.oTToolStripMenuItem.ForeColor = System.Drawing.Color.Yellow;
+            this.oTToolStripMenuItem.Name = "oTToolStripMenuItem";
+            this.oTToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
+            this.oTToolStripMenuItem.Text = "OT";
+            // 
+            // operationScheduleToolStripMenuItem
+            // 
+            this.operationScheduleToolStripMenuItem.Name = "operationScheduleToolStripMenuItem";
+            this.operationScheduleToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.operationScheduleToolStripMenuItem.Text = "Operation Schedule";
+            this.operationScheduleToolStripMenuItem.Click += new System.EventHandler(this.operationScheduleToolStripMenuItem_Click);
+            // 
+            // operationBillToolStripMenuItem
+            // 
+            this.operationBillToolStripMenuItem.Name = "operationBillToolStripMenuItem";
+            this.operationBillToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.operationBillToolStripMenuItem.Text = "Operation Bill";
+            this.operationBillToolStripMenuItem.Click += new System.EventHandler(this.operationBillToolStripMenuItem_Click);
+            // 
+            // oTBusinessofficeToolStripMenuItem
+            // 
+            this.oTBusinessofficeToolStripMenuItem.Name = "oTBusinessofficeToolStripMenuItem";
+            this.oTBusinessofficeToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.oTBusinessofficeToolStripMenuItem.Text = "OT Businessoffice";
+            this.oTBusinessofficeToolStripMenuItem.Click += new System.EventHandler(this.oTBusinessofficeToolStripMenuItem_Click);
+            // 
             // billCollectionToolStripMenuItem
             // 
             this.billCollectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1260,103 +1357,6 @@
             this.hopitalReceivePaymentToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.hopitalReceivePaymentToolStripMenuItem.Text = "Hopital ReceivePayment";
             this.hopitalReceivePaymentToolStripMenuItem.Click += new System.EventHandler(this.hopitalReceivePaymentToolStripMenuItem_Click);
-            // 
-            // oTToolStripMenuItem
-            // 
-            this.oTToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
-            this.oTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operationScheduleToolStripMenuItem,
-            this.operationBillToolStripMenuItem,
-            this.oTBusinessofficeToolStripMenuItem});
-            this.oTToolStripMenuItem.ForeColor = System.Drawing.Color.Yellow;
-            this.oTToolStripMenuItem.Name = "oTToolStripMenuItem";
-            this.oTToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
-            this.oTToolStripMenuItem.Text = "OT";
-            // 
-            // operationScheduleToolStripMenuItem
-            // 
-            this.operationScheduleToolStripMenuItem.Name = "operationScheduleToolStripMenuItem";
-            this.operationScheduleToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.operationScheduleToolStripMenuItem.Text = "Operation Schedule";
-            this.operationScheduleToolStripMenuItem.Click += new System.EventHandler(this.operationScheduleToolStripMenuItem_Click);
-            // 
-            // operationBillToolStripMenuItem
-            // 
-            this.operationBillToolStripMenuItem.Name = "operationBillToolStripMenuItem";
-            this.operationBillToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.operationBillToolStripMenuItem.Text = "Operation Bill";
-            this.operationBillToolStripMenuItem.Click += new System.EventHandler(this.operationBillToolStripMenuItem_Click);
-            // 
-            // oTBusinessofficeToolStripMenuItem
-            // 
-            this.oTBusinessofficeToolStripMenuItem.Name = "oTBusinessofficeToolStripMenuItem";
-            this.oTBusinessofficeToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.oTBusinessofficeToolStripMenuItem.Text = "OT Businessoffice";
-            this.oTBusinessofficeToolStripMenuItem.Click += new System.EventHandler(this.oTBusinessofficeToolStripMenuItem_Click);
-            // 
-            // nICUToolStripMenuItem
-            // 
-            this.nICUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nICUAdmissionToolStripMenuItem,
-            this.createBillNICUToolStripMenuItem,
-            this.dischargeBillNICUToolStripMenuItem,
-            this.nICUBusinessOfficeToolStripMenuItem,
-            this.viewNICUCollectionToolStripMenuItem,
-            this.nICUDischargeRequestToolStripMenuItem,
-            this.nICUBedHistoryToolStripMenuItem});
-            this.nICUToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.nICUToolStripMenuItem.Name = "nICUToolStripMenuItem";
-            this.nICUToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.nICUToolStripMenuItem.Text = "NICU";
-            // 
-            // nICUAdmissionToolStripMenuItem
-            // 
-            this.nICUAdmissionToolStripMenuItem.Name = "nICUAdmissionToolStripMenuItem";
-            this.nICUAdmissionToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.nICUAdmissionToolStripMenuItem.Text = "NICU Admission";
-            this.nICUAdmissionToolStripMenuItem.Click += new System.EventHandler(this.nICUAdmissionToolStripMenuItem_Click);
-            // 
-            // createBillNICUToolStripMenuItem
-            // 
-            this.createBillNICUToolStripMenuItem.Name = "createBillNICUToolStripMenuItem";
-            this.createBillNICUToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.createBillNICUToolStripMenuItem.Text = "Create Bill(NICU)";
-            this.createBillNICUToolStripMenuItem.Click += new System.EventHandler(this.createBillNICUToolStripMenuItem_Click);
-            // 
-            // dischargeBillNICUToolStripMenuItem
-            // 
-            this.dischargeBillNICUToolStripMenuItem.Name = "dischargeBillNICUToolStripMenuItem";
-            this.dischargeBillNICUToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.dischargeBillNICUToolStripMenuItem.Text = "Discharge Bill(NICU)";
-            this.dischargeBillNICUToolStripMenuItem.Click += new System.EventHandler(this.dischargeBillNICUToolStripMenuItem_Click);
-            // 
-            // nICUBusinessOfficeToolStripMenuItem
-            // 
-            this.nICUBusinessOfficeToolStripMenuItem.Name = "nICUBusinessOfficeToolStripMenuItem";
-            this.nICUBusinessOfficeToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.nICUBusinessOfficeToolStripMenuItem.Text = "NICU BusinessOffice";
-            this.nICUBusinessOfficeToolStripMenuItem.Click += new System.EventHandler(this.nICUBusinessOfficeToolStripMenuItem_Click);
-            // 
-            // viewNICUCollectionToolStripMenuItem
-            // 
-            this.viewNICUCollectionToolStripMenuItem.Name = "viewNICUCollectionToolStripMenuItem";
-            this.viewNICUCollectionToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.viewNICUCollectionToolStripMenuItem.Text = "View NICU Collection";
-            this.viewNICUCollectionToolStripMenuItem.Click += new System.EventHandler(this.viewNICUCollectionToolStripMenuItem_Click);
-            // 
-            // nICUDischargeRequestToolStripMenuItem
-            // 
-            this.nICUDischargeRequestToolStripMenuItem.Name = "nICUDischargeRequestToolStripMenuItem";
-            this.nICUDischargeRequestToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.nICUDischargeRequestToolStripMenuItem.Text = "NICU Discharge Request";
-            this.nICUDischargeRequestToolStripMenuItem.Click += new System.EventHandler(this.nICUDischargeRequestToolStripMenuItem_Click);
-            // 
-            // nICUBedHistoryToolStripMenuItem
-            // 
-            this.nICUBedHistoryToolStripMenuItem.Name = "nICUBedHistoryToolStripMenuItem";
-            this.nICUBedHistoryToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.nICUBedHistoryToolStripMenuItem.Text = "NICU BedHistory";
-            this.nICUBedHistoryToolStripMenuItem.Click += new System.EventHandler(this.nICUBedHistoryToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -1819,7 +1819,6 @@
         private System.Windows.Forms.ToolStripMenuItem technicalSupportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem21;
         private System.Windows.Forms.ToolStripMenuItem aboutGHospitalCareToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem medicineToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem22;
         private System.Windows.Forms.ToolStripMenuItem purchaseToolStripMenuItem;
@@ -1923,5 +1922,6 @@
         private System.Windows.Forms.ToolStripMenuItem nICUBedHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pathologySetupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hopitalReceivePaymentToolStripMenuItem;
+        public System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

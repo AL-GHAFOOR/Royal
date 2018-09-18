@@ -12,6 +12,20 @@ namespace GHospital_Care.DAL.Gateway
 {
     public class MedicalGatway : GatwayConnection
     {
+        public DataTable GetFollowupViewReport(string Department, string opid)
+        {
+            Query = "Rpt_FollowUP";
+            Command = new SqlCommand(Query, Connection);
+            Command.CommandType = CommandType.StoredProcedure;
+            Command.Parameters.AddWithValue("@PatientID", opid);
+            Command.Parameters.AddWithValue("@dpartment", Department);
+            Reader = Command.ExecuteReader();
+            DataTable dtDataTable = new DataTable();
+            dtDataTable.Load(Reader);
+            return dtDataTable;
+        }
+
+
         public DataTable GetAllDoctor()
         {
             Query = "select * from tblDoctors";
@@ -530,7 +544,7 @@ namespace GHospital_Care.DAL.Gateway
             DataTable dtDataTable = new DataTable();
             try
             {
-                Query = "SELECT DIStinct SerialFollowUp,OPID,Date,PatientName,BedName,BP,DoctorID,DoctorName,Shift,Deparment FROM ViewGetAllPatientFollowup where Date Between '" + FormDate + "' and '" + ToDate + "' ";
+                Query = "SELECT DIStinct SerialFollowUp,OPID,Date,PatientName,BedName,BP,DoctorID,DoctorName,DepId,Shift,Deparment FROM ViewGetAllPatientFollowup where Date Between '" + FormDate + "' and '" + ToDate + "' ";
                 Command = new SqlCommand(Query, Connection);
                 Command.CommandType = CommandType.Text;
                 Reader = Command.ExecuteReader();
