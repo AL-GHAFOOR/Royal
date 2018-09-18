@@ -51,11 +51,7 @@ namespace GHospital_Care.UI
         private void ConsultantCallUi_Load(object sender, EventArgs e)
         {
             radioBtnIndoor.Checked = true;
-<<<<<<< HEAD
             // GetAllIpPatient();
-=======
-           // GetAllIpPatient();
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             GetIpdAllDoctor();
             GenerateVoucherNo();
             btnUpdate.Enabled = false;
@@ -78,19 +74,11 @@ namespace GHospital_Care.UI
             txtFee.Text = "";
             txtAddress.Text = "";
             GenerateVoucherNo();
-<<<<<<< HEAD
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             ConsultBillService aConsultBillService = new ConsultBillService();
-=======
-           }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            ConsultBillService aConsultBillService=new ConsultBillService();
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             ConsultantCall aConsultantCall = new ConsultantCall();
 
             aConsultantCall.OpId = txtPatientID.Text;
@@ -103,11 +91,7 @@ namespace GHospital_Care.UI
             aConsultBillService.ConFee = Convert.ToDouble(txtFee.Text);
             aConsultBillService.ConQty = 1;
             aConsultBillService.VchNo = Convert.ToInt64(txtVoucherNo.Text);
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             MessageModel message = new ConsultantCallManager().SaveConsultantCall(aConsultantCall, aConsultBillService);
             if (message.MessageTitle == "Successful")
             {
@@ -131,11 +115,7 @@ namespace GHospital_Care.UI
         }
 
 
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
         private void picBox_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -157,7 +137,6 @@ namespace GHospital_Care.UI
         {
             try
             {
-<<<<<<< HEAD
                 // searchLookUpGetPatient.Properties.View.SetFocusedRowCellValue("PatientName", txtPatientName.Text);
                 txtPatientID.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("OPID").ToString();
 
@@ -165,11 +144,6 @@ namespace GHospital_Care.UI
                 txtPatientName.Text = patientName;
 
                 txtCabin.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("CabinName").ToString();
-=======
-                searchLookUpGetPatient.Properties.View.SetFocusedRowCellValue("PatientName", txtPatientName.Text);
-                txtPatientID.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("OPID").ToString();
-                txtPatientName.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("PatientName").ToString();
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
                 txtAddress.Text = searchLookUpGetPatient.Properties.View.GetFocusedRowCellValue("Address").ToString();
                 searchLookUpEditConsultant.Focus();
             }
@@ -178,17 +152,12 @@ namespace GHospital_Care.UI
 
 
             }
-<<<<<<< HEAD
 
-=======
-           
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
         }
 
         private void searchLookUpEditConsultant_EditValueChanged_1(object sender, EventArgs e)
         {
             txtFee.Focus();
-<<<<<<< HEAD
         }
 
         public void GetNicuPatient()
@@ -199,18 +168,6 @@ namespace GHospital_Care.UI
 
         }
 
-=======
-        }
-
-        public void GetNicuPatient()
-        {
-            searchLookUpGetPatient.Properties.DataSource = new ConsultantCallManager().GetNICUPatient();
-            searchLookUpGetPatient.Properties.DisplayMember = "PatientName";
-            searchLookUpGetPatient.Properties.ValueMember = "OPID";
-        
-         }
-        
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
         private void radioBtnNicu_CheckedChanged(object sender, EventArgs e)
         {
             searchLookUpGetPatient.Properties.DataSource = null;
@@ -223,20 +180,12 @@ namespace GHospital_Care.UI
 
         private void radioBtnIndoor_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             searchLookUpGetPatient.Properties.DataSource = null;
             Refresh();
             GetAllIpPatient();
         }
 
-<<<<<<< HEAD
-            searchLookUpGetPatient.Properties.DataSource = null;
-            Refresh();
-            GetAllIpPatient();
-        }
-
-=======
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
         public void ViewConsultant()
         {
             DataTable dt = new ConsultantCallManager().ViewConsultantMaster(FromDate.Value, ToDate.Value);
@@ -262,7 +211,6 @@ namespace GHospital_Care.UI
         {
             ViewConsultant();
         }
-<<<<<<< HEAD
 
         private string Consultent = "";
         private string PatientID = "";
@@ -324,68 +272,5 @@ namespace GHospital_Care.UI
         }
 
 
-=======
-
-        private string Consultent = "";
-        private string PatientID = "";
-        private string category = ""; 
-        private void gridView3_DoubleClick(object sender, EventArgs e)
-        {
-            category = gridView3.GetFocusedRowCellValue("Status").ToString();
-            if (category == "Indoor")
-            {
-                radioBtnIndoor.Checked = true;
-            }
-            if (category == "NICU")
-            {
-                radioBtnNicu.Checked = true;
-            }
-            searchLookUpGetPatient.Properties.DataSource = null;
-            txtVoucherNo.Text = gridView3.GetFocusedRowCellValue("VoucherNo").ToString();
-            dateServiceDate.Text = gridView3.GetFocusedRowCellValue("Date").ToString();
-            searchLookUpEditConsultant.Properties.NullText = gridView3.GetFocusedRowCellValue("DoctorName").ToString();
-            txtPatientID.Text = gridView3.GetFocusedRowCellValue("OPID").ToString();
-            txtPatientName.Text = gridView3.GetFocusedRowCellValue("PatientName").ToString();
-            Consultent = gridView3.GetFocusedRowCellValue("ConsultantId").ToString();
-            PatientID = gridView3.GetFocusedRowCellValue("OPID").ToString();
-            txtAddress.Text = gridView3.GetFocusedRowCellValue("Address").ToString();
-            txtFee.Text = gridView3.GetFocusedRowCellValue("ConFee").ToString();
-            searchLookUpGetPatient.Properties.NullText = txtPatientName.Text;
-            xtraTabPage1.Show();
-            btnUpdate.Enabled = true;
-            btnDelete.Enabled = true;
-            btnSave.Enabled = false;
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            ConsultBillService aConsultBillService = new ConsultBillService();
-            ConsultantCall aConsultantCall = new ConsultantCall();
-
-            aConsultantCall.OpId = txtPatientID.Text;
-            aConsultantCall.ConsultantId = Consultent;
-            aConsultantCall.Id = Convert.ToInt32(txtVoucherNo.Text);
-
-            aConsultBillService.OPID = txtPatientID.Text;
-            aConsultBillService.ConsultId = Consultent;
-            aConsultBillService.ConsultBillDate = dateServiceDate.Text;
-            aConsultBillService.ConFee = Convert.ToDouble(txtFee.Text);
-            aConsultBillService.ConQty = 1;
-            aConsultBillService.VchNo = Convert.ToInt64(txtVoucherNo.Text);
-
-            MessageModel message = new ConsultantCallManager().UpdateConsultantCall(aConsultantCall, aConsultBillService);
-            if (message.MessageTitle == "Successful")
-            {
-                MetroFramework.MetroMessageBox.Show(this, message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Refresh();
-            }
-            else
-            {
-                MetroFramework.MetroMessageBox.Show(this, message.MessageBody, message.MessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
     }
 }

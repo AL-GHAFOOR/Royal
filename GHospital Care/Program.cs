@@ -21,7 +21,7 @@ namespace GHospital_Care
         [STAThread]
         static void Main(){Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CabinStatusUi());
+            Application.Run(new Login());
             // Application.Run(new DailyPatientStatus());
         }
     }

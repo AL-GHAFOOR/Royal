@@ -171,11 +171,7 @@
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.Location = new System.Drawing.Point(151, 14);
             this.btnUpdate.Name = "btnUpdate";
-<<<<<<< HEAD
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
-=======
-            this.btnUpdate.Size = new System.Drawing.Size(82, 26);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -231,11 +227,7 @@
             // 
             // searchLookUpEditConsultant
             // 
-<<<<<<< HEAD
             this.searchLookUpEditConsultant.Location = new System.Drawing.Point(159, 266);
-=======
-            this.searchLookUpEditConsultant.Location = new System.Drawing.Point(159, 231);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.searchLookUpEditConsultant.Name = "searchLookUpEditConsultant";
             this.searchLookUpEditConsultant.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchLookUpEditConsultant.Properties.Appearance.Options.UseFont = true;
@@ -329,11 +321,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(48, 82);
-=======
-            this.label2.Location = new System.Drawing.Point(45, 82);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 16);
             this.label2.TabIndex = 23;
@@ -343,11 +331,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label11.Location = new System.Drawing.Point(41, 269);
-=======
-            this.label11.Location = new System.Drawing.Point(45, 234);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(111, 16);
             this.label11.TabIndex = 22;
@@ -357,11 +341,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label5.Location = new System.Drawing.Point(93, 171);
-=======
-            this.label5.Location = new System.Drawing.Point(45, 171);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 16);
             this.label5.TabIndex = 25;
@@ -424,11 +404,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label4.Location = new System.Drawing.Point(87, 116);
-=======
-            this.label4.Location = new System.Drawing.Point(45, 116);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 18;
@@ -437,11 +413,7 @@
             // txtFee
             // 
             this.txtFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.txtFee.Location = new System.Drawing.Point(159, 296);
-=======
-            this.txtFee.Location = new System.Drawing.Point(159, 261);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.txtFee.Name = "txtFee";
             this.txtFee.Size = new System.Drawing.Size(223, 22);
             this.txtFee.TabIndex = 6;
@@ -450,11 +422,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label10.Location = new System.Drawing.Point(120, 299);
-=======
-            this.label10.Location = new System.Drawing.Point(45, 264);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 16);
             this.label10.TabIndex = 17;
@@ -473,11 +441,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
             this.label8.Location = new System.Drawing.Point(63, 142);
-=======
-            this.label8.Location = new System.Drawing.Point(45, 142);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 16);
             this.label8.TabIndex = 21;
@@ -605,11 +569,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 41);
             this.gridControl1.MainView = this.gridView3;
             this.gridControl1.Name = "gridControl1";
-<<<<<<< HEAD
             this.gridControl1.Size = new System.Drawing.Size(501, 297);
-=======
-            this.gridControl1.Size = new System.Drawing.Size(465, 266);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.gridControl1.TabIndex = 251;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -857,10 +817,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         public DevExpress.XtraEditors.SimpleButton btnUpdate;
-<<<<<<< HEAD
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox txtCabin;
-=======
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
     }
 }
