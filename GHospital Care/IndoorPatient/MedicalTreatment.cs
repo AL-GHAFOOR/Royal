@@ -8,10 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using GHospital_Care.Admin;
 using GHospital_Care.BAL.Manager;
-using GHospital_Care.CustomLibry;
-using GHospital_Care.DAL.Gateway;
 using GHospital_Care.DAL.Model;
-using Microsoft.Reporting.WinForms;
 
 namespace GHospital_Care.IndoorPatient
 {
@@ -60,7 +57,6 @@ namespace GHospital_Care.IndoorPatient
         {
             DataTable GetAllPatientFollowup = new MedicalManager().GetAllPatientFollowup(Fromdate.Value, ToDate.Value);
             gridControlFollowUp.DataSource = GetAllPatientFollowup;
-
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -132,7 +128,7 @@ namespace GHospital_Care.IndoorPatient
         {
             DataTable dt = new MedicalManager().GetFollowupView(cmbDept.Text);
             gridControl1.DataSource = dt;
-            
+           
         }
 
         public void SaveItemValue()
@@ -329,7 +325,7 @@ namespace GHospital_Care.IndoorPatient
             //dgvServices.DataSource = null;
             //drugTable.Rows.Clear();
             DataTable dataTable=new DataTable();
-            followup.SerialId = txtFollowupSlNo.Text;
+
             dataTable = new MedicalManager().GetPatientFollowupByOpid(followup);
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
@@ -497,8 +493,6 @@ namespace GHospital_Care.IndoorPatient
         private void cmbDept_SelectedIndexChanged(object sender, EventArgs e)
         {
             getFollowUpView();
-
-           
         }
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
@@ -524,90 +518,6 @@ namespace GHospital_Care.IndoorPatient
         private void xtraTabControl1_Click(object sender, EventArgs e)
         {
             ViewFollowUP();
-        }
-
-        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
-        {
-            
-            
-        }
-
-        private void gridView1_ShownEditor(object sender, EventArgs e)
-        {
-            
-           
-        }
-
-        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
-        {
-            DataTable tbl = (DataTable)gridControl1.DataSource;
-            int count = 0;
-            var item = gridView1.GetFocusedRowCellValue("Item");
-            var FollowupId = gridView1.GetFocusedRowCellValue("FollowupId");
-            var MasterId = gridView1.GetFocusedRowCellValue("MasterId");
-
-            if (item.ToString() == "MasterItem")
-            {
-                int followupId = tbl.AsEnumerable().Count(a => a["FollowupId"].ToString() == FollowupId.ToString());
-                string join = "M" + followupId;
-
-                if (MasterId.ToString() == join)
-                {
-                    e.Cancel = true;
-                }
-                
-            }
-            //foreach (DataRow row in tbl.Rows)
-            //{
-                
-            //    count++;
-            //}
-        }
-
-        private void gridControlFollowUp_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ReportModel model = new ReportModel();
-                model.Parameters = new List<ReportParameter>
-            {
-                new ReportParameter("Company", model.Company.ToUpper()),
-                new ReportParameter("Address",  model.Address),
-            };
-                var serialId = gridViewFollowUp.GetFocusedRowCellValue("SerialFollowUp").ToString();
-                DataTable dataTable = new DataTable();
-              Followup f=new Followup();
-                f.SerialId = serialId;
-                dataTable = new MedicalManager().GetPatientFollowupByOpid(f);
-            
-                var opid = gridViewFollowUp.GetFocusedRowCellValue("OPID").ToString();
-                var deptID = gridViewFollowUp.GetFocusedRowCellValue("DepId").ToString();
-                DataTable dt = new MedicalManager().GetFollowupViewReport(deptID, opid);
-
-                model.MultiReportDataSource = new List<ReportDataSource>()
-            {
-                new ReportDataSource("DataSet",dt),new ReportDataSource("DataSet2",dataTable),
-               
-
-            };
-                model.ReportPath = "GHospital_Care.Report.rptDailyFollowupSheet.rdlc";
-                model.Show(model, this, true);
-            }
-            catch (Exception)
-            {
-                
-                
-            }
-         
-        }
-
-        private void gridControlFollowUp_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-          
         }
     }
 }
