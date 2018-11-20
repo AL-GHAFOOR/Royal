@@ -149,6 +149,7 @@ namespace GHospital_Care.Nurses
 
         private void load()
         {
+<<<<<<< HEAD
             if (radioBtnNicu.Checked)
             {
                 DataTable slNo = new DataTable();
@@ -157,6 +158,45 @@ namespace GHospital_Care.Nurses
                 cmbPid.DataSource = slNo;
                 cmbPid.DisplayMember = "RegNo";
                 cmbPid.ValueMember = "RegNo";
+=======
+                if (radioBtnNicu.Checked)
+                {
+                    DataTable slNo = new DataTable();
+                    PatientService();
+                    slNo = new IpdManager().GetAllNICUpatientSl();
+                    cmbPid.DataSource = slNo;
+                    cmbPid.DisplayMember = "RegNo";
+                    cmbPid.ValueMember = "RegNo";
+               }
+                if (radioBtnIndoor.Checked)
+                {
+                    PatientService();
+                    GetAllPatientSlNo("IPD");
+                    LoadPatientService(cmbPid.Text, "IPD");
+                   
+                }   
+        }
+
+        private void IPBillingSetup_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                radioBtnIndoor.Checked = true;
+                
+                 Patient_buttonEnable(true);
+                _session.ChkPermission(MainWindow.userName);
+                if (_session.SavePermission == false)
+                {
+                    Patient_buttonEnable(true);
+                    btnSavePSBill.Enabled = false;
+               }
+                else
+                {
+                    Patient_buttonEnable(true);
+                    
+                }
+                //chkPermission();
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             }
             if (radioBtnIndoor.Checked)
             {
@@ -271,11 +311,48 @@ namespace GHospital_Care.Nurses
             }
             catch (Exception)
             {
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
                 //throw;
             }
+            
+
+         }
 
 
+        public void LoadPatientServiceNICU(string patientId, string status)
+        {
+            try
+            {
+                Patientservice = new DataTable();
+                Int64 MaxID = new ServiceGateway().GetPateintServiceMaxValue();
+                patientId = cmbPid.Text;
+                Patientservice = new ServiceManager().GetPatientServiceBill(patientId, status, "NICU", dtpPatientService.Value);
+                if (Patientservice.Rows.Count > 0)
+                {
+
+                    gridControlPSBill.DataSource = Patientservice;
+
+<<<<<<< HEAD
+=======
+                }
+                else
+                {
+                    DataRow row = Patientservice.NewRow();
+                    Patientservice.Rows.Add(row);
+                    Patientservice.Rows[0]["OPID"] = "NA";
+                    gridControlPSBill.DataSource = Patientservice;
+                }
+                gridViewServiceBill.SetRowCellValue(gridViewServiceBill.RowCount - 1, "VchNo", MaxID);
+            }
+            catch (Exception)
+            {
+
+            }
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
         }
 
 
@@ -283,6 +360,7 @@ namespace GHospital_Care.Nurses
         {
             try
             {
+<<<<<<< HEAD
                 Patientservice = new DataTable();
                 Int64 MaxID = new ServiceGateway().GetPateintServiceMaxValue();
                 patientId = cmbPid.Text;
@@ -304,6 +382,23 @@ namespace GHospital_Care.Nurses
             }
             catch (Exception)
             {
+=======
+                var selectId = cmbPid.Text;
+                LoadDataForIPD(selectId);
+                //if (IpBillingStatus== "OPD")
+                //{
+                //    //LoadOtSetupByPId(cmbPid.Text);
+                //   LoadPatientService(cmbPid.Text, toggleSwitch1.Properties.OnText);
+                   
+
+                //}
+                //else if (IpBillingStatus == "IPD")
+                //{
+                //    //Consult---
+                //    LoadDataForIPD(cmbPid.Text);
+                //    LoadPatientService(selectId, toggleSwitch1.Properties.OffText);
+                   
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
 
             }
         }
@@ -318,6 +413,7 @@ namespace GHospital_Care.Nurses
                 //    //LoadOtSetupByPId(cmbPid.Text);
                 //   LoadPatientService(cmbPid.Text, toggleSwitch1.Properties.OnText);
 
+<<<<<<< HEAD
 
                 //}
                 //else if (IpBillingStatus == "IPD")
@@ -328,6 +424,8 @@ namespace GHospital_Care.Nurses
 
 
 
+=======
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
                 //}
             }
             catch (Exception)
@@ -650,13 +748,24 @@ namespace GHospital_Care.Nurses
             LoadPatientServiceNICU(cmbPid.Text, "NICU");
         }
 
+<<<<<<< HEAD
 
 
         private void gridControlPSBill_Click(object sender, EventArgs e)
+=======
+        private void panel2_Paint(object sender, PaintEventArgs e)
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
         {
 
         }
 
+<<<<<<< HEAD
+=======
+        private void gridControlPSBill_Click(object sender, EventArgs e)
+        {
+            }
+       
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
 
     }
 }

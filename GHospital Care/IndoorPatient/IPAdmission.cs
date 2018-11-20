@@ -452,9 +452,12 @@ namespace GHospital_Care.IndoorPatient
                 service.Total = Convert.ToDouble(txtRegFf.Text);
                 service.Qty = 1;
                 service.IssueDate = AdmissionDate.Value;
+<<<<<<< HEAD
                 service.Catgory = "Hospital";
                 
 
+=======
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
                 MessageModel message = new IpdManager().SaveIpdPatient(patient, service, aOutdoorPatient);
                 if (message.MessageTitle == "Successful")
                 {
@@ -1095,6 +1098,14 @@ namespace GHospital_Care.IndoorPatient
         {
             PatitientInfo();}
 
+<<<<<<< HEAD
+=======
+        private void txtReg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+>>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
 
         //public void GetPrimaryDoctor()
         //{
