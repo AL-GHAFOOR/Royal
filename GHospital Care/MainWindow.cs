@@ -19,8 +19,7 @@ using GHospital_Care.IndoorPatient;
 using GHospital_Care.NICU;
 using GHospital_Care.Nurses;
 using GHospital_Care.Operation;
-using GHospital_Care.OutdoorPatient;
-using GHospital_Care.Session;
+using GHospital_Care.OutdoorPatient;using GHospital_Care.Session;
 using GHospital_Care.Settings;
 using GHospital_Care.UI;
 using DischargeBill = GHospital_Care.IndoorPatient.DischargeBill;
@@ -48,9 +47,10 @@ namespace GHospital_Care
             lnkUserType.Text = UserRole;
             userName = lblUserName.Text;
             GeneralInfo.User = aUserMaster;
-            //    SetUserRole();
-
-        }Form masterForm;
+            SetUserRole();
+            
+        }
+        Form masterForm;
 
         //public MainWindow()
         //{
@@ -59,7 +59,7 @@ namespace GHospital_Care
 
         private void loadUser()
         {
-
+            
         }
         private void SetUserRole()
         {
@@ -84,7 +84,7 @@ namespace GHospital_Care
                 mnuAccount.Enabled = false;
                 mnuDoctor.Enabled = true;
                 mnuEmployee.Enabled = false;
-                // mnuHospitalProfile.Enabled = false;
+               // mnuHospitalProfile.Enabled = false;
                 mnuIP.Enabled = true;
                 mnuNurses.Enabled = false;
                 mnuOP.Enabled = true;
@@ -100,7 +100,7 @@ namespace GHospital_Care
                 mnuAccount.Enabled = true;
                 mnuDoctor.Enabled = false;
                 mnuEmployee.Enabled = false;
-                // mnuHospitalProfile.Enabled = false;
+               // mnuHospitalProfile.Enabled = false;
                 mnuIP.Enabled = false;
                 mnuNurses.Enabled = false;
                 mnuOP.Enabled = false;
@@ -116,9 +116,9 @@ namespace GHospital_Care
                 mnuAccount.Enabled = false;
                 mnuDoctor.Enabled = false;
                 mnuEmployee.Enabled = false;
-                // mnuHospitalProfile.Enabled = false;
+               // mnuHospitalProfile.Enabled = false;
                 mnuIP.Enabled = false;
-                mnuNurses.Enabled = false; mnuOP.Enabled = false;
+                mnuNurses.Enabled = false;mnuOP.Enabled = false;
                 mnuPathology.Enabled = true;
                 mnuPharmacy.Enabled = false;
                 mnuReports.Enabled = false;
@@ -169,8 +169,7 @@ namespace GHospital_Care
             Departments frm = new Departments();
             frm.MdiParent = this;
             frm.Show();
-        }
-        private void deseaseSToolStripMenuItem_Click(object sender, EventArgs e)
+        }private void deseaseSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Settings.Deseases frm = new GHospital_Care.Settings.Deseases();
             frm.MdiParent = this;
@@ -185,8 +184,7 @@ namespace GHospital_Care
         private void patientInformationToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OutdoorPatient.OutdoorPatientUi frm = new GHospital_Care.OutdoorPatient.OutdoorPatientUi();
-            frm.MdiParent = this; frm.Show();
-        }
+            frm.MdiParent = this;frm.Show();}
         private void billingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OutdoorPatient.OPBILL frm = new GHospital_Care.OutdoorPatient.OPBILL();
@@ -210,8 +208,7 @@ namespace GHospital_Care
             ServiceSetup frm = new ServiceSetup();
             frm.MdiParent = this;
             frm.Show();
-        }
-        private void informationReportToolStripMenuItem_Click(object sender, EventArgs e)
+        }private void informationReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OutdoorPatient.OPInformationReport frm = new GHospital_Care.OutdoorPatient.OPInformationReport();
             frm.MdiParent = this;
@@ -353,12 +350,10 @@ namespace GHospital_Care
             frm.Show();
         }
         private void nurseSalaryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Nurses.NurseSalary frm = new GHospital_Care.Nurses.NurseSalary();
+        {Nurses.NurseSalary frm = new GHospital_Care.Nurses.NurseSalary();
             frm.MdiParent = this;
             frm.Show();
-        }
-        private void nurseGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
+        }private void nurseGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Nurses.NurseGenerator frm = new GHospital_Care.Nurses.NurseGenerator();
             frm.MdiParent = this;
@@ -414,7 +409,7 @@ namespace GHospital_Care
         }
         private void medicalTreatmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
         private void recieveFromPatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -518,87 +513,46 @@ namespace GHospital_Care
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            // Permission(GeneralInfo.User);
-            AccessControl();
+           // Permission(GeneralInfo.User);
+         AccessControl();
 
         }
 
         public void AccessControl()
         {
-            List<UserMaster> GetAllPermission = new AccessPermissionGateway().AccessPermissionList(GeneralInfo.User.RoleId, GeneralInfo.User.ID).ToList();
+            List<UserMaster> GetAllPermission = new AccessPermissionGateway().AccessPermissionList(GeneralInfo.User.RoleId,GeneralInfo.User.ID).ToList();
             GlobalPermission.UserPermission = GetAllPermission;
-            List<UserMaster> DefaultList = new List<UserMaster>();
-            if (GetAllPermission.Count > 0)
+
+            foreach (UserMaster userMaster in GetAllPermission)
             {
-                foreach (UserMaster userMaster in GetAllPermission)
-                {
-                    foreach (ToolStripMenuItem item in menuStrip1.Items)
-                    {
-                        foreach (object child in item.DropDownItems)
-                        {
-                            ToolStripMenuItem menuItem = child as ToolStripMenuItem;
-                            if (menuItem != null)
-                            {
-                                DefaultList.Add(new UserMaster()
-                                {
-                                    FormCaption = menuItem.Text,
-                                    MenuName = menuItem.Name,
-                                    FormName = menuItem.Name,
-                                    MenuCaption = menuItem.Text
-                                });
-
-
-                                var permission = userMaster.Permission;
-                                var Menu = userMaster.MenuName;
-                                if (menuItem.Name == Menu && Convert.ToBoolean(permission))
-                                {
-                                    menuItem.Visible = true;
-
-                                }
-                                else if (menuItem.Name == Menu && Convert.ToBoolean(permission) == false)
-                                {
-                                    menuItem.Visible = false;
-                                }
-
-                            }
-
-
-                        }
-                    }
-                    GlobalPermission.DefaultMenuNameList = DefaultList;
-                }
-            }
-            else
-            {
-                int i = 1;
                 foreach (ToolStripMenuItem item in menuStrip1.Items)
                 {
                     foreach (object child in item.DropDownItems)
                     {
                         ToolStripMenuItem menuItem = child as ToolStripMenuItem;
-                        if (menuItem != null)
+                        if (menuItem!=null)
                         {
-                            DefaultList.Add(new UserMaster()
+                            var permission = userMaster.Permission;
+                            var Menu = userMaster.MenuName;
+
+                            if (menuItem.Name == Menu && Convert.ToBoolean(permission))
                             {
-                                FormCaption = menuItem.Text,
-                                MenuName = menuItem.Name,
-                                FormName = menuItem.Name,
-                                MenuCaption = menuItem.Text
-                                ,
-                                ID = i.ToString()
-                            });
+                                menuItem.Visible = true;
+
+                            }else if (menuItem.Name == Menu && Convert.ToBoolean(permission) == false)
+                            {
+                                menuItem.Visible = false;
+                            }
                         }
-                        i++;
-
+                     
+                           
                     }
-                }GlobalPermission.DefaultMenuNameList = DefaultList;
+                    }
+                }
             }
+           
 
-
-        }
-
-
-
+        
 
 
         public void Permission(UserMaster user)
@@ -700,7 +654,7 @@ namespace GHospital_Care
 
         private void btnOTSchedule_Click(object sender, EventArgs e)
         {
-            Operation.Operation frm = new Operation.Operation();
+            Operation.Operation frm = new Operation.Operation(); 
             frm.MdiParent = this;
             frm.Show();
         }
@@ -714,7 +668,7 @@ namespace GHospital_Care
 
         private void dischargePatientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DischargeUI.OperationNote DischargeForm = new DischargeUI.OperationNote();
+            DischargeUI.OperationNote DischargeForm = new   DischargeUI.OperationNote();
             DischargeForm.MdiParent = this;
             DischargeForm.Show();
         }
@@ -747,10 +701,10 @@ namespace GHospital_Care
         private void billCollectionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             IndoorPatient.PatientAmountReceive frm = new GHospital_Care.IndoorPatient.PatientAmountReceive();
-
-            frm.MdiParent = this;
-            frm.Show();
-
+            
+                frm.MdiParent = this;
+                frm.Show();
+           
         }
         private void oPBillCheckingToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -807,7 +761,7 @@ namespace GHospital_Care
             OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage3);
             OtBilling.tabControl1.TabPages.Remove(OtBilling.tabPage4);
             OtBilling.tabControl1.TabPages.Remove(OtBilling.IssueMedicine);
-
+            
         }
 
         private void MainWindow_Shown(object sender, EventArgs e)
@@ -849,7 +803,7 @@ namespace GHospital_Care
             NicuAdmissionUi NicuAdmission = new NicuAdmissionUi();
             NicuAdmission.MdiParent = this;
             NicuAdmission.Show();
-
+           
         }
 
         private void dischargeBillNICUToolStripMenuItem_Click(object sender, EventArgs e)
@@ -857,7 +811,7 @@ namespace GHospital_Care
             NICUDischargeBill nicuDischarge = new NICUDischargeBill();
             nicuDischarge.MdiParent = this;
             nicuDischarge.Show();
-
+            
         }
 
         private void createBillNICUToolStripMenuItem_Click(object sender, EventArgs e)
@@ -870,7 +824,7 @@ namespace GHospital_Care
         {
             IPBillingSetup frm = new IPBillingSetup("");
             MainWindow.MedicineFalge = "OPD";
-            frm.MdiParent = this; frm.Show();
+            frm.MdiParent = this;frm.Show();
         }
         private void consultantServiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -942,7 +896,7 @@ namespace GHospital_Care
         private void dailyFollowupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IndoorPatient.MedicalTreatment frm = new GHospital_Care.IndoorPatient.MedicalTreatment();
-            frm.MdiParent = this; frm.Show();
+            frm.MdiParent = this;frm.Show();
         }
 
         private void consultantPaymentToolStripMenuItem_Click(object sender, EventArgs e)
@@ -972,5 +926,5 @@ namespace GHospital_Care
             frm.MdiParent = this;
             frm.Show();
         }
-    }
+        }
 }

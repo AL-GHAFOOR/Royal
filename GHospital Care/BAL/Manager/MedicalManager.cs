@@ -10,14 +10,10 @@ using GHospital_Care.DAL.Gateway;
 using GHospital_Care.DAL.Model;
 
 namespace GHospital_Care.BAL.Manager
-{public class MedicalManager : MessageManager
+{
+    public class MedicalManager : MessageManager
     {
         private MedicalGatway aMedicalGatway;
-        public DataTable GetFollowupViewReport(string Department, string opid)
-        {
-            return new MedicalGatway().GetFollowupViewReport(Department, opid);
-        }
-
         public DataTable GetAllDoctor()
         {
             return new MedicalGatway().GetAllDoctor();
