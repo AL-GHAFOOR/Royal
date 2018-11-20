@@ -1717,7 +1717,7 @@
             this.txtReg.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtReg.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtReg.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReg.Location = new System.Drawing.Point(569, 5);
+            this.txtReg.Location = new System.Drawing.Point(545, 8);
             this.txtReg.MaxLength = 3;
             this.txtReg.Name = "txtReg";
             this.txtReg.ReadOnly = true;
@@ -1725,11 +1725,7 @@
             this.txtReg.TabIndex = 100087;
             this.txtReg.TabStop = false;
             this.txtReg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-<<<<<<< HEAD
             this.txtReg.Visible = false;
-=======
-            this.txtReg.TextChanged += new System.EventHandler(this.txtReg_TextChanged);
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             // 
             // label19
             // 
@@ -1737,7 +1733,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(541, 9);
+            this.label19.Location = new System.Drawing.Point(512, 12);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 13);
             this.label19.TabIndex = 100095;
@@ -1957,14 +1953,7 @@
         internal System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.TextBox txtOpid;
-<<<<<<< HEAD
         internal System.Windows.Forms.Label label40;
-=======
-        internal System.Windows.Forms.Label label32;
-        internal System.Windows.Forms.Label label31;
-        internal System.Windows.Forms.Label label40;
-        internal System.Windows.Forms.Label label39;
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
         internal System.Windows.Forms.Label label38;
         internal System.Windows.Forms.Label label33;
         internal System.Windows.Forms.Label label29;

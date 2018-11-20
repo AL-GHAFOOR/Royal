@@ -54,7 +54,6 @@
             this.addDiscountAuthorityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPermissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pathologySetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -422,13 +421,6 @@
             this.menuPermissionToolStripMenuItem.Text = "Menu Permission";
             this.menuPermissionToolStripMenuItem.Click += new System.EventHandler(this.menuPermissionToolStripMenuItem_Click);
             // 
-            // pathologySetupToolStripMenuItem
-            // 
-            this.pathologySetupToolStripMenuItem.Name = "pathologySetupToolStripMenuItem";
-            this.pathologySetupToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.pathologySetupToolStripMenuItem.Text = "Pathology Setup";
-            this.pathologySetupToolStripMenuItem.Click += new System.EventHandler(this.pathologySetupToolStripMenuItem_Click);
-            // 
             // mnuAccount
             // 
             this.mnuAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -698,11 +690,7 @@
             // 
             this.iPAllBillCheckingToolStripMenuItem.Name = "iPAllBillCheckingToolStripMenuItem";
             this.iPAllBillCheckingToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-<<<<<<< HEAD
             this.iPAllBillCheckingToolStripMenuItem.Text = "IP BusinessOffice (Search Bill)";
-=======
-            this.iPAllBillCheckingToolStripMenuItem.Text = "IP BusinessOffice";
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.iPAllBillCheckingToolStripMenuItem.Click += new System.EventHandler(this.iPAllBillCheckingToolStripMenuItem_Click);
             // 
             // iPAdmissionBedHistoryToolStripMenuItem
@@ -1194,14 +1182,7 @@
             this.oTToolStripMenuItem,
             this.billCollectionToolStripMenuItem,
             this.mnuDoctor,
-            this.mnuNurses,
             this.mnuEmployee,
-<<<<<<< HEAD
-=======
-            this.oTToolStripMenuItem,
-            this.nICUToolStripMenuItem,
-            this.mnuOP,
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             this.mnuPathology,
             this.mnuPharmacy,
             this.mnuReports,

@@ -832,7 +832,6 @@ namespace GHospital_Care
             frm.MdiParent = this;
             frm.Show();
         }
-
         private void nICUBusinessOfficeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NICUBusinessOffice frm = new NICUBusinessOffice();

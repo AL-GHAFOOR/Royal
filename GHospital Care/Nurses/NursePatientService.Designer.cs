@@ -34,8 +34,6 @@
             this.lblHeadingName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioBtnNicu = new System.Windows.Forms.RadioButton();
-            this.radioBtnIndoor = new System.Windows.Forms.RadioButton();
             this.txtCabinBed = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.cmbPid = new System.Windows.Forms.ComboBox();
@@ -100,7 +98,6 @@
             this.dtpPatientService = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,8 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -133,7 +128,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(874, 24);
             this.panel2.TabIndex = 243;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // simpleButton1
             // 
@@ -219,34 +213,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Basic Information";
             // 
-            // radioBtnNicu
-            // 
-            this.radioBtnNicu.AutoSize = true;
-            this.radioBtnNicu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnNicu.ForeColor = System.Drawing.Color.OrangeRed;
-            this.radioBtnNicu.Location = new System.Drawing.Point(98, 44);
-            this.radioBtnNicu.Name = "radioBtnNicu";
-            this.radioBtnNicu.Size = new System.Drawing.Size(62, 20);
-            this.radioBtnNicu.TabIndex = 100106;
-            this.radioBtnNicu.TabStop = true;
-            this.radioBtnNicu.Text = "NICU";
-            this.radioBtnNicu.UseVisualStyleBackColor = true;
-            this.radioBtnNicu.CheckedChanged += new System.EventHandler(this.radioBtnNicu_CheckedChanged);
-            // 
-            // radioBtnIndoor
-            // 
-            this.radioBtnIndoor.AutoSize = true;
-            this.radioBtnIndoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnIndoor.ForeColor = System.Drawing.Color.OrangeRed;
-            this.radioBtnIndoor.Location = new System.Drawing.Point(10, 44);
-            this.radioBtnIndoor.Name = "radioBtnIndoor";
-            this.radioBtnIndoor.Size = new System.Drawing.Size(70, 20);
-            this.radioBtnIndoor.TabIndex = 100105;
-            this.radioBtnIndoor.TabStop = true;
-            this.radioBtnIndoor.Text = "Indoor";
-            this.radioBtnIndoor.UseVisualStyleBackColor = true;
-            this.radioBtnIndoor.CheckedChanged += new System.EventHandler(this.radioBtnIndoor_CheckedChanged);
-            // 
             // txtCabinBed
             // 
             this.txtCabinBed.BackColor = System.Drawing.Color.White;
@@ -271,33 +237,6 @@
             this.label31.TabIndex = 100104;
             this.label31.Text = "Cabin/Bed";
             // 
-<<<<<<< HEAD
-=======
-            // toggleSwitch1
-            // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(688, 10);
-            this.toggleSwitch1.Name = "toggleSwitch1";
-            this.toggleSwitch1.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.False;
-            this.toggleSwitch1.Properties.Appearance.BackColor = System.Drawing.Color.Yellow;
-            this.toggleSwitch1.Properties.Appearance.BackColor2 = System.Drawing.Color.Red;
-            this.toggleSwitch1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.toggleSwitch1.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toggleSwitch1.Properties.Appearance.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.toggleSwitch1.Properties.Appearance.Options.UseBackColor = true;
-            this.toggleSwitch1.Properties.Appearance.Options.UseFont = true;
-            this.toggleSwitch1.Properties.Appearance.Options.UseForeColor = true;
-            this.toggleSwitch1.Properties.Appearance.Options.UseTextOptions = true;
-            this.toggleSwitch1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.toggleSwitch1.Properties.AutoHeight = false;
-            this.toggleSwitch1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.toggleSwitch1.Properties.OffText = "IPD";
-            this.toggleSwitch1.Properties.OnText = "OPD";
-            this.toggleSwitch1.Size = new System.Drawing.Size(17, 42);
-            this.toggleSwitch1.TabIndex = 100102;
-            this.toggleSwitch1.Visible = false;
-            this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
-            // 
->>>>>>> 077d18b8db0ecb2f9355d455de044d12204a1222
             // cmbPid
             // 
             this.cmbPid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1015,21 +954,6 @@
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 5;
             // 
-            // groupControl1
-            // 
-            this.groupControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.groupControl1.Appearance.Options.UseFont = true;
-            this.groupControl1.Appearance.Options.UseForeColor = true;
-            this.groupControl1.Appearance.Options.UseTextOptions = true;
-            this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
-            this.groupControl1.Controls.Add(this.radioBtnIndoor);
-            this.groupControl1.Controls.Add(this.radioBtnNicu);
-            this.groupControl1.Location = new System.Drawing.Point(675, 32);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(172, 69);
-            this.groupControl1.TabIndex = 100107;
-            this.groupControl1.Text = "Patient Category";
-            // 
             // NursePatientService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1062,9 +986,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }

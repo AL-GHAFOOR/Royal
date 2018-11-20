@@ -368,6 +368,7 @@
     <Compile Include="CustomLibry\ReportMethod.cs" />
     <Compile Include="CustomLibry\ReportModel.cs" />
     <Compile Include="DAL\Gateway\AccessPermissionGateway.cs" />
+    <Compile Include="DAL\Gateway\AdviceGateway.cs" />
     <Compile Include="DAL\Gateway\BedHistoryGateWay.cs" />
     <Compile Include="DAL\Gateway\BillCheckingGateway.cs" />
     <Compile Include="DAL\Gateway\BillCheckingGatewayNICU.cs" />
@@ -883,12 +884,6 @@
     <Compile Include="Nurses\DutyByNurse.Designer.cs">
       <DependentUpon>DutyByNurse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nurses\NursePatientService.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nurses\NursePatientService.Designer.cs">
-      <DependentUpon>NursePatientService.cs</DependentUpon>
-    </Compile>
     <Compile Include="Nurses\NurseConsultant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -912,6 +907,12 @@
     </Compile>
     <Compile Include="Nurses\NurseInfo.designer.cs">
       <DependentUpon>NurseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nurses\NursePatientService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nurses\NursePatientService.designer.cs">
+      <DependentUpon>NursePatientService.cs</DependentUpon>
     </Compile>
     <Compile Include="Nurses\NurseSalary.cs">
       <SubType>Form</SubType>
@@ -1483,9 +1484,6 @@
       <DependentUpon>DutyByNurse.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nurses\NursePatientService.resx">
-      <DependentUpon>NursePatientService.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Nurses\NurseConsultant.resx">
       <DependentUpon>NurseConsultant.cs</DependentUpon>
     </EmbeddedResource>
@@ -1500,6 +1498,9 @@
     <EmbeddedResource Include="Nurses\NurseInfo.resx">
       <DependentUpon>NurseInfo.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nurses\NursePatientService.resx">
+      <DependentUpon>NursePatientService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nurses\NurseSalary.resx">
       <DependentUpon>NurseSalary.cs</DependentUpon>

@@ -159,17 +159,6 @@ namespace GHospital_Care.DAL.Gateway
           return dtDataTable;
       }
 
-      public DataTable GetAllCabinUpdate()
-      {
-          Query = "select * from ViewAllCabins ";
-          Command = new SqlCommand(Query, Connection);
-          Command.CommandType = CommandType.Text;
-          DataTable dtDataTable = new DataTable();
-          Reader = Command.ExecuteReader();
-          dtDataTable.Load(Reader);
-          return dtDataTable;
-      }
-
       public DataTable GetAllWard()
       {
           Query = "SELECT Id, WardName FROM Ward";
